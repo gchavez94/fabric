@@ -1,0 +1,813 @@
+table cre86_tabladenuncia
+	lineageTag: 86b29786-56a6-4b1e-921a-5cd0fc057150
+
+	column TablaDenuncia
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 5a3b6c2e-fa30-4c7c-8f43-e53acb38a2e2
+		summarizeBy: none
+		sourceColumn: cre86_tabladenunciaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de creación'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 68d124c6-769d-463c-a279-4e0e29c0f810
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 240fd8b0-b4e5-46f8-aef0-1cb533463fc1
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de modificación'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e8c551c0-bbad-40ec-8a37-ccba522830d3
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 5bad58a8-3995-405d-9f08-abb6b5064c84
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: c6b532e9-7da8-4a2e-a540-8691846add79
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: ef879675-a3ba-408c-97eb-fe62734de550
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column Autor
+		dataType: string
+		sourceProviderType: nvarchar(256)
+		lineageTag: 3d4129d5-525e-4328-b803-7828aff05f89
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(256)
+		lineageTag: 984fab41-85d3-4c15-8581-3f1d87fe798c
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Autor (delegado)'
+		dataType: string
+		sourceProviderType: nvarchar(256)
+		lineageTag: fb710429-e1d5-4d1c-b96f-ea7a8af0afa9
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(256)
+		lineageTag: f073a19a-b86f-47ce-95f4-628b891182e7
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modificado por'
+		dataType: string
+		sourceProviderType: nvarchar(256)
+		lineageTag: 3ad23769-3bca-4439-adae-e6973507889d
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(256)
+		lineageTag: 470ba616-5cf2-4ce6-8717-6bf37596f733
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modificado por (delegado)'
+		dataType: string
+		sourceProviderType: nvarchar(256)
+		lineageTag: ae88c058-139e-4a3e-aba9-0a12405b8062
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(256)
+		lineageTag: a9d38db8-16c7-4dc8-81be-927c5863fca4
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 30e7d50a-6176-4a46-ab4d-79b128c96cb8
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Propietario
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(160)
+		lineageTag: bdb6b854-00c3-41f2-ae28-150205e5a651
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(160)
+		lineageTag: da6fc2e8-74fb-4f9c-9251-5ff04f43b2e9
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: e72c03e3-f200-451e-92f9-768581809b2a
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: e2486db9-78ff-4399-ad3e-a10693abed42
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 3d5ad4dd-8588-41e4-8b4b-cfc0fdb121d7
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unidad de negocio propietaria'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(160)
+		lineageTag: 36a2bf4c-0053-4efd-a1dc-d4319c56edb6
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9fdd25a4-b24e-4215-b8d7-a8998b6b4ace
+		summarizeBy: none
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = User
+
+	column statecodename
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: e1442a42-18b1-44a5-947a-4c4fd34ca638
+		summarizeBy: none
+		sourceColumn: statecodename
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Razón para el estado'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: af0fd63b-df56-450e-814c-df86f8e969ff
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscodename
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 965fc085-d540-43bf-9d55-68d8d919b912
+		summarizeBy: none
+		sourceColumn: statuscodename
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número de secuencia de importación'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: efb75006-60d4-4cdf-9856-44c6633a6e04
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de creación del registro'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d24b9237-c901-4aa1-9150-821c102c5816
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número de versión de regla de zona horaria'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 773f6d46-4cde-4af0-92bd-26ad2aec8cd0
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de zona horaria de conversión UTC'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a69de0e7-f9db-475c-b61c-a844c748fe2b
+		summarizeBy: none
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = User
+
+	column IdTablaDenuncia
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3af6b35c-6d80-4382-9e7f-118c288202d4
+		summarizeBy: none
+		sourceColumn: cre86_nuevacolumna
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaIngreso
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f3bd22b5-f32e-4fa4-b95b-c168762e62f2
+		summarizeBy: none
+		sourceColumn: d4b_fechaingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column NúmeroDenuncia
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 31e1a960-0534-4a96-b147-0e4930a8c442
+		summarizeBy: none
+		sourceColumn: cre86_numerodenuncia
+
+		annotation SummarizationSetBy = Automatic
+
+	column cre86_idmedioingreso
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: dd932435-1b9d-4320-a11b-1f3a0bba8add
+		summarizeBy: none
+		sourceColumn: cre86_idmedioingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdMedioIngreso
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 588987d4-7e96-4a89-98ad-d50b57c09dbe
+		summarizeBy: none
+		sourceColumn: cre86_idmedioingresoname
+
+		annotation SummarizationSetBy = Automatic
+
+	column cre86_idclasificacion
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 64ffcfc2-7ec3-4781-b033-51b580679e6d
+		summarizeBy: none
+		sourceColumn: cre86_idclasificacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdClasificación
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: bbe16c08-95ee-4d0a-855d-35e9b316d68f
+		summarizeBy: none
+		sourceColumn: cre86_idclasificacionname
+
+		annotation SummarizationSetBy = Automatic
+
+	column cre86_idmateria
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 42d20bea-3e52-438c-91e5-60187cccc641
+		summarizeBy: none
+		sourceColumn: cre86_idmateria
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdMateria
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 38307cfc-1b89-4b0d-8e14-9037be140200
+		summarizeBy: none
+		sourceColumn: cre86_idmaterianame
+
+		annotation SummarizationSetBy = Automatic
+
+	column cre86_idtematica
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: c0a2df34-e91f-42f6-8a95-5f9542c9c5a2
+		summarizeBy: none
+		sourceColumn: cre86_idtematica
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdTemática
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e2708631-e543-469a-ba06-ecf69ed7275b
+		summarizeBy: none
+		sourceColumn: cre86_idtematicaname
+
+		annotation SummarizationSetBy = Automatic
+
+	column BreveDescripciónHechos
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: aa141db0-6795-4259-9704-ffbb45a43492
+		summarizeBy: none
+		sourceColumn: cre86_brevedescripcionhechos
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreVíctima
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 28532631-2203-4cab-bc2f-809693ebccc9
+		summarizeBy: none
+		sourceColumn: d4b_nombrevictima
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreVictimario
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 331696d9-4a16-487b-938d-6331789adb82
+		summarizeBy: none
+		sourceColumn: d4b_nombrevictimario
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonaAsignada
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5beb1b97-e0e4-4d69-8993-76f42fc9104e
+		summarizeBy: none
+		sourceColumn: d4b_personaasignada
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbogadoAsesor
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b9b97cfd-bef8-4dd7-8a7b-458d1a7efc1e
+		summarizeBy: none
+		sourceColumn: d4b_abogadoasesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaConclusión
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1c84dae5-194f-4afc-b251-a90b14bb6022
+		summarizeBy: none
+		sourceColumn: d4b_fechaconclusion
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_esviolenciagenero
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 5fe4c1fd-3693-45f7-8c9a-ad5c53c3cfbb
+		summarizeBy: none
+		sourceColumn: d4b_esviolenciagenero
+
+		annotation SummarizationSetBy = Automatic
+
+	column EsViolenciaGénero
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: ae7c863c-de9a-483d-9c6c-e05c0963fb2e
+		summarizeBy: none
+		sourceColumn: d4b_esviolenciageneroname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_derechoprobablementeviolentado
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 35d88b05-74bd-4836-8374-8c6420651d58
+		summarizeBy: none
+		sourceColumn: d4b_derechoprobablementeviolentado
+
+		annotation SummarizationSetBy = User
+
+	column DerechoProbablementeViolentado
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 0c18c3ce-8234-4e7b-9905-75fe0922aea5
+		summarizeBy: none
+		sourceColumn: d4b_derechoprobablementeviolentadoname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_causalesincompetencia
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d56ff29d-8160-4927-ab72-a1e40abd2199
+		summarizeBy: none
+		sourceColumn: d4b_causalesincompetencia
+
+		annotation SummarizationSetBy = User
+
+	column CausalesIncompetencia
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 524f395c-b148-403b-9a97-b7cbb93a537d
+		summarizeBy: none
+		sourceColumn: d4b_causalesincompetencianame
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_subdefensoria
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 77e06c0d-cd8a-43b7-b803-5f85bf5e40ff
+		summarizeBy: none
+		sourceColumn: d4b_subdefensoria
+
+		annotation SummarizationSetBy = User
+
+	column SubDefensoría
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 9f8fd544-9953-4193-9d76-e63224b719f7
+		summarizeBy: none
+		sourceColumn: d4b_subdefensorianame
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_formatodocumentacionentrega
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 206c284f-467c-4d97-a754-92f0bf5a7cc9
+		summarizeBy: none
+		sourceColumn: d4b_formatodocumentacionentrega
+
+		annotation SummarizationSetBy = User
+
+	column FormatoDocumentaciónEntrega
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 149e4fb1-3f83-4119-8411-8eafbb1ae38e
+		summarizeBy: none
+		sourceColumn: d4b_formatodocumentacionentreganame
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_acciones
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ef05a02f-4d6b-4a32-ab8b-82ed746cc864
+		summarizeBy: none
+		sourceColumn: d4b_acciones
+
+		annotation SummarizationSetBy = User
+
+	column Acciones
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 876e920a-7284-42b8-8d87-741f88775f0c
+		summarizeBy: none
+		sourceColumn: d4b_accionesname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_estatusactual
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0370887e-4188-4fb7-b3e2-73553b8e90b8
+		summarizeBy: none
+		sourceColumn: d4b_estatusactual
+
+		annotation SummarizationSetBy = User
+
+	column EstatusActual
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 625ef4f9-d35c-48ac-8e06-fc24a480f7ae
+		summarizeBy: none
+		sourceColumn: d4b_estatusactualname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_documentosseguimiento
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b87f19bf-b7f0-4379-bccb-b2c1edd565b6
+		summarizeBy: none
+		sourceColumn: d4b_documentosseguimiento
+
+		annotation SummarizationSetBy = User
+
+	column DocumentosSeguimiento
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: cd983d1f-9778-4c86-88dc-95e632d89ba7
+		summarizeBy: none
+		sourceColumn: d4b_documentosseguimientoname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_motivoconclusion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2793c4b9-9976-4fa5-a493-4528a8e0c598
+		summarizeBy: none
+		sourceColumn: d4b_motivoconclusion
+
+		annotation SummarizationSetBy = User
+
+	column MotivoConclusión
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 72d48290-8aae-459a-8b6e-82f6c97da3ca
+		summarizeBy: none
+		sourceColumn: d4b_motivoconclusionname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_rangoedad
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e385fbf0-e3ee-46ce-8546-4048f4e9f83a
+		summarizeBy: none
+		sourceColumn: d4b_rangoedad
+
+		annotation SummarizationSetBy = User
+
+	column RangoEdad
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: cc2eb067-f4ef-46d5-a283-1d010ae9c5db
+		summarizeBy: none
+		sourceColumn: d4b_rangoedadname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_genero
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b076e975-ffda-4d92-8c59-001ce4737807
+		summarizeBy: none
+		sourceColumn: d4b_genero
+
+		annotation SummarizationSetBy = User
+
+	column Género
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 9429ecaa-9a62-4641-b242-d0c9d484791b
+		summarizeBy: none
+		sourceColumn: d4b_generoname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_categoria
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2993b01b-273d-4425-952b-43d7f53984b4
+		summarizeBy: none
+		sourceColumn: d4b_categoria
+
+		annotation SummarizationSetBy = User
+
+	column Categoría
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 657d3fad-60a5-4199-8679-217f5269a987
+		summarizeBy: none
+		sourceColumn: d4b_categorianame
+
+		annotation SummarizationSetBy = Automatic
+
+	column NúmeroEmpleado
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 90771420-6eb8-4736-8519-5f06f25a5a34
+		summarizeBy: none
+		sourceColumn: d4b_numeroempleado
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_dependenciapolitecnica
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 95a29573-a31c-49d8-914e-59c0c9d9116e
+		summarizeBy: none
+		sourceColumn: d4b_dependenciapolitecnica
+
+		annotation SummarizationSetBy = User
+
+	column DependenciaPolitécnica
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: d1a0b457-836c-41ff-9e72-08417b130577
+		summarizeBy: none
+		sourceColumn: d4b_dependenciapolitecnicaname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_areas
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9c83caed-cd44-4631-b029-d7a4420d6bc9
+		summarizeBy: none
+		sourceColumn: d4b_areas
+
+		annotation SummarizationSetBy = User
+
+	column Áreas
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 117903cc-5bc4-4c81-b8fd-9e8e6c5d7c1d
+		summarizeBy: none
+		sourceColumn: d4b_areasname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_categoriavictimario
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8cc0f28e-0f4b-42ac-a022-3cd80781fe5e
+		summarizeBy: none
+		sourceColumn: d4b_categoriavictimario
+
+		annotation SummarizationSetBy = User
+
+	column CategoríaVictimario
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: a58afc1c-e1a9-4b0d-961f-51034206e0ac
+		summarizeBy: none
+		sourceColumn: d4b_categoriavictimarioname
+
+		annotation SummarizationSetBy = Automatic
+
+	column d4b_autoridad
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7dfc8625-c173-445f-b790-34370d47f0d5
+		summarizeBy: none
+		sourceColumn: d4b_autoridad
+
+		annotation SummarizationSetBy = User
+
+	column Autoridad
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 43b28040-9db3-4c95-a7fb-0f4f2cd995a4
+		summarizeBy: none
+		sourceColumn: d4b_autoridadname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Duración
+		dataType: string
+		lineageTag: 69310c24-b3f6-4e8c-a2ee-caaab188ff42
+		summarizeBy: none
+		sourceColumn: Duración
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'd4b_fechaingreso - Copia'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		sourceProviderType: date
+		lineageTag: 0fc98aae-66d6-4a66-b44a-9822f8427a84
+		summarizeBy: none
+		sourceColumn: d4b_fechaingreso - Copia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'd4b_fechaconclusion - Copia'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		sourceProviderType: date
+		lineageTag: bbad81f1-ce05-4f09-9a48-3e75a957f6b7
+		summarizeBy: none
+		sourceColumn: d4b_fechaconclusion - Copia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition cre86_tabladenuncia = m
+		mode: directQuery
+		source =
+				let
+				    Origen = CommonDataService.Database("d4b.crm.dynamics.com"),
+				    dbo_cre86_tabladenuncia = Origen{[Schema="dbo",Item="cre86_tabladenuncia"]}[Data],
+				    #"Personalizada agregada" = Table.AddColumn(dbo_cre86_tabladenuncia, "Duración", each [d4b_fechaconclusion]-[d4b_fechaingreso]),
+				    #"Columna duplicada" = Table.DuplicateColumn(#"Personalizada agregada", "d4b_fechaingreso", "d4b_fechaingreso - Copia"),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna duplicada",{{"d4b_fechaingreso - Copia", type date}}),
+				    #"Columna duplicada1" = Table.DuplicateColumn(#"Tipo cambiado", "d4b_fechaconclusion", "d4b_fechaconclusion - Copia"),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columna duplicada1",{{"d4b_fechaconclusion - Copia", type date}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

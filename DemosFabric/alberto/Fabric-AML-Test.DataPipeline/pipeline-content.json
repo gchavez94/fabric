@@ -1,0 +1,405 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "custinvoicetrans"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "dataverse_cdsgcg_cds2_workspace_29f750ecf23a477bb1c523dc50d41058",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "ce17a71f-0934-47e9-bb9e-376d80ac898d",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "formatSettings": {
+              "type": "DelimitedTextWriteSettings",
+              "quoteAllText": true,
+              "fileExtension": ".txt"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "d4bamltest2/Demo CXC/Data",
+                  "fileName": "FacturasOrigen.csv"
+                },
+                "columnDelimiter": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "dataverse_cdsgcg_cds2_workspace_29f750ecf23a477bb1c523dc50d41058",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "ce17a71f-0934-47e9-bb9e-376d80ac898d",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Id",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Id",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "salesid",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "salesid",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "taxgroup",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "taxgroup",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "currencycode",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "currencycode",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "deliverypostaladdress",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "deliverypostaladdress",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "dlvdate",
+                  "type": "DateTime",
+                  "physicalType": "timestamp"
+                },
+                "sink": {
+                  "name": "dlvdate",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "inventdimid",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "inventdimid",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "inventqty",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 6,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "inventqty",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "inventtransid",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "inventtransid",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "invoicedate",
+                  "type": "DateTime",
+                  "physicalType": "timestamp"
+                },
+                "sink": {
+                  "name": "invoicedate",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "invoiceid",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "invoiceid",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "itemid",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "itemid",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "ledgerdimension",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "ledgerdimension",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "name",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "name",
+                  "type": "String",
+                  "physicalType": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "lineamount",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 6,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Price",
+                  "physicalType": "String"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Facturas_Origen",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "AzureMLExecutePipeline",
+        "typeProperties": {
+          "mlExecutionType": "pipeline",
+          "mlPipelineId": "c2fd7965-67c6-40ec-bbb8-74edcaefc492",
+          "experimentName": "Probabilidad_de_Morosidad_Nivel_Factura_TiempoReal"
+        },
+        "externalReferences": {
+          "connection": "d3183006-98ee-4301-a9aa-5fd3414ddee9"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Azure Machine Learning1",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "Facturas_Origen",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings",
+              "skipLineCount": 0
+            },
+            "storeSettings": {
+              "type": "LakehouseReadSettings",
+              "recursive": true,
+              "enablePartitionDiscovery": false
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "d4bamltest2",
+                  "fileName": "FacturaProcesada"
+                },
+                "columnDelimiter": ",",
+                "rowDelimiter": "\n",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "dataverse_cdsgcg_cds2_workspace_29f750ecf23a477bb1c523dc50d41058",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "80ac898d-376d-bb9e-47e9-0934ce17a71f",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "tableOption": "autoCreate",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Facturas"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "DataWH-D4B-ML",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "2ca02b65-eb24-453d-9640-e1260538ad29",
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Facturas_a_LH",
+        "dependsOn": [
+          {
+            "activity": "Azure Machine Learning1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

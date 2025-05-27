@@ -1,0 +1,36 @@
+table DimSolicitudDeCompraRequisicion
+	lineageTag: 8babac7e-0bf8-4349-8cac-68da0cb8bc67
+
+	column IdSolicitudDeCompraRequisicion
+		dataType: string
+		lineageTag: 24b8e212-9108-4186-8350-50b217c416aa
+		summarizeBy: none
+		sourceColumn: IdSolicitudDeCompraRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0a085f99-8864-43d2-b126-c7ec89611f4d
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		variation Variación
+			isDefault
+			relationship: 03ccb2d6-33b1-4f40-ba44-5ec0ff072dd9
+			defaultHierarchy: LocalDateTable_19557333-cc06-43ba-b9e0-fe9391a61ca6.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DimSolicitudDeCompraRequisicion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimSolicitudDeCompraRequisicion = Origen{[Schema="dbo",Item="DimSolicitudDeCompraRequisicion"]}[Data]
+				in
+				    dbo_DimSolicitudDeCompraRequisicion
+

@@ -1,0 +1,3821 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "80ac898d-376d-bb9e-47e9-0934ce17a71f",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "destination": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4",
+          "artifactId": "94815a50-961e-43ce-b547-d0da6c0f51ad",
+          "endPoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "d24678d6-5001-41e3-aa71-65d5100bef02",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "table": "account"
+          }
+        },
+        "destination": {
+          "tableOption": "autoCreate",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "account"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "Id",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "Id",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "SinkCreatedOn",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "SinkCreatedOn",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "SinkModifiedOn",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "SinkModifiedOn",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "statecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "statecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "statuscode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "statuscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountcategorycode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "accountcategorycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountclassificationcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "accountclassificationcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountratingcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "accountratingcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_addresstypecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address1_addresstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_freighttermscode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address1_freighttermscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_shippingmethodcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address1_shippingmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_addresstypecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address2_addresstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_freighttermscode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address2_freighttermscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_shippingmethodcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address2_shippingmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "businesstypecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "businesstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "customersizecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "customersizecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "customertypecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "customertypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "industrycode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "industrycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_invoiceaddress",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msdyn_invoiceaddress",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_language",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msdyn_language",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_onholdstatus",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msdyn_onholdstatus",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "ownershipcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "ownershipcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "paymenttermscode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "paymenttermscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredappointmentdaycode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "preferredappointmentdaycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredappointmenttimecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "preferredappointmenttimecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredcontactmethodcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "preferredcontactmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "shippingmethodcode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "shippingmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "territorycode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "territorycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "creditonhold",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "creditonhold",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotbulkemail",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotbulkemail",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotbulkpostalmail",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotbulkpostalmail",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotemail",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotemail",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotfax",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotfax",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotphone",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotphone",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotpostalmail",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotpostalmail",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "donotsendmm",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "donotsendmm",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "followemail",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "followemail",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "isprivate",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "isprivate",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "marketingonly",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "marketingonly",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "merged",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "merged",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_creditlimitismandatory",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msdyn_creditlimitismandatory",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_gdproptout",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msdyn_gdproptout",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_onetimecustomer",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msdyn_onetimecustomer",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_taxexempt",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msdyn_taxexempt",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorcreatedbyworkflow",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msdyn_vendorcreatedbyworkflow",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "participatesinworkflow",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "participatesinworkflow",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "createdby",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdby",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdby_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdby_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyexternalparty",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyexternalparty",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyexternalparty_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyexternalparty_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfby",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdonbehalfby",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfby_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdonbehalfby_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "defaultpricelevelid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "defaultpricelevelid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "defaultpricelevelid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "defaultpricelevelid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "masterid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "masterid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "masterid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "masterid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedby",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedby",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedby_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedby_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyexternalparty",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyexternalparty",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyexternalparty_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyexternalparty_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfby",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedonbehalfby",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfby_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedonbehalfby_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msa_managingpartnerid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msa_managingpartnerid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msa_managingpartnerid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msa_managingpartnerid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_accountkpiid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_accountkpiid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_accountkpiid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_accountkpiid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_billingaccount",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_billingaccount",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_billingaccount_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_billingaccount_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_company",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_company",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_company_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_company_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customergroupid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customergroupid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customergroupid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customergroupid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customerpaymentmethod",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customerpaymentmethod",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customerpaymentmethod_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customerpaymentmethod_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_defaultvendorpaymentmethodname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_defaultvendorpaymentmethodname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_defaultvendorpaymentmethodname_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_defaultvendorpaymentmethodname_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_invoicevendoraccount",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_invoicevendoraccount",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_invoicevendoraccount_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_invoicevendoraccount_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_mappedvendoraccount",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_mappedvendoraccount",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_mappedvendoraccount_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_mappedvendoraccount_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentday",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentday",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentday_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentday_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentschedule",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentschedule",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentschedule_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentschedule_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentterm",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentterm",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentterm_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentterm_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salesaccelerationinsightid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salesaccelerationinsightid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salesaccelerationinsightid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salesaccelerationinsightid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salestaxgroup",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salestaxgroup",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salestaxgroup_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salestaxgroup_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_segmentid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_segmentid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_segmentid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_segmentid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendor",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendor",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendor_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendor_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorgroup",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendorgroup",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorgroup_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendorgroup_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "originatingleadid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "originatingleadid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "originatingleadid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "originatingleadid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owningbusinessunit",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owningbusinessunit",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owningbusinessunit_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owningbusinessunit_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owningteam",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owningteam",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owningteam_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owningteam_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owninguser",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owninguser",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owninguser_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owninguser_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "parentaccountid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "parentaccountid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "parentaccountid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "parentaccountid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredequipmentid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredequipmentid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredequipmentid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredequipmentid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredserviceid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredserviceid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredserviceid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredserviceid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredsystemuserid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredsystemuserid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredsystemuserid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredsystemuserid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarycontactid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarycontactid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarycontactid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarycontactid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slaid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slaid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slaid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slaid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slainvokedid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slainvokedid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slainvokedid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slainvokedid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "territoryid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "territoryid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "territoryid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "territoryid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "transactioncurrencyid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "transactioncurrencyid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "transactioncurrencyid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "transactioncurrencyid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "ownerid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "ownerid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "ownerid_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "ownerid_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "aging30",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging30",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "aging30_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging30_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "aging60",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging60",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "aging60_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging60_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "aging90",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging90",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "aging90_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "aging90_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "creditlimit",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "creditlimit",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "creditlimit_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "creditlimit_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "marketcap",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "marketcap",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "marketcap_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "marketcap_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "openrevenue",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "openrevenue",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "openrevenue_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "openrevenue_base",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "revenue",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "revenue",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "revenue_base",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              },
+              "destination": {
+                "name": "revenue_base",
+                "physicalType": "decimal",
+                "scale": 4,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "accountid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "accountid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "accountnumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "accountnumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_addressid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_addressid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_city",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_city",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_composite",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_composite",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_country",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_country",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_county",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_county",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_fax",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_fax",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_latitude",
+                "type": "Single",
+                "physicalType": "float"
+              },
+              "destination": {
+                "name": "address1_latitude",
+                "physicalType": "real"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_line1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_line1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_line2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_line2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_line3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_line3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_longitude",
+                "type": "Single",
+                "physicalType": "float"
+              },
+              "destination": {
+                "name": "address1_longitude",
+                "physicalType": "real"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_name",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_name",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_postalcode",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_postalcode",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_postofficebox",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_postofficebox",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_primarycontactname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_primarycontactname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_stateorprovince",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_stateorprovince",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_telephone1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_telephone1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_telephone2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_telephone2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_telephone3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_telephone3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_upszone",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address1_upszone",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_utcoffset",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address1_utcoffset",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_addressid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_addressid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_city",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_city",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_composite",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_composite",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_country",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_country",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_county",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_county",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_fax",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_fax",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_latitude",
+                "type": "Single",
+                "physicalType": "float"
+              },
+              "destination": {
+                "name": "address2_latitude",
+                "physicalType": "real"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_line1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_line1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_line2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_line2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_line3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_line3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_longitude",
+                "type": "Single",
+                "physicalType": "float"
+              },
+              "destination": {
+                "name": "address2_longitude",
+                "physicalType": "real"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_name",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_name",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_postalcode",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_postalcode",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_postofficebox",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_postofficebox",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_primarycontactname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_primarycontactname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_stateorprovince",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_stateorprovince",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_telephone1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_telephone1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_telephone2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_telephone2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_telephone3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_telephone3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_upszone",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "address2_upszone",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_utcoffset",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "address2_utcoffset",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "adx_createdbyipaddress",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "adx_createdbyipaddress",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "adx_createdbyusername",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "adx_createdbyusername",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "adx_modifiedbyipaddress",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "adx_modifiedbyipaddress",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "adx_modifiedbyusername",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "adx_modifiedbyusername",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyexternalpartyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyexternalpartyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyexternalpartyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyexternalpartyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdbyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdon",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "createdon",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfbyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdonbehalfbyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfbyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "createdonbehalfbyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "defaultpricelevelidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "defaultpricelevelidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "description",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "description",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "emailaddress1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "emailaddress1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "emailaddress2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "emailaddress2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "emailaddress3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "emailaddress3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "entityimage",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "entityimage",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "entityimage_timestamp",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "entityimage_timestamp",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "entityimage_url",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "entityimage_url",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "entityimageid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "entityimageid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "exchangerate",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 10,
+                "precision": 38
+              },
+              "destination": {
+                "name": "exchangerate",
+                "physicalType": "decimal",
+                "scale": 10,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "fax",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "fax",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "ftpsiteurl",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "ftpsiteurl",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "importsequencenumber",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "importsequencenumber",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "lastonholdtime",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "lastonholdtime",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "lastusedincampaign",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "lastusedincampaign",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "masteraccountidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "masteraccountidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "masteraccountidyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "masteraccountidyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyexternalpartyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyexternalpartyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyexternalpartyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyexternalpartyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedbyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedon",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "modifiedon",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfbyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedonbehalfbyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfbyyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "modifiedonbehalfbyyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msa_managingpartneridname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msa_managingpartneridname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msa_managingpartneridyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msa_managingpartneridyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_accountkpiidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_accountkpiidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_billingaccountname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_billingaccountname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_billingaccountyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_billingaccountyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_companyname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_companyname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_creditrating",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_creditrating",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customergroupidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customergroupidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_customerpaymentmethodname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_customerpaymentmethodname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_defaultvendorpaymentmethodnamename",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_defaultvendorpaymentmethodnamename",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_emailaddress1description",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_emailaddress1description",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_externalaccountid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_externalaccountid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_faxdescription",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_faxdescription",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_faxextension",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_faxextension",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_identificationnumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_identificationnumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_invoicevendoraccountname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_invoicevendoraccountname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_mappedvendoraccountname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_mappedvendoraccountname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_partycountry",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_partycountry",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_partynumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_partynumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_partystateprovince",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_partystateprovince",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentdayname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentdayname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymentschedulename",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymentschedulename",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymenttermname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_paymenttermname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_paymenttermsbasedays",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msdyn_paymenttermsbasedays",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primaryfacebookdescription",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_primaryfacebookdescription",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primaryfacebookid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_primaryfacebookid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primarylinkedindescrption",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_primarylinkedindescrption",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primarylinkedinid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_primarylinkedinid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primarytwitteriddescription",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_primarytwitteriddescription",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salesaccelerationinsightidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salesaccelerationinsightidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_salestaxgroupname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_salestaxgroupname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_segmentidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_segmentidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_taxexemptnumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_taxexemptnumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_telephone1description",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_telephone1description",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_telephone1extension",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_telephone1extension",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorgroupname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendorgroupname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorknownasname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendorknownasname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendorname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendorname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_vendororganizationname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_vendororganizationname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_websiteurldescription",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msdyn_websiteurldescription",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "name",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "name",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "numberofemployees",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "numberofemployees",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "onholdtime",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "onholdtime",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "opendeals",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "opendeals",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "opendeals_date",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "opendeals_date",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "opendeals_state",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "opendeals_state",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "openrevenue_date",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "openrevenue_date",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "openrevenue_state",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "openrevenue_state",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "originatingleadidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "originatingleadidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "originatingleadidyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "originatingleadidyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "overriddencreatedon",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              },
+              "destination": {
+                "name": "overriddencreatedon",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "owneridname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owneridname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owneridtype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owneridtype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owneridyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owneridyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "owningbusinessunitname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "owningbusinessunitname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "parentaccountidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "parentaccountidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "parentaccountidyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "parentaccountidyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredequipmentidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredequipmentidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredserviceidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredserviceidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredsystemuseridname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredsystemuseridname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "preferredsystemuseridyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "preferredsystemuseridyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarycontactidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarycontactidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarycontactidyominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarycontactidyominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarysatoriid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarysatoriid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "primarytwitterid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "primarytwitterid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "processid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "processid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "sharesoutstanding",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "sharesoutstanding",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "sic",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "sic",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slainvokedidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slainvokedidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "slaname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "slaname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "stageid",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "stageid",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "stockexchange",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "stockexchange",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "teamsfollowed",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "teamsfollowed",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "telephone1",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "telephone1",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "telephone2",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "telephone2",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "telephone3",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "telephone3",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "territoryidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "territoryidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "tickersymbol",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "tickersymbol",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "timespentbymeonemailandmeetings",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "timespentbymeonemailandmeetings",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "timezoneruleversionnumber",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "timezoneruleversionnumber",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "transactioncurrencyidname",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "transactioncurrencyidname",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "traversedpath",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "traversedpath",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "utcconversiontimezonecode",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "utcconversiontimezonecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "versionnumber",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "versionnumber",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "websiteurl",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "websiteurl",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "yominame",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "yominame",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "IsDelete",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "IsDelete",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_primarytimezone",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msdyn_primarytimezone",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_areatype",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msrex_areatype",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_tradetype",
+                "type": "Int64",
+                "physicalType": "long"
+              },
+              "destination": {
+                "name": "msrex_tradetype",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_donotallowoutletphotos",
+                "type": "Boolean",
+                "physicalType": "boolean"
+              },
+              "destination": {
+                "name": "msrex_donotallowoutletphotos",
+                "physicalType": "bit"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_outlettype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msrex_outlettype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_outlettype_entitytype",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msrex_outlettype_entitytype",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_licensenumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msrex_licensenumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_outlettypename",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msrex_outlettypename",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_size",
+                "type": "Decimal",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              },
+              "destination": {
+                "name": "msrex_size",
+                "physicalType": "decimal",
+                "scale": 2,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "msrex_vatnumber",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "msrex_vatnumber",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "PartitionId",
+                "type": "String"
+              },
+              "destination": {
+                "name": "PartitionId",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+table DimEstadoOrdenDeCompra
+	lineageTag: 51e2fbcb-2850-46ef-b962-ab6a440e53cf
+
+	column IdEstadoDeOrdenDeCompra
+		dataType: int64
+		formatString: 0
+		lineageTag: d0c9c30c-31f8-4352-9117-1b36876f17b9
+		summarizeBy: none
+		sourceColumn: IdEstadoDeOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: d932f81c-f010-4194-9cfa-eefc3f3872c8
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEstadoOrdenDeCompra = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimEstadoOrdenDeCompra = Origen{[Schema="dbo",Item="DimEstadoOrdenDeCompra"]}[Data]
+				in
+				    dbo_DimEstadoOrdenDeCompra
+

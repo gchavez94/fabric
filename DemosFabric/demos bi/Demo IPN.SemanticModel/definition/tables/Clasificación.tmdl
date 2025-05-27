@@ -1,0 +1,31 @@
+table Clasificación
+	lineageTag: e4527e1e-776d-4d56-a0ef-e28c024a4752
+
+	column id
+		dataType: string
+		lineageTag: 94ee6e92-b076-4d02-9679-e9e43a122ec3
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clasificación
+		dataType: string
+		lineageTag: 0d6e4ae0-e238-42d1-a0e6-3ca0a9e95a3f
+		summarizeBy: none
+		sourceColumn: Clasificación
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clasificación = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Clasificación_Sheet = Origen{[Item="Clasificación",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Clasificación_Sheet, [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,33 @@
+table 'Rango de edad'
+	lineageTag: 948b93b5-b1a5-43d1-a4ee-a9abbbdc3ef0
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: c0322f3d-4240-44f2-bbb9-6eb1135fe9a4
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rango de edad'
+		dataType: string
+		lineageTag: 1427cf93-eead-4c3e-be21-e5c756550c00
+		summarizeBy: none
+		sourceColumn: rango de edad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rango de edad' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    #"Rango de edad_Sheet" = Origen{[Item="Rango de edad",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Rango de edad_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"rango de edad", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+

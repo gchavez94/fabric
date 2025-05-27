@@ -1,0 +1,53 @@
+table DimProveedor
+	lineageTag: 952aa3b6-a886-4558-bd09-c6a1b7192129
+
+	column IdCuentaProveedor
+		dataType: string
+		lineageTag: 2d8059a4-eb66-40e6-af50-cdd370468eb2
+		summarizeBy: none
+		sourceColumn: IdCuentaProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreProveedor
+		dataType: string
+		lineageTag: 56c65d58-12fd-441a-8367-d7c625e22861
+		summarizeBy: none
+		sourceColumn: NombreProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeFacturacion
+		dataType: string
+		lineageTag: 5785bc90-72c5-415e-8a81-3b5e37294edf
+		summarizeBy: none
+		sourceColumn: CuentaDeFacturacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo
+		dataType: string
+		lineageTag: 1fec4db1-ae33-4ec7-916e-b24af2fb0399
+		summarizeBy: none
+		sourceColumn: Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProveedor = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\DimProveedor.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Hoja1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdCuentaProveedor", type text}, {"NombreProveedor", type text}, {"CuentaDeFacturacion", type text}, {"Grupo", type text}})
+				in
+				    #"Tipo cambiado1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

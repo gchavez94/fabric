@@ -1,0 +1,71 @@
+{
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.51\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU02",
+            "path": "BaseThemes/CY24SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"relationships\":[{\"source\":\"e405a97d7b706a9357e9\",\"target\":\"b46fa53686a552b66892\",\"type\":1},{\"source\":\"e405a97d7b706a9357e9\",\"target\":\"2b118e639088b8fc25dc\",\"type\":1},{\"source\":\"2b118e639088b8fc25dc\",\"target\":\"b46fa53686a552b66892\",\"type\":1},{\"source\":\"b46fa53686a552b66892\",\"target\":\"2b118e639088b8fc25dc\",\"type\":1}]}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2b118e639088b8fc25dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":693.753280839895,\"y\":0,\"z\":1000,\"width\":586.2467191601049,\"height\":445.14435695538054,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Combinar.amountcur)\"}],\"Category\":[{\"queryRef\":\"Combinar.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Combinar\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"amountcur\"}},\"Function\":0},\"Name\":\"Sum(Combinar.amountcur)\",\"NativeReferenceName\":\"Suma de amountcur\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"name\"},\"Name\":\"Combinar.name\",\"NativeReferenceName\":\"name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"amountcur\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 445.14,
+          "width": 586.25,
+          "x": 693.75,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b46fa53686a552b66892\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":445.14435695538054,\"z\":2000,\"width\":1236.3254593175852,\"height\":275.48556430446195,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Combinar.amountcur)\"}],\"Category\":[{\"queryRef\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Trimestre\",\"active\":true},{\"queryRef\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Mes\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Combinar\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"amountcur\"}},\"Function\":0},\"Name\":\"Sum(Combinar.amountcur)\",\"NativeReferenceName\":\"Suma de amountcur\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"createddatetime\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"createddatetime Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"createddatetime\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"createddatetime Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"createddatetime\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Combinar.createddatetime.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"createddatetime Mes\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 275.49,
+          "width": 1236.33,
+          "x": 0.00,
+          "y": 445.14,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"e405a97d7b706a9357e9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":693.753280839895,\"height\":445.14435695538054,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Combinar.description\"},{\"queryRef\":\"Sum(Combinar.amountcur)\"},{\"queryRef\":\"SparklineData(Sum(Combinar.amountcur)_[Combinar.name])\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Combinar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"description\"},\"Name\":\"Combinar.description\",\"NativeReferenceName\":\"description\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"amountcur\"}},\"Function\":0},\"Name\":\"Sum(Combinar.amountcur)\",\"NativeReferenceName\":\"Suma de amountcur\"},{\"SparklineData\":{\"Measure\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"amountcur\"}},\"Function\":0}},\"Groupings\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"name\"}}]},\"Name\":\"SparklineData(Sum(Combinar.amountcur)_[Combinar.name])\",\"NativeReferenceName\":\"Suma de amountcur por name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 445.14,
+          "width": 693.75,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Página 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionef2d2036a5d23d8e9c32",
+      "ordinal": 1,
+      "visualContainers": [],
+      "width": 1280.00
+    }
+  ]
+}

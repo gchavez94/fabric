@@ -1,0 +1,37 @@
+table DimProyecto
+	lineageTag: a913d6dd-b3c7-4024-8634-0a5b667978e3
+
+	column IdProyecto
+		dataType: string
+		lineageTag: 840ea029-aea5-45dd-93fb-1200a6723352
+		summarizeBy: none
+		sourceColumn: IdProyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 26cc472d-eb25-4f44-971e-f0172323e98f
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProyecto = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Proy.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Hoja1_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdProyecto", type text}, {"Nombre", type text}})
+				in
+				    #"Tipo cambiado1"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

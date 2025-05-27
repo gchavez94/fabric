@@ -1,0 +1,273 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4",
+          "artifactId": "94815a50-961e-43ce-b547-d0da6c0f51ad",
+          "endPoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    },
+    "destination": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4",
+          "artifactId": "94815a50-961e-43ce-b547-d0da6c0f51ad",
+          "endPoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "9d841f00-8659-4714-b629-38096cba6e7d",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "view_TABLACUENTA"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "SinkCreatedOn",
+                "type": "DateTime",
+                "physicalType": "datetime2"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "account"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "SinkCreatedOn",
+                "type": "DateTime",
+                "physicalType": "datetime2",
+                "precision": 6
+              },
+              "destination": {
+                "name": "SinkCreatedOn",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "SinkModifiedOn",
+                "type": "DateTime",
+                "physicalType": "datetime2",
+                "precision": 6
+              },
+              "destination": {
+                "name": "SinkModifiedOn",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "statecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "statecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "statuscode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "statuscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountcategorycode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "accountcategorycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountclassificationcode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "accountclassificationcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "accountratingcode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "accountratingcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_addresstypecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address1_addresstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_freighttermscode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address1_freighttermscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address1_shippingmethodcode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address1_shippingmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_addresstypecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address2_addresstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_freighttermscode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address2_freighttermscode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "address2_shippingmethodcode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "address2_shippingmethodcode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "businesstypecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "businesstypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "customersizecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "customersizecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "customertypecode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "customertypecode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "industrycode",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "industrycode",
+                "physicalType": "bigint"
+              }
+            },
+            {
+              "source": {
+                "name": "msdyn_invoiceaddress",
+                "type": "Int64",
+                "physicalType": "bigint"
+              },
+              "destination": {
+                "name": "msdyn_invoiceaddress",
+                "physicalType": "bigint"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

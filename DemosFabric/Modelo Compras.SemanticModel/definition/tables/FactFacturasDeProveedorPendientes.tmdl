@@ -1,0 +1,161 @@
+table FactFacturasDeProveedorPendientes
+	lineageTag: 86cc34f9-3a2e-4190-ad0d-381c27bbcb45
+
+	measure M_ConteoRecepcionesPendientesPorFacturas = DISTINCTCOUNT(FactFacturasDeProveedorPendientes[IdOrdenDeCompra])
+		formatString: 0
+		lineageTag: c7b2cfaa-7350-46c5-bde0-5ced98c05642
+
+	measure M_MontoDeFacturaPendiente = ```
+			
+			Var SeleccionMoneda=SELECTEDVALUE(DimMoneda[Id])
+			Var MontoMXN=SUM(FactFacturasDeProveedorPendientes[MontoDeFacturaImportada])
+			Var MontoUSD=SUM(FactFacturasDeProveedorPendientes[MontoDeFacturaImportadaUSD])
+			Var Resultado=IF(SeleccionMoneda=1,MontoMXN,MontoUSD)
+			RETURN Resultado
+			
+			```
+		lineageTag: 3793d80b-b5c7-40a2-a90f-d24540f13108
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Factura
+		dataType: string
+		lineageTag: 09edcdf4-d202-4f25-9d93-f8864dc8fd3a
+		summarizeBy: none
+		sourceColumn: Factura
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: b6324686-e431-46c1-81e5-cb4fe4df33c3
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDeProductoInterna
+		dataType: string
+		lineageTag: 46173906-06bd-4bd7-ad5a-22c8ebcb43c6
+		summarizeBy: none
+		sourceColumn: RecepcionDeProductoInterna
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstadoUltimaConciliacion
+		dataType: int64
+		formatString: 0
+		lineageTag: fb757db1-4a75-48ac-87de-479de8f6e2a2
+		summarizeBy: sum
+		sourceColumn: IdEstadoUltimaConciliacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Divisa
+		dataType: string
+		lineageTag: 1e2e4866-9578-48e0-adf9-662754a55259
+		summarizeBy: none
+		sourceColumn: Divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeLaFactura
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 38a825df-5044-4d2d-b8b7-52ce9c8c635b
+		summarizeBy: none
+		sourceColumn: FechaDeLaFactura
+
+		variation Variación
+			isDefault
+			relationship: aafa70d0-e77c-4f3b-a6b0-a63e8f8c33a7
+			defaultHierarchy: LocalDateTable_4da625e5-6cd5-4526-a835-0ad3a7778294.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoDeFacturaImportada
+		dataType: double
+		lineageTag: 8f516b4a-88f2-454a-9f1e-a0742872bb1e
+		summarizeBy: sum
+		sourceColumn: MontoDeFacturaImportada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoDeFacturaImportadaMXN
+		dataType: double
+		lineageTag: bd5ee3c0-2eca-4b83-a394-d02963826e08
+		summarizeBy: sum
+		sourceColumn: MontoDeFacturaImportadaMXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoDeFacturaImportadaUSD
+		dataType: double
+		lineageTag: adbb1b9c-6b54-461e-90d3-b90414231be8
+		summarizeBy: sum
+		sourceColumn: MontoDeFacturaImportadaUSD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NombreDelProveedor
+		dataType: string
+		lineageTag: ce803ce6-fdf3-4a47-8bea-b3438e7ef962
+		summarizeBy: none
+		sourceColumn: NombreDelProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeRecepcionDeLaFactura
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 17acea5a-c119-4245-905f-0ad0a154980a
+		summarizeBy: none
+		sourceColumn: FechaDeRecepcionDeLaFactura
+
+		variation Variación
+			isDefault
+			relationship: aa2d4ebf-7d63-46f9-a6c9-8288e58794df
+			defaultHierarchy: LocalDateTable_349cda89-d4f8-4634-844a-54c315652fba.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDelProducto
+		dataType: string
+		lineageTag: 90c1166b-2622-40fd-a0b5-c83a8f30b11f
+		summarizeBy: none
+		sourceColumn: RecepcionDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeFacturacion
+		dataType: string
+		lineageTag: a36cd9d4-ea9b-4257-9211-9671a6003b0b
+		summarizeBy: none
+		sourceColumn: CuentaDeFacturacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column viinfotan_recid
+		dataType: int64
+		formatString: 0
+		lineageTag: aa2b5420-6617-4c78-9fea-f67a793bb467
+		summarizeBy: sum
+		sourceColumn: viinfotan_recid
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactFacturasDeProveedorPendientes = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_FactFacturasDeProveedorPendientes = Origen{[Schema="dbo",Item="FactFacturasDeProveedorPendientes"]}[Data]
+				in
+				    dbo_FactFacturasDeProveedorPendientes
+

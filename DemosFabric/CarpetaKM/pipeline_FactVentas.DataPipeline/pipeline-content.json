@@ -1,0 +1,159 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [
+          {
+            "activity": "Lookup1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "sqlReaderQuery": "SELECT [VENTA_ID]\r\n      ,[FECHA]\r\n      ,[SUCURSAL_CLIENTE]\r\n      ,[ARTICULO]\r\n      ,[CANTIDAD]\r\n      ,[SUBTOTAL]\r\n      ,[IVA]\r\n      ,[VENDEDOR]\r\n  FROM [dbo].[Fabric_Ventas_mayoreo]\r\n\r\n---------\r\n\r\nWHERE [FECHA] > @activity('Lookup1').output",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "database": "365zap"
+              },
+              "externalReferences": {
+                "connection": "2418fd80-63cf-408b-8d80-f7feccc00b1c"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWHKH",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "5c7c0957-0551-40fd-8e2d-a17cd99f214e",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "FactVentas"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      },
+      {
+        "name": "Lookup1",
+        "type": "Lookup",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT MAX([FECHA])   AS ULTIMAFECHA FROM [DWHKH].[dbo].[FactVentas]",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "annotations": [],
+            "linkedService": {
+              "name": "DWHKH",
+              "properties": {
+                "annotations": [],
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                  "artifactId": "5c7c0957-0551-40fd-8e2d-a17cd99f214e",
+                  "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                }
+              }
+            },
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "typeProperties": {}
+          }
+        }
+      },
+      {
+        "name": "Script1",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Lookup1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": {
+                "value": "SELECT [VENTA_ID]\n      ,[FECHA]\n      ,[SUCURSAL_CLIENTE]\n      ,[ARTICULO]\n      ,[CANTIDAD]\n      ,[SUBTOTAL]\n      ,[IVA]\n      ,[VENDEDOR]\n  FROM [dbo].[Fabric_Ventas_mayoreo]\n\n---------\n\nWHERE [FECHA] > @activity('Lookup1').output",
+                "type": "Expression"
+              }
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00",
+          "database": "zap365"
+        },
+        "externalReferences": {
+          "connection": "fd2cb467-e2fd-4cc8-afb9-1eae7804d0fb"
+        }
+      }
+    ],
+    "variables": {
+      "UltimaFecha": {
+        "type": "String",
+        "defaultValue": "@activity('Lookup1').output"
+      }
+    }
+  }
+}

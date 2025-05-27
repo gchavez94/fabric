@@ -1,0 +1,226 @@
+table FactRecepcion
+	lineageTag: 6ede5d99-0939-4f82-84e7-1b10f5fa95b3
+
+	measure M_CantidadRecibidadUnidadInventario = SUM(FactRecepcion[CantidadRecibidaEnUnidadDeInventario])
+		formatString: 0
+		lineageTag: c80284c3-c097-4876-8619-bb3ed8090042
+
+	measure M_CantidadRestante = SUM(FactRecepcion[CantidadRestante])
+		formatString: 0
+		lineageTag: 0ee474e2-8b48-448f-9458-03dd65855999
+
+	measure M_ConteoRecepcion = COUNT(FactRecepcion[RecepcionDelProductoLinea])
+		formatString: 0
+		lineageTag: e28b1397-8272-46a4-9afb-4a7719542ce7
+
+	measure M_ConteoRecepcionParcial = CALCULATE(COUNT(FactRecepcion[RecepcionDelProductoLinea]),FactRecepcion[CantidadRestante] > 0)
+		formatString: 0
+		lineageTag: 37e55cdd-121f-455d-a00c-7de8e97f7b55
+
+	measure M_ConteoRecepcionTotal = CALCULATE(COUNT(FactRecepcion[RecepcionDelProductoLinea]),FactRecepcion[CantidadRestante]=0)
+		formatString: 0
+		lineageTag: f2c1e5aa-2380-4475-88c3-e81b93d4fc81
+
+	column CuentaDeFacturacion
+		dataType: string
+		lineageTag: e46a1a21-8f8d-4f28-8802-bbabc957edc2
+		summarizeBy: none
+		sourceColumn: CuentaDeFacturacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDelProducto
+		dataType: string
+		lineageTag: bee8df1c-63ba-4d5c-bb83-e1523613362c
+		summarizeBy: none
+		sourceColumn: RecepcionDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDeProductoInterna
+		dataType: string
+		lineageTag: 9e8fc7e2-50a6-4fe7-8aeb-5e6c95fab3b0
+		summarizeBy: none
+		sourceColumn: RecepcionDeProductoInterna
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: fc4b2498-bc83-45f9-bcd2-da749ee3fdbb
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaRecepcion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4859bcb5-bda3-4d05-8fd5-ea0992fba291
+		summarizeBy: none
+		sourceColumn: FechaRecepcion
+
+		variation Variación
+			isDefault
+			relationship: 2546712f-345b-40a4-ae56-444458f7a060
+			defaultHierarchy: LocalDateTable_d8375248-be06-437a-a1e7-3e573d3472a5.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeOrden
+		dataType: string
+		lineageTag: 247fcc6a-d43f-4caf-a4bb-4a267101968a
+		summarizeBy: none
+		sourceColumn: CuentaDeOrden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: f7e7b23a-5bd9-4641-9dfa-08274562e9ac
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column fullymatched
+		dataType: int64
+		formatString: 0
+		lineageTag: d8825001-78b9-49cc-8378-c1bc5745cd0e
+		summarizeBy: sum
+		sourceColumn: fullymatched
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroLineaOrdenDeCompra
+		dataType: int64
+		formatString: 0
+		lineageTag: fd5f634f-e3e8-4a0f-987c-20e7c2333375
+		summarizeBy: sum
+		sourceColumn: NumeroLineaOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDelProductoLinea
+		dataType: string
+		lineageTag: 65009f75-6f9b-415c-a02f-56e6383eaeef
+		summarizeBy: none
+		sourceColumn: RecepcionDelProductoLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroDeProducto
+		dataType: int64
+		formatString: 0
+		lineageTag: a475934d-fba8-4d1b-bbfd-726162b3a7d8
+		summarizeBy: none
+		sourceColumn: NumeroDeProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroDeLinea
+		dataType: int64
+		formatString: 0
+		lineageTag: 2146271b-677c-4952-bf8f-80b2ede09da6
+		summarizeBy: sum
+		sourceColumn: NumeroDeLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDelProducto
+		dataType: string
+		lineageTag: 632e33e4-42cc-4b3f-bb9e-9d7e93407b88
+		summarizeBy: none
+		sourceColumn: NombreDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaPrevista
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fc0bc289-f3a4-4007-8ff0-9105960f7895
+		summarizeBy: none
+		sourceColumn: FechaPrevista
+
+		variation Variación
+			isDefault
+			relationship: 1b539ce6-943d-4821-ad1f-3540aeb980d9
+			defaultHierarchy: LocalDateTable_b25ab197-5acd-4930-bbd7-63d8e0c0587d.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCategoriaDeCompras
+		dataType: int64
+		formatString: 0
+		lineageTag: f1774de6-7053-4ee0-aee0-bc2e55720600
+		summarizeBy: sum
+		sourceColumn: IdCategoriaDeCompras
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		dataType: int64
+		formatString: 0
+		lineageTag: 96d8f085-b85e-4393-b4b2-e9660877667c
+		summarizeBy: sum
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdUbicacionInventario
+		dataType: string
+		lineageTag: e8740953-377a-458b-832c-4529cef6cdbf
+		summarizeBy: none
+		sourceColumn: IdUbicacionInventario
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadRecibidaEnUnidadDeInventario
+		dataType: int64
+		formatString: 0
+		lineageTag: 93833aa8-d17c-4771-823f-2f2ca18447a0
+		summarizeBy: sum
+		sourceColumn: CantidadRecibidaEnUnidadDeInventario
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadRestante
+		dataType: int64
+		formatString: 0
+		lineageTag: e0abfc6c-d11d-471d-9720-66106da9f40d
+		summarizeBy: sum
+		sourceColumn: CantidadRestante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sitio
+		dataType: string
+		lineageTag: f126e9ef-96d4-46fd-a226-aba5274bbbfe
+		summarizeBy: none
+		sourceColumn: Sitio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Almacen
+		dataType: string
+		lineageTag: aa73499f-5fb7-4764-84f2-793505809f50
+		summarizeBy: none
+		sourceColumn: Almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactRecepcion = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Recepcion.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"CuentaDeFacturacion", type text}, {"RecepcionDelProducto", type text}, {"RecepcionDeProductoInterna", type text}, {"IdOrdenDeCompra", type text}, {"FechaRecepcion", type datetime}, {"CuentaDeOrden", type text}, {"Descripcion", type any}, {"fullymatched", Int64.Type}, {"NumeroLineaOrdenDeCompra", Int64.Type}, {"RecepcionDelProductoLinea", type text}, {"NumeroDeProducto", Int64.Type}, {"NumeroDeLinea", Int64.Type}, {"NombreDelProducto", type text}, {"FechaPrevista", type datetime}, {"IdCategoriaDeCompras", Int64.Type}, {"Orden", Int64.Type}, {"IdUbicacionInventario", type text}, {"CantidadRecibidaEnUnidadDeInventario", Int64.Type}, {"CantidadRestante", Int64.Type}, {"Sitio", type text}, {"Almacen", type text}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

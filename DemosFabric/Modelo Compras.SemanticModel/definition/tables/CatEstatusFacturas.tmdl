@@ -1,0 +1,45 @@
+table CatEstatusFacturas
+	lineageTag: 17f6c7ab-c487-4fa5-af21-06e50b4893b9
+
+	measure M_ConteoFacturasEstatus = ```
+			
+			Var M1=[M_ConteoFacturasAbiertas]+0
+			Var M2=[M_ConteoFacturasPagadas]+0
+			RETURN 
+			 
+			IF  (HASONEVALUE(CatEstatusFacturas[Descripcion]),SWITCH(VALUES(CatEstatusFacturas[Id]),
+			1, M1, 
+			2, M2))
+			
+			```
+		formatString: 0
+		lineageTag: b7c39397-27b0-42c5-9143-4ba9ed363e1a
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bbccaa3-452b-48b8-a842-287058457ed9
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: f30c10ee-0847-4d0f-8ba9-027039c26cf8
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CatEstatusFacturas = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_CatEstatusFacturas = Origen{[Schema="dbo",Item="CatEstatusFacturas"]}[Data]
+				in
+				    dbo_CatEstatusFacturas
+
+	annotation PBI_ResultType = Table
+

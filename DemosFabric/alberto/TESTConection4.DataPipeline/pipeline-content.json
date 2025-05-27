@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Azure Machine Learning1",
+        "type": "AzureMLExecutePipeline",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "experimentName": "Probabilidad de Morosidad a Nivel de Factura",
+          "mlExecutionType": "pipeline",
+          "mlPipelineId": "b0da3611-ff08-4c40-acc3-ee689fc823a4"
+        },
+        "externalReferences": {
+          "connection": "d3183006-98ee-4301-a9aa-5fd3414ddee9"
+        }
+      }
+    ]
+  }
+}

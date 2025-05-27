@@ -1,0 +1,33 @@
+table DependenciaPolitécnica
+	lineageTag: 3e0d90f2-963a-40ae-9c62-e49f44a4eda7
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: f9632e67-89eb-419b-a836-2b74d2b707e2
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dependencia Politécnica'
+		dataType: string
+		lineageTag: 06351da0-78b8-424a-b96c-b73e53315a65
+		summarizeBy: none
+		sourceColumn: Dependencia Politécnica
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DependenciaPolitécnica = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    DependenciaPolitécnica_Sheet = Origen{[Item="DependenciaPolitécnica",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(DependenciaPolitécnica_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Dependencia Politécnica", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+

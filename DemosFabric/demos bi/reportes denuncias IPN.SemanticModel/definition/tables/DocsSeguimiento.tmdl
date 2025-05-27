@@ -1,0 +1,33 @@
+table DocsSeguimiento
+	lineageTag: 1511d670-0b0d-4534-8df4-75cdccdf8ce3
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: b8c75d61-675a-4b6c-ad4f-98703b2b71e6
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Documentos seguimiento'
+		dataType: string
+		lineageTag: 61038e6e-beb3-41bb-add3-adb192b4fce9
+		summarizeBy: none
+		sourceColumn: Documentos seguimiento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DocsSeguimiento = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    DocsSeguimiento_Sheet = Origen{[Item="DocsSeguimiento",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(DocsSeguimiento_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Documentos seguimiento", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+

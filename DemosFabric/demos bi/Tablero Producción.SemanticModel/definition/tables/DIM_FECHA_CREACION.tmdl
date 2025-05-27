@@ -1,0 +1,252 @@
+table DIM_FECHA_CREACION
+	lineageTag: 8e82fe10-7e54-443c-94c7-a9ab60d9d25d
+	dataCategory: Time
+
+	column ID_FECHA
+		dataType: int64
+		formatString: 0
+		lineageTag: ce45f6f7-f1c3-403b-bea2-c124758f9e6e
+		summarizeBy: sum
+		sourceColumn: ID_FECHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 2adacc8b-625e-45c2-a9bc-95ae9242128b
+		summarizeBy: none
+		sourceColumn: FECHA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MES
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bbf1418-4948-4380-b6c7-b5131c99ec3f
+		summarizeBy: sum
+		sourceColumn: MES
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 88923737-7a8b-4fd2-b53b-3efb947a4f27
+		summarizeBy: sum
+		sourceColumn: DIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIMESTRE
+		dataType: int64
+		formatString: 0
+		lineageTag: 44693918-a4cd-492b-bf8c-53017e05c774
+		summarizeBy: sum
+		sourceColumn: TRIMESTRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ee09dfe-0649-4fe4-8c91-723308c5e42f
+		summarizeBy: sum
+		sourceColumn: AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MES
+		dataType: int64
+		formatString: 0
+		lineageTag: b05f9cee-9f10-4e2a-9564-f562d6fbae40
+		summarizeBy: sum
+		sourceColumn: ID_MES
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA_SEMANA
+		dataType: int64
+		formatString: 0
+		lineageTag: ae98ce84-ae93-4d9d-8cd2-31ee4f21b1a5
+		summarizeBy: sum
+		sourceColumn: DIA_SEMANA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA_SEMANA_NOMBRE
+		dataType: string
+		lineageTag: 107a6a30-a55f-4464-8582-7c93600ea8a8
+		summarizeBy: none
+		sourceColumn: DIA_SEMANA_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA_SEMANA_NOMBRECORTO
+		dataType: string
+		lineageTag: f88c8173-3649-4be3-8b6f-e20db3fd1630
+		summarizeBy: none
+		sourceColumn: DIA_SEMANA_NOMBRECORTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEMANA_MES
+		dataType: int64
+		formatString: 0
+		lineageTag: d91e29d5-ec75-40ee-b5f4-3ce54983104a
+		summarizeBy: sum
+		sourceColumn: SEMANA_MES
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEMANA_AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a3d0ef9-e98a-45fc-8f02-79b9e231a5eb
+		summarizeBy: sum
+		sourceColumn: SEMANA_AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ES_FINDESEMANA
+		dataType: int64
+		formatString: 0
+		lineageTag: d3dd9985-d032-4efc-af08-60b363377b62
+		summarizeBy: sum
+		sourceColumn: ES_FINDESEMANA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA_MES
+		dataType: int64
+		formatString: 0
+		lineageTag: e38dc117-b018-4481-abc6-f257cfd42484
+		summarizeBy: sum
+		sourceColumn: DIA_MES
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_NOMBRE
+		dataType: string
+		lineageTag: 6147fd8e-b6e0-405e-96bf-5d7e7a54d184
+		summarizeBy: none
+		sourceColumn: MES_NOMBRE
+		sortByColumn: MES
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_NOMBRE_CORTO
+		dataType: string
+		lineageTag: 557bfbf2-6fd7-4cd1-a2c7-4ea8c2bdde79
+		summarizeBy: none
+		sourceColumn: MES_NOMBRE_CORTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_AÑO_NOMBRE
+		dataType: string
+		lineageTag: 9dfb53b9-9a92-4af4-b002-876c016105f9
+		summarizeBy: none
+		sourceColumn: MES_AÑO_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIA_AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: dad362c0-4555-40b8-8a1d-356572bd5bb8
+		summarizeBy: sum
+		sourceColumn: DIA_AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIMESTRE_NOMBRE
+		dataType: string
+		lineageTag: ea776e9d-627a-4c03-af98-64c02b24d3ad
+		summarizeBy: none
+		sourceColumn: TRIMESTRE_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMER_DIA_AÑO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 88ff8b31-1ec8-42f0-824f-985d3f475622
+		summarizeBy: none
+		sourceColumn: PRIMER_DIA_AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ULTIMO_DIA_AÑO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fe42e0ca-81ad-4d69-b63e-9312ac2e3111
+		summarizeBy: none
+		sourceColumn: ULTIMO_DIA_AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIMER_DIA_MES
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b051d56b-b452-4c54-bc2a-61bfed68fa94
+		summarizeBy: none
+		sourceColumn: PRIMER_DIA_MES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ULTIMO_DIA_MES
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 660b9660-b32b-4fcb-966e-28e1ea5d31e0
+		summarizeBy: none
+		sourceColumn: ULTIMO_DIA_MES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIMER_DIA_SEMANA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6febc741-79b9-4833-b971-a9785f831a18
+		summarizeBy: none
+		sourceColumn: PRIMER_DIA_SEMANA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ULTIMO_DIA_SEMANA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9c395c4e-9a72-40db-9acf-68edb5fe2f00
+		summarizeBy: none
+		sourceColumn: ULTIMO_DIA_SEMANA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DIM_FECHA_CREACION = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_DIM_FECHA = Origen{[Schema="dbo",Item="DIM_FECHA"]}[Data]
+				in
+				    dbo_DIM_FECHA
+
+	annotation PBI_ResultType = Table
+

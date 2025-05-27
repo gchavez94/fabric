@@ -1,0 +1,99 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Lookup1",
+        "type": "Lookup",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "select max([CLOSED]) as fecha from [DataWH-D4B-ML].[dbo].[CustTrans (Ajuste Pago adicional)]",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "annotations": [],
+            "linkedService": {
+              "name": "DataWH-D4B-ML",
+              "properties": {
+                "annotations": [],
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                  "artifactId": "2ca02b65-eb24-453d-9640-e1260538ad29",
+                  "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                }
+              }
+            },
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "typeProperties": {}
+          }
+        }
+      },
+      {
+        "name": "Script1",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Lookup1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "linkedService": {
+          "name": "DataWH-D4B-ML",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+              "artifactId": "2ca02b65-eb24-453d-9640-e1260538ad29",
+              "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+            }
+          }
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "parameters": [
+                {
+                  "name": "Fecha",
+                  "type": "String",
+                  "value": {
+                    "value": "@activity('Lookup1').output",
+                    "type": "Expression"
+                  },
+                  "direction": "Output",
+                  "size": 50
+                }
+              ],
+              "type": "Query",
+              "text": {
+                "value": "select TOP(5) * FROM [DataWH-D4B-ML].[dbo].[CustTrans (Ajuste Pago adicional)] \n\nwhere CLOSED <= cast(@Fecha as datetime)",
+                "type": "Expression"
+              }
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      }
+    ]
+  }
+}

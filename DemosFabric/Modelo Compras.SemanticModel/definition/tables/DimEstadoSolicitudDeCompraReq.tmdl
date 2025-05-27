@@ -1,0 +1,37 @@
+table DimEstadoSolicitudDeCompraReq
+	lineageTag: db26e32f-ce76-47b7-a531-a7cf7c38ca82
+
+	column IdEstado
+		dataType: int64
+		formatString: 0
+		lineageTag: 187fd7f0-daab-436b-a0ff-5d56baec91cd
+		summarizeBy: none
+		sourceColumn: IdEstado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: da270897-0e08-4aac-972c-c3f36598d6e1
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column DescripcionVisual
+		dataType: string
+		lineageTag: 60c369a8-282e-4cba-8b8c-07c9c5a98619
+		summarizeBy: none
+		sourceColumn: DescripcionVisual
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEstadoSolicitudDeCompraReq = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimEstadoSolicitudDeCompraReq = Origen{[Schema="dbo",Item="DimEstadoSolicitudDeCompraReq"]}[Data]
+				in
+				    dbo_DimEstadoSolicitudDeCompraReq
+

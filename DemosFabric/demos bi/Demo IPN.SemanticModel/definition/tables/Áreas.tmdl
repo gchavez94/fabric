@@ -1,0 +1,33 @@
+table Áreas
+	lineageTag: 6b706c7f-86a6-4e53-b5a1-6a5aba6d181d
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 22f9269c-09cb-43e3-8dd5-8cfbe371186a
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Áreas
+		dataType: string
+		lineageTag: fee6ec09-eec8-4763-9205-f555576fd0fc
+		summarizeBy: none
+		sourceColumn: Áreas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Áreas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Áreas_Sheet = Origen{[Item="Áreas",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Áreas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Áreas", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

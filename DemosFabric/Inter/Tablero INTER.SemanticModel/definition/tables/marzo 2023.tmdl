@@ -1,0 +1,266 @@
+table 'marzo 2023'
+	isHidden
+	lineageTag: 93128ba8-bb93-4271-8fdd-1ced80da2348
+
+	column DESCRIPCION_DIVISION
+		dataType: string
+		isHidden
+		lineageTag: d434500f-ae3a-4871-a569-f60a4cce0134
+		summarizeBy: none
+		sourceColumn: DESCRIPCION_DIVISION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION_OFICINA
+		dataType: string
+		isHidden
+		lineageTag: 54b9d657-54a5-4d42-90df-958c5ca2aaa4
+		summarizeBy: none
+		sourceColumn: DESCRIPCION_OFICINA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPACION
+		dataType: string
+		isHidden
+		lineageTag: 09b9ee92-596d-47de-916e-6215c860e318
+		summarizeBy: none
+		sourceColumn: AGRUPACION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAVE_ESPEJO
+		dataType: string
+		isHidden
+		lineageTag: 87c78554-5043-4db9-a3b6-f6239847553a
+		summarizeBy: none
+		sourceColumn: CLAVE_ESPEJO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAVE_AGENTE
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 590cde0d-32e3-43d0-9f05-57d0f512ada0
+		summarizeBy: none
+		sourceColumn: CLAVE_AGENTE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_AGENTE
+		dataType: string
+		isHidden
+		lineageTag: 27db5d67-dea8-4c9c-899c-6525e58debf8
+		summarizeBy: none
+		sourceColumn: NOMBRE_AGENTE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PRIMA COBRADA'
+		dataType: double
+		isHidden
+		lineageTag: f8b9cdbf-44d8-40bd-91e7-ded43ec5ca6c
+		summarizeBy: sum
+		sourceColumn: PRIMA COBRADA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PRIMA NETA'
+		dataType: double
+		isHidden
+		lineageTag: 336d1fcc-5720-4fbc-9100-7cb3bd8b5906
+		summarizeBy: sum
+		sourceColumn: PRIMA NETA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CNS
+		dataType: double
+		isHidden
+		lineageTag: 77c10273-f45b-45f9-baa3-49463d40f95b
+		summarizeBy: sum
+		sourceColumn: CNS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PRIMA DEVENGADA'
+		dataType: double
+		isHidden
+		lineageTag: 049bc01b-5c2b-44a4-aa32-d9ee9fbe5232
+		summarizeBy: sum
+		sourceColumn: PRIMA DEVENGADA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SINIESTRALIDAD
+		dataType: double
+		isHidden
+		lineageTag: 8ead8578-d7b1-4505-b958-20aff4109c1f
+		summarizeBy: sum
+		sourceColumn: SINIESTRALIDAD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PRIMA PROMEDIO HISTORICA'
+		dataType: double
+		isHidden
+		lineageTag: a1384f90-c868-4650-be40-6d8c393807f5
+		summarizeBy: sum
+		sourceColumn: PRIMA PROMEDIO HISTORICA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% DESCUENTO'
+		dataType: double
+		isHidden
+		lineageTag: 07098a2f-5c2f-4c83-bd6c-033b105a5c27
+		summarizeBy: sum
+		sourceColumn: % DESCUENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FRECUENCIA
+		dataType: double
+		isHidden
+		lineageTag: 5b11da68-eae2-4494-827b-b5815ed4fff5
+		summarizeBy: sum
+		sourceColumn: FRECUENCIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'COSTO PROMEDIO DE SINIESTRO'
+		dataType: string
+		isHidden
+		lineageTag: 59bb32aa-0513-4c79-aca7-3bbe24ec32ed
+		summarizeBy: none
+		sourceColumn: COSTO PROMEDIO DE SINIESTRO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPUESTO
+		dataType: double
+		isHidden
+		lineageTag: 9192b978-7cf0-44ee-800c-2c7a3351f75b
+		summarizeBy: sum
+		sourceColumn: EXPUESTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NUMERO DE SINIESTROS'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 50604805-a35e-48c2-9d4f-663cd9abe798
+		summarizeBy: sum
+		sourceColumn: NUMERO DE SINIESTROS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 7da51468-68da-47c7-86d3-5fd6a7ccbdf9
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 130143a6-aaec-451c-b79a-dace4c6748c9
+			defaultHierarchy: LocalDateTable_6cd69c39-8afa-4898-9fa7-36748f169a7c.'Jerarquía de fechas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Siniestralidad '
+		dataType: string
+		isHidden
+		lineageTag: 0c35ab9d-2ff0-443e-82c6-96152dd159b5
+		summarizeBy: none
+		sourceColumn: "Siniestralidad "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'marzo 2023' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\Ana Seguros\data\PwNMRv marzo 2023.xlsx"), null, true),
+				    #"MyWorkSheet-1_Sheet" = Origen{[Item="MyWorkSheet-1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"MyWorkSheet-1_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"DESCRIPCION_DIVISION", type text}, {"DESCRIPCION_OFICINA", type text}, {"AGRUPACION", Int64.Type}, {"CLAVE_ESPEJO", type text}, {"CLAVE_AGENTE", Int64.Type}, {"NOMBRE_AGENTE", type text}, {"PRIMA COBRADA", type number}, {"PRIMA NETA", type number}, {"CNS", type number}, {"PRIMA DEVENGADA", type number}, {"SINIESTRALIDAD", type number}, {"PRIMA PROMEDIO HISTORICA", type number}, {"% DESCUENTO", type number}, {"FRECUENCIA", type number}, {"COSTO PROMEDIO DE SINIESTRO", type any}, {"EXPUESTO", type number}, {"NUMERO DE SINIESTROS", Int64.Type}}),
+				    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",1),
+				    #"Personalizada agregada" = Table.AddColumn(#"Filas superiores quitadas", "Fecha", each "marzo 2023"),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Fecha", type date}}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Tipo cambiado1", "Siniestralidad ", each [CNS]/[PRIMA DEVENGADA]),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Personalizada agregada1", {{"SINIESTRALIDAD", null}}),
+				    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Errores reemplazados", {{"PRIMA PROMEDIO HISTORICA", null}}),
+				    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Errores reemplazados1", {{"FRECUENCIA", null}}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Errores reemplazados2",{{"AGRUPACION", type text}})
+				in
+				    #"Tipo cambiado2"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

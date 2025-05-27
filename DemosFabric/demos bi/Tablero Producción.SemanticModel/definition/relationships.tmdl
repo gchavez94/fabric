@@ -1,0 +1,47 @@
+relationship 015b0a82-d803-475a-98c3-25abd721e4c5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_PRODUCCION_COSTOS.FECHA_MODIFICACION
+	toColumn: LocalDateTable_25428348-646a-4582-9801-0255ac65dc11.Date
+
+relationship 24892a23-3fde-4578-945e-7faf9c37ce8f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_PRODUCTOS.FECHA_CARGA
+	toColumn: LocalDateTable_69b15ca2-c77d-40a9-a987-fc1cfc7faa6f.Date
+
+relationship 052b1539-1d2d-4f24-bec0-6c97550aacce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_ALMACEN.FECHA_CARGA
+	toColumn: LocalDateTable_0a16517f-4d86-49a5-b766-50bd99f381f1.Date
+
+relationship AutoDetected_2fc96c81-7745-4d8a-b638-38f0702da11d
+	fromColumn: FACT_PRODUCCION_COSTOS.ID_PRODUCTO
+	toColumn: DIM_PRODUCTOS.ID_PRODUCTO
+
+relationship db874bae-1a4e-63d6-b3de-a785add59513
+	fromColumn: FACT_PRODUCCION_COSTOS.ID_SITIO
+	toColumn: DIM_ALMACEN.ID_ALMACEN
+
+relationship 303706ac-f37a-44e8-94bd-66df5767bd9b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_CENTRO_COSTOS.FECHA_CARGA
+	toColumn: LocalDateTable_67aa65ef-f8b3-469d-a3e7-23962031f50b.Date
+
+relationship 9252b131-6dbb-4bc7-8022-f790e423b1dc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_PART.FECHA_CARGA
+	toColumn: LocalDateTable_35a26c37-a881-4620-8c6c-49e75bd6c58d.Date
+
+relationship AutoDetected_b575e28a-ec36-4d2e-9b76-40f21ace5619
+	fromColumn: FACT_PRODUCCION_COSTOS.ID_CENTRO_COSTOS
+	toColumn: DIM_CENTRO_COSTOS.ID_CENTRO_COSTOS
+
+relationship AutoDetected_016cb332-80a5-45b1-a74e-cbc513b764c9
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: dataProductos.SKU
+	toColumn: DIM_PRODUCTOS.SKU
+
+relationship ff29dbb1-3259-5ffb-d699-ce249f63ec6a
+	fromColumn: FACT_PRODUCCION_COSTOS.CONJUNTO_PRODUCCION
+	toColumn: conjuntoProd.ID
+

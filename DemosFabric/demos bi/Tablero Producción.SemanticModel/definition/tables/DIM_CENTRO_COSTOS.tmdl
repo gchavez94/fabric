@@ -1,0 +1,62 @@
+table DIM_CENTRO_COSTOS
+	lineageTag: c3491561-5cf3-4fb5-9090-49dc2b430be3
+
+	column ID_CENTRO_COSTOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 97bd1624-2a2b-4155-bbff-34aa3ec01a66
+		summarizeBy: none
+		sourceColumn: ID_CENTRO_COSTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_VALOR
+		dataType: string
+		lineageTag: 953cab99-97eb-4e37-8426-8ee1650e0bad
+		summarizeBy: none
+		sourceColumn: CC_VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_NOMBRE
+		dataType: string
+		lineageTag: 1eac61d5-4b72-477e-95ce-01314b920c25
+		summarizeBy: none
+		sourceColumn: CC_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC
+		dataType: int64
+		formatString: 0
+		lineageTag: 1543435c-597c-4431-b1bb-78c511553560
+		summarizeBy: sum
+		sourceColumn: CC
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CARGA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 37b610e6-496d-49e4-baec-f128be9eae8d
+		summarizeBy: none
+		sourceColumn: FECHA_CARGA
+
+		variation Variación
+			isDefault
+			relationship: 303706ac-f37a-44e8-94bd-66df5767bd9b
+			defaultHierarchy: LocalDateTable_67aa65ef-f8b3-469d-a3e7-23962031f50b.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CENTRO_COSTOS = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_DIM_CENTRO_COSTOS = Origen{[Schema="dbo",Item="DIM_CENTRO_COSTOS"]}[Data]
+				in
+				    dbo_DIM_CENTRO_COSTOS
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,33 @@
+table CategoríaVictimario
+	lineageTag: 178eabe2-4733-456f-9e61-76820a559062
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: a11672f0-6050-4515-ba96-a218f7a1b71f
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoría
+		dataType: string
+		lineageTag: 4000157f-972b-4b0a-ae69-316d92c4d6c9
+		summarizeBy: none
+		sourceColumn: Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CategoríaVictimario = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    CategoríaVictimario_Sheet = Origen{[Item="CategoríaVictimario",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(CategoríaVictimario_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Categoría", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

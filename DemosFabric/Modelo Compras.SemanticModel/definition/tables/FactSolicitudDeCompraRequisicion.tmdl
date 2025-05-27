@@ -1,0 +1,345 @@
+table FactSolicitudDeCompraRequisicion
+	lineageTag: 84cd64ed-1162-49a6-9de1-0d068c822943
+
+	measure M_ConteoSolicitudDeCompra = COUNT(FactSolicitudDeCompraRequisicion[IdSolicitudDeCompraRequisicion])
+		formatString: 0
+		lineageTag: c3037116-88ea-4857-aa3f-6bd54733c0cf
+
+	measure M_TotalCantidad = SUM(FactSolicitudDeCompraRequisicion[Cantidad])
+		formatString: 0
+		lineageTag: c1031a16-cd21-4d74-bd43-f53b30d20169
+
+	column IdSdcrOc
+		dataType: int64
+		formatString: 0
+		lineageTag: 66dc9257-6662-4ba1-ab3b-5d7518b461e7
+		summarizeBy: none
+		sourceColumn: IdSdcrOc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recid_prt
+		dataType: int64
+		formatString: 0
+		lineageTag: c70698c7-ae65-43c5-8e57-e5d7f7072f33
+		summarizeBy: sum
+		sourceColumn: Recid_prt
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8f306d1f-8e1e-469b-b773-11daa3bde674
+		summarizeBy: none
+		sourceColumn: modifieddatetime
+
+		variation Variación
+			isDefault
+			relationship: 0ca01a53-e43d-41d2-995f-f5585bc61170
+			defaultHierarchy: LocalDateTable_312a3e9f-326e-42e1-a935-7936d176f9bd.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdSolicitudDeCompraRequisicion
+		dataType: string
+		lineageTag: 12045a1c-c422-4121-a216-1e337b2f28ac
+		summarizeBy: none
+		sourceColumn: IdSolicitudDeCompraRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompraLinea
+		dataType: string
+		lineageTag: 8bfdcfb6-a74b-458a-b207-2c2194bec56c
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompraLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreSolicitudCompra
+		dataType: string
+		lineageTag: a6ba4e2b-fe6b-4cc2-b558-8754567ff67c
+		summarizeBy: none
+		sourceColumn: NombreSolicitudCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdPreparador
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b85e1d5-f7f2-4c2f-8828-80bc26b66dc2
+		summarizeBy: none
+		sourceColumn: IdPreparador
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProyecto
+		dataType: string
+		lineageTag: 698737a0-b6fe-4bf6-983c-3a106a333bae
+		summarizeBy: none
+		sourceColumn: IdProyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstado
+		dataType: int64
+		formatString: 0
+		lineageTag: 30cc0211-95d7-4976-8a92-9b82b9f19287
+		summarizeBy: sum
+		sourceColumn: IdEstado
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstadoLinea
+		dataType: int64
+		formatString: 0
+		lineageTag: 110423dc-abee-48ee-9288-a1d600168e7a
+		summarizeBy: none
+		sourceColumn: IdEstadoLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdPropositoRequisicion
+		dataType: int64
+		formatString: 0
+		lineageTag: bbd76678-fbde-4f9f-827a-274a89f11e12
+		summarizeBy: sum
+		sourceColumn: IdPropositoRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PropositoRequisicion
+		dataType: string
+		lineageTag: b327b359-70a3-42f1-9e26-da9d9b6621f2
+		summarizeBy: none
+		sourceColumn: PropositoRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdRazon
+		dataType: int64
+		formatString: 0
+		lineageTag: 21069d1f-fc29-4de7-aeb0-29297ca762c5
+		summarizeBy: none
+		sourceColumn: IdRazon
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdTipo
+		dataType: int64
+		formatString: 0
+		lineageTag: 70e07d7e-6699-47f6-9fec-62a9ead5202b
+		summarizeBy: sum
+		sourceColumn: IdTipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProducto
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ae43942-2efd-4c2f-a061-88f7c71fe9d1
+		summarizeBy: sum
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCategoriaDeCompras
+		dataType: int64
+		formatString: 0
+		lineageTag: 827d9d9a-fe7f-40c9-9094-32b4ebaba303
+		summarizeBy: none
+		sourceColumn: IdCategoriaDeCompras
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCategoriaProyecto
+		dataType: string
+		lineageTag: c375ac86-6489-4559-9ed0-db44d1d8c091
+		summarizeBy: none
+		sourceColumn: IdCategoriaProyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntidadJuridicaCompradora
+		dataType: string
+		lineageTag: 4b0e9e50-1344-4995-a5c2-f7491929d93a
+		summarizeBy: none
+		sourceColumn: EntidadJuridicaCompradora
+
+		annotation SummarizationSetBy = Automatic
+
+	column Solicitante
+		dataType: string
+		lineageTag: 8f4f24be-255b-4f99-9545-1f29ad00794a
+		summarizeBy: none
+		sourceColumn: Solicitante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Divisa
+		dataType: string
+		lineageTag: f9830150-8b57-4aeb-a870-390424750c77
+		summarizeBy: none
+		sourceColumn: Divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detalles
+		dataType: string
+		lineageTag: 6933a7dc-a8e5-42b5-8505-ece6caff6777
+		summarizeBy: none
+		sourceColumn: Detalles
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5832d4a6-ea55-4847-9a61-fd1bae74b85e
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeEnvío
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fc47f043-95ed-460d-923f-2908f5903dbe
+		summarizeBy: none
+		sourceColumn: FechaDeEnvío
+
+		variation Variación
+			isDefault
+			relationship: a4d4efed-2792-4a24-8d42-ad655a11443e
+			defaultHierarchy: LocalDateTable_dd99f5b6-f15e-4e65-8611-ae7a456ba0df.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaContable
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c93dd3b2-e153-4e71-8ebc-7027a02e8713
+		summarizeBy: none
+		sourceColumn: FechaContable
+
+		variation Variación
+			isDefault
+			relationship: 82748f6c-4ec7-4c00-bb86-a69ea7a66714
+			defaultHierarchy: LocalDateTable_c5d16db7-e04a-4a06-a751-b26720516a19.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaSolicitada
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6aa90234-c1e4-4877-abfd-0fc24c75c2c2
+		summarizeBy: none
+		sourceColumn: FechaSolicitada
+
+		variation Variación
+			isDefault
+			relationship: db0cb415-ad3a-46c6-b11d-fd837b742d36
+			defaultHierarchy: LocalDateTable_6a14c0c9-d4b9-4743-9d80-ec3ae02f5c37.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnviadoPor
+		dataType: string
+		lineageTag: 9834509b-fa29-4dfd-92f8-4251272e70de
+		summarizeBy: none
+		sourceColumn: EnviadoPor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Explicacion
+		dataType: string
+		lineageTag: 919d9829-4643-4383-be6b-e080ad0e8528
+		summarizeBy: none
+		sourceColumn: Explicacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeProveedor
+		dataType: string
+		lineageTag: f1613233-4b9c-4a85-b5d1-3034b0335bb2
+		summarizeBy: none
+		sourceColumn: CuentaDeProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroLinea
+		dataType: int64
+		formatString: 0
+		lineageTag: d600f21e-6af5-472c-b080-0471b3bfbe61
+		summarizeBy: sum
+		sourceColumn: NumeroLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDelProducto
+		dataType: string
+		lineageTag: c6384fa4-b21c-4aff-84ff-c38cb03fe06e
+		summarizeBy: none
+		sourceColumn: NombreDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecioUnitario
+		dataType: int64
+		formatString: 0
+		lineageTag: f42a99f6-e445-4801-a4a8-0292c96978cf
+		summarizeBy: sum
+		sourceColumn: PrecioUnitario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 07c14875-18af-4586-b3e6-0174c8693ea0
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidad
+		dataType: string
+		lineageTag: 6ab0da92-028a-46a3-b4bc-dee4d5b0c8f1
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNeto
+		dataType: int64
+		formatString: 0
+		lineageTag: 24284b4b-9505-4c68-b541-680a134c4a7b
+		summarizeBy: sum
+		sourceColumn: MontoNeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoVisual
+		dataType: string
+		lineageTag: ecf23046-9fbb-480b-9283-79a24a01c389
+		summarizeBy: none
+		sourceColumn: EstadoVisual
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSolicitudDeCompraRequisicion = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\SolicitudDeCompraRequisicion.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdSdcrOc", Int64.Type}, {"Recid_prt", Int64.Type}, {"modifieddatetime", type datetime}, {"IdSolicitudDeCompraRequisicion", type text}, {"IdOrdenDeCompraLinea", type text}, {"NombreSolicitudCompra", type text}, {"IdPreparador", Int64.Type}, {"IdProyecto", type text}, {"IdEstado", Int64.Type}, {"IdEstadoLinea", Int64.Type}, {"IdPropositoRequisicion", Int64.Type}, {"PropositoRequisicion", type text}, {"IdRazon", Int64.Type}, {"IdTipo", Int64.Type}, {"IdProducto", Int64.Type}, {"IdCategoriaDeCompras", Int64.Type}, {"IdCategoriaProyecto", type text}, {"EntidadJuridicaCompradora", type text}, {"Solicitante", type text}, {"Divisa", type text}, {"Detalles", type any}, {"FechaCreacion", type datetime}, {"FechaDeEnvío", type datetime}, {"FechaContable", type datetime}, {"FechaSolicitada", type datetime}, {"EnviadoPor", type text}, {"Explicacion", type any}, {"CuentaDeProveedor", type text}, {"NumeroLinea", Int64.Type}, {"NombreDelProducto", type text}, {"PrecioUnitario", Int64.Type}, {"Cantidad", Int64.Type}, {"Unidad", type text}, {"MontoNeto", Int64.Type}, {"EstadoVisual", type text}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

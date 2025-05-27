@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Morosidad a Nivel de Factura",
+        "type": "AzureMLExecutePipeline",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "experimentName": "Probabilidad de Morosidad a Nivel de Factura-batch inference-Lotes",
+          "mlExecutionType": "pipeline",
+          "mlPipelineId": "f864cd59-4d8c-41ba-b33d-ec9a3fda4152"
+        },
+        "externalReferences": {
+          "connection": "d3183006-98ee-4301-a9aa-5fd3414ddee9"
+        }
+      }
+    ]
+  }
+}

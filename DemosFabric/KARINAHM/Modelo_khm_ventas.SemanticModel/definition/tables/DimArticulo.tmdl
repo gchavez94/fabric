@@ -1,0 +1,65 @@
+table DimArticulo
+	lineageTag: a13d23a6-5523-403a-bf68-03f42a0df2de
+	sourceLineageTag: [dbo].[DimArticulo]
+
+	column CodigoArticulo
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 7e6ae67b-4ebd-413b-b2d4-e6dd9e40249c
+		sourceLineageTag: CodigoArticulo
+		summarizeBy: none
+		sourceColumn: CodigoArticulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column DescArticulo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f8b7dbe2-7bf3-48dd-b70a-5274223433b6
+		sourceLineageTag: DescArticulo
+		summarizeBy: none
+		sourceColumn: DescArticulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f64f0a3c-cf1c-41ca-85ff-d454f0ef35cc
+		sourceLineageTag: Categoria
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Formato
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9dc4507a-ba39-421b-a410-f3baa5f3421f
+		sourceLineageTag: Formato
+		summarizeBy: none
+		sourceColumn: Formato
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Categoria Hierarchy'
+		lineageTag: 762ffe3c-22e7-4010-aee6-48cc718d0999
+
+		level DescArticulo
+			lineageTag: aa598164-f649-456a-be48-f623d07981f3
+			column: DescArticulo
+
+		level Categoria
+			lineageTag: d1b3180b-d646-467b-b9f1-538d0030c3f5
+			column: Categoria
+
+	partition DimArticulo = entity
+		mode: directLake
+		source
+			entityName: DimArticulo
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

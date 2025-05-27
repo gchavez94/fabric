@@ -1,0 +1,44 @@
+table DIRPARTYTABLE
+	lineageTag: 178afad1-bd1e-4c77-bf75-c1d40e7769dd
+	sourceLineageTag: [dbo].[DIRPARTYTABLE]
+
+	column NAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6b48e2bd-6c24-4908-8974-334b8889b81b
+		sourceLineageTag: NAME
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5ef24d70-3dbf-4d0c-ac94-57084485d182
+		sourceLineageTag: RECID
+		summarizeBy: count
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cliente Prov'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fd3be452-6308-4d20-ae5c-6dd76545ac07
+		sourceLineageTag: Cliente Prov
+		summarizeBy: none
+		sourceColumn: Cliente Prov
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIRPARTYTABLE = entity
+		mode: directLake
+		source
+			entityName: DIRPARTYTABLE
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

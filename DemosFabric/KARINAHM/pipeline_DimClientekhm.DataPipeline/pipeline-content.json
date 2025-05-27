@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "sqlReaderQuery": "SELECT  A.*\r\n      ,CASE WHEN [NivelDeServicio]='A' THEN 'ALTO'\r\n\t    WHEN [NivelDeServicio]='B' THEN 'MEDIO'\r\n            WHEN [NivelDeServicio]='C' THEN 'BAJO'\r\n            ELSE 'NO APLICA' END AS DescripcionServicio\r\n\r\n  FROM [dbo].[Fabric_Clientes] A\r\n  LEFT JOIN  [dbo].[Fabric_InfoComplementariaCliente] B\r\n  ON A.[CodigoSucursal]=B.[CodigoSucursal]",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "database": "365zap"
+              },
+              "externalReferences": {
+                "connection": "2418fd80-63cf-408b-8d80-f7feccc00b1c"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "ALMACEN KHM",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "94815a50-961e-43ce-b547-d0da6c0f51ad",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "DimCliente"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ]
+  }
+}

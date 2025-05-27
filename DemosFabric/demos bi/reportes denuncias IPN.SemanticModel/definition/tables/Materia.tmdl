@@ -1,0 +1,33 @@
+table Materia
+	lineageTag: d264830e-d8c2-4296-a2e0-741a52faf510
+
+	column id
+		dataType: string
+		lineageTag: 29bad67b-4aca-4372-99d5-272cd08a3c65
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Materia
+		dataType: string
+		lineageTag: b8bfcf0d-97cc-4cab-8c3f-42d61288cb34
+		summarizeBy: none
+		sourceColumn: Materia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Materia = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Materia_Sheet = Origen{[Item="Materia",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Materia_Sheet, [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,16 @@
+relationship 6e137958-714a-33b1-9ae4-5559501a5d4a
+	fromColumn: FactVentas.FECHA
+	toColumn: DimFecha.Fecha
+
+relationship dacd7709-84d2-2e91-1b7d-a4ebd0d8d621
+	fromColumn: FactVentas.ARTICULO
+	toColumn: DimArticulo.CodigoArticulo
+
+relationship f144deb4-c0ab-0103-94d1-f7a8df9c2583
+	fromColumn: FactVentas.VENDEDOR
+	toColumn: DimVendedor.Vendedor
+
+relationship a2ea8251-4606-f022-b15b-55ef78f530d8
+	fromColumn: FactVentas.SUCURSAL_CLIENTE
+	toColumn: DimCliente.CodigoSucursal
+

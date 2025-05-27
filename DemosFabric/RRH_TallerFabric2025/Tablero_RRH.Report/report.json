@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a0aca332c10ab22b455d",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"24bed759572900882c7f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":313.2447224394058,\"z\":1,\"width\":559.4370602032837,\"height\":406.3174354964816,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(FACT_VENTAS_RRH.CANTIDAD)\"}],\"Category\":[{\"queryRef\":\"DIM_CLIENTES_RRH.Nombre_Grupo_Sucursal\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FACT_VENTAS_RRH\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_CLIENTES_RRH\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0},\"Name\":\"Sum(FACT_VENTAS_RRH.CANTIDAD)\",\"NativeReferenceName\":\"Suma de CANTIDAD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nombre_Grupo_Sucursal\"},\"Name\":\"DIM_CLIENTES_RRH.Nombre_Grupo_Sucursal\",\"NativeReferenceName\":\"Nombre_Grupo_Sucursal\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0}}}]},\"autoSelectVisualType\":false,\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 406.32,
+          "width": 559.44,
+          "x": 0.00,
+          "y": 313.24,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"4e613df37de068b8754c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":559.4370602032837,\"y\":321.250977326036,\"z\":0,\"width\":683.5340109460516,\"height\":369.28850664581705,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(FACT_VENTAS_RRH.TOTAL)\"}],\"Category\":[{\"queryRef\":\"DIM_VENDEDORES_RRH.NombreVendedor\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FACT_VENTAS_RRH\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_VENDEDORES_RRH\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TOTAL\"}},\"Function\":0},\"Name\":\"Sum(FACT_VENTAS_RRH.TOTAL)\",\"NativeReferenceName\":\"Suma de TOTAL\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"NombreVendedor\"},\"Name\":\"DIM_VENDEDORES_RRH.NombreVendedor\",\"NativeReferenceName\":\"NombreVendedor\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TOTAL\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 369.29,
+          "width": 683.53,
+          "x": 559.44,
+          "y": 321.25,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

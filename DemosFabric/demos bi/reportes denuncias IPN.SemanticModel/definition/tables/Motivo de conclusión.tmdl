@@ -1,0 +1,33 @@
+table 'Motivo de conclusión'
+	lineageTag: ef406282-34e1-4ee2-bda4-26975432e04b
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 49ecd4cb-2382-4646-8f2a-ad6b9a46746b
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Motivo de conclusión'
+		dataType: string
+		lineageTag: 3577aa42-a490-4438-ab35-13c75e08d1da
+		summarizeBy: none
+		sourceColumn: Motivo de conclusión
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Motivo de conclusión' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    #"Motivo de conclusión_Sheet" = Origen{[Item="Motivo de conclusión",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Motivo de conclusión_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Motivo de conclusión", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+

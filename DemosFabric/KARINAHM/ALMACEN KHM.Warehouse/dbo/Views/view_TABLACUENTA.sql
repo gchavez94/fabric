@@ -1,0 +1,20 @@
+-- Auto Generated (Do not modify) 0DB3E924A08F57D65734D5F1A2C3B5BFE9C51DCCED9152405DEC35C3CEFAF553
+CREATE VIEW [dbo].[view_TABLACUENTA]
+AS SELECT TOP 10 [SinkCreatedOn],
+			[SinkModifiedOn],
+			[statecode],
+			[statuscode],
+			[accountcategorycode],
+			[accountclassificationcode],
+			[accountratingcode],
+			[address1_addresstypecode],
+			[address1_freighttermscode],
+			[address1_shippingmethodcode],
+			[address2_addresstypecode],
+			[address2_freighttermscode],
+			[address2_shippingmethodcode],
+			[businesstypecode],
+			[customersizecode],
+			[customertypecode],
+			[industrycode],
+			[msdyn_invoiceaddress] FROM[ALMACEN KHM].[dbo].[account]

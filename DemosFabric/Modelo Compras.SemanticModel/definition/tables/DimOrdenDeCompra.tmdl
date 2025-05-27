@@ -1,0 +1,36 @@
+table DimOrdenDeCompra
+	lineageTag: f1181b05-1b1f-49fc-aa5a-db318e93099c
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: c52c36bf-6563-4df8-b8f9-aba50d55471a
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7b9b9528-0292-433a-9669-6025f43937df
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		variation Variación
+			isDefault
+			relationship: 155eef2b-72bd-4473-add7-4dceecb8380e
+			defaultHierarchy: LocalDateTable_c7feac8b-4bd5-414f-be96-1bf7710ae854.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimOrdenDeCompra = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimOrdenDeCompra = Origen{[Schema="dbo",Item="DimOrdenDeCompra"]}[Data]
+				in
+				    dbo_DimOrdenDeCompra
+
+	annotation PBI_ResultType = Table
+

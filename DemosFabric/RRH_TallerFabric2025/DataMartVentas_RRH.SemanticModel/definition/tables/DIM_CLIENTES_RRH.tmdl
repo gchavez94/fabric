@@ -1,0 +1,141 @@
+table DIM_CLIENTES_RRH
+	lineageTag: a71e54bb-ebef-4862-af5c-5540b62fd08e
+	sourceLineageTag: [dbo].[DIM_CLIENTES_RRH]
+
+	column CodigoGrupoCliente
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7830f1a2-82f1-49c7-a5b0-549ed276d520
+		sourceLineageTag: CodigoGrupoCliente
+		summarizeBy: none
+		sourceColumn: CodigoGrupoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre_Grupo_Sucursal
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0524ce26-a939-4eea-b664-16d9b2206bac
+		sourceLineageTag: Nombre_Grupo_Sucursal
+		summarizeBy: none
+		sourceColumn: Nombre_Grupo_Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoSucursal
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7ce7699e-5c4d-4380-961a-e1e3fe27e211
+		sourceLineageTag: CodigoSucursal
+		summarizeBy: none
+		sourceColumn: CodigoSucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3315503c-2861-41cd-abdc-d03d8b6aad12
+		sourceLineageTag: CP
+		summarizeBy: none
+		sourceColumn: CP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a7ace58f-1475-4a53-8694-49dc9976e983
+		sourceLineageTag: Pais
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Colonia
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a8139ea8-5223-45fe-81fe-147f0b0a5191
+		sourceLineageTag: Colonia
+		summarizeBy: none
+		sourceColumn: Colonia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b50fdd47-ac22-402c-b8e0-e0bead83b51c
+		sourceLineageTag: Desc_Estado
+		summarizeBy: none
+		sourceColumn: Desc_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0a60f7a9-4837-4e51-8343-1ef0e3ac2f03
+		sourceLineageTag: Codigo_Estado
+		summarizeBy: none
+		sourceColumn: Codigo_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Municipio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c1c5b8d4-9316-4505-9c6f-1d97de1c4145
+		sourceLineageTag: Desc_Municipio
+		summarizeBy: none
+		sourceColumn: Desc_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Municipio
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: a91acfad-7034-4673-a06c-df15b61c2312
+		sourceLineageTag: Codigo_Municipio
+		summarizeBy: none
+		sourceColumn: Codigo_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAT
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b611142d-f2e8-4390-b440-5a2524ba90cf
+		sourceLineageTag: LAT
+		summarizeBy: none
+		sourceColumn: LAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LONG
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 65d5f6b9-b8c1-49dc-a0d7-082c9d150085
+		sourceLineageTag: LONG
+		summarizeBy: none
+		sourceColumn: LONG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DIM_CLIENTES_RRH = entity
+		mode: directLake
+		source
+			entityName: DIM_CLIENTES_RRH
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

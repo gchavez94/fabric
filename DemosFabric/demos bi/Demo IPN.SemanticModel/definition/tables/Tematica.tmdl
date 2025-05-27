@@ -1,0 +1,31 @@
+table Tematica
+	lineageTag: 71e6ed6e-7a0e-4774-b46f-b8f5d77c4883
+
+	column id
+		dataType: string
+		lineageTag: 955195dd-e119-482c-a8d7-eed79865f725
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Temática
+		dataType: string
+		lineageTag: 50cdfa93-3a1e-4b7a-b0d3-85807d58b0c8
+		summarizeBy: none
+		sourceColumn: Temática
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tematica = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Tematica_Sheet = Origen{[Item="Tematica",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Tematica_Sheet, [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+

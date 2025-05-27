@@ -1,0 +1,49 @@
+table CATALOGO_MP
+	lineageTag: deca005e-3551-42b5-a2ea-ffe66dc9f6c0
+
+	column Grupo_costos
+		dataType: string
+		lineageTag: a7919899-df75-464e-a3b6-25219063d406
+		summarizeBy: none
+		sourceColumn: Grupo_costos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concepto
+		dataType: string
+		lineageTag: a4b44b21-f437-49fc-b054-1984664b2d90
+		summarizeBy: none
+		sourceColumn: Concepto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Catalogo
+		dataType: string
+		lineageTag: 3a2b73c8-fc29-403f-b915-0acab4a7d020
+		summarizeBy: none
+		sourceColumn: Catalogo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		dataType: int64
+		formatString: 0
+		lineageTag: 255631ed-fc4e-4b86-b430-eb5dcb08dfaa
+		summarizeBy: sum
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CATALOGO_MP = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_CATALOGO_MP = Origen{[Schema="dbo",Item="CATALOGO_MP"]}[Data]
+				in
+				    dbo_CATALOGO_MP
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

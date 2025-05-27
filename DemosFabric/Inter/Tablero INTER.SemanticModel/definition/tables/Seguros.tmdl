@@ -1,0 +1,341 @@
+table Seguros
+	lineageTag: f8b5aca1-37d1-49a5-b4f0-318fe8c0e19d
+
+	measure 'YoY% de Prima Cobrada' =
+			
+			IF(
+				ISFILTERED('Seguros'[Fecha]),
+				ERROR("La medida rápida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarquía de datos proporcionada por Power BI o por la columna de datos principal."),
+				VAR __PREV_YEAR =
+					CALCULATE(
+						SUM('Seguros'[Prima Cobrada]),
+						DATEADD('Seguros'[Fecha].[Date], -1, YEAR)
+					)
+				RETURN
+					DIVIDE(SUM('Seguros'[Prima Cobrada]) - __PREV_YEAR, __PREV_YEAR)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c546ff4c-6963-4a2d-85e9-98e671096fb3
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearOverYear"
+				}
+
+		changedProperty = FormatString
+
+	measure 'YoY% de Prima Devengada' =
+			
+			IF(
+				ISFILTERED('Seguros'[Fecha]),
+				ERROR("La medida rápida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarquía de datos proporcionada por Power BI o por la columna de datos principal."),
+				VAR __PREV_YEAR =
+					CALCULATE(
+						SUM('Seguros'[Prima Devengada]),
+						DATEADD('Seguros'[Fecha].[Date], -1, YEAR)
+					)
+				RETURN
+					DIVIDE(SUM('Seguros'[Prima Devengada]) - __PREV_YEAR, __PREV_YEAR)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f30171eb-23f4-45a4-be00-c96835f45041
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearOverYear"
+				}
+
+		changedProperty = FormatString
+
+	measure 'YoY% de Prima Neta' =
+			
+			IF(
+				ISFILTERED('Seguros'[Fecha]),
+				ERROR("La medida rápida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarquía de datos proporcionada por Power BI o por la columna de datos principal."),
+				VAR __PREV_YEAR =
+					CALCULATE(
+						SUM('Seguros'[Prima Neta]),
+						DATEADD('Seguros'[Fecha].[Date], -1, YEAR)
+					)
+				RETURN
+					DIVIDE(SUM('Seguros'[Prima Neta]) - __PREV_YEAR, __PREV_YEAR)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eae13217-0187-4a27-bc63-4370f5a99964
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearOverYear"
+				}
+
+		changedProperty = FormatString
+
+	measure 'YoY% de Siniestralidad' =
+			
+			IF(
+				ISFILTERED('Seguros'[Fecha]),
+				ERROR("La medida rápida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarquía de datos proporcionada por Power BI o por la columna de datos principal."),
+				VAR __PREV_YEAR =
+					CALCULATE(
+						AVERAGE('Seguros'[SINIESTRALIDAD]),
+						DATEADD('Seguros'[Fecha].[Date], -1, YEAR)
+					)
+				RETURN
+					DIVIDE(AVERAGE('Seguros'[SINIESTRALIDAD]) - __PREV_YEAR, __PREV_YEAR)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f5ab0395-ed58-4bf8-baae-cd76c839772a
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearOverYear"
+				}
+
+		changedProperty = FormatString
+
+	measure 'YoY% de CNS' =
+			
+			IF(
+				ISFILTERED('Seguros'[Fecha]),
+				ERROR("La medida rápida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarquía de datos proporcionada por Power BI o por la columna de datos principal."),
+				VAR __PREV_YEAR = CALCULATE(SUM('Seguros'[CNS]), DATEADD('Seguros'[Fecha].[Date], -1, YEAR))
+				RETURN
+					DIVIDE(SUM('Seguros'[CNS]) - __PREV_YEAR, __PREV_YEAR)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 301261c5-d65f-44d7-a60a-50d86162069b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearOverYear"
+				}
+
+		changedProperty = FormatString
+
+	column Division
+		dataType: string
+		lineageTag: ed9e7a60-4b85-42c9-a90c-12506732024f
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oficina
+		dataType: string
+		lineageTag: ddc592ae-1be7-431f-8e71-a080bd1a303d
+		summarizeBy: none
+		sourceColumn: Oficina
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agrupacion
+		dataType: string
+		lineageTag: 10d6e838-9d33-44fa-94b2-e86d837764a3
+		summarizeBy: none
+		sourceColumn: Agrupacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clave Espejo'
+		dataType: string
+		lineageTag: 3b688c16-ee27-4d3a-8acd-31d90e2d1b58
+		summarizeBy: none
+		sourceColumn: Clave Espejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clave Agente'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c0c0475-dc39-45cd-8968-77c358f06da9
+		summarizeBy: none
+		sourceColumn: Clave Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Agente'
+		dataType: string
+		lineageTag: f69de4eb-0f6b-497f-a32d-f78aa8b9a8f3
+		summarizeBy: none
+		sourceColumn: Nombre Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prima Cobrada'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2062ad19-57d3-4d9a-a71b-f767ecd3cc7d
+		summarizeBy: sum
+		sourceColumn: Prima Cobrada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prima Neta'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9b2b794e-b0c6-4696-985c-1d9c6906d90e
+		summarizeBy: sum
+		sourceColumn: Prima Neta
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNS
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e85ff4a1-7436-41d0-8538-c8ac1150c637
+		summarizeBy: sum
+		sourceColumn: CNS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prima Devengada'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 03abd978-f2af-4cf6-9bd3-484b4109323c
+		summarizeBy: sum
+		sourceColumn: Prima Devengada
+
+		annotation SummarizationSetBy = Automatic
+
+	column SINIESTRALIDAD
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6053ac50-af5d-4669-adf9-1c0786cdda75
+		summarizeBy: average
+		sourceColumn: SINIESTRALIDAD
+
+		annotation SummarizationSetBy = User
+
+	column 'Prima Promedio Historica'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 19262ad3-e890-4729-b985-a7f8923a987d
+		summarizeBy: sum
+		sourceColumn: Prima Promedio Historica
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% DESCUENTO'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e1c536e4-a36a-4a15-a240-a147fcf82867
+		summarizeBy: sum
+		sourceColumn: % DESCUENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FRECUENCIA
+		dataType: double
+		lineageTag: 0add95de-b44d-4763-96eb-486112f89f99
+		summarizeBy: sum
+		sourceColumn: FRECUENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'COSTO PROMEDIO DE SINIESTRO'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5611f68c-580a-44a6-8a30-b2afa9a61e5e
+		summarizeBy: sum
+		sourceColumn: COSTO PROMEDIO DE SINIESTRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPUESTO
+		dataType: double
+		lineageTag: 93fe66ac-4b9c-4004-9859-950bf79f394a
+		summarizeBy: sum
+		sourceColumn: EXPUESTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NUMERO DE SINIESTROS'
+		dataType: int64
+		formatString: 0
+		lineageTag: a0449d49-9cfa-471f-abd8-53d2dd204ea9
+		summarizeBy: sum
+		sourceColumn: NUMERO DE SINIESTROS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cafe53f9-aaae-49f2-92cf-dbd939b4e955
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 312e335e-db69-43f9-a68c-0c0a78e64e93
+			defaultHierarchy: LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Siniestralidad '
+		dataType: double
+		isHidden
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 354aff52-0ac6-44ef-b56e-c9dd4bf98123
+		summarizeBy: sum
+		sourceColumn: "Siniestralidad "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de cotización'
+		dataType: string
+		lineageTag: 975fcb59-3f6f-4c2f-9a42-3da6ca5efcba
+		summarizeBy: none
+		sourceColumn: Tipo de cotización
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de Agente'
+		dataType: string
+		lineageTag: 0395efca-f4e0-499d-8d40-2ed6a6c0b3c0
+		summarizeBy: none
+		sourceColumn: Tipo de Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoría
+		dataType: string
+		lineageTag: 8caafbbf-6ae9-444d-b0dc-d7b3ccf34708
+		summarizeBy: none
+		sourceColumn: Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Seguros = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({#"Abril 23", #"Abril 24", #"agosto 2023", #"agosto 2024", #"diciembre 2023", #"enero 2023", #"enero 2024", #"febrero 2023", #"febrero 2024", #"julio 2023", #"julio 2024", #"junio 2023", #"junio 2024", #"marzo 2023", #"marzo 2024", #"mayo 2023", #"mayo 2024", #"noviembre 2023", #"noviembre 2024", #"octubre 2023", #"octubre 2024", #"septiembre 2023", #"septiembre 2024"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Siniestralidad ", type number}, {"COSTO PROMEDIO DE SINIESTRO", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"DESCRIPCION_DIVISION", "DIVISION"}, {"DESCRIPCION_OFICINA", "OFICINA"}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado",null,0,Replacer.ReplaceValue,{"Siniestralidad "}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Valor reemplazado",{{"PRIMA COBRADA", "Prima Cobrada"}, {"PRIMA DEVENGADA", "Prima Devengada"}, {"PRIMA NETA", "Prima Neta"}, {"PRIMA PROMEDIO HISTORICA", "Prima Promedio Historica"}, {"DIVISION", "Division"}, {"NOMBRE_AGENTE", "Nombre Agente"}, {"CLAVE_AGENTE", "Clave Agente"}, {"AGRUPACION", "Agrupacion"}, {"OFICINA", "Oficina"}, {"CLAVE_ESPEJO", "Clave Espejo"}}),
+				    #"Columna condicional agregada" = Table.AddColumn(#"Columnas con nombre cambiado1", "Tipo de cotización", each if [FRECUENCIA] >= 0.92387287509238725 then "Individual" else if [FRECUENCIA] >= 0.33934438664500149 then "Flotilla" else "Individual", type text),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Columna condicional agregada", {{"Tipo de cotización", "Flotilla"}}),
+				    #"Columna condicional agregada1" = Table.AddColumn(#"Errores reemplazados", "Tipo de Agente", each if [Clave Agente] < 10000 then "Agencia/Arrendadora" else if [Clave Agente] < 50000 then "Tradicional" else if [Clave Agente] >= 50000 then "Promotoria" else null),
+				    #"Columna condicional agregada2" = Table.AddColumn(#"Columna condicional agregada1", "Categoría", each if [Prima Cobrada] < 90000 then "Tradicional" else "Equipo pesado")
+				in
+				    #"Columna condicional agregada2"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

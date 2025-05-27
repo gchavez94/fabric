@@ -1,0 +1,43 @@
+table DimRazon
+	lineageTag: 5ecfe775-6cab-40c9-95b0-4f2f8fa55add
+
+	column IdRazon
+		dataType: int64
+		formatString: 0
+		lineageTag: 32881973-b275-44eb-a79f-820827ab05e1
+		summarizeBy: none
+		sourceColumn: IdRazon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: 28da6956-8cf8-460e-8e27-d450435b58d5
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Razon
+		dataType: string
+		lineageTag: 0eff15cb-c712-4536-a1f3-9ac48afa47fb
+		summarizeBy: none
+		sourceColumn: Razon
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimRazon = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\RAZON.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdRazon", Int64.Type}, {"Descripcion", type text}, {"Razon", type text}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

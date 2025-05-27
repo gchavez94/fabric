@@ -1,0 +1,74 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["FactPagosFacturas","FactFacturasProveedorAbiertas","FactFacturasDeProveedorPendientes","DimSolicitudDeCompraRequisicion","DimRecepcion","DimProducto","DimMoneda","DimFecha","DimEstadoSolicitudDeCompraReq","DimEstadoOrdenDeCompra","DimEstadoAprobacion","sdcr_oc","DimFactura","CatEtapas","CatEstatusFacturas","CatTipoRecepcion","DimOrdenDeCompra","FactSolicitudDeCompraRequisicion","DimRazon","DimEmpleado","DimCategoriaDeCompras","DimProyecto","FactOrdenDeCompra","FactRecepcion","DimProveedor"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1476.0 (25.02)+e8c6a85d1d09735c5c055c3244a60ff4076cd2cf
+
+ref table DateTableTemplate_79fa40fc-67c0-4736-8d29-cf24abec1648
+ref table FactPagosFacturas
+ref table LocalDateTable_9d8638c4-18f5-4c7e-a166-dc91a11cd4eb
+ref table LocalDateTable_7912f706-eb67-4527-b752-d0fde533cb7a
+ref table LocalDateTable_f8bd85f1-17f2-42fa-b417-c1f670e00a45
+ref table LocalDateTable_e8df2bde-a841-4039-9372-6b62f0a35ca5
+ref table LocalDateTable_1e4b7cec-c23f-48e7-acd8-ea71a60f31ce
+ref table LocalDateTable_3bdef9c1-bc69-428d-bcf9-c372f7ce39ff
+ref table LocalDateTable_4b93c69c-6a31-4d8b-89f5-ba29a4034e77
+ref table FactFacturasProveedorAbiertas
+ref table LocalDateTable_28d7883c-0648-4565-8efd-64a75c18ce10
+ref table LocalDateTable_c04b4989-3e07-44ca-bd83-dfaa73d589ea
+ref table LocalDateTable_804147e6-13ac-457c-9076-15e8cbb1045e
+ref table LocalDateTable_23f753af-0c98-43c7-bda5-0534cee5ecdf
+ref table FactFacturasDeProveedorPendientes
+ref table LocalDateTable_4da625e5-6cd5-4526-a835-0ad3a7778294
+ref table LocalDateTable_349cda89-d4f8-4634-844a-54c315652fba
+ref table DimSolicitudDeCompraRequisicion
+ref table LocalDateTable_19557333-cc06-43ba-b9e0-fe9391a61ca6
+ref table DimRecepcion
+ref table DimProducto
+ref table DimMoneda
+ref table DimFecha
+ref table LocalDateTable_1f443b97-44c8-4787-8227-0e0a64551508
+ref table DimEstadoSolicitudDeCompraReq
+ref table DimEstadoOrdenDeCompra
+ref table DimEstadoAprobacion
+ref table sdcr_oc
+ref table DimFactura
+ref table CatEtapas
+ref table CatEstatusFacturas
+ref table CatTipoRecepcion
+ref table DimOrdenDeCompra
+ref table LocalDateTable_c7feac8b-4bd5-414f-be96-1bf7710ae854
+ref table FactSolicitudDeCompraRequisicion
+ref table LocalDateTable_312a3e9f-326e-42e1-a935-7936d176f9bd
+ref table LocalDateTable_dd99f5b6-f15e-4e65-8611-ae7a456ba0df
+ref table LocalDateTable_c5d16db7-e04a-4a06-a751-b26720516a19
+ref table LocalDateTable_6a14c0c9-d4b9-4743-9d80-ec3ae02f5c37
+ref table DimRazon
+ref table DimEmpleado
+ref table DimCategoriaDeCompras
+ref table DimProyecto
+ref table FactOrdenDeCompra
+ref table LocalDateTable_ec40d0b6-d481-47b7-8440-7d0373891a6d
+ref table LocalDateTable_7c5aa1cc-2cca-4598-acc2-1f953278d0d2
+ref table LocalDateTable_0b72f80e-5df9-4b9d-a728-66cb0a94ea5e
+ref table LocalDateTable_7fa857f6-2fb4-4c6f-8b0b-0b689d7e2cf4
+ref table LocalDateTable_4fca8da3-ffce-4193-b2b5-4fb8c8bb44f3
+ref table LocalDateTable_32ce6f9e-a20d-4ea3-a97d-6ad95f688ec3
+ref table LocalDateTable_a9b440a4-0cbb-490a-858d-9aa27704cc3b
+ref table LocalDateTable_0aa54e94-df51-43c5-9338-dad4558ab5e9
+ref table LocalDateTable_7b8b302f-364d-458b-bf7f-59c47900230e
+ref table FactRecepcion
+ref table LocalDateTable_d8375248-be06-437a-a1e7-3e573d3472a5
+ref table LocalDateTable_b25ab197-5acd-4930-bbd7-63d8e0c0587d
+ref table DimProveedor
+
+ref cultureInfo es-ES
+

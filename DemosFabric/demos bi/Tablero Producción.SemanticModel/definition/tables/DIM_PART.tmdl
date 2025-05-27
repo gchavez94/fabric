@@ -1,0 +1,62 @@
+table DIM_PART
+	lineageTag: 015584dd-ecd3-4ad5-8eea-2e566a686538
+
+	column ID_PART
+		dataType: int64
+		formatString: 0
+		lineageTag: 44053366-d5be-4348-8033-23843ea64915
+		summarizeBy: sum
+		sourceColumn: ID_PART
+
+		annotation SummarizationSetBy = Automatic
+
+	column PART_VALOR
+		dataType: string
+		lineageTag: 47a503a3-9490-40f9-a514-34bdf1101cc5
+		summarizeBy: none
+		sourceColumn: PART_VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PART_NOMBRE
+		dataType: string
+		lineageTag: 24283063-99b3-4441-a37f-a0613457cac5
+		summarizeBy: none
+		sourceColumn: PART_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PART
+		dataType: int64
+		formatString: 0
+		lineageTag: dedca8ca-0c60-4c36-bceb-364d28f926bf
+		summarizeBy: sum
+		sourceColumn: PART
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CARGA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eeb574b9-ce8f-45f6-8d96-f1ff0761a974
+		summarizeBy: none
+		sourceColumn: FECHA_CARGA
+
+		variation Variación
+			isDefault
+			relationship: 9252b131-6dbb-4bc7-8022-f790e423b1dc
+			defaultHierarchy: LocalDateTable_35a26c37-a881-4620-8c6c-49e75bd6c58d.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PART = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_DIM_PART = Origen{[Schema="dbo",Item="DIM_PART"]}[Data]
+				in
+				    dbo_DIM_PART
+
+	annotation PBI_ResultType = Table
+

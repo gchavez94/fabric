@@ -1,0 +1,12 @@
+relationship b83abcbb-1474-c7ba-c0b0-b95b16f6700f
+	fromColumn: FACT_VENTAS_RRH.FECHA
+	toColumn: DIM_FECHA_RRH.Fecha
+
+relationship a95ca5c6-af1c-516a-1364-2b0b93d0a38f
+	fromColumn: FACT_VENTAS_RRH.SUCURSAL_CLIENTE
+	toColumn: DIM_CLIENTES_RRH.CodigoSucursal
+
+relationship 74fdbce4-6d48-bf35-b330-15ec9eb5a507
+	fromColumn: FACT_VENTAS_RRH.VENDEDOR
+	toColumn: DIM_VENDEDORES_RRH.Vendedor
+
