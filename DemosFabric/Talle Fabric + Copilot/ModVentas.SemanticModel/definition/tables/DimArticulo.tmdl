@@ -1,0 +1,54 @@
+table DimArticulo
+	lineageTag: e8297415-be0e-46a1-b846-a18973aa3308
+	sourceLineageTag: [dbo].[DimArticulo]
+
+	column DimArticuloId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2796a204-40e9-4146-abeb-bc9a00717893
+		sourceLineageTag: DimArticuloId
+		summarizeBy: none
+		sourceColumn: DimArticuloId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 680459b4-71ab-4d15-86f9-4b98725ae0a1
+		sourceLineageTag: Descripcion
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dd5cab62-bffa-4612-bbf0-c88ee9dc06c0
+		sourceLineageTag: Categoria
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Formato
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 459dd618-2ac6-4413-b57f-3fbf92d7c8a5
+		sourceLineageTag: Formato
+		summarizeBy: none
+		sourceColumn: Formato
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimArticulo = entity
+		mode: directLake
+		source
+			entityName: DimArticulo
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

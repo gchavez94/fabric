@@ -1,0 +1,651 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "8f28b3b2-b039-4d9a-9300-064150858f86",
+  "workspaceId": "03be628f-3842-485b-a93f-863c939651c9",
+  "dataSourceInstructions": null,
+  "displayName": "Demo Carso",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "3da528ad-e807-4ef0-ab1f-6dc4344108d5",
+      "is_selected": false,
+      "display_name": "DimCurrency",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "7c677f5d-cee7-4e26-bd7f-28d85ae9b192",
+          "is_selected": true,
+          "display_name": "CurrencyKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2c054cb4-7020-4164-885b-ccb71bcb22e8",
+          "is_selected": true,
+          "display_name": "CurrencyName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "63f91133-68fd-4642-9e3f-592b7c85d2d8",
+          "is_selected": true,
+          "display_name": "ToMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ba1c8678-3d47-4929-9ac7-7582b08711e8",
+          "is_selected": true,
+          "display_name": "ToUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "95ac2de1-71a1-4b19-ab00-207046e2d871",
+      "is_selected": true,
+      "display_name": "DimDate",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "8865fccd-0366-40b7-a569-239a391990ca",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "46d1c663-667e-47cc-9caa-5ac63a84efad",
+          "is_selected": true,
+          "display_name": "Month",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16e41399-d1eb-48c0-96b2-23bda000e643",
+          "is_selected": true,
+          "display_name": "MonthName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "61e1683e-6913-4daf-b41d-426d1610742c",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "413918dd-fa8c-4110-a40f-bd2f6a8ff45a",
+          "is_selected": true,
+          "display_name": "YearMonth",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e12163a3-d5d6-45d0-8369-e5c34ea86a46",
+      "is_selected": true,
+      "display_name": "DimProject",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "72563266-e11d-4e5f-9799-55b5487a5c86",
+          "is_selected": true,
+          "display_name": "ProjectID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "57d0d709-84c6-432a-a947-98cf4a89806f",
+          "is_selected": true,
+          "display_name": "ProjectName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8749d318-704f-41a1-908b-d9e0bd5681f4",
+      "is_selected": true,
+      "display_name": "DimSegment",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "a92e9ecf-b99b-4cec-b018-7f25e5410275",
+          "is_selected": true,
+          "display_name": "SegmentKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "63be71f0-17e3-4099-9990-a88ab58eca8c",
+          "is_selected": true,
+          "display_name": "SegmentName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3ab08243-323c-43d2-a726-cd263824d0dc",
+          "is_selected": true,
+          "display_name": "SEQ",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "f847c947-b599-4a3b-b9f2-c59505bec33b",
+      "is_selected": true,
+      "display_name": "DimStage",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "290011c3-5df6-4e2f-91a2-029368335614",
+          "is_selected": true,
+          "display_name": "DateEnd",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3825de60-3ffc-44a5-992a-58ceb7fa80de",
+          "is_selected": true,
+          "display_name": "PlannedDays",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d7afd7f3-d097-4636-8f7f-34d269bee964",
+          "is_selected": true,
+          "display_name": "RealDays",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e051ff51-a1a6-40be-bc47-e13897c262a0",
+          "is_selected": true,
+          "display_name": "Seq",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2688ee21-0504-4b40-a146-40e60dd10269",
+          "is_selected": true,
+          "display_name": "StageKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "449f5610-b190-4068-befa-778e5670bb97",
+          "is_selected": true,
+          "display_name": "StageName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "504dc198-218d-4335-96bb-032434e10a51",
+      "is_selected": true,
+      "display_name": "DimType",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "59fe3691-715b-4f90-9573-2e550b804358",
+          "is_selected": true,
+          "display_name": "TYPE",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a2c4cf1b-db50-4d11-a6b0-7124c65d5f1f",
+      "is_selected": false,
+      "display_name": "FactBudget",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "fd4b72a2-d8f9-42ca-952c-1e0aeafec0ea",
+          "is_selected": true,
+          "display_name": "BudgetMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "611a8725-83b3-48fb-a6d6-ef0e4ff1bbfd",
+          "is_selected": true,
+          "display_name": "BudgetUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c0021a3e-0231-4747-8553-dcde7fd34828",
+          "is_selected": true,
+          "display_name": "Column12",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a7949fa0-299b-4609-b861-29782f8f17ef",
+          "is_selected": true,
+          "display_name": "PlannedDays",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f98b7f8d-eda4-455f-8f86-a0cdf067227e",
+          "is_selected": true,
+          "display_name": "ProgramEnd",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9f090a00-1965-4792-beb4-10628a53771c",
+          "is_selected": true,
+          "display_name": "ProgramStart",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "999e5852-2038-4192-bce6-6b3bac5c5d8f",
+          "is_selected": true,
+          "display_name": "ProjectID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49ac7a01-9163-416c-aae5-4e57739c830e",
+          "is_selected": true,
+          "display_name": "ProjectName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2291e2d3-f192-4bf0-8fb0-d9e6a405e094",
+          "is_selected": true,
+          "display_name": "SegmentKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4678f87b-4852-48c6-b0ac-a6e54e9e2068",
+          "is_selected": true,
+          "display_name": "SegmentName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d059284e-f98e-4e71-bc0b-aa91a72584ab",
+          "is_selected": true,
+          "display_name": "StageKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5d9e2cb4-7f6c-4e81-aef4-e84efebd7308",
+          "is_selected": true,
+          "display_name": "StageName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5ce3707a-6035-417b-a356-0906062ea993",
+          "is_selected": true,
+          "display_name": "Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6cd511fa-1a28-4470-9d17-8d01e2c5cc32",
+      "is_selected": true,
+      "display_name": "FactProyectos",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "eda9fe33-a886-4ccf-aa98-d821f4801312",
+          "is_selected": true,
+          "display_name": "AmountMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4f32f37-ac6b-442f-8e61-aec982d72248",
+          "is_selected": true,
+          "display_name": "AmountUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2508a677-ce80-46fd-a91e-569a99f1c05e",
+          "is_selected": true,
+          "display_name": "BudgetMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "72ddde4c-c1af-4617-abe4-d67f1a21f6a6",
+          "is_selected": true,
+          "display_name": "BudgetUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f137a437-c113-4567-89f1-f4b2381f48b0",
+          "is_selected": true,
+          "display_name": "PlannedDays",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7a11914b-98e3-42ab-86ff-69520f686da2",
+          "is_selected": true,
+          "display_name": "Porcentaje",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eac750c8-ee84-49b1-bbac-165add9b14b5",
+          "is_selected": true,
+          "display_name": "ProgramEnd",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "60e8a77a-adda-4e89-9282-4a34d8967474",
+          "is_selected": true,
+          "display_name": "ProgramStart",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1becd26c-147c-47e0-9298-348f859fd3c2",
+          "is_selected": true,
+          "display_name": "ProjectID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "86cdcdc0-aab7-4e77-a22e-654d531b985c",
+          "is_selected": true,
+          "display_name": "ProjectName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0891ec50-b93f-4c16-8560-4fffd98cfa51",
+          "is_selected": true,
+          "display_name": "RealMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2768ea85-a016-4271-9b68-467224a7f383",
+          "is_selected": true,
+          "display_name": "RealUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5bc828e7-4fe1-41a6-b0b6-b5ad5c62e136",
+          "is_selected": true,
+          "display_name": "SegmentKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "be2f5baf-b278-4448-b36d-83c82a7f74eb",
+          "is_selected": true,
+          "display_name": "SegmentName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e2743b80-b1ae-4602-86e8-b3fb8fd271be",
+          "is_selected": true,
+          "display_name": "StageKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db337fe4-b6bb-4df0-9d1c-958f22ba4dae",
+          "is_selected": true,
+          "display_name": "StageName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ffa0524-f122-4198-a23d-82da4c2f665a",
+          "is_selected": true,
+          "display_name": "Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1f12e3df-fa40-4063-bf12-683b6314f13e",
+      "is_selected": false,
+      "display_name": "FactRealMonthly",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "effe1e66-7622-4a0a-aae9-faa007c1f0c4",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50cdc754-3529-431a-b71f-31470f07956e",
+          "is_selected": true,
+          "display_name": "ProjectID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcd7f299-2059-4a8c-b9a6-5cb0e1a0d1df",
+          "is_selected": true,
+          "display_name": "ProjectName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "903422b2-d228-4387-a316-c236ea10df09",
+          "is_selected": true,
+          "display_name": "RealMXN",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c576d55e-8a65-4fc8-af7b-3061fe58bfd9",
+          "is_selected": true,
+          "display_name": "RealUSD",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2506896e-4e70-4030-880e-8809f0632ade",
+          "is_selected": true,
+          "display_name": "SegmentKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "04d52cc1-45bd-4919-a111-68cf35ecd2f9",
+          "is_selected": true,
+          "display_name": "SegmentName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "314b731f-24e1-404d-8a17-37669cd88482",
+          "is_selected": true,
+          "display_name": "StageKey",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1cd72bb8-5f69-46c6-b31f-fe9f45e407db",
+          "is_selected": true,
+          "display_name": "StageName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "761075ca-ba3d-476c-821e-d92aafde7969",
+          "is_selected": true,
+          "display_name": "Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4780b43a-177f-4589-b210-956d6112ecbf",
+          "is_selected": true,
+          "display_name": "YearMonth",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

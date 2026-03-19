@@ -1,0 +1,11 @@
+expression 'DirectLake - CatManagement' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/5bb3a27e-bc84-41d2-bf55-296bb6efc7a4/6d4069c9-930d-4eb8-ae10-e7140f2890d0", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: e171cb88-f74a-4ab6-8800-a37e9a02c17a
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[fact_transactions_with_calendar]"}},"objectType":"Table"}]
+

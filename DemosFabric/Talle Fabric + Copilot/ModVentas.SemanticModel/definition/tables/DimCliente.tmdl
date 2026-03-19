@@ -1,0 +1,96 @@
+table DimCliente
+	lineageTag: 15c87906-29ec-4fb7-a93c-4997c35daa2e
+	sourceLineageTag: [dbo].[DimCliente]
+
+	column DimClienteId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7508e824-3cec-4b94-8cc9-9bf8342436d5
+		sourceLineageTag: DimClienteId
+		summarizeBy: none
+		sourceColumn: DimClienteId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f75bc5bd-fd48-4804-b8af-f710a7cf83ac
+		sourceLineageTag: NombreCliente
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 973734c3-08c9-454e-8787-eafb71fd1ffd
+		sourceLineageTag: Sucursal
+		summarizeBy: none
+		sourceColumn: Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b03c99bd-8ab7-42be-8d06-40ac67575f0f
+		sourceLineageTag: Pais
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 45a464aa-606b-4f84-9443-faa585be4b36
+		sourceLineageTag: Estado
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Municipio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6c4757e8-2db3-46e1-a99b-a6c3bf943f16
+		sourceLineageTag: Municipio
+		summarizeBy: none
+		sourceColumn: Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitud
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 34af5819-dc74-45df-b5d7-f540dbc9d039
+		sourceLineageTag: Latitud
+		summarizeBy: none
+		sourceColumn: Latitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitud
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5198f2f1-715e-4742-bafe-bfe5adecd646
+		sourceLineageTag: Longitud
+		summarizeBy: none
+		sourceColumn: Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCliente = entity
+		mode: directLake
+		source
+			entityName: DimCliente
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

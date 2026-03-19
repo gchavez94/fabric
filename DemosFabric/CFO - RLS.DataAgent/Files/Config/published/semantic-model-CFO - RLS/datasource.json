@@ -1,0 +1,768 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "35b247c4-05fe-9a91-4fb0-a2fece73010e",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "CFO - RLS",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "8edf92fa-c948-4f20-bd78-616b3f75666f",
+      "is_selected": false,
+      "display_name": "cashflow",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "7dbe0e4e-1262-4aa7-b39d-5a099478113f",
+          "is_selected": true,
+          "display_name": "Actual",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbd43910-bf00-41d0-912b-8d2b3d343905",
+          "is_selected": true,
+          "display_name": "CxC",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3fd2af95-6ca0-4991-9528-01548911f187",
+          "is_selected": true,
+          "display_name": "CxP",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db278b20-6ca3-460a-98b1-25e31c2ecacf",
+          "is_selected": true,
+          "display_name": "Fecha",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8fec8243-5872-4cc9-8f72-d527309c5dd5",
+          "is_selected": true,
+          "display_name": "Nómina",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50a1e8b3-dbb0-4148-b31d-bf9c5f0777a4",
+          "is_selected": true,
+          "display_name": "Proyectos",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a42a63fd-032a-49ee-8687-dcbce94e3508",
+      "is_selected": false,
+      "display_name": "CxP",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "83188119-dd9c-46f1-b030-d8422b485e56",
+          "is_selected": true,
+          "display_name": "Atrasado",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fce36841-1fb1-4991-9465-998a6f8e5b26",
+          "is_selected": true,
+          "display_name": "Cliente",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c7d505d9-15a8-4349-a752-f8c7e4fc75a7",
+          "is_selected": true,
+          "display_name": "Días atraso",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0a78bf12-b366-4b4c-b181-8193b19a2cfc",
+          "is_selected": true,
+          "display_name": "Días de pago",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b7701cfb-0d91-45d1-808e-269d32e76102",
+          "is_selected": true,
+          "display_name": "Estatus",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e96606a8-7d44-45ba-bb38-6afd08d21048",
+          "is_selected": true,
+          "display_name": "Fecha",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c93bcc44-e5fb-470f-a798-7fac5a3a42f2",
+          "is_selected": true,
+          "display_name": "Moneda",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ae2442a5-c542-4c9b-9c69-963260c29a7f",
+          "is_selected": true,
+          "display_name": "Monto",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "33c80246-68a7-4f22-8772-52ecb38bcfdc",
+          "is_selected": true,
+          "display_name": "Montro transacción",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14f80187-2076-4b0d-9b9f-fa6a99b45607",
+          "is_selected": true,
+          "display_name": "Proyecto",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ed7ad4de-a920-4bcc-8f4b-ed6ecf5328ed",
+          "is_selected": true,
+          "display_name": "Tipo de Proveedor",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a9c80ed4-7980-4882-b6db-c03ebfbb6c79",
+          "is_selected": true,
+          "display_name": "Ubicación",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "533d15f9-28c6-479e-93a1-eec362776f14",
+      "is_selected": false,
+      "display_name": "Dll-Euro",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "9a5d9504-0b08-4d71-98e5-de0cc1588789",
+          "is_selected": true,
+          "display_name": "Parameter Value",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad1015f4-97ea-407d-9ab2-c30ec92cda8b",
+          "is_selected": true,
+          "display_name": "Tipo de cambio",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6c6f26f5-e981-4c6f-adc7-cc54a27e49c8",
+      "is_selected": true,
+      "display_name": "historia",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "f93eb97d-6de1-4f55-8660-bd551b43b94a",
+          "is_selected": true,
+          "display_name": "% Margen Bruto",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4ee84c5f-fd25-44c3-a089-13f646e2e270",
+          "is_selected": true,
+          "display_name": "% Margen Euros",
+          "type": "semantic_model.measure",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bb334fa4-f03f-4118-9249-c6acd0416bb6",
+          "is_selected": true,
+          "display_name": "Año",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcc646f5-b967-4715-8660-459756c0b864",
+          "is_selected": true,
+          "display_name": "Assets",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1b76a5b-3dd9-4980-b213-07a7b58dabe8",
+          "is_selected": true,
+          "display_name": "Cliente",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f5e26cb9-4c19-4c7a-bde6-cf643ae228df",
+          "is_selected": true,
+          "display_name": "COGS",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05c051ae-9f1d-48bd-be7b-29026a6620aa",
+          "is_selected": true,
+          "display_name": "Current Assets",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5917e888-f647-49b3-b360-4ced5150d240",
+          "is_selected": true,
+          "display_name": "Current Liabilities",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "462fe1cc-2acb-4a4f-a557-6264841a9258",
+          "is_selected": true,
+          "display_name": "Debt Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2d9ff989-8be0-44d8-b6ef-1ec4628006de",
+          "is_selected": true,
+          "display_name": "Debt to Equity Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "759342d1-136c-46b5-a339-556156222bf9",
+          "is_selected": true,
+          "display_name": "Dolares",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cbd9d55b-644e-4467-8d6c-566eb19dba0d",
+          "is_selected": true,
+          "display_name": "Euros",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "19d8ba03-2517-4924-aa95-a590ad5fec80",
+          "is_selected": true,
+          "display_name": "Expenses",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "04f7dcdd-3832-431c-a8b4-58c66fea1174",
+          "is_selected": true,
+          "display_name": "Gross Margin",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f54ca008-f959-4a17-a20a-cba6498843a4",
+          "is_selected": true,
+          "display_name": "Gross Margin %",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "89366d1b-8ab9-463e-b051-a76b43c7fc45",
+          "is_selected": true,
+          "display_name": "Liabilities",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "833be673-d1fb-462a-a4a1-3eef00b680c1",
+          "is_selected": true,
+          "display_name": "Long Term Debt to Equity Rat",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4aac4b7d-a82e-4b55-9424-1f4f1cbd001c",
+          "is_selected": true,
+          "display_name": "LY Ingresos",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66e18db8-4ab9-43ac-8739-c235e3b44338",
+          "is_selected": true,
+          "display_name": "Margen bruto",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9801f17a-ae71-42be-95a4-0db7b234b137",
+          "is_selected": true,
+          "display_name": "Margen Bruto Euros",
+          "type": "semantic_model.measure",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f18de888-5a5a-4c0f-a546-e9c09c506e17",
+          "is_selected": true,
+          "display_name": "Mes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2888d463-9b5c-477e-8133-236347d1d6c5",
+          "is_selected": true,
+          "display_name": "Net Sales",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7b06b89-32eb-44c9-830d-b1bd84efd178",
+          "is_selected": true,
+          "display_name": "Operating Profit %",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c52ebfd0-a4ce-4a1f-bede-0019f23f2ffd",
+          "is_selected": true,
+          "display_name": "País",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ab2e6f1-9e17-437e-954b-bb96c2f00140",
+          "is_selected": true,
+          "display_name": "Quick Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ae406e3-6e0b-4fe5-abb5-295bd836d6d9",
+          "is_selected": true,
+          "display_name": "Return on Assets",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c7d2118a-0c62-44dc-854a-d52827cd8eb2",
+          "is_selected": true,
+          "display_name": "Return on Equity",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "34f99410-2b19-4efb-9faa-fe1c0d64cf6a",
+          "is_selected": true,
+          "display_name": "Working Capital",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "7f451a37-cb25-4be3-a466-c6751e9f6fef",
+      "is_selected": false,
+      "display_name": "INPC",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b6f165a9-6faf-4ba2-832f-f752fb87a509",
+          "is_selected": true,
+          "display_name": "INPC",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "afc271e7-37ec-4f63-bc91-18e024ee5519",
+          "is_selected": true,
+          "display_name": "Valor INPC",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a45e91a7-828c-4bc6-8bb2-acafdf8b87ea",
+      "is_selected": false,
+      "display_name": "mapa",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "2c704ac1-f81b-4c0b-916b-a2256d6d6405",
+          "is_selected": true,
+          "display_name": "% de avance",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2fafa2b5-f9ad-46ae-9dd0-8ceeb73821f5",
+          "is_selected": true,
+          "display_name": "Codigo_Estado",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d1d5b6ce-e6f0-4444-b9fe-2040bc1be7bf",
+          "is_selected": true,
+          "display_name": "Codigo_Municipio",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "61078a04-e200-4b77-8aac-99ff37133f45",
+          "is_selected": true,
+          "display_name": "Colonia",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a6dab47f-d991-4d21-959b-8f664f332966",
+          "is_selected": true,
+          "display_name": "CP",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f393b487-e86e-4d32-bf5f-28e27a6f35d2",
+          "is_selected": true,
+          "display_name": "Desc_Estado",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "58590745-2d64-4320-b2ad-a536c9a50eef",
+          "is_selected": true,
+          "display_name": "Desc_Municipio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c03add8d-a6f4-4c23-b4b4-11f08217d0d6",
+          "is_selected": true,
+          "display_name": "LAT",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cf74ad94-6054-4254-9ca9-2b8f2eaaf384",
+          "is_selected": true,
+          "display_name": "LONG",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ff9f4cc5-e3d8-4a61-99ec-95fef18476ce",
+          "is_selected": true,
+          "display_name": "Pais",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "94ff234b-26ec-4569-9b02-78ac75451428",
+          "is_selected": true,
+          "display_name": "Programadas",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c116c96a-23ff-4fcb-b765-70cf7ecc8754",
+          "is_selected": true,
+          "display_name": "Reales",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "f27f3eef-9099-47de-a8ae-c5b4dc893d75",
+      "is_selected": false,
+      "display_name": "tarjetas",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "4f6c8fa3-7122-4ded-9f8c-0fe56f50bfe9",
+          "is_selected": true,
+          "display_name": "AP",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "384062f6-891a-4043-8edc-41514d657caa",
+          "is_selected": true,
+          "display_name": "AR",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "75a92fd0-3123-4ed1-b16e-c0e8d5acd2a3",
+          "is_selected": true,
+          "display_name": "Cash to Cash Cycle",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f9894e0c-d4f5-4da1-9f63-0bf8fbef3f30",
+          "is_selected": true,
+          "display_name": "Debt Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "86cf29fe-f0f8-4735-8980-dc14a4dcf09a",
+          "is_selected": true,
+          "display_name": "Debt to Equity Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9bc4b740-89ab-4fbe-a3fc-befc7393486e",
+          "is_selected": true,
+          "display_name": "Gross Margin",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eda960dc-d834-43eb-8a70-e9946f9e1cb3",
+          "is_selected": true,
+          "display_name": "Gross Margin %",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4a6d7998-e09b-405c-8553-f8679f77a4c1",
+          "is_selected": true,
+          "display_name": "Net Sales",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0352bb79-4097-4577-be1f-6349f68498ee",
+          "is_selected": true,
+          "display_name": "Operating Profit",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "303d21d6-52d2-40ca-b0e5-3be4778b9943",
+          "is_selected": true,
+          "display_name": "Operating Profit %",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7453fa57-28d8-4dd7-8899-4c41dcc3c13f",
+          "is_selected": true,
+          "display_name": "Quick Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7330f0c2-ae7c-409e-8880-aba16f25e343",
+          "is_selected": true,
+          "display_name": "Return on Assets",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4ede409c-37e1-4242-8e50-4b40f822890f",
+          "is_selected": true,
+          "display_name": "Return on Equity",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6b7bc52a-81fa-479f-ac50-8e4fc01e4f3f",
+          "is_selected": true,
+          "display_name": "Working Capital",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1bbab506-369a-42bf-885a-2c257a425750",
+          "is_selected": true,
+          "display_name": "Working Capital Ratio",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

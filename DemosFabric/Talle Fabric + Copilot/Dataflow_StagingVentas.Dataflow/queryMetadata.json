@@ -1,0 +1,285 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow_StagingVentas",
+  "queryGroups": [
+    {
+      "id": "cb579523-cf5a-4cce-acb8-44c367e053de",
+      "name": "Transformar archivo de Consulta"
+    },
+    {
+      "id": "4f094817-7dcf-41f0-99b7-1e8e69a4a1fc",
+      "name": "Consultas auxiliares",
+      "parentId": "cb579523-cf5a-4cce-acb8-44c367e053de"
+    },
+    {
+      "id": "0a2cc2c5-6025-4a3b-a31c-45c474ef12bf",
+      "name": "Transformar archivo de StagingVentasMenudeo"
+    },
+    {
+      "id": "a05fb8ab-7ece-4b3b-bf92-1d490abc3d03",
+      "name": "Consultas auxiliares (2)",
+      "parentId": "0a2cc2c5-6025-4a3b-a31c-45c474ef12bf"
+    },
+    {
+      "id": "31fccdb9-2f96-4898-86a1-72b1f8cd63f4",
+      "name": "Transformar archivo de StagingArticulos"
+    },
+    {
+      "id": "71c20c1b-0ecd-4a49-a7f9-8cf54ccf15d8",
+      "name": "Consultas auxiliares (3)",
+      "parentId": "31fccdb9-2f96-4898-86a1-72b1f8cd63f4"
+    },
+    {
+      "id": "f3ced825-06ad-4bb1-9cae-fe84f2089088",
+      "name": "Transformar archivo de StagingArticulos (2)",
+      "order": 1
+    },
+    {
+      "id": "f23cc7d3-4395-462a-be95-657068f2cbda",
+      "name": "Consultas auxiliares (4)",
+      "parentId": "f3ced825-06ad-4bb1-9cae-fe84f2089088"
+    },
+    {
+      "id": "985051fa-0a7f-4718-8c0d-5fbff12676af",
+      "name": "Transformar archivo de StagingClientes (2)",
+      "order": 2
+    },
+    {
+      "id": "758a8230-edfd-4bd0-9e83-e8dbeac364cd",
+      "name": "Consultas auxiliares (5)",
+      "parentId": "985051fa-0a7f-4718-8c0d-5fbff12676af"
+    },
+    {
+      "id": "5a5009c1-3961-4caf-923a-661271a956a0",
+      "name": "Transformar archivo de StagingGrupoCliente (2)",
+      "order": 3
+    },
+    {
+      "id": "4bc1a42e-e58f-4aec-9bb7-c84f3182ace0",
+      "name": "Consultas auxiliares (6)",
+      "parentId": "5a5009c1-3961-4caf-923a-661271a956a0"
+    }
+  ],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "StagingVentasMayoreo": {
+      "queryId": "d5a863dd-697c-476e-a1db-b3814b56a183",
+      "queryName": "StagingVentasMayoreo"
+    },
+    "Archivo de ejemplo": {
+      "queryId": "c53fdf5c-af41-4f6f-849a-7cf296205f84",
+      "queryName": "Archivo de ejemplo",
+      "queryGroupId": "4f094817-7dcf-41f0-99b7-1e8e69a4a1fc",
+      "loadEnabled": false
+    },
+    "Parámetro": {
+      "queryId": "0a01e022-9721-4ef3-b870-cc3316535cf8",
+      "queryName": "Parámetro",
+      "queryGroupId": "4f094817-7dcf-41f0-99b7-1e8e69a4a1fc",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo": {
+      "queryId": "2408b77e-6173-4fa6-b6df-ec6bf16d420f",
+      "queryName": "Transformar Archivo de ejemplo",
+      "queryGroupId": "cb579523-cf5a-4cce-acb8-44c367e053de",
+      "loadEnabled": false
+    },
+    "Transformar archivo": {
+      "queryId": "355db7f2-379a-4f18-884e-9de016b6bae7",
+      "queryName": "Transformar archivo",
+      "queryGroupId": "4f094817-7dcf-41f0-99b7-1e8e69a4a1fc",
+      "loadEnabled": false
+    },
+    "StagingVentas_DataDestination": {
+      "queryId": "6aaa7f8a-7f6a-4a81-937d-ff46d90e4f39",
+      "queryName": "StagingVentas_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "StagingVentasMenudeo": {
+      "queryId": "c39429c9-3f2a-499a-8797-8f4e858838ce",
+      "queryName": "StagingVentasMenudeo"
+    },
+    "Archivo de ejemplo (2)": {
+      "queryId": "4475ce3c-2257-4b96-9be0-51e71bc14f93",
+      "queryName": "Archivo de ejemplo (2)",
+      "queryGroupId": "a05fb8ab-7ece-4b3b-bf92-1d490abc3d03",
+      "loadEnabled": false
+    },
+    "Parámetro (2)": {
+      "queryId": "23c3d50b-bdb7-416a-8984-b09a0a880ac6",
+      "queryName": "Parámetro (2)",
+      "queryGroupId": "a05fb8ab-7ece-4b3b-bf92-1d490abc3d03",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo (2)": {
+      "queryId": "125e5f05-307a-4566-95f9-0f162b1cb3e9",
+      "queryName": "Transformar Archivo de ejemplo (2)",
+      "queryGroupId": "0a2cc2c5-6025-4a3b-a31c-45c474ef12bf",
+      "loadEnabled": false
+    },
+    "Transformar archivo (2)": {
+      "queryId": "13258569-4e4f-4900-9541-db9938686814",
+      "queryName": "Transformar archivo (2)",
+      "queryGroupId": "a05fb8ab-7ece-4b3b-bf92-1d490abc3d03",
+      "loadEnabled": false
+    },
+    "StagingVentasMenudeo_DataDestination": {
+      "queryId": "d84e5664-c612-45dd-99b1-1f98d1ed8e23",
+      "queryName": "StagingVentasMenudeo_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "StagingArticulos": {
+      "queryId": "cead7587-747a-47f6-a36d-8100d7a5ba89",
+      "queryName": "StagingArticulos"
+    },
+    "Archivo de ejemplo (3)": {
+      "queryId": "434b6361-3d16-483b-a929-72418b0aa0ae",
+      "queryName": "Archivo de ejemplo (3)",
+      "queryGroupId": "71c20c1b-0ecd-4a49-a7f9-8cf54ccf15d8",
+      "loadEnabled": false
+    },
+    "Parámetro (3)": {
+      "queryId": "ebc5b36a-b1ce-46d1-af55-c77fea90560f",
+      "queryName": "Parámetro (3)",
+      "queryGroupId": "71c20c1b-0ecd-4a49-a7f9-8cf54ccf15d8",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo (3)": {
+      "queryId": "b94355ff-69e5-4ca0-a23c-fdc4570a7ca4",
+      "queryName": "Transformar Archivo de ejemplo (3)",
+      "queryGroupId": "31fccdb9-2f96-4898-86a1-72b1f8cd63f4",
+      "loadEnabled": false
+    },
+    "Transformar archivo (3)": {
+      "queryId": "ce5fdfa8-998b-4474-af44-ca039eeb5e8b",
+      "queryName": "Transformar archivo (3)",
+      "queryGroupId": "71c20c1b-0ecd-4a49-a7f9-8cf54ccf15d8",
+      "loadEnabled": false
+    },
+    "StagingClientes": {
+      "queryId": "faa06769-e0a2-4c27-b746-900f233fe131",
+      "queryName": "StagingClientes"
+    },
+    "Archivo de ejemplo (4)": {
+      "queryId": "b3c33d51-58c7-4a3d-8ebe-623471d0f639",
+      "queryName": "Archivo de ejemplo (4)",
+      "queryGroupId": "f23cc7d3-4395-462a-be95-657068f2cbda",
+      "loadEnabled": false
+    },
+    "Parámetro (4)": {
+      "queryId": "3bc49728-77ca-45c7-a761-281474210b8c",
+      "queryName": "Parámetro (4)",
+      "queryGroupId": "f23cc7d3-4395-462a-be95-657068f2cbda",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo (4)": {
+      "queryId": "c2605f48-d36d-498b-b457-d483b35647ef",
+      "queryName": "Transformar Archivo de ejemplo (4)",
+      "queryGroupId": "f3ced825-06ad-4bb1-9cae-fe84f2089088",
+      "loadEnabled": false
+    },
+    "Transformar archivo (4)": {
+      "queryId": "b098ce8d-a529-4f92-b0ff-0b739ee75b41",
+      "queryName": "Transformar archivo (4)",
+      "queryGroupId": "f23cc7d3-4395-462a-be95-657068f2cbda",
+      "loadEnabled": false
+    },
+    "StagingGrupoCliente": {
+      "queryId": "53f9569b-6e2f-4b94-8ea3-24b8ea588690",
+      "queryName": "StagingGrupoCliente"
+    },
+    "Archivo de ejemplo (5)": {
+      "queryId": "e841f85c-ccdb-479c-bd46-14d44e6b8662",
+      "queryName": "Archivo de ejemplo (5)",
+      "queryGroupId": "758a8230-edfd-4bd0-9e83-e8dbeac364cd",
+      "loadEnabled": false
+    },
+    "Parámetro (5)": {
+      "queryId": "2bffb3c3-b0b0-4c33-8977-65e405fb6fba",
+      "queryName": "Parámetro (5)",
+      "queryGroupId": "758a8230-edfd-4bd0-9e83-e8dbeac364cd",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo (5)": {
+      "queryId": "8a3e35a2-0e2e-4235-8d83-acb5ad1d7d32",
+      "queryName": "Transformar Archivo de ejemplo (5)",
+      "queryGroupId": "985051fa-0a7f-4718-8c0d-5fbff12676af",
+      "loadEnabled": false
+    },
+    "Transformar archivo (5)": {
+      "queryId": "33684f0b-5136-4646-bb10-195dbbd0a152",
+      "queryName": "Transformar archivo (5)",
+      "queryGroupId": "758a8230-edfd-4bd0-9e83-e8dbeac364cd",
+      "loadEnabled": false
+    },
+    "StagingVendedor": {
+      "queryId": "c33a7a33-3ec6-42b4-b773-e1cff1af2999",
+      "queryName": "StagingVendedor"
+    },
+    "Archivo de ejemplo (6)": {
+      "queryId": "2bc7f104-9a01-4848-93f8-42acc159ded9",
+      "queryName": "Archivo de ejemplo (6)",
+      "queryGroupId": "4bc1a42e-e58f-4aec-9bb7-c84f3182ace0",
+      "loadEnabled": false
+    },
+    "Parámetro (6)": {
+      "queryId": "031c1f3a-7320-44f0-9158-cf781107f9e9",
+      "queryName": "Parámetro (6)",
+      "queryGroupId": "4bc1a42e-e58f-4aec-9bb7-c84f3182ace0",
+      "loadEnabled": false
+    },
+    "Transformar Archivo de ejemplo (6)": {
+      "queryId": "4db31934-3ca7-460c-9010-20f005cf471f",
+      "queryName": "Transformar Archivo de ejemplo (6)",
+      "queryGroupId": "5a5009c1-3961-4caf-923a-661271a956a0",
+      "loadEnabled": false
+    },
+    "Transformar archivo (6)": {
+      "queryId": "507a3710-95ef-4886-a2c5-9a79fd9551c0",
+      "queryName": "Transformar archivo (6)",
+      "queryGroupId": "4bc1a42e-e58f-4aec-9bb7-c84f3182ace0",
+      "loadEnabled": false
+    },
+    "StagingArticulos_DataDestination": {
+      "queryId": "79262db7-c329-418e-8e77-4d98d0142431",
+      "queryName": "StagingArticulos_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "StagingClientes_DataDestination": {
+      "queryId": "2b38a69f-cf78-4bef-81b0-ebb9f7b072fe",
+      "queryName": "StagingClientes_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "StagingGrupoCliente_DataDestination": {
+      "queryId": "c939e6e9-336f-4fc3-bb01-8a670e88e0ee",
+      "queryName": "StagingGrupoCliente_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "StagingVendedor_DataDestination": {
+      "queryId": "2dfa0b10-785a-41ff-9b0a-108ef1cd27e4",
+      "queryName": "StagingVendedor_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://gcgcia.sharepoint.com/sites/EquipoVentas",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"4e9486fe-a25d-4d93-9a2f-0d8dfddfa411\",\"DatasourceId\":\"ff2d0f14-4cf9-414a-8ea1-12f6da5b48eb\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"4e9486fe-a25d-4d93-9a2f-0d8dfddfa411\",\"DatasourceId\":\"9aa7826e-7a56-4ef9-a58a-43540995ce07\"}"
+    }
+  ]
+}

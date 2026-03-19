@@ -1,0 +1,31 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Prueba_DataFlow",
+  "queryGroups": [],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "custinvoiceline": {
+      "queryId": "3f154165-1496-4ae5-a634-e34ccf673284",
+      "queryName": "custinvoiceline"
+    },
+    "custinvoiceline_DataDestination": {
+      "queryId": "a1215672-957d-4c1a-9f9b-2be4d34aa299",
+      "queryName": "custinvoiceline_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"4e9486fe-a25d-4d93-9a2f-0d8dfddfa411\",\"DatasourceId\":\"e29d6ef1-867a-4239-92a7-8140fe3fbfdf\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"4e9486fe-a25d-4d93-9a2f-0d8dfddfa411\",\"DatasourceId\":\"1bca6b1c-3292-4a00-97c0-352843b46be9\"}"
+    }
+  ]
+}

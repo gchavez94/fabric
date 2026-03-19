@@ -1,0 +1,107 @@
+table fact_transactions
+	lineageTag: 73fed13b-b1b7-42ea-a9ab-a945c369f79d
+	sourceLineageTag: [dbo].[fact_transactions]
+
+	column fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3fcbeb0f-cf61-4d42-8023-d0f92fc9bdf8
+		sourceLineageTag: fecha
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column tienda
+		dataType: string
+		lineageTag: 4aa8c80f-b46f-48a8-b444-bb79ad4f2bb3
+		sourceLineageTag: tienda
+		summarizeBy: none
+		sourceColumn: tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column tamano_tienda
+		dataType: string
+		lineageTag: fe97a7b7-1f8d-4f3c-8137-3919d85e1a86
+		sourceLineageTag: tamano_tienda
+		summarizeBy: none
+		sourceColumn: tamano_tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column perfil_cliente
+		dataType: string
+		lineageTag: f4cfebf0-7ad5-4017-bab4-8087b8ad8a13
+		sourceLineageTag: perfil_cliente
+		summarizeBy: none
+		sourceColumn: perfil_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: f1a75ab4-4938-4ca7-995b-85209e81c3a1
+		sourceLineageTag: categoria
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto
+		dataType: string
+		lineageTag: 87c1b03e-89f1-4f4e-9de1-bd557c501c0c
+		sourceLineageTag: producto
+		summarizeBy: none
+		sourceColumn: producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column precio
+		dataType: double
+		lineageTag: e7e06310-9b89-40b5-8f6c-b916a5affe7d
+		sourceLineageTag: precio
+		summarizeBy: sum
+		sourceColumn: precio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 81e92cbb-349f-429b-99ad-37eee8872f3b
+		sourceLineageTag: cantidad
+		summarizeBy: sum
+		sourceColumn: cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column descuento_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: 220e86d4-b329-4c85-9164-4d1f33641293
+		sourceLineageTag: descuento_flag
+		summarizeBy: sum
+		sourceColumn: descuento_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column porcentaje_descuento
+		dataType: int64
+		formatString: 0
+		lineageTag: b772cbf6-e418-40a7-9841-dab8e7516304
+		sourceLineageTag: porcentaje_descuento
+		summarizeBy: sum
+		sourceColumn: porcentaje_descuento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_transactions = entity
+		mode: directLake
+		source
+			entityName: fact_transactions
+			schemaName: dbo
+			expressionSource: 'DirectLake - CatManagement'
+
