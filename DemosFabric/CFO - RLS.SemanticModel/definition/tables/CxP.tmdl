@@ -1,0 +1,129 @@
+table CxP
+	lineageTag: a42a63fd-032a-49ee-8687-dcbce94e3508
+
+	column Fecha
+		dataType: dateTime
+		formatString: dd-mm-yy
+		lineageTag: e96606a8-7d44-45ba-bb38-6afd08d21048
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: f10d45e5-0711-4b6d-837b-5d6b4720134a
+			defaultHierarchy: LocalDateTable_dc70d029-2a4d-48f0-ab26-0a5d45fd5350.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Proyecto
+		dataType: string
+		lineageTag: 14f80187-2076-4b0d-9b9f-fa6a99b45607
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ubicación
+		dataType: string
+		lineageTag: a9c80ed4-7980-4882-b6db-c03ebfbb6c79
+		summarizeBy: none
+		sourceColumn: Ubicación
+
+		annotation SummarizationSetBy = Automatic
+
+	column Moneda
+		dataType: string
+		lineageTag: c93bcc44-e5fb-470f-a798-7fac5a3a42f2
+		summarizeBy: none
+		sourceColumn: Moneda
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estatus
+		dataType: string
+		lineageTag: b7701cfb-0d91-45d1-808e-269d32e76102
+		summarizeBy: none
+		sourceColumn: Estatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: fce36841-1fb1-4991-9465-998a6f8e5b26
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de Proveedor'
+		dataType: string
+		lineageTag: ed7ad4de-a920-4bcc-8f4b-ed6ecf5328ed
+		summarizeBy: none
+		sourceColumn: Tipo de Proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Días de pago'
+		dataType: string
+		lineageTag: 0a78bf12-b366-4b4c-b181-8193b19a2cfc
+		summarizeBy: none
+		sourceColumn: Días de pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column Atrasado
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 83188119-dd9c-46f1-b030-d8422b485e56
+		summarizeBy: none
+		sourceColumn: Atrasado
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ae2442a5-c542-4c9b-9c69-963260c29a7f
+		summarizeBy: sum
+		sourceColumn: Monto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Montro transacción'
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 33c80246-68a7-4f22-8772-52ecb38bcfdc
+		summarizeBy: sum
+		sourceColumn: Montro transacción
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Días atraso'
+		dataType: int64
+		formatString: 0
+		lineageTag: c7d505d9-15a8-4349-a752-f8c7e4fc75a7
+		summarizeBy: sum
+		sourceColumn: Días atraso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CxP-d4d4688e-0ff8-4a3d-9586-166097155f15 = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Mis Documentos\CxC Promujer.xlsx"), null, true),
+				    CxP_Sheet = Origen{[Item="CxP",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(CxP_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Fecha", type date}, {"Proyecto", type text}, {"Ubicación", type text}, {"Moneda", type text}, {"Estatus", type text}, {"Proveedor", type text}, {"Tipo de Proveedor", type text}, {"Días de pago", type text}, {"Atrasado", Int64.Type}, {"Monto compañía", Int64.Type}, {"Montro transacción", type number}, {"Días atraso", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Proveedor", "Cliente"}, {"Monto compañía", "Monto"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+

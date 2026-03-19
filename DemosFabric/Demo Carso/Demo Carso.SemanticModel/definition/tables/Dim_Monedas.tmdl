@@ -1,0 +1,63 @@
+table Dim_Monedas
+	lineageTag: 3da528ad-e807-4ef0-ab1f-6dc4344108d5
+
+	column Moneda
+		dataType: string
+		lineageTag: 7c677f5d-cee7-4e26-bd7f-28d85ae9b192
+		summarizeBy: none
+		sourceColumn: Moneda
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Moneda'
+		dataType: string
+		lineageTag: 2c054cb4-7020-4164-885b-ccb71bcb22e8
+		summarizeBy: none
+		sourceColumn: Nombre Moneda
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToUSD
+		dataType: double
+		lineageTag: ba1c8678-3d47-4929-9ac7-7582b08711e8
+		summarizeBy: sum
+		sourceColumn: ToUSD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ToMXN
+		dataType: double
+		lineageTag: 63f91133-68fd-4642-9e3f-592b7c85d2d8
+		summarizeBy: sum
+		sourceColumn: ToMXN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dim_Monedas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    DimCurrency_Sheet = Origen{[Item="DimCurrency",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(DimCurrency_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"CurrencyKey", type text}, {"CurrencyName", type text}, {"ToUSD", type number}, {"ToMXN", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"CurrencyKey", "Moneda"}, {"CurrencyName", "Nombre Moneda"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

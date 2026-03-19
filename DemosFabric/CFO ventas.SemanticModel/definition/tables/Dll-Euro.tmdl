@@ -1,0 +1,25 @@
+table Dll-Euro
+	lineageTag: d5239dd1-802d-452a-8f14-3e2bd8c4cd58
+
+	measure 'Parameter Value' = SELECTEDVALUE('Dll-Euro'[Tipo de cambio], 0.849)
+		lineageTag: c7f0e278-9df4-4a54-9c7d-d188c8a2a125
+
+	column 'Tipo de cambio'
+		dataType: decimal
+		lineageTag: 1a81181e-ff32-4d9b-a3b1-727e69cef536
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dll-Euro-647aedb7-565c-4a53-b4ce-f09543a9ad0e = calculated
+		mode: import
+		source = GENERATESERIES(0.8, 1, 0.001)
+

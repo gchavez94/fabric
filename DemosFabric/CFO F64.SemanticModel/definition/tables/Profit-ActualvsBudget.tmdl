@@ -1,0 +1,62 @@
+table Profit-ActualvsBudget
+	lineageTag: de1a4d9f-ab84-4af4-bb26-03322a15eaa1
+
+	column Category
+		dataType: string
+		lineageTag: c3fa1d7b-ab23-4d92-970a-472821627993
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column MTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 21fa98aa-254a-4872-820a-04ea36671b50
+		summarizeBy: sum
+		sourceColumn: MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 8736e5b9-9370-41d6-81f2-d3b015449ca9
+		summarizeBy: sum
+		sourceColumn: QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget
+		dataType: int64
+		formatString: 0
+		lineageTag: 47e10595-203e-496c-89d7-81b1a26f57bd
+		summarizeBy: sum
+		sourceColumn: Budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget QTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9793f20b-8df4-4e30-89ec-ba9cc761905f
+		summarizeBy: sum
+		sourceColumn: Budget QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Profit-ActualvsBudget-dab2e0cf-1215-44d8-b271-6713e3d99f14 = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Profit-ActualvsBudget_Sheet" = Origen{[Item="Profit-ActualvsBudget",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit-ActualvsBudget_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Category", type text}, {"MTD", Int64.Type}, {"QTD", Int64.Type}, {"Budget", Int64.Type}, {"Budget QTD", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

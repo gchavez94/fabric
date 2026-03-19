@@ -1,0 +1,127 @@
+table 'Profit and loss statement (dril'
+	lineageTag: 73af06ca-e5f7-49c6-b106-9fbc22514ab6
+
+	column Column1
+		dataType: string
+		lineageTag: 6a602532-d301-49f6-ad0a-fca468285c29
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Actual
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1467659b-446f-40f3-8659-375bb9887522
+		summarizeBy: sum
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Budget
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: fe49f1bd-9587-4128-95af-52036d307d87
+		summarizeBy: sum
+		sourceColumn: Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Var
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 7ac8be66-5564-4816-8c2c-609f67a20cda
+		summarizeBy: sum
+		sourceColumn: Var
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Var %'
+		dataType: double
+		lineageTag: 97acd538-f2c8-4d34-88be-58e5b09a5133
+		summarizeBy: sum
+		sourceColumn: Var %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a09e5a49-56c0-4f17-9b00-ea83c7d005c5
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 4b858ccd-91fb-43f3-9cfa-a523c08a0212
+			defaultHierarchy: LocalDateTable_8331b080-6814-4286-ae3b-b6400fb492d9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Actual_YTD
+		dataType: double
+		lineageTag: 17455266-aab6-4341-8a77-1e578c222672
+		summarizeBy: sum
+		sourceColumn: Actual_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Budget_YTD
+		dataType: double
+		lineageTag: c0f7eeef-043e-4d3b-afb9-8e54b3cb5760
+		summarizeBy: sum
+		sourceColumn: Budget_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Var_YTD
+		dataType: double
+		lineageTag: c4264731-43c9-4471-a941-14d7dde551b4
+		summarizeBy: sum
+		sourceColumn: Var_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Var %_YTD'
+		dataType: double
+		lineageTag: cd720db9-8ef8-4ecf-98d8-b1b280ae8fd9
+		summarizeBy: sum
+		sourceColumn: Var %_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Profit and loss statement (dril-d9e9335d-cbbd-492f-8dde-08c0b265feec' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    #"Profit and loss statement_Sheet" = Origen{[Item="Profit and loss statement",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit and loss statement_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Actual", type number}, {"Budget", type number}, {"Var", type number}, {"Var %", type number}, {"Actual_YTD", type number}, {"Budget_YTD", type number}, {"Var_YTD", type number}, {"Var %_YTD", type number}, {"Fecha", type date}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

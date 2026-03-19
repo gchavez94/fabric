@@ -1,0 +1,27 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim_Monedas","Dim_Fecha","Dim_Proyectos","Dim_Lineas","Dim_Etapas","Fact_Presupuesto","Fact_Costos","Dim_Tipo","Fact Proyectos"]
+
+ref table Dim_Monedas
+ref table Dim_Fecha
+ref table DateTableTemplate_a62edd5d-c970-4d31-b3e3-518e68802b04
+ref table Dim_Proyectos
+ref table Dim_Lineas
+ref table Dim_Etapas
+ref table Fact_Presupuesto
+ref table Fact_Costos
+ref table LocalDateTable_15841faa-ac03-442f-80e7-db4612f84ad9
+ref table Dim_Tipo
+ref table 'Fact Proyectos'
+ref table LocalDateTable_6a7a896f-07d3-44b7-9c5b-fef16ed9ba6c
+
+ref cultureInfo es-ES
+

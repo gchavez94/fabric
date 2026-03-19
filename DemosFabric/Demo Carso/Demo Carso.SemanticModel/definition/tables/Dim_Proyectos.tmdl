@@ -1,0 +1,40 @@
+table Dim_Proyectos
+	lineageTag: e12163a3-d5d6-45d0-8369-e5c34ea86a46
+
+	column 'ID Proyecto'
+		dataType: string
+		lineageTag: 72563266-e11d-4e5f-9799-55b5487a5c86
+		summarizeBy: none
+		sourceColumn: ID Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyecto
+		dataType: string
+		lineageTag: 57d0d709-84c6-432a-a947-98cf4a89806f
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Proyectos = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    DimProject_Sheet = Origen{[Item="DimProject",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(DimProject_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ProjectID", type text}, {"ProjectName", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"ProjectID", "ID Proyecto"}, {"ProjectName", "Proyecto"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

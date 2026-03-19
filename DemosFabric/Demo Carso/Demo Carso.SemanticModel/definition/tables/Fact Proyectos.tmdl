@@ -1,0 +1,198 @@
+table 'Fact Proyectos'
+	lineageTag: 6cd511fa-1a28-4470-9d17-8d01e2c5cc32
+
+	measure Porcentaje =
+			
+			DIVIDE(SUM('Fact Proyectos'[RealUSD]), SUM('Fact Proyectos'[Presupuesto USD]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7a11914b-98e3-42ab-86ff-69520f686da2
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure DisponibleUSD =
+			
+			SUM('Fact Proyectos'[Presupuesto USD]) - SUM('Fact Proyectos'[RealUSD])
+		lineageTag: 24cb9672-ee9b-4d7f-a92c-f06f8c9ec7d0
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ID Proyecto'
+		dataType: string
+		lineageTag: 1becd26c-147c-47e0-9298-348f859fd3c2
+		summarizeBy: none
+		sourceColumn: ID Proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyecto
+		dataType: string
+		lineageTag: 86cdcdc0-aab7-4e77-a22e-654d531b985c
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Etapa'
+		dataType: string
+		lineageTag: e2743b80-b1ae-4602-86e8-b3fb8fd271be
+		summarizeBy: none
+		sourceColumn: ID Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: db337fe4-b6bb-4df0-9d1c-958f22ba4dae
+		summarizeBy: none
+		sourceColumn: Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Linea'
+		dataType: string
+		lineageTag: 5bc828e7-4fe1-41a6-b0b6-b5ad5c62e136
+		summarizeBy: none
+		sourceColumn: ID Linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		lineageTag: be2f5baf-b278-4448-b36d-83c82a7f74eb
+		summarizeBy: none
+		sourceColumn: Linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Presupuesto USD'
+		dataType: double
+		lineageTag: 72ddde4c-c1af-4617-abe4-d67f1a21f6a6
+		summarizeBy: sum
+		sourceColumn: Presupuesto USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Presupuesto MXN'
+		dataType: double
+		lineageTag: 2508a677-ce80-46fd-a91e-569a99f1c05e
+		summarizeBy: sum
+		sourceColumn: Presupuesto MXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fecha Inicio'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 60e8a77a-adda-4e89-9282-4a34d8967474
+		summarizeBy: none
+		sourceColumn: Fecha Inicio
+
+		variation Variación
+			isDefault
+			relationship: d606f3e9-32d6-4ef7-875f-67132117f4fa
+			defaultHierarchy: LocalDateTable_6a7a896f-07d3-44b7-9c5b-fef16ed9ba6c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias Planeados'
+		dataType: int64
+		formatString: 0
+		lineageTag: f137a437-c113-4567-89f1-f4b2381f48b0
+		summarizeBy: sum
+		sourceColumn: Dias Planeados
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		lineageTag: 7ffa0524-f122-4198-a23d-82da4c2f665a
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monto USD'
+		dataType: double
+		lineageTag: a4f32f37-ac6b-442f-8e61-aec982d72248
+		summarizeBy: sum
+		sourceColumn: Monto USD
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Monto MXN'
+		dataType: double
+		lineageTag: eda9fe33-a886-4ccf-aa98-d821f4801312
+		summarizeBy: sum
+		sourceColumn: Monto MXN
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RealUSD
+		dataType: double
+		lineageTag: 2768ea85-a016-4271-9b68-467224a7f383
+		summarizeBy: sum
+		sourceColumn: RealUSD
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RealMXN
+		dataType: double
+		lineageTag: 0891ec50-b93f-4c16-8560-4fffd98cfa51
+		summarizeBy: sum
+		sourceColumn: RealMXN
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Fact Proyectos' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    FactProyectos_Sheet = Origen{[Item="FactProyectos",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(FactProyectos_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ProjectID", type text}, {"ProjectName", type text}, {"StageKey", type text}, {"StageName", type text}, {"SegmentKey", type text}, {"SegmentName", type text}, {"BudgetUSD", type number}, {"BudgetMXN", type number}, {"ProgramStart", type date}, {"ProgramEnd", type date}, {"PlannedDays", Int64.Type}, {"Type", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"ProjectID", "ID Proyecto"}, {"ProjectName", "Proyecto"}, {"StageKey", "ID Etapa"}, {"StageName", "Etapa"}, {"SegmentKey", "ID Linea"}, {"SegmentName", "Linea"}, {"AmountUSD", "Monto USD"}, {"AmountMXN", "Monto MXN"}, {"BudgetUSD", "Presupuesto USD"}, {"BudgetMXN", "Presupuesto MXN"}, {"ProgramStart", "Fecha Inicio"}, {"ProgramEnd", "Fecha Fin"}, {"PlannedDays", "Dias Planeados"}, {"Type", "Tipo"}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Fecha Fin"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,311 @@
+table historia
+	lineageTag: 6c6f26f5-e981-4c6f-adc7-cc54a27e49c8
+
+	measure 'Margen Bruto Euros' = (sum(historia[Margen bruto])*'Dll-Euro'[Parameter Value])
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 9801f17a-ae71-42be-95a4-0db7b234b137
+
+	measure Euros = (sum(historia[Dolares])*'Dll-Euro'[Parameter Value])*INPC[Valor INPC] /100+(sum(historia[Dolares])*'Dll-Euro'[Parameter Value])
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: cbd9d55b-644e-4467-8d6c-566eb19dba0d
+
+	measure '% Margen Euros' = [Margen Bruto Euros]/[Euros]
+		formatString: #,0.00\ %;-#,0.00\ %;#,0.00\ %
+		lineageTag: 4ee84c5f-fd25-44c3-a089-13f646e2e270
+
+	column Año
+		dataType: string
+		lineageTag: bb334fa4-f03f-4118-9249-c6acd0416bb6
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: f18de888-5a5a-4c0f-a546-e9c09c506e17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column País
+		dataType: string
+		lineageTag: c52ebfd0-a4ce-4a1f-bede-0019f23f2ffd
+		summarizeBy: none
+		sourceColumn: País
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Sales'
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2888d463-9b5c-477e-8133-236347d1d6c5
+		summarizeBy: sum
+		sourceColumn: Net Sales
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column COGS
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f5e26cb9-4c19-4c7a-bde6-cf643ae228df
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gross Margin %'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: f54ca008-f959-4a17-a20a-cba6498843a4
+		summarizeBy: average
+		sourceColumn: Gross Margin %
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Margin'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 04f7dcdd-3832-431c-a8b4-58c66fea1174
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Expenses
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 19d8ba03-2517-4924-aa95-a590ad5fec80
+		summarizeBy: sum
+		sourceColumn: Expenses
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Operating Profit %'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: e7b06b89-32eb-44c9-830d-b1bd84efd178
+		summarizeBy: average
+		sourceColumn: Operating Profit %
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Return on Assets'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 7ae406e3-6e0b-4fe5-abb5-295bd836d6d9
+		summarizeBy: average
+		sourceColumn: Return on Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Return on Equity'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: c7d2118a-0c62-44dc-854a-d52827cd8eb2
+		summarizeBy: average
+		sourceColumn: Return on Equity
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Assets'
+		dataType: double
+		lineageTag: 05c051ae-9f1d-48bd-be7b-29026a6620aa
+		summarizeBy: sum
+		sourceColumn: Current Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Liabilities'
+		dataType: double
+		lineageTag: 5917e888-f647-49b3-b360-4ced5150d240
+		summarizeBy: sum
+		sourceColumn: Current Liabilities
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Working Capital'
+		dataType: double
+		lineageTag: 34f99410-2b19-4efb-9faa-fe1c0d64cf6a
+		summarizeBy: sum
+		sourceColumn: Working Capital
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quick Ratio'
+		dataType: double
+		lineageTag: 7ab2e6f1-9e17-437e-954b-bb96c2f00140
+		summarizeBy: sum
+		sourceColumn: Quick Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Assets
+		dataType: double
+		lineageTag: fcc646f5-b967-4715-8660-459756c0b864
+		summarizeBy: sum
+		sourceColumn: Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Liabilities
+		dataType: double
+		lineageTag: 89366d1b-8ab9-463e-b051-a76b43c7fc45
+		summarizeBy: sum
+		sourceColumn: Liabilities
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Debt Ratio'
+		dataType: decimal
+		formatString: 0.00
+		lineageTag: 462fe1cc-2acb-4a4f-a557-6264841a9258
+		summarizeBy: sum
+		sourceColumn: Debt Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debt to Equity Ratio'
+		dataType: double
+		lineageTag: 2d9ff989-8be0-44d8-b6ef-1ec4628006de
+		summarizeBy: sum
+		sourceColumn: Debt to Equity Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Long Term Debt to Equity Rat'
+		dataType: string
+		lineageTag: 833be673-d1fb-462a-a4a1-3eef00b680c1
+		summarizeBy: none
+		sourceColumn: Long Term Debt to Equity Rat
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dolares
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 759342d1-136c-46b5-a339-556156222bf9
+		summarizeBy: sum
+		sourceColumn: Dolares
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Margen bruto'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 66e18db8-4ab9-43ac-8739-c235e3b44338
+		summarizeBy: sum
+		sourceColumn: Margen bruto
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column '% Margen Bruto'
+		dataType: decimal
+		formatString: #,0.00\ %;-#,0.00\ %;#,0.00\ %
+		lineageTag: f93eb97d-6de1-4f55-8660-bd551b43b94a
+		summarizeBy: average
+		sourceColumn: % Margen Bruto
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column Cliente
+		dataType: string
+		lineageTag: f1b76a5b-3dd9-4980-b213-07a7b58dabe8
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LY Ingresos'
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 4aac4b7d-a82e-4b55-9424-1f4f1cbd001c
+		summarizeBy: sum
+		sourceColumn: LY Ingresos
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	partition historia-f12d1786-b18d-43e4-9117-322b87bcc32b = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Mis Documentos\CFO - Promujer.xlsx"), null, true),
+				    historia_Sheet = Source{[Item="historia",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(historia_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Mes", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Changed Type1",{{"Compañía ", "País"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+

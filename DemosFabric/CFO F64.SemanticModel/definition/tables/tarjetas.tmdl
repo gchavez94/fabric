@@ -1,0 +1,159 @@
+table tarjetas
+	lineageTag: e1d6341e-4820-4fc0-9bbf-1fbb3975f812
+
+	column 'Net Sales'
+		dataType: int64
+		formatString: 0
+		lineageTag: 758b5f32-b941-402e-a6d5-55d8b54f4f86
+		summarizeBy: sum
+		sourceColumn: Net Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Margin'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e8e03cf-3af9-4d5c-9c4d-58262823ce60
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operating Profit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 44ae60b5-091f-45e4-9576-28b097f10748
+		summarizeBy: sum
+		sourceColumn: Operating Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Margin %'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 6ecc298a-bf82-4ef7-94f3-ee322dbecef8
+		summarizeBy: sum
+		sourceColumn: Gross Margin %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operating Profit %'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 1fb868ea-f291-4ebc-ad3b-877d10461352
+		summarizeBy: sum
+		sourceColumn: Operating Profit %
+
+		annotation SummarizationSetBy = Automatic
+
+	column AR
+		dataType: int64
+		formatString: 0
+		lineageTag: 719aa89c-9eae-427c-9c62-256653da9b84
+		summarizeBy: sum
+		sourceColumn: AR
+
+		annotation SummarizationSetBy = Automatic
+
+	column AP
+		dataType: int64
+		formatString: 0
+		lineageTag: cae8e5e6-a11a-407e-9f89-aafb1ce4efe9
+		summarizeBy: sum
+		sourceColumn: AP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cash to Cash Cycle'
+		dataType: double
+		lineageTag: 3ac961f6-11d9-4953-846b-ad2ef3bea562
+		summarizeBy: sum
+		sourceColumn: Cash to Cash Cycle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Return on Assets'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: c1ad225b-eb99-4b6b-92d8-a22c4bbbb12c
+		summarizeBy: sum
+		sourceColumn: Return on Assets
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Return on Equity'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 4ccaf9f6-6970-4cde-a5b9-abb26dd3f5cb
+		summarizeBy: sum
+		sourceColumn: Return on Equity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Working Capital'
+		dataType: int64
+		formatString: 0
+		lineageTag: ee6d772c-553e-42d6-b259-b1dc00fae50a
+		summarizeBy: sum
+		sourceColumn: Working Capital
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Working Capital Ratio'
+		dataType: double
+		lineageTag: 392d7ec6-787f-4ef3-9720-4341b91c21e8
+		summarizeBy: sum
+		sourceColumn: Working Capital Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quick Ratio'
+		dataType: double
+		lineageTag: ac26de69-8bea-44f5-a38c-45d10af6f84c
+		summarizeBy: sum
+		sourceColumn: Quick Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Debt Ratio'
+		dataType: double
+		lineageTag: c51a9316-863c-418e-b724-71bac39abfeb
+		summarizeBy: sum
+		sourceColumn: Debt Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Debt to Equity Ratio'
+		dataType: double
+		lineageTag: 74b572cb-dc2f-49f6-ad52-fbae87ee7fe0
+		summarizeBy: sum
+		sourceColumn: Debt to Equity Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition tarjetas-de023176-ba37-4f05-84f8-9a271c34ec0e = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Mis Documentos\CFO - Credifiel.xlsx"), null, true),
+				    tarjetas_Sheet = Source{[Item="tarjetas",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(tarjetas_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Net Sales", Int64.Type}, {"Gross Margin", Int64.Type}, {"Operating Profit", Int64.Type}, {"Gross Margin %", type number}, {"Operating Profit_1", type number}, {"AR", Int64.Type}, {"AP", Int64.Type}, {"Cash to Cash Cycle", type number}, {"Return on Assets", type number}, {"Return on Equity", type number}, {"Working Capital", Int64.Type}, {"Working Capital Ratio", type number}, {"Quick Ratio", type number}, {"Debt Ratio", type number}, {"Debt to Equity Ratio", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Operating Profit_1", "Operating Profit %"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

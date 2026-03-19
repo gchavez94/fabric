@@ -1,0 +1,56 @@
+table 'Profit share analysis MTD QTD Y'
+	lineageTag: e76fb837-5f29-471b-9b5e-663e58c52543
+
+	column 'Date.Fiscal YQMD'
+		dataType: string
+		lineageTag: 8eeb9309-82b0-451e-8c3d-5d59883f474f
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Margin'
+		dataType: double
+		lineageTag: f8b003cf-6d57-4f03-af60-ff396d554f20
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Profit'
+		dataType: double
+		lineageTag: fb941e69-9b78-4e26-90fc-c3e74ed4ac3c
+		summarizeBy: sum
+		sourceColumn: Net Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Sales share'
+		dataType: double
+		lineageTag: 20b47134-bed8-41c6-9723-0633cd67fc87
+		summarizeBy: sum
+		sourceColumn: Net Sales share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Profit share analysis MTD QTD Y-f4ff4096-c730-42b1-8b8a-b709ea5c6773' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Profit share analysis MTD QTD Y_Sheet" = Origen{[Item="Profit share analysis MTD QTD Y",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit share analysis MTD QTD Y_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date.Fiscal YQMD", type text}, {"Gross Margin", type number}, {"Net Profit", type number}, {"Net Sales share", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

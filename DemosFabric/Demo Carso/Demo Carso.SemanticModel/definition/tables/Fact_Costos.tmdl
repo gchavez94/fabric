@@ -1,0 +1,140 @@
+table Fact_Costos
+	lineageTag: 1f12e3df-fa40-4063-bf12-683b6314f13e
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: effe1e66-7622-4a0a-aae9-faa007c1f0c4
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Mes Año'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4780b43a-177f-4589-b210-956d6112ecbf
+		summarizeBy: none
+		sourceColumn: Mes Año
+
+		variation Variación
+			isDefault
+			relationship: aab60fb5-ccee-45cd-8fb6-dc826adcf118
+			defaultHierarchy: LocalDateTable_15841faa-ac03-442f-80e7-db4612f84ad9.'Jerarquía de fechas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'ID Proyecto'
+		dataType: string
+		lineageTag: 50cdc754-3529-431a-b71f-31470f07956e
+		summarizeBy: none
+		sourceColumn: ID Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyecto
+		dataType: string
+		lineageTag: fcd7f299-2059-4a8c-b9a6-5cb0e1a0d1df
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Etapa'
+		dataType: string
+		lineageTag: 314b731f-24e1-404d-8a17-37669cd88482
+		summarizeBy: none
+		sourceColumn: ID Etapa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: 1cd72bb8-5f69-46c6-b31f-fe9f45e407db
+		summarizeBy: none
+		sourceColumn: Etapa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Linea'
+		dataType: string
+		lineageTag: 2506896e-4e70-4030-880e-8809f0632ade
+		summarizeBy: none
+		sourceColumn: ID Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		lineageTag: 04d52cc1-45bd-4919-a111-68cf35ecd2f9
+		summarizeBy: none
+		sourceColumn: Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RealUSD
+		dataType: double
+		lineageTag: c576d55e-8a65-4fc8-af7b-3061fe58bfd9
+		summarizeBy: sum
+		sourceColumn: RealUSD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RealMXN
+		dataType: double
+		lineageTag: 903422b2-d228-4387-a316-c236ea10df09
+		summarizeBy: sum
+		sourceColumn: RealMXN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Type = "COSTO REAL"
+		lineageTag: 761075ca-ba3d-476c-821e-d92aafde7969
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Costos = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    FactRealMonthly_Sheet = Origen{[Item="FactRealMonthly",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(FactRealMonthly_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date", type date}, {"YearMonth", type date}, {"ProjectID", type text}, {"ProjectName", type text}, {"StageKey", type text}, {"StageName", type text}, {"SegmentKey", type text}, {"SegmentName", type text}, {"RealUSD", type number}, {"RealMXN", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Date", "Fecha"}, {"YearMonth", "Mes Año"}, {"ProjectID", "ID Proyecto"}, {"ProjectName", "Proyecto"}, {"StageKey", "ID Etapa"}, {"StageName", "Etapa"}, {"SegmentKey", "ID Linea"}, {"SegmentName", "Linea"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

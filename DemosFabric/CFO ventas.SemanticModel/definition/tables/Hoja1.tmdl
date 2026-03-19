@@ -1,0 +1,78 @@
+table Hoja1
+	lineageTag: 4a9d8989-4564-42b2-b620-1d032efc6d8a
+
+	column Account
+		dataType: string
+		lineageTag: a8093d5d-354a-4a06-8d29-f68091d4d032
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Opening Balance'
+		dataType: double
+		lineageTag: b10afeff-ab83-4f11-b83a-78872808f323
+		summarizeBy: sum
+		sourceColumn: Opening Balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Debit Amnt'
+		dataType: double
+		lineageTag: e2680831-fb2c-41ac-80f2-1933a2f25914
+		summarizeBy: sum
+		sourceColumn: Debit Amnt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Credit Amnt'
+		dataType: double
+		lineageTag: 9af904eb-714c-407b-9cdc-bed04e73d782
+		summarizeBy: sum
+		sourceColumn: Credit Amnt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Variance This Month'
+		dataType: double
+		lineageTag: fe8120ca-0b91-4bef-a6c3-2a21c51a8726
+		summarizeBy: sum
+		sourceColumn: Variance This Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Closing Balance'
+		dataType: double
+		lineageTag: 98ceeb42-081f-41c0-a7c0-5a2e20a1d706
+		summarizeBy: sum
+		sourceColumn: Closing Balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Hoja1-8b1ed324-f4f1-4c18-8827-f3bde30cf54e = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    Balance_Sheet = Origen{[Item="Balance",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Balance_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Account", type text}, {"Opening Balance", type number}, {"Debit Amnt", type number}, {"Credit Amnt", type number}, {"Variance This Month", type number}, {"Closing Balance", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+
