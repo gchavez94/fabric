@@ -1014,19 +1014,6 @@
             }
           }
         ],
-        "measures": [
-          {
-            "name": "TEST",
-            "expression": "1",
-            "formatString": "0",
-            "lineageTag": "b8affef8-ad9b-49dc-be1c-53fec7df634d",
-            "changedProperties": [
-              {
-                "property": "Name"
-              }
-            ]
-          }
-        ],
         "annotations": [
           {
             "name": "IsTableInBiModel",
@@ -2622,9 +2609,15 @@
             "name": "AMOUNTMST",
             "dataType": "double",
             "sourceColumn": "AMOUNTMST",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "sourceProviderType": "float",
             "sourceLineageTag": "AMOUNTMST",
             "summarizeBy": "sum",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2632,7 +2625,7 @@
               },
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "value": "{\"currencyCulture\":\"en-US\"}"
               }
             ]
           },
@@ -3647,10 +3640,15 @@
             "name": "ACCOUNTNUM",
             "dataType": "int64",
             "sourceColumn": "ACCOUNTNUM",
-            "formatString": "0",
+            "formatString": "#,0",
             "sourceProviderType": "bigint",
             "sourceLineageTag": "ACCOUNTNUM",
             "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -3662,9 +3660,15 @@
             "name": "AMOUNTMST",
             "dataType": "double",
             "sourceColumn": "AMOUNTMST",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "sourceProviderType": "float",
             "sourceLineageTag": "AMOUNTMST",
             "summarizeBy": "sum",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -3672,7 +3676,7 @@
               },
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "value": "{\"currencyCulture\":\"en-US\"}"
               }
             ]
           },
@@ -4727,10 +4731,15 @@
             "name": "CREATEDDATETIME",
             "dataType": "dateTime",
             "sourceColumn": "CREATEDDATETIME",
-            "formatString": "General Date",
+            "formatString": "Short Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "CREATEDDATETIME",
             "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -4887,10 +4896,15 @@
             "name": "DUEDATE",
             "dataType": "dateTime",
             "sourceColumn": "DUEDATE",
-            "formatString": "General Date",
+            "formatString": "Short Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "DUEDATE",
             "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -4952,7 +4966,7 @@
             "formatString": "0",
             "sourceProviderType": "bigint",
             "sourceLineageTag": "ACCOUNTNUM",
-            "summarizeBy": "sum",
+            "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -5099,10 +5113,15 @@
             "name": "SETTLEAMOUNTMST",
             "dataType": "int64",
             "sourceColumn": "SETTLEAMOUNTMST",
-            "formatString": "0",
+            "formatString": "#,0",
             "sourceProviderType": "bigint",
             "sourceLineageTag": "SETTLEAMOUNTMST",
             "summarizeBy": "sum",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -5114,10 +5133,15 @@
             "name": "CLOSED",
             "dataType": "dateTime",
             "sourceColumn": "CLOSED",
-            "formatString": "General Date",
+            "formatString": "Short Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "CLOSED",
             "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -5144,10 +5168,15 @@
             "name": "Fecha_Pronostico_Pago",
             "dataType": "dateTime",
             "sourceColumn": "Fecha_Pronostico_Pago",
-            "formatString": "General Date",
+            "formatString": "Short Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "Fecha_Pronostico_Pago",
             "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -7226,9 +7255,15 @@
             "name": "SETTLEAMOUNTMST",
             "dataType": "double",
             "sourceColumn": "SETTLEAMOUNTMST",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "sourceProviderType": "float",
             "sourceLineageTag": "SETTLEAMOUNTMST",
             "summarizeBy": "sum",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -7236,7 +7271,7 @@
               },
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "value": "{\"currencyCulture\":\"en-US\"}"
               }
             ]
           },
@@ -9443,6 +9478,13 @@
         "toTable": "CustTable",
         "toColumn": "ACCOUNTNUM",
         "isActive": false
+      },
+      {
+        "name": "5152a58cc719e18298277a43374469a6",
+        "fromTable": "CustTrans_to_AML_2WH",
+        "fromColumn": "ACCOUNTNUM",
+        "toTable": "CustTable",
+        "toColumn": "ACCOUNTNUM"
       },
       {
         "name": "58ecb591c6bfc6f6a69a421ecfcb25fe",

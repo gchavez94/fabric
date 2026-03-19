@@ -15,40 +15,6 @@
 # META   }
 # META }
 
-# CELL ********************
-
-import pandas as pd
-
-wrangler_sample_df = pd.read_csv("https://aka.ms/wrangler/titanic.csv")
-display(wrangler_sample_df)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark",
-# META   "editable": true
-# META }
-
-# CELL ********************
-
-# Código generado por Data Wrangler para pandas DataFrame
-
-def clean_data(wrangler_sample_df):
-    # Reemplazar los valores que faltan con "1234"en la columna: 'Cabin'
-    wrangler_sample_df = wrangler_sample_df.fillna({'Cabin': "1234"})
-    return wrangler_sample_df
-
-wrangler_sample_df_clean = clean_data(wrangler_sample_df.copy())
-display(wrangler_sample_df_clean)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
 # MARKDOWN ********************
 
 # 
@@ -319,14 +285,4 @@ display(wrangler_sample_df)
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark",
 # META   "editable": true
-# META }
-
-# CELL ********************
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
 # META }

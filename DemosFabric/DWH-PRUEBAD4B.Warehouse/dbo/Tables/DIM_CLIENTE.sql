@@ -1,0 +1,25 @@
+CREATE TABLE [dbo].[DIM_CLIENTE] (
+
+	[SK_CLIENTE] varchar(8000) NULL, 
+	[CVE_CLIENTE] varchar(8000) NULL, 
+	[DSC_NOMBRE] varchar(8000) NULL, 
+	[CVE_COMPANIA] varchar(8000) NULL, 
+	[CVE_MERCADO] varchar(8000) NULL, 
+	[DSC_MERCADO] varchar(8000) NULL, 
+	[CVE_NEGOCIO] varchar(8000) NULL, 
+	[DSC_NEGOCIO] varchar(8000) NULL, 
+	[SK_VENDEDOR] varchar(8000) NULL, 
+	[Cve_Zona_de_ventas] varchar(8000) NULL, 
+	[Dsc_Zona_de_ventas] varchar(8000) NULL, 
+	[Cve_Subzona_de_ventas] varchar(8000) NULL, 
+	[Dsc_Subzona_de_ventas] varchar(8000) NULL, 
+	[Dsc_Segmento_PlanLealtad] varchar(8000) NULL, 
+	[Dsc_Reconfiguracion_Acuerdos_Comerciales] varchar(8000) NULL, 
+	[Dsc_CadenaCompania] varchar(8000) NULL, 
+	[Dsc_Agrupador_Clientes] varchar(8000) NULL, 
+	[Cve_Calidra_PlanLealtad] varchar(8000) NULL, 
+	[Cve_Linea_Negocio] varchar(8000) NULL, 
+	[Cve_Grupo] varchar(8000) NULL, 
+	[INSERT_SVR] datetime2(3) NULL, 
+	[UPDATE_SVR] datetime2(3) NULL
+);

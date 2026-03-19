@@ -13,6 +13,173 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
+        "name": "Company",
+        "sourceLineageTag": "[dbo].[Company]",
+        "columns": [
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nombre",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "timestamp",
+            "dataType": "int64",
+            "sourceColumn": "timestamp",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "timestamp",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Evaluation_Company",
+            "dataType": "boolean",
+            "sourceColumn": "Evaluation_Company",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "Evaluation_Company",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Display_Name",
+            "dataType": "string",
+            "sourceColumn": "Display_Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Display_Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Business_Profile_Id",
+            "dataType": "string",
+            "sourceColumn": "Business_Profile_Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Business_Profile_Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SystemCreatedBy",
+            "dataType": "string",
+            "sourceColumn": "SystemCreatedBy",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SystemCreatedBy",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SystemModifiedBy",
+            "dataType": "string",
+            "sourceColumn": "SystemModifiedBy",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SystemModifiedBy",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "System_Indicator",
+            "dataType": "string",
+            "sourceColumn": "System_Indicator",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "System_Indicator",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "System_Indicator_Style",
+            "dataType": "int64",
+            "sourceColumn": "System_Indicator_Style",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "System_Indicator_Style",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Company",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "DimArticulo",
         "sourceLineageTag": "[dbo].[DimArticulo]",
         "columns": [
