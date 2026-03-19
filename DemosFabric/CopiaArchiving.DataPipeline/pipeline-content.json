@@ -1,0 +1,1832 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "ForEach_bu7",
+        "type": "ForEach",
+        "dependsOn": [],
+        "typeProperties": {
+          "items": {
+            "value": "@pipeline().parameters.cw_items_bu7",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "name": "Copy_bu7",
+              "type": "Copy",
+              "dependsOn": [],
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureOutput": false,
+                "secureInput": false
+              },
+              "typeProperties": {
+                "source": {
+                  "type": "LakehouseTableSource",
+                  "datasetSettings": {
+                    "annotations": [],
+                    "linkedService": {
+                      "name": "dataverse_gcgformacion_cds2_workspace_unq10f0efdbf324ef1184046045bddbb",
+                      "properties": {
+                        "annotations": [],
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "workspaceId": "24c2f4ba-e3f8-4cf8-b952-da0b193d39e8",
+                          "artifactId": "2748e951-561c-427f-964c-f6f1e8475996",
+                          "rootFolder": "Tables"
+                        }
+                      }
+                    },
+                    "type": "LakehouseTable",
+                    "schema": [],
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item().source.table",
+                        "type": "Expression"
+                      }
+                    }
+                  }
+                },
+                "sink": {
+                  "type": "DataWarehouseSink",
+                  "allowCopyCommand": true,
+                  "copyCommandSettings": {},
+                  "tableOption": "autoCreate",
+                  "datasetSettings": {
+                    "annotations": [],
+                    "linkedService": {
+                      "name": "almacenArchiving",
+                      "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-xl2mejhy4p4ezoks3ifrspjz5a.datawarehouse.fabric.microsoft.com",
+                          "artifactId": "02a9a397-627b-44ed-9685-6ead944548e5",
+                          "workspaceId": "24c2f4ba-e3f8-4cf8-b952-da0b193d39e8"
+                        }
+                      }
+                    },
+                    "type": "DataWarehouseTable",
+                    "schema": [],
+                    "typeProperties": {
+                      "schema": "dbo",
+                      "table": {
+                        "value": "@item().destination.table",
+                        "type": "Expression"
+                      }
+                    }
+                  }
+                },
+                "enableStaging": true,
+                "translator": {
+                  "value": "@item().copyActivity.translator",
+                  "type": "Expression"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "parameters": {
+      "cw_items_bu7": {
+        "type": "Array",
+        "defaultValue": [
+          {
+            "source": {
+              "table": "mserp_inventjournaltransbientity"
+            },
+            "destination": {
+              "table": "mserp_inventjournaltransbientity"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "Id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "Id",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SinkCreatedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "SinkCreatedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SinkModifiedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "SinkModifiedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_assettranstype",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_assettranstype",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_bomline",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_bomline",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dsa_in",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_dsa_in",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_exciserecordtype_in",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_exciserecordtype_in",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_excisetype_in",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_excisetype_in",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventreftype",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_inventreftype",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_itmoverundertransfer",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_itmoverundertransfer",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_journaltype",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_journaltype",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_pdscopybatchattrib",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_pdscopybatchattrib",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_profitset",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_profitset",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_storno_ru",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_storno_ru",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_id",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_id_entitytype",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_id_entitytype",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_activitynumber",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_activitynumber",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_assetbookid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_assetbookid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_assetid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_assetid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_costamount",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_costamount",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_costmarkup",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_costmarkup",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_costprice",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_costprice",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_counted",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_counted",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_countingreasoncode",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_countingreasoncode",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_idname",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_idname",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_entassetworkorderline",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_entassetworkorderline",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_entassetworkorderline_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_entassetworkorderline_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_excisetariffcodes_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_excisetariffcodes_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_excisetariffcodes_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_excisetariffcodes_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_intrastatfulfillmentdate_hu",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "mserp_intrastatfulfillmentdate_hu",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventdimid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventdimid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventjournaltransbientityid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventjournaltransbientityid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventonhand",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_inventonhand",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventoryserviceadjustmentoffsetdatasource",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventoryserviceadjustmentoffsetdatasource",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventoryserviceadjustmentoffsetphysicalmeasure",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventoryserviceadjustmentoffsetphysicalmeasure",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventoryservicetransactionid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventoryservicetransactionid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventrefid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventrefid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventreftransid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventreftransid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventtransid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventtransid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventtransidfather",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventtransidfather",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_inventtransidreturn",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_inventtransidreturn",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_itemid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_itemid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_journalid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_journalid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_ledgerdimension",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_ledgerdimension",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_ledgerdimension_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_ledgerdimension_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_linenum",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_linenum",
+                      "physicalType": "decimal",
+                      "scale": 10,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_packedextensions",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_packedextensions",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_pdscwinventonhand",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_pdscwinventonhand",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_pdscwinventqtycounted",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_pdscwinventqtycounted",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_pdscwqty",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_pdscwqty",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_postaladdress_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_postaladdress_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_postaladdress_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_postaladdress_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_priceunit",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_priceunit",
+                      "physicalType": "decimal",
+                      "scale": 10,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_primaryfield",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_primaryfield",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projcategoryid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projcategoryid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projlinepropertyid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projlinepropertyid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projsalescurrencyid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projsalescurrencyid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projsalesprice",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_projsalesprice",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projtaxgroupid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projtaxgroupid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projtaxitemgroupid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projtaxitemgroupid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projtransid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projtransid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_projunitid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_projunitid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_qty",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_qty",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_releasedate",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "mserp_releasedate",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_reqpoid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_reqpoid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_retailinfocodeidex2",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_retailinfocodeidex2",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_retailinformationsubcodeidex2",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_retailinformationsubcodeidex2",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_salesamount",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_salesamount",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_scraptypeid_ru",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_scraptypeid_ru",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_subbilldeferralrecidoriginal",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_subbilldeferralrecidoriginal",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_subbilldeferralrecidoriginal_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_subbilldeferralrecidoriginal_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sysdataareaid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_sysdataareaid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sysrowversion",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_sysrowversion",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sysrowversion_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_sysrowversion_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_toinventdimid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_toinventdimid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_toinventtransid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_toinventtransid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_transdate",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "mserp_transdate",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_unit",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_unit",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_unitqty",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_unitqty",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_voucher",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_voucher",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_warehouselocation_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_warehouselocation_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_warehouselocation_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_warehouselocation_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_worker",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_worker",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_worker_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_worker_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "versionnumber",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "versionnumber",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsDelete",
+                      "type": "Boolean",
+                      "physicalType": "boolean"
+                    },
+                    "sink": {
+                      "name": "IsDelete",
+                      "physicalType": "bit"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CreatedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "CreatedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "msft_datastate",
+                      "type": "Int64"
+                    },
+                    "sink": {
+                      "name": "msft_datastate",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "PartitionId",
+                      "type": "String"
+                    },
+                    "sink": {
+                      "name": "PartitionId",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "mserp_taxtranswbientity"
+            },
+            "destination": {
+              "table": "mserp_taxtranswbientity"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "Id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "Id",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SinkCreatedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "SinkCreatedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SinkModifiedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "SinkModifiedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_applyexcise_in",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_applyexcise_in",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtype_in",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtype_in",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_id",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_id_entitytype",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_id_entitytype",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_abatementamount_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_abatementamount_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_addressing_pl",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_addressing_pl",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_claimpercentage_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_claimpercentage_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_customsduty_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_customsduty_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_custvendname_pl",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_custvendname_pl",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_custvendtranspostinglogtaxorigin_w",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_custvendtranspostinglogtaxorigin_w",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_custvendtranspostinglogtaxorigin_w_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_custvendtranspostinglogtaxorigin_w_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_dataareaid_idname",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_dataareaid_idname",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_documentdate_pl",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "mserp_documentdate_pl",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_exciseamount_pl",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_exciseamount_pl",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_offsetrecid_mx",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_offsetrecid_mx",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_offsetrecid_mx_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_offsetrecid_mx_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_primaryfield",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_primaryfield",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_promissorynoteinvoice_mx",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_promissorynoteinvoice_mx",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_reversedtaxtransrecid_w",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_reversedtaxtransrecid_w",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_reversedtaxtransrecid_w_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_reversedtaxtransrecid_w_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_servicetaxreversechargeoriginamount_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_servicetaxreversechargeoriginamount_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_servicetaxreversechargepercentage_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_servicetaxreversechargepercentage_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sourcekey",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_sourcekey",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sourcekey_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_sourcekey_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sysrowversion",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_sysrowversion",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_sysrowversion_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_sysrowversion_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxamountcustoms_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_taxamountcustoms_in",
+                      "physicalType": "decimal",
+                      "scale": 6,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxcomponenttable_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_taxcomponenttable_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxcomponenttable_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_taxcomponenttable_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxperiodpaymentcode_pl",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_taxperiodpaymentcode_pl",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxregistrationnumbertable_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_taxregistrationnumbertable_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxregistrationnumbertable_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_taxregistrationnumbertable_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtrans",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtrans",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtrans_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtrans_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtransrefrecid_in",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtransrefrecid_in",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtransrefrecid_in_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtransrefrecid_in_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_taxtranswbientityid",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_taxtranswbientityid",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_transrecid_mx",
+                      "type": "Decimal",
+                      "physicalType": "decimal"
+                    },
+                    "sink": {
+                      "name": "mserp_transrecid_mx",
+                      "physicalType": "decimal",
+                      "scale": 0,
+                      "precision": 38
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_transrecid_mx_bigint",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_transrecid_mx_bigint",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_transtableid_mx",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "mserp_transtableid_mx",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_vatduedate_w",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "mserp_vatduedate_w",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "mserp_vatnum_pl",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "mserp_vatnum_pl",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "versionnumber",
+                      "type": "Int64",
+                      "physicalType": "long"
+                    },
+                    "sink": {
+                      "name": "versionnumber",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsDelete",
+                      "type": "Boolean",
+                      "physicalType": "boolean"
+                    },
+                    "sink": {
+                      "name": "IsDelete",
+                      "physicalType": "bit"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CreatedOn",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "CreatedOn",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "msft_datastate",
+                      "type": "Int64"
+                    },
+                    "sink": {
+                      "name": "msft_datastate",
+                      "physicalType": "bigint"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "PartitionId",
+                      "type": "String"
+                    },
+                    "sink": {
+                      "name": "PartitionId",
+                      "physicalType": "varchar",
+                      "length": "8000"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

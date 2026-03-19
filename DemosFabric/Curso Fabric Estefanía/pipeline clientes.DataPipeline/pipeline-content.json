@@ -1,0 +1,221 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Fabric_Clientes",
+                "database": "365zap"
+              },
+              "externalReferences": {
+                "connection": "d2368c4f-3359-4b48-a2fb-c84b55c56cc9"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "disableMetricsCollection": false,
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWH Estefania",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "3134b22e-25b9-4b9e-9e96-ece60e50c2ba",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "dim_clientes"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "CodigoGrupoCliente",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "CodigoGrupoCliente",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "Nombre_Grupo_Sucursal",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "100"
+                },
+                "sink": {
+                  "name": "Nombre_Grupo_Sucursal",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "CodigoSucursal",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "CodigoSucursal",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "CP",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "CP",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "Pais",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Pais",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Colonia",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Colonia",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Desc_Estado",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Desc_Estado",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Codigo_Estado",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Codigo_Estado",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Desc_Municipio",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Desc_Municipio",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Codigo_Municipio",
+                  "type": "Int16",
+                  "physicalType": "smallint"
+                },
+                "sink": {
+                  "name": "Codigo_Municipio",
+                  "physicalType": "smallint"
+                }
+              },
+              {
+                "source": {
+                  "name": "LAT",
+                  "type": "Double",
+                  "physicalType": "float"
+                },
+                "sink": {
+                  "name": "LAT",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "LONG",
+                  "type": "Double",
+                  "physicalType": "float"
+                },
+                "sink": {
+                  "name": "LONG",
+                  "physicalType": "float"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ]
+  }
+}

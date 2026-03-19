@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "dataverse_gcgformacion_cds2_workspace_unq10f0efdbf324ef1184046045bddbb",
+                "properties": {
+                  "annotations": [],
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "workspaceId": "24c2f4ba-e3f8-4cf8-b952-da0b193d39e8",
+                    "artifactId": "2748e951-561c-427f-964c-f6f1e8475996",
+                    "rootFolder": "Tables"
+                  }
+                }
+              },
+              "type": "LakehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "table": "account"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "almacenArchiving",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-xl2mejhy4p4ezoks3ifrspjz5a.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "02a9a397-627b-44ed-9685-6ead944548e5",
+                    "workspaceId": "24c2f4ba-e3f8-4cf8-b952-da0b193d39e8"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "account"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ]
+  }
+}
