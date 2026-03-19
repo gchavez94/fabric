@@ -1,0 +1,35 @@
+table CONCEPTOS
+	lineageTag: e0342e5c-3bee-4f3c-bfd1-6cf1f2123656
+
+	column ORDEN
+		dataType: double
+		lineageTag: 9c8fc991-2112-4e9f-82d2-ab0cb87ee2c9
+		summarizeBy: none
+		sourceColumn: ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONCEPTO
+		dataType: string
+		lineageTag: 0a0f7b7d-af65-482f-957a-e8cab464a939
+		summarizeBy: none
+		sourceColumn: CONCEPTO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CONCEPTOS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("Xc/LCsIwEAXQXwlZl4LV6lpsXSkIPjalizQdZSSPkofo35vU1EW3Z5g7d5qGLmhGd9o6bcken9rSNguYlyPLQYAENR+uwrCCwQBHxlGrxMvAR6YcKJQYt5LHE2cPov8HFEFOlyup8A4GezZyMTUhN2aQdQJ+POaGLp23DoPaxOWMyYccfJeG63n/KXPajtdqAdwZ5KFBnzh2rd+D0BZfOll8d/vwqWW+ie8wHp9pvw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ORDEN = _t, CONCEPTO = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ORDEN", type number}, {"CONCEPTO", type text}}),
+				    #"Filas ordenadas" = Table.Sort(#"Tipo cambiado",{{"ORDEN", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

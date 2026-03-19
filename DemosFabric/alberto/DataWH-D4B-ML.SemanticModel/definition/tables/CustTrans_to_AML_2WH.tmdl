@@ -1,0 +1,455 @@
+table CustTrans_to_AML_2WH
+	lineageTag: 197ce114-aebe-48b6-aadb-0b9be749f8ad
+	sourceLineageTag: [dbo].[CustTrans_to_AML_2WH]
+
+	measure 'Monto Total' = SUM(CustTrans_to_AML_2WH[AMOUNTMST])/10
+		lineageTag: 5ce24a8e-f3af-4863-90f3-ab27254a3127
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Facturas rec' = DISTINCTCOUNT(CustTrans_to_AML_2WH[INVOICE])
+		lineageTag: 81a33050-b285-40be-a3a6-7a62aa6671af
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Balance = sum(CustTrans_to_AML_2WH[AMOUNTMST])-sum(CustTrans_to_AML_2WH[SETTLEAMOUNTMST])
+		formatString: 0
+		lineageTag: d396784d-1084-40cb-b216-657c181c586f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column Status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4429fbd2-0b8f-4a6f-b414-856360e07dd7
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATEDDATETIME
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 8cf40963-b747-4aec-8c04-f437e79c62fe
+		sourceLineageTag: CREATEDDATETIME
+		summarizeBy: none
+		sourceColumn: CREATEDDATETIME
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9e94db88-23d0-4684-ae69-9bfbae704dd6
+		sourceLineageTag: RECID
+		summarizeBy: count
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 10a6890b-dea1-4a78-a6b0-6e497725c321
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAYMTERMID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e176b467-7d64-4ced-8bf7-5aa13a2e2c5e
+		sourceLineageTag: PAYMTERMID
+		summarizeBy: none
+		sourceColumn: PAYMTERMID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOUCHER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 59bf1e06-4f9a-4086-b565-93a260426c65
+		sourceLineageTag: VOUCHER
+		summarizeBy: none
+		sourceColumn: VOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TXT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0c25f83-5949-4ffd-9a9d-b807f7917655
+		sourceLineageTag: TXT
+		summarizeBy: none
+		sourceColumn: TXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9be67662-4d48-4bbd-810c-db33bee212e3
+		sourceLineageTag: TRANSTYPE
+		summarizeBy: sum
+		sourceColumn: TRANSTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3b3a36b9-a83e-47f3-9959-e532c7ce7ff9
+		sourceLineageTag: TRANSDATE
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAYMMODE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1524e4b7-c19c-4657-9ea7-6f99328e541d
+		sourceLineageTag: PAYMMODE
+		summarizeBy: sum
+		sourceColumn: PAYMMODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LASTSETTLEDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c110d06d-622e-45fe-8c89-001685e14853
+		sourceLineageTag: LASTSETTLEDATE
+		summarizeBy: none
+		sourceColumn: LASTSETTLEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 610d9a6f-9031-4d62-9f84-d9db02e74ceb
+		sourceLineageTag: INVOICE
+		summarizeBy: none
+		sourceColumn: INVOICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DUEDATE
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 2fd412ef-1bc3-4608-8d13-dd61be31b4f2
+		sourceLineageTag: DUEDATE
+		summarizeBy: none
+		sourceColumn: DUEDATE
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOCUMENTDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 978c037b-83cf-4f28-9c47-b43fab7c579a
+		sourceLineageTag: DOCUMENTDATE
+		summarizeBy: none
+		sourceColumn: DOCUMENTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCYCODE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 218eebd3-4f5f-468d-b3d9-a67bfaebe892
+		sourceLineageTag: CURRENCYCODE
+		summarizeBy: none
+		sourceColumn: CURRENCYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNTMST
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 89180728-7dbe-436e-aed2-fff34461275b
+		sourceLineageTag: AMOUNTMST
+		summarizeBy: sum
+		sourceColumn: AMOUNTMST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 144ad1b1-059c-4455-bb3c-849da62b668f
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: none
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMOFDAYS
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 618bd943-bb2f-49a0-8b63-5bd95d54128a
+		sourceLineageTag: NUMOFDAYS
+		summarizeBy: sum
+		sourceColumn: NUMOFDAYS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTGROUP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9ad1327b-e201-414d-9b9f-61b1c1e13b3e
+		sourceLineageTag: CUSTGROUP
+		summarizeBy: none
+		sourceColumn: CUSTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 96ee3cec-9236-4e3a-850c-b923c018262b
+		sourceLineageTag: NAME
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Morosidad
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 83090833-f1ae-478e-bf82-0e46a355bc7e
+		sourceLineageTag: Morosidad
+		summarizeBy: sum
+		sourceColumn: Morosidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Pago_Hoy
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ec91c6da-6d1d-452f-a26b-0de97f431396
+		sourceLineageTag: Dias_Pago_Hoy
+		summarizeBy: sum
+		sourceColumn: Dias_Pago_Hoy
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_de_Factura
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aabc2b08-bd04-43e4-b7c3-fe6af7f2e05d
+		sourceLineageTag: Tipo_de_Factura
+		summarizeBy: none
+		sourceColumn: Tipo_de_Factura
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filtro_Modelo
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0c610a9b-93eb-4ddb-a72f-bd8644385319
+		sourceLineageTag: Filtro_Modelo
+		summarizeBy: sum
+		sourceColumn: Filtro_Modelo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filtro_Iteracion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 206d74be-7ee0-46c3-80d2-e8648929b6af
+		sourceLineageTag: Filtro_Iteracion
+		summarizeBy: sum
+		sourceColumn: Filtro_Iteracion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Transcurridos_Pago
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 6a519b7b-0dc2-4074-bbc1-da965fbc4a37
+		sourceLineageTag: Dias_Transcurridos_Pago
+		summarizeBy: sum
+		sourceColumn: Dias_Transcurridos_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEAMOUNTMST
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: bigint
+		lineageTag: d1ffd3c7-72bc-4c10-a573-dd706d3a7038
+		sourceLineageTag: SETTLEAMOUNTMST
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTMST
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSED
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 1199af1b-418a-4e83-bbfe-9fe758e1d51b
+		sourceLineageTag: CLOSED
+		summarizeBy: none
+		sourceColumn: CLOSED
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Pronostico_Pago
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 07060806-da26-479b-9f8d-ef094f8630c8
+		sourceLineageTag: Dias_Pronostico_Pago
+		summarizeBy: sum
+		sourceColumn: Dias_Pronostico_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_Pronostico_Pago
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 39fdd926-9891-4e2a-9e58-4073c18731b0
+		sourceLineageTag: Fecha_Pronostico_Pago
+		summarizeBy: none
+		sourceColumn: Fecha_Pronostico_Pago
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pronostico_Morosidad
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e7a5c33e-7682-4425-9048-a4b9fd8ea161
+		sourceLineageTag: Pronostico_Morosidad
+		summarizeBy: none
+		sourceColumn: Pronostico_Morosidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Previsión_Incobrables
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b105bc50-7128-49b4-b2dd-a3bc9e276249
+		sourceLineageTag: Previsión_Incobrables
+		summarizeBy: none
+		sourceColumn: Previsión_Incobrables
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pronostico_Morosidad_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3ab6fdad-1d80-47bd-b240-30d99e426652
+		sourceLineageTag: Pronostico_Morosidad_ID
+		summarizeBy: count
+		sourceColumn: Pronostico_Morosidad_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prevision_Incobrables_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5260c229-7acf-4b83-8d4a-bc39cb4f7da4
+		sourceLineageTag: Prevision_Incobrables_ID
+		summarizeBy: count
+		sourceColumn: Prevision_Incobrables_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clasificacion_de_Riesgo_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f3c1b165-7e22-4951-aa80-13f86155f286
+		sourceLineageTag: Clasificacion_de_Riesgo_ID
+		summarizeBy: count
+		sourceColumn: Clasificacion_de_Riesgo_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clasificacion_Riesgo
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78d02001-e3f8-4d87-bc30-e1f10b58464d
+		sourceLineageTag: Clasificacion_Riesgo
+		summarizeBy: none
+		sourceColumn: Clasificacion_Riesgo
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumFecha
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f07fc6af-4a51-4a3b-a028-9083611f5a37
+		sourceLineageTag: NumFecha
+		summarizeBy: sum
+		sourceColumn: NumFecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AgingMostrar
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 11fd4d59-00d0-42db-a1df-b1e62080393a
+		sourceLineageTag: AgingMostrar
+		summarizeBy: sum
+		sourceColumn: AgingMostrar
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CustTrans_to_AML_2WH-4477d1b9-9e41-4557-ad82-9cb935b69c99 = entity
+		mode: directLake
+		source
+			entityName: CustTrans_to_AML_2WH
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

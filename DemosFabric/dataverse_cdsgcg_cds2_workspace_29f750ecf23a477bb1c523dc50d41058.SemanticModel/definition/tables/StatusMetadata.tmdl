@@ -1,0 +1,97 @@
+table StatusMetadata
+	lineageTag: d167da3b-e204-476a-9904-03e8b9bddee0
+	sourceLineageTag: [dbo].[StatusMetadata]
+
+	column EntityName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92da9ec0-00f8-42db-89a5-3f5852cb505e
+		sourceLineageTag: EntityName
+		summarizeBy: none
+		sourceColumn: EntityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 31d9ca7b-4159-4de0-b5a9-d04af429af3b
+		sourceLineageTag: State
+		summarizeBy: sum
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3ac507f8-5e77-491b-9993-4862152d5a57
+		sourceLineageTag: Status
+		summarizeBy: sum
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUserLocalizedLabel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 1fca616d-5bde-47fc-a374-ae0704711d9f
+		sourceLineageTag: IsUserLocalizedLabel
+		summarizeBy: none
+		sourceColumn: IsUserLocalizedLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocalizedLabelLanguageCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d7583c8c-de5a-48e2-b665-3b0898e77693
+		sourceLineageTag: LocalizedLabelLanguageCode
+		summarizeBy: sum
+		sourceColumn: LocalizedLabelLanguageCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocalizedLabel
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2cf237fb-4f3e-4ded-8de2-04e57ebd277d
+		sourceLineageTag: LocalizedLabel
+		summarizeBy: none
+		sourceColumn: LocalizedLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalValue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ae35ccd-6741-45b0-85d6-3fb404c35afc
+		sourceLineageTag: ExternalValue
+		summarizeBy: none
+		sourceColumn: ExternalValue
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonpartition
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88c3f33b-9184-44e3-8ac2-80e87b5e2712
+		sourceLineageTag: createdonpartition
+		summarizeBy: none
+		sourceColumn: createdonpartition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StatusMetadata-2e975745-e53b-4ffd-b60e-4f6924aef993 = entity
+		mode: directLake
+		source
+			entityName: StatusMetadata
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

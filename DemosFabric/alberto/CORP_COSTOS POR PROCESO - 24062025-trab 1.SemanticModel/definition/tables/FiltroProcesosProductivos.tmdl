@@ -1,0 +1,17 @@
+table FiltroProcesosProductivos
+	lineageTag: c5591464-e2cd-4dee-8315-4c15818b693a
+
+	column Cve_B_ProcesoProductivo
+		lineageTag: 7ccdcabf-9dcf-4064-827b-456b155869c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dim_b_proceso_productivo[Cve_B_ProcesoProductivo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FiltroProcesosProductivos = calculated
+		mode: import
+		source = VALUES(dim_b_proceso_productivo[Cve_B_ProcesoProductivo])
+
+	annotation PBI_Id = 3cf5651e22f74a708f17148699a0a69b
+

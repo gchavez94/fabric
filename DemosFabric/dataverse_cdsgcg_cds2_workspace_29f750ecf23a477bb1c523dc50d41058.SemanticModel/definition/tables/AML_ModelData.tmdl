@@ -1,0 +1,45 @@
+table AML_ModelData
+	lineageTag: b6e36b6f-03f7-4d4b-865c-d4479b58da55
+	sourceLineageTag: [dbo].[AML_ModelData]
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8b066dcd-96cc-4ba9-bb69-8d6fca4a0025
+		sourceLineageTag: RECID
+		summarizeBy: sum
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6e5bacd-edf7-4141-b901-d40f7853fd2b
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Pronostico_Pago
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1ed7e138-c818-4fef-9e7a-e79001e4dce2
+		sourceLineageTag: Dias_Pronostico_Pago
+		summarizeBy: sum
+		sourceColumn: Dias_Pronostico_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AML_ModelData-dd1ac54e-8b8a-44e5-9846-1aa3d099bd06 = entity
+		mode: directLake
+		source
+			entityName: AML_ModelData
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

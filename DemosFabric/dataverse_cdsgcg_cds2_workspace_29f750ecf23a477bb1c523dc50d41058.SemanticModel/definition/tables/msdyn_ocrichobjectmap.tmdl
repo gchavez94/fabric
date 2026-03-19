@@ -1,0 +1,575 @@
+table msdyn_ocrichobjectmap
+	lineageTag: ffec4789-c468-4459-987b-deea3336e954
+	sourceLineageTag: [dbo].[msdyn_ocrichobjectmap]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c28769bb-9fc6-4ff6-9e49-ad12a8160bd6
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1419dc02-1426-4e06-8e26-46c741847ee5
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f4b69e3d-30bb-4fdf-ac8e-78198459e05c
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f6c8a429-accb-43ba-9505-47ada6966e16
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c09269ae-0b78-40d5-b589-db95ae26b459
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: af87caff-9d36-4f40-a317-5e7cc2821835
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 87455203-517e-43ae-bd94-1919f040cc58
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0c103fe7-c8d9-4e28-a8a1-6fe1bfcec827
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38ca934d-5efd-447a-ba8c-deaf88af5fe6
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7d471d91-712d-4cc0-be5c-12fb8cb80849
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f3b3d4f8-b884-4a71-ae91-3918b90e135e
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a0117ee-87fc-44ef-b932-b15c4fba70ee
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5d5240c6-0ba6-45a2-92d3-763a9f1025b0
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_authsettingsmapid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7dca3ec5-1f8d-403c-9fbe-72a67c0b930f
+		sourceLineageTag: msdyn_authsettingsmapid
+		summarizeBy: none
+		sourceColumn: msdyn_authsettingsmapid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_authsettingsmapid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2313eeff-c5f9-4d56-9b50-6d58fd1ed022
+		sourceLineageTag: msdyn_authsettingsmapid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_authsettingsmapid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocmappedrichobjid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bafff306-2f65-45f3-b796-2f98d45b0da0
+		sourceLineageTag: msdyn_ocmappedrichobjid
+		summarizeBy: none
+		sourceColumn: msdyn_ocmappedrichobjid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocmappedrichobjid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d165ba13-30d4-4211-8906-26e7c2cb9791
+		sourceLineageTag: msdyn_ocmappedrichobjid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_ocmappedrichobjid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocpaymentprofileid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7214c4b5-ed51-4c8f-bfae-f7fe309c5485
+		sourceLineageTag: msdyn_ocpaymentprofileid
+		summarizeBy: none
+		sourceColumn: msdyn_ocpaymentprofileid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocpaymentprofileid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac6fc536-0ff2-4a95-976f-4ea5b85e9f58
+		sourceLineageTag: msdyn_ocpaymentprofileid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_ocpaymentprofileid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocrichobjid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1069fb7d-20e0-45e3-a020-221a1032c83f
+		sourceLineageTag: msdyn_ocrichobjid
+		summarizeBy: none
+		sourceColumn: msdyn_ocrichobjid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocrichobjid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 83244e35-3e68-43e2-ae96-b6c5ccfdb461
+		sourceLineageTag: msdyn_ocrichobjid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_ocrichobjid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 60bd058a-770f-4ae7-bb84-d46026799018
+		sourceLineageTag: owningbusinessunit
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 41eb514b-4894-4ecd-98af-e922950dd0b2
+		sourceLineageTag: owningbusinessunit_entitytype
+		summarizeBy: none
+		sourceColumn: owningbusinessunit_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0408232c-66b5-4755-a802-be9901268d07
+		sourceLineageTag: owningteam
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27fa11b1-825b-4274-b018-a0298a02d5be
+		sourceLineageTag: owningteam_entitytype
+		summarizeBy: none
+		sourceColumn: owningteam_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d08b7464-e746-4503-897a-2138a1b0c73a
+		sourceLineageTag: owninguser
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bef04c6d-3acd-4d87-b797-9c73e0e443a8
+		sourceLineageTag: owninguser_entitytype
+		summarizeBy: none
+		sourceColumn: owninguser_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 51782f51-fd84-4a3d-8898-4e366148e471
+		sourceLineageTag: ownerid
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3727ac95-43d5-406e-8c9d-40a2f1545ad2
+		sourceLineageTag: ownerid_entitytype
+		summarizeBy: none
+		sourceColumn: ownerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9fdf0a6-240b-47f1-b62e-69679762dc1b
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a7d96afe-eb0a-4c95-8ea6-91160d9ab928
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0f8b4c85-a980-4140-bc06-f5116c75b960
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1194d1cd-6cba-43d4-bd29-b8a4daec9819
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a767782f-8341-4c1d-93bc-8c2e5660016b
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: fcf61e2a-4d9b-42af-99af-5b46ef87e155
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 17b45977-b2b1-4b1e-acdf-91a1fc97b2df
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7f2b5e51-e076-4a8b-9c37-8a2907b79f27
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cd6a5f88-ac7e-4036-84bb-9fb35b4ef2df
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eb9c0485-0b64-49f9-a197-c65a0898b737
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 090514cb-f911-40e4-a430-9d6676095630
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_authsettingsmapidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8dc2f781-17d5-4ffc-81da-914effde898e
+		sourceLineageTag: msdyn_authsettingsmapidname
+		summarizeBy: none
+		sourceColumn: msdyn_authsettingsmapidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b7175890-0be6-44cd-a3f0-622ecb5e57a5
+		sourceLineageTag: msdyn_name
+		summarizeBy: none
+		sourceColumn: msdyn_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocmappedrichobjidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 30416ed8-5bf3-4ca4-9083-a3d22d444f18
+		sourceLineageTag: msdyn_ocmappedrichobjidname
+		summarizeBy: none
+		sourceColumn: msdyn_ocmappedrichobjidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocpaymentprofileidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e54517b9-3ed3-4d53-ae2c-dca5ed361d36
+		sourceLineageTag: msdyn_ocpaymentprofileidname
+		summarizeBy: none
+		sourceColumn: msdyn_ocpaymentprofileidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ocrichobjectmapid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6cf0b310-8d23-4a32-983e-9c0a9822d5cc
+		sourceLineageTag: msdyn_ocrichobjectmapid
+		summarizeBy: none
+		sourceColumn: msdyn_ocrichobjectmapid
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 4dcbdbf5-975f-4b8a-8b14-4ad87a252767
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e296f4d3-062c-4343-a9e2-3c6afed2d48b
+		sourceLineageTag: owneridname
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridtype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c357cfdd-a528-4e60-b12a-1b039a2458b9
+		sourceLineageTag: owneridtype
+		summarizeBy: none
+		sourceColumn: owneridtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 41fba69a-6ecb-49e0-92e6-caee72ffaa4c
+		sourceLineageTag: owneridyominame
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunitname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4a1bc06c-be86-4383-8606-eb82a6cba0ac
+		sourceLineageTag: owningbusinessunitname
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2f6fa33d-cf2a-4410-83c0-442842e16b72
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 89b08eb8-01f4-41ca-b173-0427e860589d
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 824e2cc2-c35d-43e2-8f0d-b9e69e999853
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c9a521a4-38ec-444a-9212-f996b359575d
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80bd4183-e990-41c0-9e91-926c3fe2ac7e
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition msdyn_ocrichobjectmap-0e38e301-5d75-402a-aa67-dbc09831d140 = entity
+		mode: directLake
+		source
+			entityName: msdyn_ocrichobjectmap
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

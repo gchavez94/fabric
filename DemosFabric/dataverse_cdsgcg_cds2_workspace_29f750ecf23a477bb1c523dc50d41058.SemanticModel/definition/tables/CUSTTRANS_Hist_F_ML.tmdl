@@ -1,0 +1,80 @@
+table CUSTTRANS_Hist_F_ML
+	lineageTag: 85547df3-bdd8-46eb-8bbd-bb4e8a7fb060
+	sourceLineageTag: [dbo].[CUSTTRANS_Hist_F_ML]
+
+	column FECHA_Mes_Cierre
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f66088c7-19a3-46d0-9faa-fc1f47d89bcb
+		sourceLineageTag: FECHA_Mes_Cierre
+		summarizeBy: none
+		sourceColumn: FECHA_Mes_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 51d8dc98-8a8d-4080-90e4-4c865f1c8314
+		sourceLineageTag: Total
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha_Corte
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 95877bb7-921a-4ca5-9cc1-58a458dcc7dc
+		sourceLineageTag: Fecha_Corte
+		summarizeBy: none
+		sourceColumn: Fecha_Corte
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7f9484a0-cee0-4dd0-a192-bdd35dd85d62
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: sum
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Cierre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 261ee07e-0fb6-4cf7-9851-b1fbec2fc099
+		sourceLineageTag: Mes_Cierre
+		summarizeBy: sum
+		sourceColumn: Mes_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año_Cierre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 585a2dd6-6b1d-4926-bff2-e9d92896c25d
+		sourceLineageTag: Año_Cierre
+		summarizeBy: sum
+		sourceColumn: Año_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CUSTTRANS_Hist_F_ML-1649b41f-8375-432c-afa6-c5892a4ffb7b = entity
+		mode: directLake
+		source
+			entityName: CUSTTRANS_Hist_F_ML
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

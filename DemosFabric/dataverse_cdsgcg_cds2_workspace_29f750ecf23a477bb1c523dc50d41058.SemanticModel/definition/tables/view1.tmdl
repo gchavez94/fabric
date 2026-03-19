@@ -1,0 +1,193 @@
+table view1
+	lineageTag: 304f185e-a6c4-4d48-bfa8-e1d9ab018fe9
+	sourceLineageTag: [dbo].[view1]
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 10613fd8-c080-4c04-892d-733eb2e40350
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetmodelid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2adad275-c8a9-4d75-bfec-c267c6f21785
+		sourceLineageTag: budgetmodelid
+		summarizeBy: none
+		sourceColumn: budgetmodelid
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid_btl
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ab50ae9d-cb46-4fd6-9688-961b87f856a2
+		sourceLineageTag: recid_btl
+		summarizeBy: sum
+		sourceColumn: recid_btl
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactionstatus
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a45167b5-a37b-4369-9e43-2cde10528733
+		sourceLineageTag: transactionstatus
+		summarizeBy: sum
+		sourceColumn: transactionstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgettransactioncode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4f2a2ea0-0058-4ab8-a3e6-42dc17f74fbb
+		sourceLineageTag: budgettransactioncode
+		summarizeBy: sum
+		sourceColumn: budgettransactioncode
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetmodeltype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 717f752f-95f4-4f32-8928-d12628142e8f
+		sourceLineageTag: budgetmodeltype
+		summarizeBy: sum
+		sourceColumn: budgetmodeltype
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetmodeldataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7921f6b8-f204-4aa6-bcf2-2185389643ba
+		sourceLineageTag: budgetmodeldataareaid
+		summarizeBy: none
+		sourceColumn: budgetmodeldataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e6edf08e-ca96-4e2f-bfe2-67f853435dde
+		sourceLineageTag: transactioncurrencyamount
+		summarizeBy: sum
+		sourceColumn: transactioncurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column costcenter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c9d3d476-2ede-4b18-99fd-a683e3c714b6
+		sourceLineageTag: costcenter
+		summarizeBy: sum
+		sourceColumn: costcenter
+
+		annotation SummarizationSetBy = Automatic
+
+	column costcentervalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3fb21a69-06fe-43f1-b0eb-b8d0ee09a13e
+		sourceLineageTag: costcentervalue
+		summarizeBy: none
+		sourceColumn: costcentervalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column project
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 545d02c5-3b9f-48c9-9dae-4b8d29c2e31a
+		sourceLineageTag: project
+		summarizeBy: sum
+		sourceColumn: project
+
+		annotation SummarizationSetBy = Automatic
+
+	column projectvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e557eafe-ecdc-4b80-b75b-f91fb9e7645b
+		sourceLineageTag: projectvalue
+		summarizeBy: none
+		sourceColumn: projectvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column mainaccountvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c73ac947-b58c-4763-9ea7-20983eef1d53
+		sourceLineageTag: mainaccountvalue
+		summarizeBy: none
+		sourceColumn: mainaccountvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column displayvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b94c30eb-9cc4-4792-bc8b-847259c428fb
+		sourceLineageTag: displayvalue
+		summarizeBy: none
+		sourceColumn: displayvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgettransactiontype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 16a797c2-a476-48c7-9aeb-46f6a385e38a
+		sourceLineageTag: budgettransactiontype
+		summarizeBy: sum
+		sourceColumn: budgettransactiontype
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetdescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 20700048-504d-47d9-8aa3-de0c25b9c10b
+		sourceLineageTag: budgetdescription
+		summarizeBy: none
+		sourceColumn: budgetdescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5608b3c5-c28a-487f-9dad-728253dfd7d4
+		sourceLineageTag: budgetname
+		summarizeBy: none
+		sourceColumn: budgetname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition view1-c0d16f7b-e72f-43aa-887e-12b551e08dcd = entity
+		mode: directLake
+		source
+			entityName: view1
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

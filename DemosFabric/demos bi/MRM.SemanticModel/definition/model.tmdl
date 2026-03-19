@@ -1,0 +1,24 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.145.1105.0 (25.07)+decbc46fce458c5b8d5109d6f32a743f2ac949c8
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Ventas","SL","Presupuesto"]
+
+ref table Ventas
+ref table DateTableTemplate_dc56faec-4920-4e8b-b7f3-3b46f63598cd
+ref table SL
+ref table Presupuesto
+ref table LocalDateTable_f10cfc63-3a6f-4219-8ce0-d5edadf1d5b3
+ref table LocalDateTable_1416158a-95e6-424a-8c6a-bb1b85e32797
+ref table LocalDateTable_53cf4afa-8821-4dc8-afc6-aaac43786c97
+
+ref cultureInfo es-MX
+

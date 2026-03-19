@@ -1,0 +1,163 @@
+table Morosidad_AML
+	lineageTag: 413ef311-1841-413e-9e8e-566aea67dbc9
+	sourceLineageTag: [dbo].[Morosidad_AML]
+
+	column ACCOUNTNUM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6803f1b0-407c-43f2-9ad4-b90c7ee75972
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: none
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNTCUR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3f5653f5-a133-4d2b-a5cc-fb96a2c6430b
+		sourceLineageTag: AMOUNTCUR
+		summarizeBy: none
+		sourceColumn: AMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSED
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 62dd7036-6c74-40b4-9716-d0c7514f2467
+		sourceLineageTag: CLOSED
+		summarizeBy: none
+		sourceColumn: CLOSED
+
+		annotation SummarizationSetBy = Automatic
+
+	column DUEDATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d055929-6d0f-427a-9f48-5427c945cb97
+		sourceLineageTag: DUEDATE
+		summarizeBy: none
+		sourceColumn: DUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEAMOUNTCUR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72b0c909-c8af-43c4-9792-78acbc8e398d
+		sourceLineageTag: SETTLEAMOUNTCUR
+		summarizeBy: none
+		sourceColumn: SETTLEAMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e4389360-a393-4bf8-a4e7-c10170cd2f37
+		sourceLineageTag: TRANSDATE
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAYMTERMID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b280873f-7e22-4487-a5f6-c2ed22aa8da7
+		sourceLineageTag: PAYMTERMID
+		summarizeBy: none
+		sourceColumn: PAYMTERMID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0c2772ce-9ae7-4746-b008-f62d67bd7a69
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Pago
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7d326322-406a-4e5b-9924-92857e351bad
+		sourceLineageTag: Dias_Pago
+		summarizeBy: none
+		sourceColumn: Dias_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMOFDAYS
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c4b2ec9d-6981-4c32-9b16-4ab861805f3d
+		sourceLineageTag: NUMOFDAYS
+		summarizeBy: none
+		sourceColumn: NUMOFDAYS
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANYCHAINID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ccf95f6b-c878-449e-9c92-c07804458715
+		sourceLineageTag: COMPANYCHAINID
+		summarizeBy: none
+		sourceColumn: COMPANYCHAINID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTGROUP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d7530bbf-9d88-428c-ae2a-d496a3f4422e
+		sourceLineageTag: CUSTGROUP
+		summarizeBy: none
+		sourceColumn: CUSTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Morosidad
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03f8f489-8e4d-47b9-ae0e-2f78faad8a95
+		sourceLineageTag: Morosidad
+		summarizeBy: none
+		sourceColumn: Morosidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scored Labels'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80184a82-5fc9-4b94-a0bf-1ec59c97d11f
+		sourceLineageTag: Scored Labels
+		summarizeBy: none
+		sourceColumn: Scored Labels
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scored Probabilities'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cd8e01a5-4e37-4c51-8b46-32ef56b2d3f1
+		sourceLineageTag: Scored Probabilities
+		summarizeBy: none
+		sourceColumn: Scored Probabilities
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Morosidad_AML-ce8366a5-14e2-4dfb-a3b9-32a81205a9ca = entity
+		mode: directLake
+		source
+			entityName: Morosidad_AML
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

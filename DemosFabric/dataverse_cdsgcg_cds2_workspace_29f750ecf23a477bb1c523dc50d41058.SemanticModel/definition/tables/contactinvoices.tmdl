@@ -1,0 +1,172 @@
+table contactinvoices
+	lineageTag: ab6440e8-192a-4f30-ad84-4065141ea639
+	sourceLineageTag: [dbo].[contactinvoices]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b1d062f5-dcad-41ec-8e0d-d144c8d609f5
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c0c86f7c-08f7-4405-a157-832fa40b61c3
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 44b781e3-8db5-4d37-9a33-7bf018f862d2
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e2f98037-dbbe-4bed-87f0-ff190e0594c5
+		sourceLineageTag: contactid
+		summarizeBy: none
+		sourceColumn: contactid
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactinvoiceid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9168d243-3a59-4d62-a88a-53cd7cafcda3
+		sourceLineageTag: contactinvoiceid
+		summarizeBy: none
+		sourceColumn: contactinvoiceid
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3eaf9779-a4de-4501-895a-dcf0f31f13b9
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoiceid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6e7bce35-8f4c-493a-920f-fe89cd552e5c
+		sourceLineageTag: invoiceid
+		summarizeBy: none
+		sourceColumn: invoiceid
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0feac551-b3c6-4ec6-80b2-93c270c0f078
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3d337a77-e29d-4677-9392-63a085226667
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0b105507-9301-4cf4-8ec3-ca33cab19b9a
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3a124064-fd4b-4e8d-be5d-c81e26b1046f
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1972e3f1-a04a-48c7-9256-f4e1df73e3ed
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 8c9e89bc-00bb-4dc1-af71-a8636a619fc0
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: bccc502e-b985-4c45-84c1-9e06690f44f6
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 69ff019a-b804-4270-8069-daec05f99f12
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition contactinvoices-a71da796-f3cc-40c5-b548-b1d127bc28cb = entity
+		mode: directLake
+		source
+			entityName: contactinvoices
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

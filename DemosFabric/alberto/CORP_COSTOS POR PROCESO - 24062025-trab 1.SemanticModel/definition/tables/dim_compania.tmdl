@@ -1,0 +1,90 @@
+table dim_compania
+	lineageTag: 4dc13c13-4eeb-4922-8e25-ec3239eee5db
+
+	column Sk_Compania
+		dataType: string
+		lineageTag: 879aeb31-8d95-42e6-bb5b-f70ff4844b91
+		summarizeBy: none
+		sourceColumn: Sk_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_Compania
+		dataType: string
+		lineageTag: 15f0f553-6783-4bd4-b799-2349ecf9489a
+		summarizeBy: none
+		sourceColumn: CVE_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_Nombre
+		dataType: string
+		lineageTag: 5c962092-aa8d-4a65-b7b2-858d51cb8a6f
+		summarizeBy: none
+		sourceColumn: Dsc_Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_Alias
+		dataType: string
+		lineageTag: fbd6928f-0389-4f0d-b607-02d642c1f4e5
+		summarizeBy: none
+		sourceColumn: Dsc_Alias
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_Pais
+		dataType: string
+		lineageTag: 63fd5837-185a-4794-9a52-0d3c90c7b8b1
+		summarizeBy: none
+		sourceColumn: Dsc_Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_MonedaLocal
+		dataType: string
+		lineageTag: f5e00dd2-00c8-4de4-bac0-c7718cf2aa93
+		summarizeBy: none
+		sourceColumn: Cve_MonedaLocal
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 77e8ca0d-39d8-4b6f-a2f1-06c73869b2ff
+		summarizeBy: none
+		sourceColumn: INSERT_SVR
+
+		variation Variación
+			isDefault
+			relationship: 01471995-f7c5-4218-a15d-247b0eed339b
+			defaultHierarchy: LocalDateTable_aec19b8d-ab09-4ce2-b11b-771cdb167beb.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6c59e455-6fba-46cc-9460-038a09a5a995
+		summarizeBy: none
+		sourceColumn: UPDATE_SVR
+
+		variation Variación
+			isDefault
+			relationship: 0b925dae-e48b-4603-9271-bef5f7dd381e
+			defaultHierarchy: LocalDateTable_14e14dba-35e2-4e14-8916-a5944f7ab650.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_compania = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr"),
+				    dbo_dim_compania = Origen{[Schema="dbo",Item="dim_compania"]}[Data]
+				in
+				    dbo_dim_compania
+
+	annotation PBI_ResultType = Table
+

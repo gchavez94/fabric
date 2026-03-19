@@ -1,0 +1,74 @@
+table 'CustTrans (Ajuste Pago adicional)'
+	lineageTag: ae02e537-b90e-42ae-821d-93a79f16c533
+	sourceLineageTag: [dbo].[CustTrans (Ajuste Pago adicional)]
+
+	measure TEST = 1
+		formatString: 0
+		lineageTag: b8affef8-ad9b-49dc-be1c-53fec7df634d
+
+		changedProperty = Name
+
+	column AMOUNTCUR
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 5a013913-b0fd-4ba8-9f65-514f14557fe8
+		sourceLineageTag: AMOUNTCUR
+		summarizeBy: sum
+		sourceColumn: AMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLOSED
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3291945a-0cf9-4b83-8254-e364698a31ce
+		sourceLineageTag: CLOSED
+		summarizeBy: none
+		sourceColumn: CLOSED
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 09d99c47-83e0-4e9b-bade-fcbe14938494
+		sourceLineageTag: INVOICE
+		summarizeBy: none
+		sourceColumn: INVOICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LASTSETTLEVOUCHER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0ec4756a-a163-40c3-b1ca-285fe5be2104
+		sourceLineageTag: LASTSETTLEVOUCHER
+		summarizeBy: none
+		sourceColumn: LASTSETTLEVOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEAMOUNTCUR
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e849eec9-f0e3-499d-8d4c-cf7b9c1379bf
+		sourceLineageTag: SETTLEAMOUNTCUR
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CustTrans (Ajuste Pago adicional)-966356b1-7258-4ffa-9b85-34388b220448' = entity
+		mode: directLake
+		source
+			entityName: CustTrans (Ajuste Pago adicional)
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

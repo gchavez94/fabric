@@ -1,0 +1,61 @@
+table 'Limite de Credito'
+	lineageTag: 82033f1a-20f3-4772-b051-1d3d041915ea
+	sourceLineageTag: [dbo].[Limite de Credito]
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 06a8ebfe-363e-4bf4-805a-57c809f7aae1
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: none
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4da87420-11c7-4759-aee0-6323e781593c
+		sourceLineageTag: Cliente
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Importe
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4ab0cd13-bce3-4c56-b739-66b6cf8ca697
+		sourceLineageTag: Importe
+		summarizeBy: sum
+		sourceColumn: Importe
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Limite de Credito'
+		dataType: double
+		formatString: \$#,0;-\$#,0;\$#,0
+		sourceProviderType: float
+		lineageTag: fd2dde4c-557c-43b2-a125-9e922dca314f
+		sourceLineageTag: Limite de Credito
+		summarizeBy: sum
+		sourceColumn: Limite de Credito
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	partition 'Limite de Credito-b92b76cf-651b-42d5-a6a5-fac04f3396c7' = entity
+		mode: directLake
+		source
+			entityName: Limite de Credito
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

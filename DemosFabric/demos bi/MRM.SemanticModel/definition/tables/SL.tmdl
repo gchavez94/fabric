@@ -1,0 +1,255 @@
+table SL
+	lineageTag: 2c82b2a9-2eb4-4496-89ff-f5784069a749
+
+	column CP
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dbdea8a-aabc-4896-9b0d-96fa14785a90
+		summarizeBy: sum
+		sourceColumn: CP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		lineageTag: 8748aedf-5864-43a9-ba8d-fd503d36e180
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Estado
+		dataType: string
+		lineageTag: e297cacb-4a2f-48c5-b451-ab5cfe58e577
+		summarizeBy: none
+		sourceColumn: Desc_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Municipio
+		dataType: string
+		lineageTag: adb9c45d-369f-4a72-b862-9f80f1e79b97
+		summarizeBy: none
+		sourceColumn: Desc_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAT
+		dataType: double
+		lineageTag: c8f32025-9ba7-466f-afcb-728bfeab45ea
+		summarizeBy: sum
+		sourceColumn: LAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LONG
+		dataType: double
+		lineageTag: fc762bc7-ca30-489e-b742-a07a32352d65
+		summarizeBy: sum
+		sourceColumn: LONG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Programadas
+		dataType: int64
+		formatString: #,0
+		lineageTag: 237fa733-050c-46fa-94a7-d26ecae67497
+		summarizeBy: sum
+		sourceColumn: Programadas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reales
+		dataType: int64
+		formatString: #,0
+		lineageTag: 50daa93c-34ac-4988-9810-3267540ea285
+		summarizeBy: sum
+		sourceColumn: Reales
+
+		annotation SummarizationSetBy = Automatic
+
+	column SLA
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b588e1cb-cc44-4335-af47-16a19299f011
+		summarizeBy: sum
+		sourceColumn: SLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entrada
+		dataType: dateTime
+		formatString: hh:nn AM/PM
+		lineageTag: f23d4b4c-8aa0-4e5a-aa7d-6246b9a65eb4
+		summarizeBy: none
+		sourceColumn: Entrada
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Día
+		dataType: string
+		lineageTag: 7946f4aa-eaf2-4128-9807-707ba1bd8acf
+		summarizeBy: none
+		sourceColumn: Día
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estatus
+		dataType: string
+		lineageTag: 9c0e1a98-859b-404e-8078-87d9352c31b6
+		summarizeBy: none
+		sourceColumn: Estatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de venta'
+		dataType: string
+		lineageTag: 73eafa75-8485-438a-87f2-23a4f2fde0eb
+		summarizeBy: none
+		sourceColumn: Tipo de venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Logo
+		dataType: string
+		lineageTag: f5bd18cd-b680-4e0e-a947-61f2a15b84f4
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subproducto
+		dataType: string
+		lineageTag: 0c4cea58-cb0a-4887-b4cb-239e71c36e07
+		summarizeBy: none
+		sourceColumn: Subproducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tickets
+		dataType: int64
+		formatString: #,0
+		lineageTag: c8c2f5e2-6229-4982-8f0b-c5ba638b47d6
+		summarizeBy: sum
+		sourceColumn: Tickets
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: 4fbedb1a-7f2a-4762-92c1-a5319bd8e99b
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zona
+		dataType: string
+		lineageTag: eb1972ae-1b48-4bea-9380-ae7d53dd4fab
+		summarizeBy: none
+		sourceColumn: Zona
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oficina
+		dataType: string
+		lineageTag: 47878fff-6ebf-44ac-b715-bb5de2eda4de
+		summarizeBy: none
+		sourceColumn: Oficina
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: d086e3de-2b57-4253-a589-58c95657f88d
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estudio
+		dataType: string
+		lineageTag: ec3c737b-5198-4099-8910-c885a03a25b1
+		summarizeBy: none
+		sourceColumn: Estudio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Categoría de venta'
+		dataType: string
+		lineageTag: 34e1f39b-8843-46b0-b2a7-46deb39e41da
+		summarizeBy: none
+		sourceColumn: Categoría de venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Artículo
+		dataType: string
+		lineageTag: 4c29935b-5b60-4c3e-89de-460a790fa888
+		summarizeBy: none
+		sourceColumn: Artículo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distribuidor
+		dataType: string
+		lineageTag: 8c5a087e-8bd4-4fca-839f-6ee00e3b478a
+		summarizeBy: none
+		sourceColumn: Distribuidor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aa999707-658e-4ac0-93b5-3ab91ff77df9
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 2f0f48aa-71b1-4e48-9670-593c1f82fd69
+			defaultHierarchy: LocalDateTable_53cf4afa-8821-4dc8-afc6-aaac43786c97.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Foto
+		dataType: string
+		lineageTag: 29067df7-137c-46b8-bb7c-d90e51791682
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Foto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SL-f8a65f2e-bef9-4696-a09f-dbf15d81a18f = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\MRM - RFP\Demo -pbi\BD_MRM.xlsx"), null, true),
+				    SL_Sheet = Origen{[Item="SL",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(SL_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Fecha", type date}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Tipo cambiado1",{{"CP", Int64.Type}, {"Pais", type text}, {"Desc_Estado", type text}, {"Desc_Municipio", type text}, {"LAT", type number}, {"LONG", type number}, {"Programadas", Int64.Type}, {"Reales", Int64.Type}, {"SLA", type number}, {"Entrada", type datetime}, {"Día", type text}, {"Estatus", type text}, {"Producto", type text}, {"Logo", type text}, {"Subproducto", type text}, {"Tickets", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Producto", "Tipo de venta"}, {"Call Center", "Oficina"}, {"Área de formación ocupacional", "Categoría de venta"}, {"Carrera", "Artículo"}, {"Planteles ", "Distribuidor"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

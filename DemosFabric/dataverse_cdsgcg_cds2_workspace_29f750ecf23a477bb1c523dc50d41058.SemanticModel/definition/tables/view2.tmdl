@@ -1,0 +1,300 @@
+table view2
+	lineageTag: 1cd78a2d-af83-4daa-b951-73fe12cac78e
+	sourceLineageTag: [dbo].[view2]
+
+	column text
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aa0a1963-1dc5-4743-872b-61c3520fdddf
+		sourceLineageTag: text
+		summarizeBy: none
+		sourceColumn: text
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencycode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 628faa79-62f8-47d5-b30c-e684eaece83b
+		sourceLineageTag: transactioncurrencycode
+		summarizeBy: none
+		sourceColumn: transactioncurrencycode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditDebitAmount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8e43bc11-1e70-43c9-8ed2-0f1a73b4a300
+		sourceLineageTag: CreditDebitAmount
+		summarizeBy: sum
+		sourceColumn: CreditDebitAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column iscredit
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 19659def-9a40-4672-8fa7-36186e84ba88
+		sourceLineageTag: iscredit
+		summarizeBy: sum
+		sourceColumn: iscredit
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 814260ef-4b6a-42ec-8031-fa8a329295d7
+		sourceLineageTag: transactioncurrencyamount
+		summarizeBy: sum
+		sourceColumn: transactioncurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accountingcurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d58b0d89-cf66-4a92-8df0-4c509f55dfdd
+		sourceLineageTag: accountingcurrencyamount
+		summarizeBy: sum
+		sourceColumn: accountingcurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reportingcurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 15f60027-bd32-4cd6-9ab0-a6eb382c6a05
+		sourceLineageTag: reportingcurrencyamount
+		summarizeBy: sum
+		sourceColumn: reportingcurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GJAERecid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0a03cc6e-6501-4bb7-9c80-92512f5844bf
+		sourceLineageTag: GJAERecid
+		summarizeBy: sum
+		sourceColumn: GJAERecid
+
+		annotation SummarizationSetBy = Automatic
+
+	column postingtype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e0a3ead7-cf05-4e9c-b96f-ff36eafe0df1
+		sourceLineageTag: postingtype
+		summarizeBy: sum
+		sourceColumn: postingtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledgeraccount
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8258c073-3c13-435c-bbfc-15e4108c2b0b
+		sourceLineageTag: ledgeraccount
+		summarizeBy: none
+		sourceColumn: ledgeraccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column mainaccount
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d6a1a2d7-1318-47c0-87dd-7163a922399f
+		sourceLineageTag: mainaccount
+		summarizeBy: sum
+		sourceColumn: mainaccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column journalnumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ad436c5-1a62-4537-9740-d37bca36a464
+		sourceLineageTag: journalnumber
+		summarizeBy: none
+		sourceColumn: journalnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column subledgervoucher
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ee85fcb-7f18-4bd3-bcc4-de43ea313255
+		sourceLineageTag: subledgervoucher
+		summarizeBy: none
+		sourceColumn: subledgervoucher
+
+		annotation SummarizationSetBy = Automatic
+
+	column documentnumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ef220859-1d02-4c73-84bf-0b70123023ff
+		sourceLineageTag: documentnumber
+		summarizeBy: none
+		sourceColumn: documentnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountingdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9a347eaa-9d54-4154-a187-33305cdaa66d
+		sourceLineageTag: accountingdate
+		summarizeBy: none
+		sourceColumn: accountingdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column postinglayer
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f137d52d-4ad6-439f-94e5-402d1de0a1bd
+		sourceLineageTag: postinglayer
+		summarizeBy: sum
+		sourceColumn: postinglayer
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 13178a98-a166-4043-b495-75de24b2f145
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column subledgervoucherdataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 50d7ed54-cbb1-4b67-85eb-637904ce8649
+		sourceLineageTag: subledgervoucherdataareaid
+		summarizeBy: none
+		sourceColumn: subledgervoucherdataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mainaccountid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68722031-0cb4-43c2-83e9-1368fd79f869
+		sourceLineageTag: mainaccountid
+		summarizeBy: none
+		sourceColumn: mainaccountid
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 863109de-8848-4e4f-9f70-aa67729006b1
+		sourceLineageTag: accountName
+		summarizeBy: none
+		sourceColumn: accountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountRecid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 546eb5ba-413f-4131-893c-42075c11716d
+		sourceLineageTag: AccountRecid
+		summarizeBy: sum
+		sourceColumn: AccountRecid
+
+		annotation SummarizationSetBy = Automatic
+
+	column costcenter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d52d3fd2-579f-42f7-b0c4-4616b11b5db5
+		sourceLineageTag: costcenter
+		summarizeBy: sum
+		sourceColumn: costcenter
+
+		annotation SummarizationSetBy = Automatic
+
+	column costcentervalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c7773c49-15ee-4763-ae80-de0929d55469
+		sourceLineageTag: costcentervalue
+		summarizeBy: none
+		sourceColumn: costcentervalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column project
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d0c0547a-9e1d-49c7-acf4-cb7813954574
+		sourceLineageTag: project
+		summarizeBy: sum
+		sourceColumn: project
+
+		annotation SummarizationSetBy = Automatic
+
+	column projectvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8de94a46-7bfa-48ad-8980-c12827f2b06e
+		sourceLineageTag: projectvalue
+		summarizeBy: none
+		sourceColumn: projectvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column mainaccountvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 141aa559-e66b-443e-baeb-9ba8a1e08e95
+		sourceLineageTag: mainaccountvalue
+		summarizeBy: none
+		sourceColumn: mainaccountvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column displayvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad1c74ad-be37-4688-94d2-4afeec446427
+		sourceLineageTag: displayvalue
+		summarizeBy: none
+		sourceColumn: displayvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition view2-137337a6-27ed-4d5b-83ae-84d371051ac8 = entity
+		mode: directLake
+		source
+			entityName: view2
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

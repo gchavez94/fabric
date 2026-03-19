@@ -1,0 +1,292 @@
+table dataarea
+	lineageTag: 22c57bd8-c761-40ae-b395-37d67867bcdf
+	sourceLineageTag: [dbo].[dataarea]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 21898e4f-4f63-434e-a938-14bf1c4f03f6
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2f8f85cb-2f1e-4c01-9bac-bef5118c969f
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 16625953-67a4-4e81-98ba-fda3efb885fb
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column isvirtual
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: bbe501b4-009b-42f0-8576-d7c27eee3c6f
+		sourceLineageTag: isvirtual
+		summarizeBy: sum
+		sourceColumn: isvirtual
+
+		annotation SummarizationSetBy = Automatic
+
+	column alwaysnative
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d15a8799-4fce-43dd-a6ed-6659236d7bb7
+		sourceLineageTag: alwaysnative
+		summarizeBy: sum
+		sourceColumn: alwaysnative
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezone
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2fe4ff82-a0fd-4677-975c-80a6c28ef149
+		sourceLineageTag: timezone
+		summarizeBy: sum
+		sourceColumn: timezone
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysdatastatecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4d37d9b5-7f22-49e5-b23e-69fe6266e687
+		sourceLineageTag: sysdatastatecode
+		summarizeBy: sum
+		sourceColumn: sysdatastatecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column fno_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 33dd4826-8f21-4a74-9783-7812c0fce6a5
+		sourceLineageTag: fno_id
+		summarizeBy: none
+		sourceColumn: fno_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aec07744-4e8b-47ae-a6eb-6438922a906e
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f8eeb919-56fc-415b-a773-d6ba05c09bf6
+		sourceLineageTag: modifieddatetime
+		summarizeBy: none
+		sourceColumn: modifieddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8c8cdcb0-8675-4bba-905e-55ea2e2235a8
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d2bd3f68-372e-4821-b5cf-efe31b14358a
+		sourceLineageTag: modifiedtransactionid
+		summarizeBy: sum
+		sourceColumn: modifiedtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column createddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dba0417a-68f9-4ca3-8025-2dcaa01becaa
+		sourceLineageTag: createddatetime
+		summarizeBy: none
+		sourceColumn: createddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fdc91c8d-a3c5-437a-9a09-39f0cc0737ba
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6e3fddd4-43ef-4d73-9621-c589b203e771
+		sourceLineageTag: createdtransactionid
+		summarizeBy: sum
+		sourceColumn: createdtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aa05d8e0-c904-410e-a7c0-07675dbac1d8
+		sourceLineageTag: dataareaid
+		summarizeBy: none
+		sourceColumn: dataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column recversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e78d6c63-71ab-40ab-972e-65c60c878a13
+		sourceLineageTag: recversion
+		summarizeBy: sum
+		sourceColumn: recversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 63392a80-4c5e-4929-b192-de8f0a5d1e32
+		sourceLineageTag: partition
+		summarizeBy: sum
+		sourceColumn: partition
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysrowversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 584da6bc-c2b1-4323-a4b5-4412a77d317b
+		sourceLineageTag: sysrowversion
+		summarizeBy: sum
+		sourceColumn: sysrowversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8258ad25-6cc2-4a4a-99e2-4af74d32b389
+		sourceLineageTag: recid
+		summarizeBy: sum
+		sourceColumn: recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column tableid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3d3adc7d-53f5-48a8-a7f7-cb8f13d9ef75
+		sourceLineageTag: tableid
+		summarizeBy: sum
+		sourceColumn: tableid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e1424def-7c3c-459a-a5af-81eb70305806
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5e215f98-28cc-44a2-9f74-b3338878385d
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fdd0f67c-e379-46e2-9f34-f76ecace814a
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 2fd3a46f-c85e-4c06-b513-0c738210dfaa
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f65fb8e1-0bc1-4a67-921b-5bcf875f5da2
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dataarea-42ea2713-c765-402b-8d1d-8b0cfbf127f6 = entity
+		mode: directLake
+		source
+			entityName: dataarea
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

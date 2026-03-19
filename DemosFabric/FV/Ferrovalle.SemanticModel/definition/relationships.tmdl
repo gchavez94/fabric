@@ -1,0 +1,91 @@
+relationship 00be4efe-61a2-de8b-ce90-2805b2a4e49a
+	fromColumn: 'BD Dwell Carros activos v1'.Personalizado
+	toColumn: 'Capacidad patios'.Patio
+
+relationship 1c63faaf-cd92-b7a0-13d4-049b3eb3e49e
+	fromColumn: 'BD Dwell Carros activos v1'.'Ultimo movimiento'
+	toColumn: Eventos.'Id Evento'
+
+relationship cb6a8247-50a0-45a8-b965-54309e2daba3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha de llegada'
+	toColumn: LocalDateTable_9641cfaf-9e91-43d0-a839-8328364c4231.Date
+
+relationship 306f8456-3cb1-460c-83fa-4326c1e84f71
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Ini Patio Recibo'
+	toColumn: LocalDateTable_79818cfb-05f0-4793-bb96-795769716d9c.Date
+
+relationship f7ce1b64-0c40-4385-88de-f5beaff5e341
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Fin Patio Recibo'
+	toColumn: LocalDateTable_01fb41bf-3fb5-4943-af38-d9d91b837c68.Date
+
+relationship a1edc61e-499c-4df3-8ab5-aaec071be7e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Ini Patio Clasificacion'
+	toColumn: LocalDateTable_fba3c2a9-adb7-4a95-836c-6c6a6dc45d7c.Date
+
+relationship bc8de76b-2c64-44a4-8949-f2a1e9b98fac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Ini Patio Despacho'
+	toColumn: LocalDateTable_76707c5f-2489-4c59-b1bf-e943d0e221ea.Date
+
+relationship 9380ad0b-f85a-40cf-b31d-79a861833f14
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Ofrecimiento a CO'
+	toColumn: LocalDateTable_b6bb6628-65aa-46ee-8a22-3a5bd1f4edbc.Date
+
+relationship 6540ed64-f097-45e3-b8af-55a562061452
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha de Salida'
+	toColumn: LocalDateTable_ee88ed8b-edfb-4e9c-b521-0048bd1e9543.Date
+
+relationship 4e4a3106-d5f1-4d0a-ae71-464e9ea7e80f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha Ultimo movimiento'
+	toColumn: LocalDateTable_ece4a114-2e0a-488f-b581-b87ce4d3ed11.Date
+
+relationship 1a34195a-13fc-41b1-bcad-29402bbeede4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha de posicionado'
+	toColumn: LocalDateTable_38bf5b7b-ec1c-4bda-9832-ec0b6f2e3c67.Date
+
+relationship 6abb4790-7b83-4da7-a770-3185657f20ea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha de liberado'
+	toColumn: LocalDateTable_7e87e45e-a5b6-4ade-87b4-2177437fafdd.Date
+
+relationship 269ce719-058a-4eec-8e57-830212f9b9ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha ultimo ingreso'
+	toColumn: LocalDateTable_674dc3ef-98b6-4731-af1f-cf7e166d9899.Date
+
+relationship ed20698a-3f08-41e8-95f8-5a2da26ccef2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha ini Detencion'
+	toColumn: LocalDateTable_6f1ae0c0-6d8e-47d5-a996-fb0705657653.Date
+
+relationship 878ef5aa-cd43-4d9b-8e33-81aca6a64e4b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha fin detencion'
+	toColumn: LocalDateTable_2c137cb5-123e-4002-b9f4-51857e0a6c03.Date
+
+relationship bcd37b8e-b4e2-4b31-af31-b89887c623a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha ini Bado'
+	toColumn: LocalDateTable_443151a2-2320-4607-9e5f-58ab5892702a.Date
+
+relationship 05b47a59-e3af-4fc2-b54f-d1f4af6219a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'BD Dwell Carros activos v1'.'Fecha fin Bado'
+	toColumn: LocalDateTable_63cc16fd-b383-4e61-ad2d-1871d71472a4.Date
+
+relationship f770a4bd-8690-23a6-4225-5b08146ed719
+	fromColumn: 'BD Dwell Carros activos v1'.'Via actual'
+	toColumn: 'Capacidad por industria'.'Via posicionado(ZVP)'
+
+relationship ba5d6f11-0a25-9594-846d-cf00dddea230
+	fromColumn: 'BD Dwell Carros activos v1'.'Tipo de servicio'
+	toColumn: 'Tipo servicio'.TipServ
+

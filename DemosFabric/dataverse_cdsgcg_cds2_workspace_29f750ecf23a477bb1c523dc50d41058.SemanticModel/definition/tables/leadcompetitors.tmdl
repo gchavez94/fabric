@@ -1,0 +1,172 @@
+table leadcompetitors
+	lineageTag: c4164c98-e1d6-4234-87cb-47a88acb9136
+	sourceLineageTag: [dbo].[leadcompetitors]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0b226e5-db2b-44cf-aaae-cc647bc684ae
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 123c7286-506f-4d08-842d-22ca63b42a4d
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c3b8a6be-cc5c-4b92-9d32-5eed94bbce2b
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column competitorid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0f40af2-1304-4dec-a02d-99f7627fa73a
+		sourceLineageTag: competitorid
+		summarizeBy: none
+		sourceColumn: competitorid
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6dbde54d-5d5f-4064-a5e8-38a972441294
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column leadcompetitorid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f290e191-cdc5-4ab3-8732-4fee394d6091
+		sourceLineageTag: leadcompetitorid
+		summarizeBy: none
+		sourceColumn: leadcompetitorid
+
+		annotation SummarizationSetBy = Automatic
+
+	column leadid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1dc7bccf-fe09-4b2f-b32c-d661a078a0b9
+		sourceLineageTag: leadid
+		summarizeBy: none
+		sourceColumn: leadid
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9118282e-774f-46e8-ada1-6e9a17070a84
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7a12a737-a9eb-4c75-9dc5-75df4e8ab81c
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 722ae0b8-3cb6-43a0-9f00-d139dcfdf6fc
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 07635fd4-1af0-4968-80bb-a634bb2d1d62
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 463e3589-7701-435c-b5cf-6f55d9faf142
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: b355d7fc-2831-493f-9aff-02214c8c9d45
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b21eff5b-384e-4492-b26e-293488bb40a3
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ba35f81-fb2d-43c3-b9e6-084a95e6902c
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition leadcompetitors-a2e6ba41-e1a4-42e0-9870-6875284e3965 = entity
+		mode: directLake
+		source
+			entityName: leadcompetitors
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

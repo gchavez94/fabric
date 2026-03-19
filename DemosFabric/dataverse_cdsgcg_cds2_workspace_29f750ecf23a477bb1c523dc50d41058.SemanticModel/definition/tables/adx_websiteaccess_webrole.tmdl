@@ -1,0 +1,118 @@
+table adx_websiteaccess_webrole
+	lineageTag: 16e5c128-f815-43a4-88ce-1465daa0562e
+	sourceLineageTag: [dbo].[adx_websiteaccess_webrole]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 591f8f05-e100-46a4-9c6a-966a658e6012
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9bc24c38-a411-43ba-84cb-f168b87e469c
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8c34f290-76de-470d-8d07-0441447d0158
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_webroleid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bd7b636d-5c29-41ae-b781-fbb696441cf1
+		sourceLineageTag: adx_webroleid
+		summarizeBy: none
+		sourceColumn: adx_webroleid
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_websiteaccess_webroleid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d8e1e5b0-eb30-466f-9bbb-5330c7383de6
+		sourceLineageTag: adx_websiteaccess_webroleid
+		summarizeBy: none
+		sourceColumn: adx_websiteaccess_webroleid
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_websiteaccessid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b1b1baa2-79ca-443d-b256-bc1935f2cf93
+		sourceLineageTag: adx_websiteaccessid
+		summarizeBy: none
+		sourceColumn: adx_websiteaccessid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 334dc00a-1466-4190-8489-0a56ec0ad89d
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 95bc34fb-fd9e-41f6-9a1f-face233e551d
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 65bc0860-c1d2-4682-ac66-626e93b207ad
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: af417cc7-fce4-437a-a46c-281b6a874a71
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition adx_websiteaccess_webrole-42bd1021-f8dc-43db-b6a1-ef3984fb5390 = entity
+		mode: directLake
+		source
+			entityName: adx_websiteaccess_webrole
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

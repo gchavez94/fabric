@@ -1,0 +1,45 @@
+table AML_ModelDataAnt
+	lineageTag: c2c7c8b7-ea07-46c1-a9d3-7c1ad6817c35
+	sourceLineageTag: [dbo].[AML_ModelDataAnt]
+
+	column Scored_Labels
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d3501f10-823e-49f0-b3d2-473848897d7d
+		sourceLineageTag: Scored_Labels
+		summarizeBy: sum
+		sourceColumn: Scored_Labels
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6bafd4f1-03bd-483f-8dd5-b9b197265cee
+		sourceLineageTag: RECID
+		summarizeBy: sum
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f69adf38-739a-4543-bcea-e60911b01f16
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AML_ModelDataAnt-c403caa9-ba6c-429e-bfe9-215033c65cb4 = entity
+		mode: directLake
+		source
+			entityName: AML_ModelDataAnt
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

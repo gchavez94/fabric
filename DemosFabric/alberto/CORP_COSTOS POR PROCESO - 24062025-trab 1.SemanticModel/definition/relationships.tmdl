@@ -1,0 +1,154 @@
+relationship 01471995-f7c5-4218-a15d-247b0eed339b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_compania.INSERT_SVR
+	toColumn: LocalDateTable_aec19b8d-ab09-4ce2-b11b-771cdb167beb.Date
+
+relationship 0b925dae-e48b-4603-9271-bef5f7dd381e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_compania.UPDATE_SVR
+	toColumn: LocalDateTable_14e14dba-35e2-4e14-8916-a5944f7ab650.Date
+
+relationship 6fcdd5de-8009-4ab4-9c9c-71968d7da206
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_a_localidad.Fecha_UltimaModificacion
+	toColumn: LocalDateTable_291ab99d-dcbd-43ce-bdd3-6dc50381e809.Date
+
+relationship 3f8853db-ee24-4fec-ae07-b0a931656084
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_a_localidad.INSERT_SVR
+	toColumn: LocalDateTable_86634656-0c20-40a3-a0f3-222989b03485.Date
+
+relationship 6f0f7a30-36aa-4781-8edc-57a827529194
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_a_localidad.UPDATE_SVR
+	toColumn: LocalDateTable_68a16d45-49e5-4c38-a26d-b7de3b4d087f.Date
+
+relationship 66edd799-103f-4fa0-a637-ea8bf22a55a6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_b_proceso_productivo.Fecha_UltimaModificacion
+	toColumn: LocalDateTable_838f493f-cf35-46b6-b6a8-a827f706cf03.Date
+
+relationship 6d41055e-8c02-4180-a67b-7fcf861ee67b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_c_recurso.Fecha_UltimaModificacion
+	toColumn: LocalDateTable_9acab121-4882-431d-9901-28bff679a0b8.Date
+
+relationship 6880f85f-5b40-4477-a061-1db1137c8ff2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_c_recurso.INSERT_SVR
+	toColumn: LocalDateTable_534acb70-fb39-4d0d-ad41-87d84e0a7923.Date
+
+relationship 803f8234-0e29-4b89-86b8-a031f1e50c2d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_c_recurso.UPDATE_SVR
+	toColumn: LocalDateTable_53492989-07cf-4f08-b57b-ff00a6a3ced2.Date
+
+relationship e32b987a-8f8c-4baf-9de5-7f4ece6d3a38
+	joinOnDateBehavior: datePartOnly
+	fromColumn: h_finanzas_consolidacion.INSERT_GLD
+	toColumn: LocalDateTable_e305e8c0-6f0d-452e-a446-9c8de2342272.Date
+
+relationship b0707211-9b9f-4b46-affb-257d8a32abb1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: h_finanzas_consolidacion.UPDATE_GLD
+	toColumn: LocalDateTable_fce4e3a4-9667-40a4-a91a-91ab9771642e.Date
+
+relationship AutoDetected_b2fbf01b-1894-4558-a9dc-bd9793185368
+	isActive: false
+	fromColumn: h_finanzas_consolidacion.Cve_Compania
+	toColumn: dim_compania.CVE_Compania
+
+relationship a068c400-ea9a-e907-a76b-4e9bb32d806e
+	fromColumn: h_finanzas_consolidacion.Periodo1
+	toColumn: dim_fecha.Periodo1
+
+relationship ebae65d4-18f8-4a67-97c8-1a16b1f2ba4c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_cuentas_contables.INSERT_SVR
+	toColumn: LocalDateTable_c5e708e2-bc00-43c3-b415-98921560277e.Date
+
+relationship a432b66f-db81-464c-b583-80d94a3ebe8d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_cuentas_contables.UPDATE_SVR
+	toColumn: LocalDateTable_94131467-9ebf-4949-a6bf-77491463bb20.Date
+
+relationship AutoDetected_c4baf1bd-813f-41a3-9cd8-98183dee5abd
+	fromColumn: h_finanzas_consolidacion.SK_C_Recurso
+	toColumn: dim_c_recurso.Sk_C_Recurso
+
+relationship c93122e0-5de2-8d2a-be5c-484f5dc43216
+	fromColumn: dim_b_proceso_productivo.key_ORDEN
+	toColumn: PROCESOS.ID_PROCESOS
+
+relationship 1ce26069-c103-bdc9-6237-f083e4962569
+	fromColumn: h_finanzas_consolidacion.SK_A_localidad
+	toColumn: dim_a_localidad.Sk_A_Localidad
+
+relationship 1ef1b1fb-c717-4230-9c7a-10a87d43a4b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: h_operaciones.Fecha_Fisica
+	toColumn: LocalDateTable_da3084c8-7db1-4a53-9754-841f96ce1657.Date
+
+relationship AutoDetected_1b03aa11-8a49-4720-a1b2-1cc7be6477c7
+	isActive: false
+	fromColumn: h_operaciones.Cve_Compania
+	toColumn: dim_compania.CVE_Compania
+
+relationship AutoDetected_3012a1ea-c3d3-4e44-bffe-46ff6284d4bc
+	fromColumn: h_operaciones.SK_A_Localidad
+	toColumn: dim_a_localidad.Sk_A_Localidad
+
+relationship AutoDetected_bc0afe95-42ca-435e-a075-6267241bbe11
+	fromColumn: h_operaciones.SK_B_ProcesoProductivo
+	toColumn: dim_b_proceso_productivo.Sk_B_ProcesoProductivo
+
+relationship AutoDetected_329ad422-4562-49a4-8178-afc573ebf009
+	fromColumn: h_operaciones.SK_C_Recurso
+	toColumn: dim_c_recurso.Sk_C_Recurso
+
+relationship AutoDetected_9b487a76-3b47-41c7-b06d-543d485dafa6
+	fromColumn: h_finanzas_consolidacion.SK_B_ProcesoProductivo
+	toColumn: dim_b_proceso_productivo.Sk_B_ProcesoProductivo
+
+relationship 2cf0cece-55c8-80c2-a2e4-24b865f0fd3a
+	fromColumn: h_finanzas_consolidacion.Sk_CuentasContables
+	toColumn: dim_cuentas_contables.Sk_CuentasContables
+
+relationship AutoDetected_597a4025-700a-4eb8-9c1a-09e77adfd95d
+	isActive: false
+	fromColumn: h_finanzas_consolidacion.'PROCESOS.ORDEN'
+	toColumn: PROCESOS.ORDEN
+
+relationship a96ee624-8f41-6e59-bf62-dca6524e9acf
+	fromColumn: h_operaciones.Periodo
+	toColumn: dim_fecha.Periodo1
+
+relationship AutoDetected_63431722-4c11-446d-a852-d63d12582799
+	fromColumn: dim_cuentas_contables.'CONCEPTOS.ORDEN'
+	toColumn: CONCEPTOS.ORDEN
+
+relationship 2d4db673-73f4-ac0c-1add-6d6c1b56f8ef
+	fromColumn: dim_a_localidad.Cve_Compania
+	toColumn: dim_compania.CVE_Compania
+
+relationship AutoDetected_f91fe9ba-c2bd-44e5-b7b0-6f25f1c389a3
+	fromColumn: Consumos.SK_A_Localidad
+	toColumn: dim_a_localidad.Sk_A_Localidad
+
+relationship AutoDetected_a14db648-bfc5-4f41-be43-794c1a515847
+	fromColumn: Consumos.SK_C_Recurso
+	toColumn: dim_c_recurso.Sk_C_Recurso
+
+relationship AutoDetected_b4541359-7279-4d7d-8243-1124d1efe0be
+	fromColumn: Consumos.SK_B_ProcesoProductivo
+	toColumn: dim_b_proceso_productivo.Sk_B_ProcesoProductivo
+
+relationship 2f86d5f1-a85b-4f69-997b-53f222a4b45f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Consumos.Fecha_Financiera
+	toColumn: LocalDateTable_ec9b7efc-40c0-4332-b7c5-b584b46b5eba.Date
+
+relationship 439b9714-bfcc-e11d-01fd-532213136b6a
+	fromColumn: Consumos.Periodo
+	toColumn: dim_fecha.Periodo1
+

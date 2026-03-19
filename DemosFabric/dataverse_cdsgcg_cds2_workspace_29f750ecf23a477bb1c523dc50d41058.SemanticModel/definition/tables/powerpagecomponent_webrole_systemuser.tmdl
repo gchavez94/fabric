@@ -1,0 +1,118 @@
+table powerpagecomponent_webrole_systemuser
+	lineageTag: c7bec2d7-fae3-45de-aad8-207de4c08265
+	sourceLineageTag: [dbo].[powerpagecomponent_webrole_systemuser]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d62445f-6350-4825-88b8-54b472614d38
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 689244e1-a577-4d53-aaf0-60ccc0d60154
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 274243f0-d7a7-4373-aa99-2e9e7518c8cb
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column powerpagecomponent_webrole_systemuserid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bdd38def-e235-48b0-9cb4-a9a9d2200ac8
+		sourceLineageTag: powerpagecomponent_webrole_systemuserid
+		summarizeBy: none
+		sourceColumn: powerpagecomponent_webrole_systemuserid
+
+		annotation SummarizationSetBy = Automatic
+
+	column powerpagecomponentid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 64f9a477-7412-4520-a9e3-ed5085cb2fa8
+		sourceLineageTag: powerpagecomponentid
+		summarizeBy: none
+		sourceColumn: powerpagecomponentid
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemuserid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ade71877-cf07-472f-8481-031b8dab4584
+		sourceLineageTag: systemuserid
+		summarizeBy: none
+		sourceColumn: systemuserid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8e00ffae-62c8-4bfe-a4a5-fb9b59c71897
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: a72b1ac0-669e-4d92-9a25-358863efb8bc
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d5bab883-315b-4c91-b601-662ef12adc17
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f08de05e-5abd-42f7-8545-c61b379e007c
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition powerpagecomponent_webrole_systemuser-3b53c1e2-97ee-4332-8721-b19cb6f2a692 = entity
+		mode: directLake
+		source
+			entityName: powerpagecomponent_webrole_systemuser
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

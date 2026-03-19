@@ -1,0 +1,456 @@
+table usermobileofflineprofilemembership
+	lineageTag: 263597c2-0721-4d0f-935d-5e6dd0d0ec42
+	sourceLineageTag: [dbo].[usermobileofflineprofilemembership]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cfb9edbd-37e0-4673-b688-950b065a8781
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c1946900-512d-4b57-a74e-06b587641360
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f747146b-1b38-4d32-a242-e28c0c758ff0
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 237cfa3d-5afe-4513-9815-73b9596b096a
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 656a09b4-49dc-4ed7-a241-6e6c143b030e
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column hasmobileofflineprofileidconflict
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 1d821bd9-577a-4e60-8d50-504a468382f6
+		sourceLineageTag: hasmobileofflineprofileidconflict
+		summarizeBy: none
+		sourceColumn: hasmobileofflineprofileidconflict
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 105452fe-a488-4487-a6dc-8b5602a5ab31
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a006aab-52bd-4e9e-9129-474344a2a1cf
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db352dee-e19d-42ca-b8da-a99c92a982ee
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03adc100-539c-479b-bc14-895de9b63262
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobileofflineprofileid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aeb91ede-5b1b-4948-ac9c-455ac5c36b63
+		sourceLineageTag: mobileofflineprofileid
+		summarizeBy: none
+		sourceColumn: mobileofflineprofileid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobileofflineprofileid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 11a6d429-9ca5-4db9-a313-e0fe81c675b7
+		sourceLineageTag: mobileofflineprofileid_entitytype
+		summarizeBy: none
+		sourceColumn: mobileofflineprofileid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fc82e974-bf2e-449f-8cc6-bd9f297568f8
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 520bcd16-b114-4b43-ad33-a84e6c1e9966
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4f128843-1d81-4c3f-a7bb-93d8874f1733
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46dde314-29b8-4312-a20c-2ce9afa5e1f6
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column organizationid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45dab905-c440-4407-8899-659ffffc5811
+		sourceLineageTag: organizationid
+		summarizeBy: none
+		sourceColumn: organizationid
+
+		annotation SummarizationSetBy = Automatic
+
+	column organizationid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bc47eb10-2802-4f10-b6b9-ee9e61256d6f
+		sourceLineageTag: organizationid_entitytype
+		summarizeBy: none
+		sourceColumn: organizationid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemuserid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45a0db0b-565d-40e5-b03b-a96f0d058c81
+		sourceLineageTag: systemuserid
+		summarizeBy: none
+		sourceColumn: systemuserid
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemuserid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aa47d067-fca3-475e-aa80-e65cad45f73a
+		sourceLineageTag: systemuserid_entitytype
+		summarizeBy: none
+		sourceColumn: systemuserid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5155e0a9-8646-4e69-9cd9-eb4d4d7a8a64
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: da7a8b8c-81f7-44f5-9bde-f00911aab6cf
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2180f38e-3c05-4b30-a2a7-a87e8ae4fbad
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 98effa66-5523-47df-b469-5633cb85b9e3
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: df1b32b8-ccba-445a-9489-aa20b15a373e
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 194e6859-dc5b-403f-9b5c-1dcf93e60179
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobileofflineprofileidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf0e3552-298d-44d7-b1d8-60806e4878c7
+		sourceLineageTag: mobileofflineprofileidname
+		summarizeBy: none
+		sourceColumn: mobileofflineprofileidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78ffc221-4f10-4aef-a35b-d27cc350d0fd
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8c4ae1c8-1589-4032-ab9e-ad7e024d96b0
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 4ce25733-b558-4d95-81ff-316016c12587
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 32b8b827-8169-4d0b-8537-a3ec372979ca
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2de02a27-7247-4425-b1a8-f617557153fb
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 58656e80-f7a7-46d1-9833-cde7ad210fa8
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column organizationidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 89a2ea92-d9ec-4f6e-b5f2-585f97e65709
+		sourceLineageTag: organizationidname
+		summarizeBy: none
+		sourceColumn: organizationidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e8daf1be-0faf-429f-868f-4d6888a36778
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemuseridname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 647e988f-03de-4893-bf0f-b5b137fd59bc
+		sourceLineageTag: systemuseridname
+		summarizeBy: none
+		sourceColumn: systemuseridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemuseridyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 50205629-eb37-451e-85b6-08d98c9905b4
+		sourceLineageTag: systemuseridyominame
+		summarizeBy: none
+		sourceColumn: systemuseridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 371a0841-244c-4879-943b-af61c5c34210
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column usermobileofflineprofilemembershipid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e46f37ea-9280-4721-9a5e-00517868938f
+		sourceLineageTag: usermobileofflineprofilemembershipid
+		summarizeBy: none
+		sourceColumn: usermobileofflineprofilemembershipid
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b350892a-bf81-4284-99e8-e62a6325c9fb
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1de9e8e5-7468-4f85-9b20-141f8a81a477
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 95a91075-63f1-43a0-bdbb-15c3b91c5676
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1f64fbdb-fb77-4d03-abe6-69eb2b0cc48b
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition usermobileofflineprofilemembership-8446438c-8982-4966-ba97-0d91c449e8c9 = entity
+		mode: directLake
+		source
+			entityName: usermobileofflineprofilemembership
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

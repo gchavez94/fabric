@@ -1,0 +1,430 @@
+table mserp_budgettransactionlinebientity
+	lineageTag: ad14da56-7b4e-40e7-a951-fb2d59d76fb3
+	sourceLineageTag: [dbo].[mserp_budgettransactionlinebientity]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 052a577a-be85-4079-b74c-86cadda8dae2
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f582f060-ba43-4aa9-888c-970e1b2c76d2
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6e9436d8-3fbf-4955-b809-98423b3b58d7
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_budgettype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5131cf34-ad30-413f-ba2b-ce602252a3ec
+		sourceLineageTag: mserp_budgettype
+		summarizeBy: sum
+		sourceColumn: mserp_budgettype
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_includeincashflowforecast
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 554d648d-729d-4aa9-b85b-4baa3df200a1
+		sourceLineageTag: mserp_includeincashflowforecast
+		summarizeBy: sum
+		sourceColumn: mserp_includeincashflowforecast
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_workflowstatus
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 29ed82f4-fd89-4b9c-b443-ec3107f97bd4
+		sourceLineageTag: mserp_workflowstatus
+		summarizeBy: sum
+		sourceColumn: mserp_workflowstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_accountingcurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5ae5baeb-d8ed-4663-81fb-bdd258fef812
+		sourceLineageTag: mserp_accountingcurrencyamount
+		summarizeBy: sum
+		sourceColumn: mserp_accountingcurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_assetbudget
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 68d50634-1e2e-400d-bde8-f2ba3e1d944c
+		sourceLineageTag: mserp_assetbudget
+		summarizeBy: sum
+		sourceColumn: mserp_assetbudget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_assetbudget_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0bb8e6bb-0f2f-4b83-a98f-9f1716720b23
+		sourceLineageTag: mserp_assetbudget_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_assetbudget_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_assetbudget_ru
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 10036fc8-114f-486d-846e-5415779846f7
+		sourceLineageTag: mserp_assetbudget_ru
+		summarizeBy: sum
+		sourceColumn: mserp_assetbudget_ru
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_assetbudget_ru_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a771b575-a1a1-4a6d-9620-9a5517bae2e2
+		sourceLineageTag: mserp_assetbudget_ru_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_assetbudget_ru_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_budgettransactionheader
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5967780c-de64-4893-b6b8-3cb45ebaae35
+		sourceLineageTag: mserp_budgettransactionheader
+		summarizeBy: sum
+		sourceColumn: mserp_budgettransactionheader
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_budgettransactionheader_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: aaf68916-1892-4cc1-858f-bb5c1af2c22d
+		sourceLineageTag: mserp_budgettransactionheader_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_budgettransactionheader_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_budgettransactionlinebientityid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: df23a372-9ba7-4a3f-9c21-b5081f080802
+		sourceLineageTag: mserp_budgettransactionlinebientityid
+		summarizeBy: none
+		sourceColumn: mserp_budgettransactionlinebientityid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_comment
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0ce147d8-c305-46d6-9521-1d5326fc6ad6
+		sourceLineageTag: mserp_comment
+		summarizeBy: none
+		sourceColumn: mserp_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1f14b473-bb17-40b8-81c4-c44069bef739
+		sourceLineageTag: mserp_createdon
+		summarizeBy: none
+		sourceColumn: mserp_createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_generaljournalentry
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f24ef221-b08c-43a9-9741-50fda87ff5fc
+		sourceLineageTag: mserp_generaljournalentry
+		summarizeBy: sum
+		sourceColumn: mserp_generaljournalentry
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_generaljournalentry_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b925d3ea-d66f-48e2-8f69-7a9a12d54c73
+		sourceLineageTag: mserp_generaljournalentry_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_generaljournalentry_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_ledgerdimensionvaluesjson
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 661bd5c8-3c86-4047-963f-6545016583ba
+		sourceLineageTag: mserp_ledgerdimensionvaluesjson
+		summarizeBy: none
+		sourceColumn: mserp_ledgerdimensionvaluesjson
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_linenumber
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 91149bd6-e91a-4865-ab2f-0926014afa76
+		sourceLineageTag: mserp_linenumber
+		summarizeBy: sum
+		sourceColumn: mserp_linenumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_price
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 603e5e8b-ffdf-4704-bfcc-d64a9364e978
+		sourceLineageTag: mserp_price
+		summarizeBy: sum
+		sourceColumn: mserp_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_primaryfield
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: af0113e3-da29-4906-9d79-072f2065ec32
+		sourceLineageTag: mserp_primaryfield
+		summarizeBy: none
+		sourceColumn: mserp_primaryfield
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_projtransbudgettransid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 17499234-bab2-41a6-8419-631baac542a7
+		sourceLineageTag: mserp_projtransbudgettransid
+		summarizeBy: none
+		sourceColumn: mserp_projtransbudgettransid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_quantity
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 45a85e0d-b8dd-41d2-88ed-6e10b171980d
+		sourceLineageTag: mserp_quantity
+		summarizeBy: sum
+		sourceColumn: mserp_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcekey
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 49f30914-3f2e-419f-a87c-2a7e43af15db
+		sourceLineageTag: mserp_sourcekey
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcekey_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2c8ac4c6-07a8-42f0-a1ac-c2cda700b7e4
+		sourceLineageTag: mserp_sourcekey_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_syscreatedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e38dd410-8fd5-44b8-88ed-90bcae2934d3
+		sourceLineageTag: mserp_syscreatedby
+		summarizeBy: none
+		sourceColumn: mserp_syscreatedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysmodifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c546e072-7189-48bf-8485-b14c05c4f743
+		sourceLineageTag: mserp_sysmodifiedby
+		summarizeBy: none
+		sourceColumn: mserp_sysmodifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysmodifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2b1ceb3c-5ab3-413c-970f-f1f0baba91f7
+		sourceLineageTag: mserp_sysmodifieddatetime
+		summarizeBy: none
+		sourceColumn: mserp_sysmodifieddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysrecversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 431e2828-2796-488a-9c31-64bddd4fad69
+		sourceLineageTag: mserp_sysrecversion
+		summarizeBy: sum
+		sourceColumn: mserp_sysrecversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_taxgroup
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05430275-0c3b-45b3-8cc3-c26015e3ac02
+		sourceLineageTag: mserp_taxgroup
+		summarizeBy: none
+		sourceColumn: mserp_taxgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_transactioncurrency
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57c8b4c8-73ab-457f-a00e-735fd5c21c35
+		sourceLineageTag: mserp_transactioncurrency
+		summarizeBy: none
+		sourceColumn: mserp_transactioncurrency
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_transactioncurrencyamount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: dc4c146e-1689-42ea-a0d9-49eb7ecba951
+		sourceLineageTag: mserp_transactioncurrencyamount
+		summarizeBy: sum
+		sourceColumn: mserp_transactioncurrencyamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_transactiondate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f5a8c33f-c16c-48c0-924b-e4f3b67cc632
+		sourceLineageTag: mserp_transactiondate
+		summarizeBy: none
+		sourceColumn: mserp_transactiondate
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 099604d9-9ef1-492e-bc29-d11f4ecfef54
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d90436fc-1b69-4741-8b8a-cf8e38f8444d
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 35cf03dc-cc36-420f-9cd1-7c4dc2f7ff5a
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d91bf265-af35-415a-9e43-43c4e510c620
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mserp_budgettransactionlinebientity-f355140c-b2a3-4aa6-b293-69e5cb9dccd1 = entity
+		mode: directLake
+		source
+			entityName: mserp_budgettransactionlinebientity
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

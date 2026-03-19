@@ -1,0 +1,118 @@
+table principalentitymap
+	lineageTag: 788c9348-5d56-43f5-be40-5b7c528d5408
+	sourceLineageTag: [dbo].[principalentitymap]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7581b6d1-0a77-4fca-a718-4adeb0c0b9cf
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: db689cf2-16a0-4581-a2eb-a162f10c6c02
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0e6441d3-c92d-4a89-81cb-222b13acc658
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column objecttypecode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: babe9a0d-b409-497f-ac2f-ee265354d65e
+		sourceLineageTag: objecttypecode
+		summarizeBy: none
+		sourceColumn: objecttypecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column principalentitymapid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cc8617e0-6452-4809-95e0-7cd8b3bb4970
+		sourceLineageTag: principalentitymapid
+		summarizeBy: none
+		sourceColumn: principalentitymapid
+
+		annotation SummarizationSetBy = Automatic
+
+	column principalid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a02107b1-ae0b-49df-ae0d-070fba6613d8
+		sourceLineageTag: principalid
+		summarizeBy: none
+		sourceColumn: principalid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ca46f0f1-7172-47d9-a298-4735239700bf
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 85696119-a0bd-4b87-a913-e7c5c1dd49c4
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a226a126-7863-46fa-9e03-eab21c19a740
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fc556d48-f4f6-4e51-95f5-77ab0421e21c
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition principalentitymap-2d2a1467-4e01-4c56-8766-b046720711f8 = entity
+		mode: directLake
+		source
+			entityName: principalentitymap
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

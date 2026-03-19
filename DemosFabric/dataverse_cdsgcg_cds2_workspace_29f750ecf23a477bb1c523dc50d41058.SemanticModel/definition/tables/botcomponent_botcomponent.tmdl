@@ -1,0 +1,191 @@
+table botcomponent_botcomponent
+	lineageTag: e766f942-a5d9-49e7-bf16-d57aca7f76ce
+	sourceLineageTag: [dbo].[botcomponent_botcomponent]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 90b67fd9-0f4c-4042-8168-71e3aa43ae1b
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f46ea732-b54e-4cdb-ace0-07c7a9fd14a0
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 615eab29-169d-4c0d-b39f-01a1daabe0fc
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column componentstate
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ac22c0b7-8486-40de-adf7-addb4435bd09
+		sourceLineageTag: componentstate
+		summarizeBy: sum
+		sourceColumn: componentstate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ismanaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: de2292c7-eb9b-4937-b6e3-e3c7d07940e7
+		sourceLineageTag: ismanaged
+		summarizeBy: none
+		sourceColumn: ismanaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column botcomponent_botcomponentid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6d5d2a3-6f25-455b-810b-40243e1321aa
+		sourceLineageTag: botcomponent_botcomponentid
+		summarizeBy: none
+		sourceColumn: botcomponent_botcomponentid
+
+		annotation SummarizationSetBy = Automatic
+
+	column botcomponentidone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a98704c-2f86-4149-934d-89b290c4d07f
+		sourceLineageTag: botcomponentidone
+		summarizeBy: none
+		sourceColumn: botcomponentidone
+
+		annotation SummarizationSetBy = Automatic
+
+	column botcomponentidtwo
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8d91ea88-e155-41c1-94f4-0dfac0fa464b
+		sourceLineageTag: botcomponentidtwo
+		summarizeBy: none
+		sourceColumn: botcomponentidtwo
+
+		annotation SummarizationSetBy = Automatic
+
+	column componentidunique
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 59cf172c-3bdf-4406-a351-233b34940550
+		sourceLineageTag: componentidunique
+		summarizeBy: none
+		sourceColumn: componentidunique
+
+		annotation SummarizationSetBy = Automatic
+
+	column iscustomizable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77e1c7b9-b0ed-426f-94f2-eb11721d15d6
+		sourceLineageTag: iscustomizable
+		summarizeBy: none
+		sourceColumn: iscustomizable
+
+		annotation SummarizationSetBy = Automatic
+
+	column overwritetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a50f67a6-4bca-4f19-a283-704376860041
+		sourceLineageTag: overwritetime
+		summarizeBy: none
+		sourceColumn: overwritetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column solutionid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: daac5cdb-816c-45c2-a2de-438e8d5363e1
+		sourceLineageTag: solutionid
+		summarizeBy: none
+		sourceColumn: solutionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column supportingsolutionid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c154323-a7b5-4915-86ed-8b5305eee245
+		sourceLineageTag: supportingsolutionid
+		summarizeBy: none
+		sourceColumn: supportingsolutionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e5a9916f-6f01-4097-a6ab-acaaff04301c
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 3e38cd7c-3ba8-41dd-84f0-546a4131056f
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a155d111-e5a3-4722-9087-9825c6ef2fcc
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92093fc1-600a-4371-a89f-b3ec35865b9e
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition botcomponent_botcomponent-a009f5c7-d1ab-42d0-95d9-a609fda1011f = entity
+		mode: directLake
+		source
+			entityName: botcomponent_botcomponent
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

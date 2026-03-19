@@ -1,0 +1,53 @@
+table _Custom_query_copyfromcds
+	lineageTag: 3de8f6bb-bb29-45ac-ae4f-17f830219dc4
+	sourceLineageTag: [dbo].[_Custom_query_copyfromcds]
+
+	column TABLE_CATALOG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8b21611e-93e9-4ad6-9d1d-c3c5df29ba8a
+		sourceLineageTag: TABLE_CATALOG
+		summarizeBy: none
+		sourceColumn: TABLE_CATALOG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABLE_SCHEMA
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb5edd16-5486-459d-b9c1-893a1b0bae8b
+		sourceLineageTag: TABLE_SCHEMA
+		summarizeBy: none
+		sourceColumn: TABLE_SCHEMA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABLE_NAME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 32cd01bc-2a31-4ec6-b49d-b31af8426e17
+		sourceLineageTag: TABLE_NAME
+		summarizeBy: none
+		sourceColumn: TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABLE_TYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a95537e0-0cfc-46e1-9b6d-0c5ef878c698
+		sourceLineageTag: TABLE_TYPE
+		summarizeBy: none
+		sourceColumn: TABLE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Custom_query_copyfromcds-0813df1c-5201-460d-a04e-fdd36499eb72 = entity
+		mode: directLake
+		source
+			entityName: _Custom_query_copyfromcds
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

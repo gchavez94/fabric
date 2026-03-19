@@ -1,0 +1,113 @@
+table Consumos
+	lineageTag: 0306913a-3799-44ed-a436-fb849130777e
+
+	column SK_Compania
+		dataType: string
+		lineageTag: 81f0493c-0044-4cb2-b810-924156658b12
+		summarizeBy: none
+		sourceColumn: SK_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 6ad2c501-107d-43d8-bf42-2b27600240f6
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_A_Localidad
+		dataType: string
+		lineageTag: ca646fca-361e-4cd8-a704-b46739014aad
+		summarizeBy: none
+		sourceColumn: SK_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_B_ProcesoProductivo
+		dataType: string
+		lineageTag: 901225bd-c24b-409e-94e0-4eca1e41e964
+		summarizeBy: none
+		sourceColumn: Cve_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_B_ProcesoProductivo
+		dataType: string
+		lineageTag: 4e200f8f-2779-4808-b6f8-e392110e9fcd
+		summarizeBy: none
+		sourceColumn: SK_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_C_Recurso
+		dataType: string
+		lineageTag: c532e189-3d47-411e-89f6-5556c68cdf2d
+		summarizeBy: none
+		sourceColumn: SK_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo
+		dataType: string
+		lineageTag: fa0e770b-fb0d-47f6-b153-e5088b8d5b59
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Articulo_Consumo
+		dataType: string
+		lineageTag: d3070225-7f31-4bdf-83b9-adf8c0770624
+		summarizeBy: none
+		sourceColumn: Cve_Articulo_Consumo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: double
+		lineageTag: 5163916c-3abf-4d1b-8a38-95423ae984b0
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'dim_compania.Dsc_Pais'
+		dataType: string
+		lineageTag: 2dc0ab63-fdfc-482f-b776-72173d66d356
+		summarizeBy: none
+		sourceColumn: dim_compania.Dsc_Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_Financiera
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4f81a810-3f4c-411e-ba19-e4396a392682
+		summarizeBy: none
+		sourceColumn: Fecha_Financiera
+
+		variation Variación
+			isDefault
+			relationship: 2f86d5f1-a85b-4f69-997b-53f222a4b45f
+			defaultHierarchy: LocalDateTable_ec9b7efc-40c0-4332-b7c5-b584b46b5eba.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Consumos = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr", [Query="Select SK_Compania,HO.Cve_Compania,#(lf)  HO.SK_A_Localidad,Cve_B_ProcesoProductivo,SK_B_ProcesoProductivo, SK_C_Recurso,#(lf)      Fecha_Financiera, LEft(CONVERT(varchar, Fecha_Financiera, 112),6) Periodo,#(lf)Cve_Articulo_Consumo,Sum(Cantidad) Cantidad #(lf)From H_Operaciones HO#(lf)Where Cve_TipoTransaccion= 8#(lf)Group By#(lf)SK_Compania,HO.Cve_Compania,HO.Sk_A_Localidad,Cve_B_ProcesoProductivo, SK_B_ProcesoProductivo,SK_C_Recurso,#(lf)      Fecha_Financiera,Cve_Articulo_Consumo"]),
+				    #"Consultas combinadas" = Table.NestedJoin(Origen, {"SK_Compania"}, dim_compania, {"Sk_Compania"}, "dim_compania", JoinKind.LeftOuter),
+				    #"Se expandió dim_compania" = Table.ExpandTableColumn(#"Consultas combinadas", "dim_compania", {"Dsc_Pais"}, {"dim_compania.Dsc_Pais"})
+				in
+				    #"Se expandió dim_compania"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,35 @@
+table Eventos
+	lineageTag: acd39270-8727-4faa-a133-443106c558ff
+
+	column 'Id Evento'
+		dataType: string
+		lineageTag: 52e799ba-b2af-47e3-a67d-a17a965ae899
+		summarizeBy: none
+		sourceColumn: Id Evento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Evento
+		dataType: string
+		lineageTag: beea2e11-3d8b-48cc-9348-9baefbfe716e
+		summarizeBy: none
+		sourceColumn: Evento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Eventos = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2025\Ferrovalle\POV data\Catalogo de eventos.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Hoja1_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id Evento", type text}, {"Evento", type text}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

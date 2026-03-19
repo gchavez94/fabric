@@ -1,0 +1,102 @@
+table CT_Modelo_3
+	lineageTag: 9b7cf645-e9f1-438a-9584-6b2bb269962d
+	sourceLineageTag: [dbo].[CT_Modelo_3]
+
+	column AMOUNTMST
+		dataType: double
+		sourceProviderType: float
+		lineageTag: d17464b3-7928-4d0f-8c05-9984d09ba5a5
+		sourceLineageTag: AMOUNTMST
+		summarizeBy: sum
+		sourceColumn: AMOUNTMST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLOSED
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: dc540b72-6dc0-4876-84c5-0a86bbbae45b
+		sourceLineageTag: CLOSED
+		summarizeBy: none
+		sourceColumn: CLOSED
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2a5d72df-a176-47e4-b6cb-0b05599e705e
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9a8780e2-4059-4a77-a1c0-f74a14b7567b
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ae491eb9-f4ec-40a7-955a-70bb3c120b33
+		sourceLineageTag: Day
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e9929ef1-79d0-4825-81fd-ee5278356ade
+		sourceLineageTag: Week
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dec2f5b7-6871-46d3-b994-9de7a580d393
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto_Recibido
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f426912f-0f5f-4e3f-8b37-222f64d5e97d
+		sourceLineageTag: Monto_Recibido
+		summarizeBy: sum
+		sourceColumn: Monto_Recibido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CT_Modelo_3-5ba72ed7-715c-4ce7-9709-a45fa4d1a8c4 = entity
+		mode: directLake
+		source
+			entityName: CT_Modelo_3
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

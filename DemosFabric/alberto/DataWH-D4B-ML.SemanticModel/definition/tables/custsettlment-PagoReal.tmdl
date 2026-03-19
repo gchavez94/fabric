@@ -1,0 +1,137 @@
+table custsettlment-PagoReal
+	lineageTag: 8801b46c-55c6-4153-80eb-fd314ae338b7
+	sourceLineageTag: [dbo].[custsettlment-PagoReal]
+
+	column TRANSRECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9e9b4543-0250-4d95-af2f-0729ef7f99b2
+		sourceLineageTag: TRANSRECID
+		summarizeBy: count
+		sourceColumn: TRANSRECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 708bdc7d-128d-4d00-bdd5-159fc7380985
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: sum
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXCHADJUSTMENT
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 73c86cab-a4cc-483f-a672-b8f21e68fa5c
+		sourceLineageTag: EXCHADJUSTMENT
+		summarizeBy: sum
+		sourceColumn: EXCHADJUSTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OFFSETTRANSVOUCHER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6e4e2be2-7139-48ce-987f-6ed833e3d86a
+		sourceLineageTag: OFFSETTRANSVOUCHER
+		summarizeBy: none
+		sourceColumn: OFFSETTRANSVOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEAMOUNTCUR
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 8357f654-409c-4d62-90c0-e4e8f91fc665
+		sourceLineageTag: SETTLEAMOUNTCUR
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEAMOUNTMST
+		dataType: double
+		formatString: \$#,0.00;-\$#,0.00;\$#,0.00
+		sourceProviderType: float
+		lineageTag: f73fb09d-4319-4b59-9a06-edb46723a895
+		sourceLineageTag: SETTLEAMOUNTMST
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTMST
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column SETTLEMENTVOUCHER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 145c7b84-cf1c-4acf-bd75-c490f1dc6943
+		sourceLineageTag: SETTLEMENTVOUCHER
+		summarizeBy: none
+		sourceColumn: SETTLEMENTVOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8dbb38f6-20ff-4e5a-936c-14168771a777
+		sourceLineageTag: TRANSDATE
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSEDDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: acdacbe1-b464-4e5c-89a2-dd6518f35a21
+		sourceLineageTag: CLOSEDDATE
+		summarizeBy: none
+		sourceColumn: CLOSEDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2cccc078-0f41-4945-8f03-b2b9aa7ce9d5
+		sourceLineageTag: TRANSTYPE
+		summarizeBy: sum
+		sourceColumn: TRANSTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e5e5d35b-8c39-4f52-ba57-596faa84e35a
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition custsettlment-PagoReal-dccad7f0-f3ad-46e6-9a30-5ea18fb1df6a = entity
+		mode: directLake
+		source
+			entityName: custsettlment-PagoReal
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

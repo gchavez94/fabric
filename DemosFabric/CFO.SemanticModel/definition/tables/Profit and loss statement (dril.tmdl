@@ -1,0 +1,128 @@
+table 'Profit and loss statement (dril'
+	lineageTag: 08b81ed7-6b58-4db8-aac6-a288d387a557
+
+	column Column1
+		dataType: string
+		lineageTag: a6fcc215-d6d2-44fc-98a7-04673911daf3
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: ec669da1-dcb9-45c1-b50e-a1247118ad94
+		summarizeBy: sum
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Budget
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 811aa62b-0667-49a7-9d22-e3a83af556ed
+		summarizeBy: sum
+		sourceColumn: Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Var
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 34e27017-1183-452f-ad0c-0b0acd64d067
+		summarizeBy: sum
+		sourceColumn: Var
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Var %'
+		dataType: double
+		lineageTag: d7731c8e-77c8-4d46-a105-a97fc8348683
+		summarizeBy: sum
+		sourceColumn: Var %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_YTD
+		dataType: double
+		lineageTag: 00aefdd2-0325-4b27-a1bb-38521e7aeb07
+		summarizeBy: sum
+		sourceColumn: Actual_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Budget_YTD
+		dataType: double
+		lineageTag: 8d327b41-31ab-4535-80fd-e1b91b96db26
+		summarizeBy: sum
+		sourceColumn: Budget_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Var_YTD
+		dataType: double
+		lineageTag: 7795cec9-b0aa-49aa-b8ab-eaf0ed6592fd
+		summarizeBy: sum
+		sourceColumn: Var_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Var %_YTD'
+		dataType: double
+		lineageTag: 759d9ab3-a9a8-4f94-93d5-6d7cb1131765
+		summarizeBy: sum
+		sourceColumn: Var %_YTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 52735466-5053-4425-8d12-75279b7d52e3
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 4b858ccd-91fb-43f3-9cfa-a523c08a0212
+			defaultHierarchy: LocalDateTable_8331b080-6814-4286-ae3b-b6400fb492d9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Profit and loss statement (dril-d9e9335d-cbbd-492f-8dde-08c0b265feec' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Profit and loss statement (dril_Sheet" = Origen{[Item="Profit and loss statement (dril",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit and loss statement (dril_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Category", type text}, {"MTD", type any}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}, {"YTD", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}}),
+				    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Actual", type number}, {"Budget", type number}, {"Var", type number}, {"Var %", type number}, {"Actual_1", type number}, {"Budget_2", type number}, {"Var_3", type number}, {"Var %_4", type number}, {"Fecha", type date}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Actual_1", "Actual_YTD"}, {"Budget_2", "Budget_YTD"}, {"Var %_4", "Var %_YTD"}, {"Var_3", "Var_YTD"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

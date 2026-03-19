@@ -1,0 +1,52 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Monedas","PROCESOS","DEPRECIACION","PTU DIFERIDA","CostoAbsorbente","h_finanzas_consolidacion","dim_compania","dim_a_localidad","dim_b_proceso_productivo","dim_c_recurso","dim_fecha","dim_cuentas_contables","h_operaciones","CONCEPTOS","Consumos","COMBUSTIBLE","SACOS"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.144.1155.0 (25.06)+46435b07013d2a234d7fd007083a9e70b8e79f1c
+
+ref table Monedas
+ref table PROCESOS
+ref table DEPRECIACION
+ref table 'PTU DIFERIDA'
+ref table CostoAbsorbente
+ref table h_finanzas_consolidacion
+ref table DateTableTemplate_0e4e0c67-633a-461c-826b-a9a3086a6204
+ref table dim_compania
+ref table LocalDateTable_aec19b8d-ab09-4ce2-b11b-771cdb167beb
+ref table LocalDateTable_14e14dba-35e2-4e14-8916-a5944f7ab650
+ref table dim_a_localidad
+ref table LocalDateTable_291ab99d-dcbd-43ce-bdd3-6dc50381e809
+ref table LocalDateTable_86634656-0c20-40a3-a0f3-222989b03485
+ref table LocalDateTable_68a16d45-49e5-4c38-a26d-b7de3b4d087f
+ref table dim_b_proceso_productivo
+ref table LocalDateTable_838f493f-cf35-46b6-b6a8-a827f706cf03
+ref table dim_c_recurso
+ref table LocalDateTable_9acab121-4882-431d-9901-28bff679a0b8
+ref table LocalDateTable_534acb70-fb39-4d0d-ad41-87d84e0a7923
+ref table LocalDateTable_53492989-07cf-4f08-b57b-ff00a6a3ced2
+ref table LocalDateTable_e305e8c0-6f0d-452e-a446-9c8de2342272
+ref table LocalDateTable_fce4e3a4-9667-40a4-a91a-91ab9771642e
+ref table dim_fecha
+ref table dim_cuentas_contables
+ref table LocalDateTable_c5e708e2-bc00-43c3-b415-98921560277e
+ref table LocalDateTable_94131467-9ebf-4949-a6bf-77491463bb20
+ref table CALCULOS
+ref table h_operaciones
+ref table LocalDateTable_da3084c8-7db1-4a53-9754-841f96ce1657
+ref table FiltroProcesosProductivos
+ref table CONCEPTOS
+ref table Consumos
+ref table COMBUSTIBLE
+ref table SACOS
+ref table LocalDateTable_ec9b7efc-40c0-4332-b7c5-b584b46b5eba
+
+ref cultureInfo es-ES
+

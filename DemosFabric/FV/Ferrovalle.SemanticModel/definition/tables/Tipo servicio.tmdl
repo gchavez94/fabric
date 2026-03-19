@@ -1,0 +1,32 @@
+table 'Tipo servicio'
+	lineageTag: 1a5ff018-6ff0-4e2c-a1e4-af7bfdea7d6f
+
+	column TipServ
+		dataType: string
+		lineageTag: 24ee1f4b-edac-4839-a010-cb5649c8a1ee
+		summarizeBy: none
+		sourceColumn: TipServ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de servicio'
+		dataType: string
+		lineageTag: ef003607-b0e2-4d42-aacc-7c0897c762f7
+		summarizeBy: none
+		sourceColumn: Tipo de servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tipo servicio' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCnbxVNJRUghOLSrLTM7MV0hJVcjMSyktLinKTFSK1QEqCAApgMsXJBYlYqqI9/QLCXKMD3KNNERSXKwAFsZUZERQUUioD2GTgIpwmhQSBJQJKUrMK84syVeKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [TipServ = _t, #"Tipo de servicio" = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"TipServ", type text}, {"Tipo de servicio", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

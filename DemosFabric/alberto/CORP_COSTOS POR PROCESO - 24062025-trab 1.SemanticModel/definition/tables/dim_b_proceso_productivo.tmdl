@@ -1,0 +1,116 @@
+table dim_b_proceso_productivo
+	lineageTag: 068b28a0-aaf2-4702-951f-45d02f5ce05b
+
+	column Sk_B_ProcesoProductivo
+		dataType: string
+		lineageTag: 63d5e5fe-9178-4a0b-a114-3db166255cb4
+		summarizeBy: none
+		sourceColumn: Sk_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_B_ProcesoProductivo
+		dataType: string
+		lineageTag: dfc6397b-7e4d-4c49-8ccc-041b7881cd8b
+		summarizeBy: none
+		sourceColumn: Cve_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_B_ProcesoProductivo
+		dataType: string
+		lineageTag: a5982341-81c1-425c-bbf8-03cab098baa8
+		summarizeBy: none
+		sourceColumn: Dsc_B_ProcesoProductivo
+		sortByColumn: 'PROCESOS.ORDEN'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 75f99999-498e-4cf9-a9a1-576c68f192a7
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_UltimaModificacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c2c23e5d-e3d0-431c-8358-e34f8f7c4ef3
+		summarizeBy: none
+		sourceColumn: Fecha_UltimaModificacion
+
+		variation Variación
+			isDefault
+			relationship: 66edd799-103f-4fa0-a637-ea8bf22a55a6
+			defaultHierarchy: LocalDateTable_838f493f-cf35-46b6-b6a8-a827f706cf03.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column key_ORDEN = ```
+			
+			    SWITCH(
+				dim_b_proceso_productivo[Cve_B_ProcesoProductivo],
+				"101","101",
+				"102","102",
+			    "104","104",
+			    "105","105-106",
+			    "106","105-106",
+			    "107","107",
+			    "108","108",
+			    "109","109",
+			    "111","111",
+			    "113","113",
+				dim_b_proceso_productivo[Cve_B_ProcesoProductivo]
+			)
+			```
+		lineageTag: 9192b44c-50d3-4d81-928e-0687431e742e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PROCESOS_ORDEN
+		dataType: string
+		lineageTag: cdac5b9f-9043-40d8-9aee-356110960c6c
+		summarizeBy: none
+		sourceColumn: ID_PROCESOS_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PROCESOS.ORDEN'
+		dataType: int64
+		formatString: 0
+		lineageTag: 610bc6d3-6378-478c-b3e4-60e464662cac
+		summarizeBy: sum
+		sourceColumn: PROCESOS.ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClavePP = dim_b_proceso_productivo[Cve_B_ProcesoProductivo]
+		dataType: int64
+		formatString: 0
+		lineageTag: 6960191f-cdf3-466f-a3b1-8b8fbd19c49e
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_b_proceso_productivo = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr", [Query="Select Sk_B_ProcesoProductivo,#(tab)Cve_B_ProcesoProductivo,case#(lf)WHEN Dsc_B_ProcesoProductivo = 'Pulverizado de Biomasa' THEN 'Pulverizado de Pet Coke'#(lf)ELSE#(lf)Dsc_B_ProcesoProductivo#(lf)END Dsc_B_ProcesoProductivo,#(lf)Cve_Compania,Fecha_UltimaModificacion,#(lf)CASE #(lf)When Cve_B_ProcesoProductivo = 101 THEN '101'#(lf)When Cve_B_ProcesoProductivo = 102 THEN '102'#(lf)When Cve_B_ProcesoProductivo = 104 THEN '104'#(lf)WHEN Cve_B_ProcesoProductivo in ('105','106') THEN '105-106'#(lf)When Cve_B_ProcesoProductivo = 107 THEN '107'#(lf)When Cve_B_ProcesoProductivo = 108 THEN '108'#(lf)When Cve_B_ProcesoProductivo = 109 THEN '109'#(lf)When Cve_B_ProcesoProductivo = 111 THEN '111'#(lf)When Cve_B_ProcesoProductivo = 113 THEN '113'#(lf)ELSE cast(Cve_B_ProcesoProductivo as char)#(lf)END ID_PROCESOS_ORDEN#(lf) #(lf)From dim_b_proceso_productivo#(lf)where Cve_B_ProcesoProductivo IN ('101','102','104','105','106','107','108','109','111','113')"]),
+				    #"Consultas combinadas" = Table.NestedJoin(Origen, {"ID_PROCESOS_ORDEN"}, PROCESOS, {"ID_PROCESOS"}, "PROCESOS", JoinKind.LeftOuter),
+				    #"Se expandió PROCESOS" = Table.ExpandTableColumn(#"Consultas combinadas", "PROCESOS", {"ORDEN"}, {"PROCESOS.ORDEN"}),
+				    #"Filas ordenadas" = Table.Sort(#"Se expandió PROCESOS",{{"PROCESOS.ORDEN", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

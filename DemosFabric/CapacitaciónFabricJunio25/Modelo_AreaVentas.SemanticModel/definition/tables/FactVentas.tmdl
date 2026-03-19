@@ -1,0 +1,134 @@
+table FactVentas
+	lineageTag: 518943fa-3ebb-46f8-9458-86122a57486b
+	sourceLineageTag: [dbo].[FactVentas]
+
+	measure MedidaVentasTotal = SUM(FactVentas[Total])
+		lineageTag: 64e847c5-4929-450f-80ee-13ea4921e0cb
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MedidaConteoVentas = COUNT(FactVentas[VENTA_ID])
+		formatString: 0
+		lineageTag: b3c09e42-ec0e-45ff-8f7a-66c625f9eef2
+
+		changedProperty = Name
+
+	measure Medida_Promedio = AVERAGE(FactVentas[Total])
+		lineageTag: afef9c1f-7d2f-4c48-83b4-eafd2a4ff2b6
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VENTA_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5dfb8a7b-0291-4247-9e04-eb45016803b6
+		sourceLineageTag: VENTA_ID
+		summarizeBy: count
+		sourceColumn: VENTA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimFechaId
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7d0ccb43-5ec7-40a5-bb04-a07bbe8bd326
+		sourceLineageTag: DimFechaId
+		summarizeBy: none
+		sourceColumn: DimFechaId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimClienteId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b44ba649-5298-4a77-80fc-51be787133f8
+		sourceLineageTag: DimClienteId
+		summarizeBy: none
+		sourceColumn: DimClienteId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimArticuloId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2658421d-cd46-4acf-be73-6f5dcfa5f35c
+		sourceLineageTag: DimArticuloId
+		summarizeBy: none
+		sourceColumn: DimArticuloId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANTIDAD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2ca03f10-b5c5-4271-bf18-6f95e28e62f6
+		sourceLineageTag: CANTIDAD
+		summarizeBy: sum
+		sourceColumn: CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBTOTAL
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8afdeaa0-a1cf-4a36-b5e4-799124c1c01b
+		sourceLineageTag: SUBTOTAL
+		summarizeBy: sum
+		sourceColumn: SUBTOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column IVA
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 97932425-64e6-4b72-a094-6a8eb974cc59
+		sourceLineageTag: IVA
+		summarizeBy: sum
+		sourceColumn: IVA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DimVendedorId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9fc794f2-fe8f-42d1-a3b5-e6803277f828
+		sourceLineageTag: DimVendedorId
+		summarizeBy: none
+		sourceColumn: DimVendedorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4ac83fe3-701b-4fcb-ac88-59c52f9b0544
+		sourceLineageTag: Total
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactVentas = entity
+		mode: directLake
+		source
+			entityName: FactVentas
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
