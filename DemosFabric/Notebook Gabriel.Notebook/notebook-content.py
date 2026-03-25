@@ -28,7 +28,7 @@ import pandas as pd
 
 
 
-# URL of the CSV File
+# URL of the CSV File v2.0
 
 orders_url = "https://raw.githubusercontent.com/microsoft/PowerApps-Samples/master/ai-builder/order.csv"
 
