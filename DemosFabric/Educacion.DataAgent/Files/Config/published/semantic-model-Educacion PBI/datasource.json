@@ -1,0 +1,482 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "2cd608f3-dddf-a3c2-47d6-492e6c249f26",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "Educacion PBI",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {
+    "csdl_relationships": "[{\"FromTable\":\"Presupuesto\",\"FromColumn\":\"A\\u00F1o\",\"ToTable\":\"LocalDateTable_f10cfc63_3a6f_4219_8ce0_d5edadf1d5b3\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
+  },
+  "elements": [
+    {
+      "id": "a8a36b82-e41c-40de-8813-bdfc36bc7a79",
+      "is_selected": true,
+      "display_name": "Info Estudiantes",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ef431d4a-5f71-4b47-a47f-935d323b6da9",
+          "is_selected": true,
+          "display_name": "Área de formación ocupacional",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "562da5ba-0afe-4cfe-bf42-0dc203236aa1",
+          "is_selected": true,
+          "display_name": "Beca",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25deb3be-9ce9-496a-908f-88ef2f975e0b",
+          "is_selected": true,
+          "display_name": "Carrera",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "910e0c8b-d887-4eeb-8133-9ed4d60b4b0b",
+          "is_selected": true,
+          "display_name": "CP",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "941ba35c-dc6c-4d1b-b6f5-cdacf32c91bc",
+          "is_selected": true,
+          "display_name": "Desc_Municipio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "579f8d65-9de1-4a8c-9dfb-2dcf70895ed2",
+          "is_selected": true,
+          "display_name": "Entidad",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "11ab6e1d-26b8-483d-844b-aa3197243ff1",
+          "is_selected": true,
+          "display_name": "Estudiante",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a9467aa8-7257-4dad-a61f-877f8ffede55",
+          "is_selected": true,
+          "display_name": "Estudio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0bf64b59-14be-4327-8356-3dd4e635fdcd",
+          "is_selected": true,
+          "display_name": "Foto",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "67015c1e-9057-412a-8369-45903d5e6b54",
+          "is_selected": true,
+          "display_name": "Genero",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "40e65b8b-22d6-418a-84bd-6b3e7f58e5d2",
+          "is_selected": true,
+          "display_name": "Ingresos",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f705ce82-06d3-4c72-96ee-9dfc025974fe",
+          "is_selected": true,
+          "display_name": "LAT",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f75609ca-e362-4a1a-9ae6-c25505a5c27c",
+          "is_selected": true,
+          "display_name": "LONG",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d1003f27-5c36-4217-b0b2-2910eea11f2f",
+          "is_selected": true,
+          "display_name": "Nombre",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50b1b3f0-49b0-4517-b10a-74316c186784",
+          "is_selected": true,
+          "display_name": "Pais",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b5c4d550-517f-4c6e-9ef8-2e86ca6d792f",
+          "is_selected": true,
+          "display_name": "Plantel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0fc727d2-c441-495e-a9dc-731fd5cb6157",
+          "is_selected": true,
+          "display_name": "Semestre",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "425fb6a0-53d4-47db-babf-fe7c07ade99b",
+          "is_selected": true,
+          "display_name": "Servicios al Cliente",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4306bb8-5520-4d9e-98ae-4a2349b55d6f",
+          "is_selected": true,
+          "display_name": "Subproducto",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "54975bf1-c324-4cf4-bdb4-20ed740b34aa",
+          "is_selected": true,
+          "display_name": "Zona",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e8516eb4-ce52-46bb-b2f4-2eac26680f6f",
+      "is_selected": true,
+      "display_name": "Presupuesto",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "3cac0085-0caf-4a1f-b05c-d3669051e634",
+          "is_selected": true,
+          "display_name": "Año",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "deea3294-781e-4659-a308-388259f30307",
+          "is_selected": true,
+          "display_name": "Área",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "881e3969-7590-4798-a0f9-015f9ea03944",
+          "is_selected": true,
+          "display_name": "Concepto",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b8802e13-eb99-47b8-81af-c6d2c82922af",
+          "is_selected": true,
+          "display_name": "Presupuesto Asignado",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb7ca3b1-f011-48bc-aea9-521bb451796b",
+          "is_selected": true,
+          "display_name": "Presupuesto Utilizado",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2c82b2a9-2eb4-4496-89ff-f5784069a749",
+      "is_selected": true,
+      "display_name": "SL",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "34e1f39b-8843-46b0-b2a7-46deb39e41da",
+          "is_selected": true,
+          "display_name": "Área de formación ocupacional",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d086e3de-2b57-4253-a589-58c95657f88d",
+          "is_selected": true,
+          "display_name": "Canal",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c29935b-5b60-4c3e-89de-460a790fa888",
+          "is_selected": true,
+          "display_name": "Carrera",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6dbdea8a-aabc-4896-9b0d-96fa14785a90",
+          "is_selected": true,
+          "display_name": "CP",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e297cacb-4a2f-48c5-b451-ab5cfe58e577",
+          "is_selected": true,
+          "display_name": "Desc_Estado",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "adb9c45d-369f-4a72-b862-9f80f1e79b97",
+          "is_selected": true,
+          "display_name": "Desc_Municipio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7946f4aa-eaf2-4128-9807-707ba1bd8acf",
+          "is_selected": true,
+          "display_name": "Día",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f23d4b4c-8aa0-4e5a-aa7d-6246b9a65eb4",
+          "is_selected": true,
+          "display_name": "Entrada",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9c0e1a98-859b-404e-8078-87d9352c31b6",
+          "is_selected": true,
+          "display_name": "Estatus",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "73eafa75-8485-438a-87f2-23a4f2fde0eb",
+          "is_selected": true,
+          "display_name": "Estudiante",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ec3c737b-5198-4099-8910-c885a03a25b1",
+          "is_selected": true,
+          "display_name": "Estudio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8f32025-9ba7-466f-afcb-728bfeab45ea",
+          "is_selected": true,
+          "display_name": "LAT",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f5bd18cd-b680-4e0e-a947-61f2a15b84f4",
+          "is_selected": true,
+          "display_name": "Logo",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fc762bc7-ca30-489e-b742-a07a32352d65",
+          "is_selected": true,
+          "display_name": "LONG",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "47878fff-6ebf-44ac-b715-bb5de2eda4de",
+          "is_selected": true,
+          "display_name": "Oficina",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4fbedb1a-7f2a-4762-92c1-a5319bd8e99b",
+          "is_selected": true,
+          "display_name": "Order",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8748aedf-5864-43a9-ba8d-fd503d36e180",
+          "is_selected": true,
+          "display_name": "Pais",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8c5a087e-8bd4-4fca-839f-6ee00e3b478a",
+          "is_selected": true,
+          "display_name": "Planteles ",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "237fa733-050c-46fa-94a7-d26ecae67497",
+          "is_selected": true,
+          "display_name": "Programadas",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50daa93c-34ac-4988-9810-3267540ea285",
+          "is_selected": true,
+          "display_name": "Reales",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b588e1cb-cc44-4335-af47-16a19299f011",
+          "is_selected": true,
+          "display_name": "SLA",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0c4cea58-cb0a-4887-b4cb-239e71c36e07",
+          "is_selected": true,
+          "display_name": "Subproducto",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8c2f5e2-6229-4982-8f0b-c5ba638b47d6",
+          "is_selected": true,
+          "display_name": "Tickets",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb1972ae-1b48-4bea-9380-ae7d53dd4fab",
+          "is_selected": true,
+          "display_name": "Zona",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
