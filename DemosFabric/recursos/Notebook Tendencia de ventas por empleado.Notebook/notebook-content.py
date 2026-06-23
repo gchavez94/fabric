@@ -24,7 +24,7 @@
 # CELL ********************
 
 
-#Ejecutar esta celda para instalar los paquetes necesarios para Copilot v1.1.1.0
+#Ejecutar esta celda para instalar los paquetes necesarios para Copilot v1.1.1.1
 %load_ext dscopilot_installer
 %activate_dscopilot
 
