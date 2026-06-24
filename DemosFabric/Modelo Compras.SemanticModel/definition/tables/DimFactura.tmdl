@@ -1,0 +1,22 @@
+table DimFactura
+	lineageTag: 616d1cbe-57fb-4b9d-b923-dcb7b7d0cff2
+
+	column IdFactura
+		dataType: string
+		lineageTag: 67c192e5-066b-4f76-8142-a91c07525905
+		summarizeBy: none
+		sourceColumn: IdFactura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimFactura = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimFactura = Origen{[Schema="dbo",Item="DimFactura"]}[Data]
+				in
+				    dbo_DimFactura
+
+	annotation PBI_ResultType = Table
+

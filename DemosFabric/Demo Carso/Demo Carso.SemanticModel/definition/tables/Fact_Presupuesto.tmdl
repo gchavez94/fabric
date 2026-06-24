@@ -1,0 +1,134 @@
+table Fact_Presupuesto
+	lineageTag: a2c4cf1b-db50-4d11-a6b0-7124c65d5f1f
+
+	column 'ID Proyecto'
+		dataType: string
+		lineageTag: 999e5852-2038-4192-bce6-6b3bac5c5d8f
+		summarizeBy: none
+		sourceColumn: ID Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyecto
+		dataType: string
+		lineageTag: 49ac7a01-9163-416c-aae5-4e57739c830e
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Etapa'
+		dataType: string
+		lineageTag: d059284e-f98e-4e71-bc0b-aa91a72584ab
+		summarizeBy: none
+		sourceColumn: ID Etapa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: 5d9e2cb4-7f6c-4e81-aef4-e84efebd7308
+		summarizeBy: none
+		sourceColumn: Etapa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Linea'
+		dataType: string
+		lineageTag: 2291e2d3-f192-4bf0-8fb0-d9e6a405e094
+		summarizeBy: none
+		sourceColumn: ID Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		lineageTag: 4678f87b-4852-48c6-b0ac-a6e54e9e2068
+		summarizeBy: none
+		sourceColumn: Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Presupuesto USD'
+		dataType: double
+		lineageTag: 611a8725-83b3-48fb-a6d6-ef0e4ff1bbfd
+		summarizeBy: sum
+		sourceColumn: Presupuesto USD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Presupuesto MXN'
+		dataType: double
+		lineageTag: fd4b72a2-d8f9-42ca-952c-1e0aeafec0ea
+		summarizeBy: sum
+		sourceColumn: Presupuesto MXN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fecha Inicio'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9f090a00-1965-4792-beb4-10628a53771c
+		summarizeBy: none
+		sourceColumn: Fecha Inicio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias Planeados'
+		dataType: int64
+		formatString: 0
+		lineageTag: a7949fa0-299b-4609-b861-29782f8f17ef
+		summarizeBy: sum
+		sourceColumn: Dias Planeados
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type = "COSTO PROGRAMADO"
+		lineageTag: 5ce3707a-6035-417b-a356-0906062ea993
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Presupuesto = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    FactBudget_Sheet = Origen{[Item="FactBudget",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(FactBudget_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ProjectID", type text}, {"ProjectName", type text}, {"StageKey", type text}, {"StageName", type text}, {"SegmentKey", type text}, {"SegmentName", type text}, {"BudgetUSD", type number}, {"BudgetMXN", type number}, {"ProgramStart", type date}, {"ProgramEnd", type date}, {"PlannedDays", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"ProjectID", "ID Proyecto"}, {"ProjectName", "Proyecto"}, {"StageKey", "ID Etapa"}, {"StageName", "Etapa"}, {"SegmentKey", "ID Linea"}, {"SegmentName", "Linea"}, {"BudgetUSD", "Presupuesto USD"}, {"BudgetMXN", "Presupuesto MXN"}, {"ProgramStart", "Fecha Inicio"}, {"ProgramEnd", "Fecha Fin"}, {"PlannedDays", "Dias Planeados"}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Column12", "Fecha Fin"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

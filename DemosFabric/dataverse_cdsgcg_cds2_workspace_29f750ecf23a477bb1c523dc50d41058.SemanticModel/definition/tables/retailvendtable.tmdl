@@ -1,0 +1,510 @@
+table retailvendtable
+	lineageTag: 1f9e9c1c-28a9-4abb-8192-4f6c55aaa75e
+	sourceLineageTag: [dbo].[retailvendtable]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fe5cc9f1-3e7a-43b6-8261-829199d08eb0
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 89d0a24d-c34e-41a7-9623-ce8777490009
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5c6e8f9b-0dbe-4757-bf45-23cca042d761
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column createbarcodeifneeded
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a952ab16-feb6-489c-839a-80b57778a125
+		sourceLineageTag: createbarcodeifneeded
+		summarizeBy: sum
+		sourceColumn: createbarcodeifneeded
+
+		annotation SummarizationSetBy = Automatic
+
+	column fixedexchrate
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1ee5c6b8-47e5-4e62-9d79-7e32c5bee2d2
+		sourceLineageTag: fixedexchrate
+		summarizeBy: sum
+		sourceColumn: fixedexchrate
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricepointroundingtype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 18c28d68-9870-4750-8682-ee58fb4de59c
+		sourceLineageTag: pricepointroundingtype
+		summarizeBy: sum
+		sourceColumn: pricepointroundingtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column salespricerounding
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a8a4b4a5-f52f-4236-8631-ca33dc84e564
+		sourceLineageTag: salespricerounding
+		summarizeBy: sum
+		sourceColumn: salespricerounding
+
+		annotation SummarizationSetBy = Automatic
+
+	column useprefixforitemnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: fa4a71af-80be-41cc-9602-36a6c6371006
+		sourceLineageTag: useprefixforitemnumber
+		summarizeBy: sum
+		sourceColumn: useprefixforitemnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column usevendorsitemnumberseq
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a032cc63-6a00-4943-8e9d-ef0f09159da2
+		sourceLineageTag: usevendorsitemnumberseq
+		summarizeBy: sum
+		sourceColumn: usevendorsitemnumberseq
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendtype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0b01acf2-4ca6-453a-8528-2d748e82fcb8
+		sourceLineageTag: vendtype
+		summarizeBy: sum
+		sourceColumn: vendtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysdatastatecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6f09b668-9a4f-48cd-980e-49f207550e98
+		sourceLineageTag: sysdatastatecode
+		summarizeBy: sum
+		sourceColumn: sysdatastatecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column itemnumberseq
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 09d069ff-57c0-499d-b178-efdb8a01520e
+		sourceLineageTag: itemnumberseq
+		summarizeBy: none
+		sourceColumn: itemnumberseq
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountnum
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 74f40ab6-4d5e-4b55-9c90-d6b2444904ea
+		sourceLineageTag: accountnum
+		summarizeBy: none
+		sourceColumn: accountnum
+
+		annotation SummarizationSetBy = Automatic
+
+	column barcodenumberseq
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 12caf4b2-6734-48f9-9f5d-42d7815d5f48
+		sourceLineageTag: barcodenumberseq
+		summarizeBy: none
+		sourceColumn: barcodenumberseq
+
+		annotation SummarizationSetBy = Automatic
+
+	column coloridprefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 97256f92-a0c4-4236-a507-22778a218f56
+		sourceLineageTag: coloridprefix
+		summarizeBy: none
+		sourceColumn: coloridprefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column defaultshelflifeperiod_ath
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c470a15d-0f6c-4913-9ddc-6e9660b9d0cd
+		sourceLineageTag: defaultshelflifeperiod_ath
+		summarizeBy: sum
+		sourceColumn: defaultshelflifeperiod_ath
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchrate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 15b96df3-5f82-4d87-8a27-f082e3ca998d
+		sourceLineageTag: exchrate
+		summarizeBy: sum
+		sourceColumn: exchrate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fileexportprefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18209aae-b9a8-44f4-b2c6-a4a9ef14f09c
+		sourceLineageTag: fileexportprefix
+		summarizeBy: none
+		sourceColumn: fileexportprefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column foreignvendpricegroup_ath
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 61a9cca9-6cc1-42b5-b3fc-3e81f2469a4d
+		sourceLineageTag: foreignvendpricegroup_ath
+		summarizeBy: none
+		sourceColumn: foreignvendpricegroup_ath
+
+		annotation SummarizationSetBy = Automatic
+
+	column franchiseeid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f1c2fc82-4f90-4016-b723-81c34772f3b0
+		sourceLineageTag: franchiseeid
+		summarizeBy: none
+		sourceColumn: franchiseeid
+
+		annotation SummarizationSetBy = Automatic
+
+	column itemnumberprefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f4757d3e-659f-472b-9bb3-898284d2c638
+		sourceLineageTag: itemnumberprefix
+		summarizeBy: none
+		sourceColumn: itemnumberprefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column itemsalesexportpath
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 916f725a-e699-4ef9-ba08-67bc04716279
+		sourceLineageTag: itemsalesexportpath
+		summarizeBy: none
+		sourceColumn: itemsalesexportpath
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricepointgroupid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3c069817-f688-41b8-bc6b-3d0d89c32656
+		sourceLineageTag: pricepointgroupid
+		summarizeBy: none
+		sourceColumn: pricepointgroupid
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchunit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: be81c7cd-c633-48b6-8e75-63ebb018caaf
+		sourceLineageTag: purchunit
+		summarizeBy: none
+		sourceColumn: purchunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column roundingmethod
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 67d4f0e3-6a9f-4efe-b6ec-f478e340b3c9
+		sourceLineageTag: roundingmethod
+		summarizeBy: none
+		sourceColumn: roundingmethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column salesunit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57d1ea7d-5f43-4b97-bbd9-806b09af3507
+		sourceLineageTag: salesunit
+		summarizeBy: none
+		sourceColumn: salesunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column servicecategory
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ed5acba-d2f6-4cad-bc01-59668ee686ff
+		sourceLineageTag: servicecategory
+		summarizeBy: none
+		sourceColumn: servicecategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column sizeidprefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95630028-0c68-4f95-8e37-ea4b9c459542
+		sourceLineageTag: sizeidprefix
+		summarizeBy: none
+		sourceColumn: sizeidprefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column styleidprefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 35ef8984-a280-4a8d-9811-9c40acfdc5e8
+		sourceLineageTag: styleidprefix
+		summarizeBy: none
+		sourceColumn: styleidprefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendorproducthierarchyid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: be46ca28-200f-4c01-86c8-b2f3416c93b2
+		sourceLineageTag: vendorproducthierarchyid
+		summarizeBy: sum
+		sourceColumn: vendorproducthierarchyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8614d539-a043-4edc-988d-497a4c6030d6
+		sourceLineageTag: modifieddatetime
+		summarizeBy: none
+		sourceColumn: modifieddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8732bcc1-e658-4049-9338-021a00398677
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5e4aee2d-3fbb-4006-af64-5474e0a1b11e
+		sourceLineageTag: modifiedtransactionid
+		summarizeBy: sum
+		sourceColumn: modifiedtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column createddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fb9baaa4-ef5f-432e-a181-a98ac356a952
+		sourceLineageTag: createddatetime
+		summarizeBy: none
+		sourceColumn: createddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bccb98a1-012b-49ba-8239-56060d1b69b9
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 959ddee8-b3a4-4d59-9042-71ae77fdc32e
+		sourceLineageTag: createdtransactionid
+		summarizeBy: sum
+		sourceColumn: createdtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9c1df0bd-f4f6-4b79-ac17-5951a936863b
+		sourceLineageTag: dataareaid
+		summarizeBy: none
+		sourceColumn: dataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column recversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8e2344f9-8d8e-4f9e-ad7e-e52459ec7dca
+		sourceLineageTag: recversion
+		summarizeBy: sum
+		sourceColumn: recversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 83aca645-4ffa-43da-889b-5c22583853c0
+		sourceLineageTag: partition
+		summarizeBy: sum
+		sourceColumn: partition
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysrowversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: bb9b5503-fa6b-437f-a2ba-449b18e2ab29
+		sourceLineageTag: sysrowversion
+		summarizeBy: sum
+		sourceColumn: sysrowversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4cddff4a-9346-49e9-9a09-a1dce5788267
+		sourceLineageTag: recid
+		summarizeBy: sum
+		sourceColumn: recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column tableid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8dcde1cb-309c-4e1b-9410-1f85259eb0dc
+		sourceLineageTag: tableid
+		summarizeBy: sum
+		sourceColumn: tableid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 09470e45-15ee-4a90-804e-6cee1d145b47
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c80036a2-e8e9-4d97-b4e2-b3445b8544cd
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dab49feb-733f-4ae9-b11b-61981edfec3e
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: cb88b3e5-c90f-414d-91e0-2d78d90cf51c
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b50b6c77-f59c-4130-8fe1-9d91a7ace63d
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition retailvendtable-c7f905dd-b30b-4762-b595-cbad6fcca377 = entity
+		mode: directLake
+		source
+			entityName: retailvendtable
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

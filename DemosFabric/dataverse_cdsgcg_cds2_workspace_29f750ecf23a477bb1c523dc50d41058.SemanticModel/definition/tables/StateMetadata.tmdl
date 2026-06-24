@@ -1,0 +1,86 @@
+table StateMetadata
+	lineageTag: 6946ace7-2127-4cd9-8e80-ca11644eb5a6
+	sourceLineageTag: [dbo].[StateMetadata]
+
+	column EntityName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 763fef9d-cb24-4e59-843f-58b5b5158dd7
+		sourceLineageTag: EntityName
+		summarizeBy: none
+		sourceColumn: EntityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d9fa0ba3-aed1-4b0a-8e04-11337f513561
+		sourceLineageTag: State
+		summarizeBy: sum
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUserLocalizedLabel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0b9bcb9d-a386-45ee-a379-837c743f2862
+		sourceLineageTag: IsUserLocalizedLabel
+		summarizeBy: none
+		sourceColumn: IsUserLocalizedLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocalizedLabelLanguageCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f908509b-c1be-499f-b0e1-b98ceb46a8b2
+		sourceLineageTag: LocalizedLabelLanguageCode
+		summarizeBy: sum
+		sourceColumn: LocalizedLabelLanguageCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocalizedLabel
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dc56dace-c1f3-4cc2-aee5-66f0a1c57510
+		sourceLineageTag: LocalizedLabel
+		summarizeBy: none
+		sourceColumn: LocalizedLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalValue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 002a3268-3d8a-4ed5-8cc1-7fcb4acf9733
+		sourceLineageTag: ExternalValue
+		summarizeBy: none
+		sourceColumn: ExternalValue
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonpartition
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 54aadba9-eae2-45f3-84dc-1a3106449932
+		sourceLineageTag: createdonpartition
+		summarizeBy: none
+		sourceColumn: createdonpartition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StateMetadata-5cb9ed86-8497-4298-8143-58888b7872fc = entity
+		mode: directLake
+		source
+			entityName: StateMetadata
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

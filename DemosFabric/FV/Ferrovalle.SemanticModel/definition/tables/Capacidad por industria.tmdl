@@ -1,0 +1,71 @@
+table 'Capacidad por industria'
+	lineageTag: e1d42f34-da4a-420d-95c7-4948e8c31842
+
+	column IdCliente
+		dataType: int64
+		formatString: 0
+		lineageTag: e0a8d391-170e-41a9-b28d-60415a8186dd
+		summarizeBy: none
+		sourceColumn: IdCliente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: 479e8352-0197-4c31-bfe8-0c9c68b1cde3
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Capacidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 186e4700-0ba6-4c7b-9e56-c82956bbcf7d
+		summarizeBy: none
+		sourceColumn: Capacidad
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Via posicionado(ZVP)'
+		dataType: string
+		lineageTag: 79883bdf-0d1a-4929-aaef-1992e798cf83
+		summarizeBy: none
+		sourceColumn: Via posicionado(ZVP)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Servicio_NC
+		dataType: string
+		lineageTag: 86e194e3-58c6-458b-9aa3-9a5cb5e20a9b
+		summarizeBy: none
+		sourceColumn: Servicio_NC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Capacidad por industria' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2025\Ferrovalle\POV data\Capacidad por industria.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdCliente", Int64.Type}, {"Cliente", type text}, {"Capacidad", Int64.Type}, {"Via posicionado(ZVP)", type text}, {"Servicio_NC", type text}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

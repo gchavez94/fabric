@@ -1,0 +1,34 @@
+table conjuntoProd
+	lineageTag: 3c43f29c-ecb2-440f-a05c-f3d3ba5c7eae
+
+	column ID
+		dataType: string
+		lineageTag: 3ec09b05-ae75-420c-8ec8-9c1c23839a05
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONJUNTO_PRODUCCION
+		dataType: string
+		lineageTag: 4499b228-e093-4c85-a612-e251c979ec38
+		summarizeBy: none
+		sourceColumn: CONJUNTO_PRODUCCION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition conjuntoProd = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\GabrielArmandoChávez\Downloads\conjuntoProd.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ID", type text}, {"CONJUNTO_PRODUCCION", type text}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

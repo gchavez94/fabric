@@ -1,0 +1,425 @@
+table mserp_purchreqtablebientity
+	lineageTag: 526a41a9-8ea1-4109-b2cf-11cade55ec96
+	sourceLineageTag: [dbo].[mserp_purchreqtablebientity]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb4e7206-7627-4c09-860f-8733888799ca
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0ddb4737-2068-4be9-a71a-a7faaff2e0ff
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 24ba6984-5909-45d1-b256-8562dc9f9658
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_ismodified
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 730fa9db-6ad6-43c7-ba2d-f4dbca72cb59
+		sourceLineageTag: mserp_ismodified
+		summarizeBy: sum
+		sourceColumn: mserp_ismodified
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_isworkflowtoberesubmitted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: af7e22ac-4af9-4987-b26a-9847d63f4f21
+		sourceLineageTag: mserp_isworkflowtoberesubmitted
+		summarizeBy: sum
+		sourceColumn: mserp_isworkflowtoberesubmitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_onhold
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b5800744-4c77-46d2-8214-928232af43e2
+		sourceLineageTag: mserp_onhold
+		summarizeBy: sum
+		sourceColumn: mserp_onhold
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_purchreqtype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e33babf5-191c-4ae7-a21d-7202fbe6d975
+		sourceLineageTag: mserp_purchreqtype
+		summarizeBy: sum
+		sourceColumn: mserp_purchreqtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_requisitionpurpose
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: bbf35816-1449-43df-86bf-4d761b44ebd1
+		sourceLineageTag: mserp_requisitionpurpose
+		summarizeBy: sum
+		sourceColumn: mserp_requisitionpurpose
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_requisitionstatus
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7031eb92-479f-4af0-b54c-c15a1c82cf1c
+		sourceLineageTag: mserp_requisitionstatus
+		summarizeBy: sum
+		sourceColumn: mserp_requisitionstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_businessjustification
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6f844c09-3b90-4441-bafa-9bbda51c0730
+		sourceLineageTag: mserp_businessjustification
+		summarizeBy: sum
+		sourceColumn: mserp_businessjustification
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_businessjustification_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4301b6f3-a33a-4035-977a-18afdc13d9a8
+		sourceLineageTag: mserp_businessjustification_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_businessjustification_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_companyinfodefault
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 64763869-008b-4094-a25b-92e2a430c4bd
+		sourceLineageTag: mserp_companyinfodefault
+		summarizeBy: sum
+		sourceColumn: mserp_companyinfodefault
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_companyinfodefault_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a6d2d644-5953-42c7-b60d-451b9996203c
+		sourceLineageTag: mserp_companyinfodefault_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_companyinfodefault_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 43716b41-5d6f-4dd5-ae09-c2aaf0591559
+		sourceLineageTag: mserp_createdon
+		summarizeBy: none
+		sourceColumn: mserp_createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_holdexplanation
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 841fe0b0-e438-4c91-88c8-c13150f69ca4
+		sourceLineageTag: mserp_holdexplanation
+		summarizeBy: none
+		sourceColumn: mserp_holdexplanation
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_originator
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e95d0f57-b2ed-4aac-b1a6-b11d6fdc0e45
+		sourceLineageTag: mserp_originator
+		summarizeBy: sum
+		sourceColumn: mserp_originator
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_originator_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2fc96c0b-9f72-41dd-9300-24e8548c88e6
+		sourceLineageTag: mserp_originator_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_originator_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_projid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56627137-560c-4e66-b085-3c37b35921f7
+		sourceLineageTag: mserp_projid
+		summarizeBy: none
+		sourceColumn: mserp_projid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_projiddataarea
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d081a96-631c-4c95-9afb-3f79ad5f841b
+		sourceLineageTag: mserp_projiddataarea
+		summarizeBy: none
+		sourceColumn: mserp_projiddataarea
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_purchreqid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5104cddc-8c62-4766-83d0-f24afb280c74
+		sourceLineageTag: mserp_purchreqid
+		summarizeBy: none
+		sourceColumn: mserp_purchreqid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_purchreqname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84142b1a-0357-41ef-9056-4843e74dc6ae
+		sourceLineageTag: mserp_purchreqname
+		summarizeBy: none
+		sourceColumn: mserp_purchreqname
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_purchreqtablebientityid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb32d9f2-99e2-4fdc-811e-f385ade016a6
+		sourceLineageTag: mserp_purchreqtablebientityid
+		summarizeBy: none
+		sourceColumn: mserp_purchreqtablebientityid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_requireddate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 05a744b1-5e36-4f20-81c0-2c5fd3026d1d
+		sourceLineageTag: mserp_requireddate
+		summarizeBy: none
+		sourceColumn: mserp_requireddate
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sourcedocumentheader
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d1fc5b78-9b2f-4370-9969-299d5007faf8
+		sourceLineageTag: mserp_sourcedocumentheader
+		summarizeBy: sum
+		sourceColumn: mserp_sourcedocumentheader
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcedocumentheader_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 45d6d094-26f1-4ad0-a8ec-f39a691991d0
+		sourceLineageTag: mserp_sourcedocumentheader_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_sourcedocumentheader_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sourcekey
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 29f26773-9716-4595-97ee-e1c6b7e1009a
+		sourceLineageTag: mserp_sourcekey
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcekey_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 43c789f0-7cc0-4c26-8fa1-60b409eb2138
+		sourceLineageTag: mserp_sourcekey_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_submittedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 756d66a4-c684-4d0c-a1f0-1adab9b8e514
+		sourceLineageTag: mserp_submittedby
+		summarizeBy: none
+		sourceColumn: mserp_submittedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_submitteddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 13c094fb-3c39-4460-88fb-a420b7c39205
+		sourceLineageTag: mserp_submitteddatetime
+		summarizeBy: none
+		sourceColumn: mserp_submitteddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_syscreatedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ca1b909-7318-49a4-952e-eb43521b9433
+		sourceLineageTag: mserp_syscreatedby
+		summarizeBy: none
+		sourceColumn: mserp_syscreatedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysmodifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4ddabbbb-eead-49dc-8ddc-bdf6332af08e
+		sourceLineageTag: mserp_sysmodifiedby
+		summarizeBy: none
+		sourceColumn: mserp_sysmodifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysmodifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9ff9b411-299d-44d3-a6fc-5f58359cd187
+		sourceLineageTag: mserp_sysmodifieddatetime
+		summarizeBy: none
+		sourceColumn: mserp_sysmodifieddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sysrecversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9a792b6c-ccea-46b6-bd02-5d9b4440a5a5
+		sourceLineageTag: mserp_sysrecversion
+		summarizeBy: sum
+		sourceColumn: mserp_sysrecversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_transdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e2551846-6fdb-40c0-af88-c422007b5904
+		sourceLineageTag: mserp_transdate
+		summarizeBy: none
+		sourceColumn: mserp_transdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e3790c32-a35d-42a4-955c-1556bda3d64d
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0b11760c-62cc-4ac6-a9a2-5cebee619b37
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9d69c1fb-0f1a-4b42-ac49-82849fbef955
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 369ccbda-e424-4db5-bef7-6d5fab0429c7
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mserp_purchreqtablebientity-0c3c0ae5-c496-44e2-a236-5a7626c06e58 = entity
+		mode: directLake
+		source
+			entityName: mserp_purchreqtablebientity
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

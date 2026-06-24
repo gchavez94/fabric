@@ -1,0 +1,33 @@
+table Autoridad
+	lineageTag: 2b51171b-f986-44c8-8186-3ffe55a6d4ac
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a11d0ea-d705-43a5-886c-98ee982f3f9f
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Autoridad
+		dataType: string
+		lineageTag: 764428f3-eb07-42a3-9674-f085bf151917
+		summarizeBy: none
+		sourceColumn: Autoridad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Autoridad = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Autoridad_Sheet = Origen{[Item="Autoridad",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Autoridad_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Autoridad", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

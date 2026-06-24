@@ -1,0 +1,64 @@
+table Profit-ActualvsBudget
+	lineageTag: 2c95e7e5-defa-4b0d-988c-468fa7295b7d
+
+	column Category
+		dataType: string
+		lineageTag: 856f206b-33af-426a-8893-709c1438f4bb
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column MTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e7334e8-8f39-4406-9d34-0dc854496215
+		summarizeBy: sum
+		sourceColumn: MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 074dd57f-49e0-40ea-95ee-a00f3537063d
+		summarizeBy: sum
+		sourceColumn: QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget
+		dataType: int64
+		formatString: 0
+		lineageTag: 0638b67f-e654-4ae2-8963-b86a3313f0d2
+		summarizeBy: sum
+		sourceColumn: Budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget QTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: 083da438-3143-4042-a4d7-5c788e500b65
+		summarizeBy: sum
+		sourceColumn: Budget QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Profit-ActualvsBudget-dab2e0cf-1215-44d8-b271-6713e3d99f14 = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    #"Profit-ActualvsBudget_Sheet" = Origen{[Item="Profit-ActualvsBudget",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit-ActualvsBudget_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Category", type text}, {"MTD", Int64.Type}, {"QTD", Int64.Type}, {"Budget", Int64.Type}, {"Budget QTD", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

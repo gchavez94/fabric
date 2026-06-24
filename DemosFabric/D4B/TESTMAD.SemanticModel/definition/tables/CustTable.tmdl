@@ -1,0 +1,168 @@
+table CustTable
+	lineageTag: 47cb70fb-681e-4059-8c8f-ce3685e3a489
+	sourceLineageTag: [dbo].[CustTable]
+
+	column PAYMTERMID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0b8d731d-7b11-43e7-98b5-f2f1776025db
+		sourceLineageTag: PAYMTERMID
+		summarizeBy: none
+		sourceColumn: PAYMTERMID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEDISC
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0165ac1d-8c71-4eac-88f3-fbcda44d0c05
+		sourceLineageTag: LINEDISC
+		summarizeBy: none
+		sourceColumn: LINEDISC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTYCOUNTRY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4dc8ae47-e6b3-4148-b93f-efcf9b2ffb62
+		sourceLineageTag: PARTYCOUNTRY
+		summarizeBy: none
+		sourceColumn: PARTYCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7262ade8-6709-46f5-8fc2-35fcc1483dbf
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: sum
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column BANKACCOUNT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a26c295a-7738-47da-a45d-fb0a02e458d2
+		sourceLineageTag: BANKACCOUNT
+		summarizeBy: sum
+		sourceColumn: BANKACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITMAX
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6f58a244-fd82-498f-ad00-79083004849f
+		sourceLineageTag: CREDITMAX
+		summarizeBy: sum
+		sourceColumn: CREDITMAX
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITRATING
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 25144c69-0f97-4a5e-9174-72b82443d283
+		sourceLineageTag: CREDITRATING
+		summarizeBy: none
+		sourceColumn: CREDITRATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 184a6180-e49d-405c-bf67-d39797b1ad4a
+		sourceLineageTag: CURRENCY
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTGROUP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 55c8ef6b-6020-45f6-87c9-6baebf22aea5
+		sourceLineageTag: CUSTGROUP
+		summarizeBy: none
+		sourceColumn: CUSTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTY
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7617fe33-7bf0-4d6d-b92b-176ad9eaf0db
+		sourceLineageTag: PARTY
+		summarizeBy: sum
+		sourceColumn: PARTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFC_MX
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ffc25138-47ef-4c2b-bcfd-b10e26004187
+		sourceLineageTag: RFC_MX
+		summarizeBy: none
+		sourceColumn: RFC_MX
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cce15b77-9f76-4a98-a842-fa3b304b0ad3
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a5586424-f406-4764-8c8c-c44b358d7c30
+		sourceLineageTag: RECID
+		summarizeBy: count
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a98b379a-5c34-414c-94bd-f20088e2dcf2
+		sourceLineageTag: NAME
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cliente Prov'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3973aef8-6ba7-4d68-9215-ef00597e44dc
+		sourceLineageTag: Cliente Prov
+		summarizeBy: none
+		sourceColumn: Cliente Prov
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CustTable = entity
+		mode: directLake
+		source
+			entityName: CustTable
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

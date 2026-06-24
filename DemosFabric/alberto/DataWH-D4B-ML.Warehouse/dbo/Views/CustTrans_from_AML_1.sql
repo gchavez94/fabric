@@ -1,0 +1,5 @@
+-- Auto Generated (Do not modify) 8B77E9F69F82E97711BC19AF29E3F271DC31AC906B550C6DAB7E7313EA081A91
+CREATE VIEW [dbo].[CustTrans_from_AML_1]
+AS SELECT *
+FROM [dataverse_cdsgcg_cds2_workspace_29f750ecf23a477bb1c523dc50d41058].[dbo].[CustTrans_to_AML_1]
+WHERE DATAAREAID='ifa'

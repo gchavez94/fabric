@@ -1,0 +1,431 @@
+table generaljournalentry
+	lineageTag: ab909e7f-6f13-474a-a788-a64656100a5a
+	sourceLineageTag: [dbo].[generaljournalentry]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e1e03c5-c8a4-4693-ba73-970ed6235a51
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 72bd99dd-5563-4e79-acf8-f608f63d5bd0
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2cbfafac-2ffe-4870-ac22-7d10f0679b35
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column journalcategory
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: afdeb440-1552-4aae-9c29-12dffdf85b9d
+		sourceLineageTag: journalcategory
+		summarizeBy: sum
+		sourceColumn: journalcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column postinglayer
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 58d5110f-caa0-4c00-8816-fc949955dc54
+		sourceLineageTag: postinglayer
+		summarizeBy: sum
+		sourceColumn: postinglayer
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysdatastatecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1d50789e-e047-4398-b0d4-bd8b50f4899c
+		sourceLineageTag: sysdatastatecode
+		summarizeBy: sum
+		sourceColumn: sysdatastatecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountingdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b144775e-f509-48e3-9a27-73088ce2a0cf
+		sourceLineageTag: accountingdate
+		summarizeBy: none
+		sourceColumn: accountingdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column acknowledgementdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 16cca6e4-c4b0-4116-8c08-90d4f3068b21
+		sourceLineageTag: acknowledgementdate
+		summarizeBy: none
+		sourceColumn: acknowledgementdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column documentdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c107e7af-baf5-40ee-a95c-94beb64d124d
+		sourceLineageTag: documentdate
+		summarizeBy: none
+		sourceColumn: documentdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column documentnumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53c34ed6-b732-4552-bc31-4c05ba369f81
+		sourceLineageTag: documentnumber
+		summarizeBy: none
+		sourceColumn: documentnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscalcalendarperiod
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f287abf2-3f6c-4156-8622-5046152a75a5
+		sourceLineageTag: fiscalcalendarperiod
+		summarizeBy: sum
+		sourceColumn: fiscalcalendarperiod
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscalcalendaryear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 82f0d364-074c-4b80-921b-215e40ffede5
+		sourceLineageTag: fiscalcalendaryear
+		summarizeBy: sum
+		sourceColumn: fiscalcalendaryear
+
+		annotation SummarizationSetBy = Automatic
+
+	column journalnumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5f4cfc6d-0d23-4499-914b-e4a4330b0106
+		sourceLineageTag: journalnumber
+		summarizeBy: none
+		sourceColumn: journalnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b5be6a5a-75c9-40ec-9a23-7ca0b850f535
+		sourceLineageTag: ledger
+		summarizeBy: sum
+		sourceColumn: ledger
+
+		annotation SummarizationSetBy = Automatic
+
+	column subledgerjournalentry
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 142c3fbb-2008-44c8-bb3a-aa825fa56bee
+		sourceLineageTag: subledgerjournalentry
+		summarizeBy: sum
+		sourceColumn: subledgerjournalentry
+
+		annotation SummarizationSetBy = Automatic
+
+	column transferid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 611b9384-29b9-4972-a5aa-b81e9e14f1e3
+		sourceLineageTag: transferid
+		summarizeBy: sum
+		sourceColumn: transferid
+
+		annotation SummarizationSetBy = Automatic
+
+	column subledgervoucher
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b537b1be-1e07-46da-9908-d6aa482e6496
+		sourceLineageTag: subledgervoucher
+		summarizeBy: none
+		sourceColumn: subledgervoucher
+
+		annotation SummarizationSetBy = Automatic
+
+	column subledgervoucherdataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 44024edd-33d6-4495-bd86-b9a7fdc8570b
+		sourceLineageTag: subledgervoucherdataareaid
+		summarizeBy: none
+		sourceColumn: subledgervoucherdataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledgerentryjournal
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9203d39a-0217-4fab-bb2b-e9ea8baaa91b
+		sourceLineageTag: ledgerentryjournal
+		summarizeBy: sum
+		sourceColumn: ledgerentryjournal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledgerpostingjournal
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bcfaab71-a560-4e4c-9dea-6378e9532292
+		sourceLineageTag: ledgerpostingjournal
+		summarizeBy: none
+		sourceColumn: ledgerpostingjournal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledgerpostingjournaldataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eedb61e8-5458-4e18-92d5-3cbfecce4361
+		sourceLineageTag: ledgerpostingjournaldataareaid
+		summarizeBy: none
+		sourceColumn: ledgerpostingjournaldataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetsourceledgerentryposted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0ef14ab2-8a74-4f02-8c6b-64e761e19899
+		sourceLineageTag: budgetsourceledgerentryposted
+		summarizeBy: sum
+		sourceColumn: budgetsourceledgerentryposted
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifieddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8a10785a-f3b3-4353-adcd-85d9aeba64ab
+		sourceLineageTag: modifieddatetime
+		summarizeBy: none
+		sourceColumn: modifieddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f31edc6-9892-419c-9029-244b527c191a
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dcb52633-3329-46a8-95b3-6b76cfd01e8f
+		sourceLineageTag: modifiedtransactionid
+		summarizeBy: sum
+		sourceColumn: modifiedtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column createddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dbd52ecb-df22-4511-ab46-92ba3fc932b1
+		sourceLineageTag: createddatetime
+		summarizeBy: none
+		sourceColumn: createddatetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 51c5d5bd-0b94-4ff5-9ecf-6f52b06f677f
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdtransactionid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a1df1f13-c349-47bc-8d77-f103f4824554
+		sourceLineageTag: createdtransactionid
+		summarizeBy: sum
+		sourceColumn: createdtransactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataareaid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 601cd361-bd4c-4f89-906d-10ab5038d05b
+		sourceLineageTag: dataareaid
+		summarizeBy: none
+		sourceColumn: dataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column recversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dd3ca469-0cb4-420b-888f-7795f69649bd
+		sourceLineageTag: recversion
+		summarizeBy: sum
+		sourceColumn: recversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 16ece18c-bb61-456e-b3dd-83fc146150ac
+		sourceLineageTag: partition
+		summarizeBy: sum
+		sourceColumn: partition
+
+		annotation SummarizationSetBy = Automatic
+
+	column sysrowversion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a7b21341-6834-4fad-a329-2422d707fb82
+		sourceLineageTag: sysrowversion
+		summarizeBy: sum
+		sourceColumn: sysrowversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 867211ba-b9f0-4e5c-a621-4434074cff4b
+		sourceLineageTag: recid
+		summarizeBy: sum
+		sourceColumn: recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column tableid
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 566578a8-e596-44b2-82f2-7879ae321a7b
+		sourceLineageTag: tableid
+		summarizeBy: sum
+		sourceColumn: tableid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a786055c-21a7-4ce5-89fc-0a8376c258c0
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 529b268d-6b7d-417c-a9d7-050506d74f71
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a8787970-a280-43c7-b16c-9b08bb6c4e2c
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0eb9acae-30d2-43ca-b811-2d86fe0a204e
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9f0d5145-09b0-4b39-bac6-1fff23f8c489
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition generaljournalentry-bab59a9a-ecf7-41c0-9146-a86c8cb4f6e1 = entity
+		mode: directLake
+		source
+			entityName: generaljournalentry
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

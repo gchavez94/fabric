@@ -1,0 +1,45 @@
+table Morosidad_From_AML
+	lineageTag: 61afd1f1-4962-4069-8f53-b841a5e5741a
+	sourceLineageTag: [dbo].[Morosidad_From_AML]
+
+	column Scored_Labels
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9f0955bd-a0aa-4003-9671-968983acf941
+		sourceLineageTag: Scored_Labels
+		summarizeBy: none
+		sourceColumn: Scored_Labels
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e5a0dc2f-0592-4f14-b2ef-48e42140abb8
+		sourceLineageTag: RECID
+		summarizeBy: none
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea29bef0-3b2d-47c5-a419-d2b35c1b0de9
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Morosidad_From_AML-3007c337-424d-4959-bd1b-396e9c8efb82 = entity
+		mode: directLake
+		source
+			entityName: Morosidad_From_AML
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

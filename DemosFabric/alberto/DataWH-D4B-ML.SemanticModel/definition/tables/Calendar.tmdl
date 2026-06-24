@@ -1,0 +1,66 @@
+table Calendar
+	lineageTag: de3b4784-0dcb-4e57-95f3-3d3d29fcde2f
+	sourceLineageTag: [dbo].[Calendar]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 430bea9c-60dc-48f4-b6c1-e4bb0e7c0f0e
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dc1c236a-ecfb-49bb-9eae-897d967f0477
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e6ae602e-7823-4e91-807f-4f230d4b828a
+		sourceLineageTag: Month_Name
+		summarizeBy: none
+		sourceColumn: Month_Name
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d1a0906b-7d9d-478b-bb4d-277dfa813b05
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 396b2d05-0067-422a-9cea-5d45e5762a6d
+
+		level Date
+			lineageTag: 5ed04ca6-5d11-4d2d-b752-2445a48481ff
+			column: Date
+
+	partition Calendar-decc2136-0653-4aa3-825a-a469406c1ab3 = entity
+		mode: directLake
+		source
+			entityName: Calendar
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

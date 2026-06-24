@@ -1,0 +1,154 @@
+table 'Drill -transacción'
+	lineageTag: dfba4c04-aa99-4c5e-bd33-6694b76fd7ae
+
+	column 'Budget status'
+		dataType: string
+		lineageTag: 68f0ae67-ab9b-441e-acf5-36e09fef24f3
+		summarizeBy: none
+		sourceColumn: Budget status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operating unit number'
+		dataType: string
+		lineageTag: d15c67f9-087f-4e63-bcf4-0b7a495d036c
+		summarizeBy: none
+		sourceColumn: Operating unit number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Chart of Accounts Accounts'
+		dataType: string
+		lineageTag: 16c91edf-2e40-47a9-ad5c-b8357c4b82cc
+		summarizeBy: none
+		sourceColumn: Chart of Accounts Accounts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: 8233cada-1f96-41b7-afcd-4189ab6e3655
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operating unit number_1'
+		dataType: string
+		lineageTag: 3eae4753-68e8-48a0-8d76-6ec00d0c0593
+		summarizeBy: none
+		sourceColumn: Operating unit number_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Crediting
+		dataType: string
+		lineageTag: df905e98-156f-4130-9247-ea7eb6f835b7
+		summarizeBy: none
+		sourceColumn: Crediting
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 34bf0800-c812-43b9-acd3-cb9981b01cc6
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date.Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6577312c-541c-4aab-a557-f97f8db97017
+		summarizeBy: none
+		sourceColumn: Date.Date
+
+		variation Variación
+			isDefault
+			relationship: 7199964c-6738-4114-8ec3-cf2a5eda8744
+			defaultHierarchy: LocalDateTable_a442228c-8909-4e6c-bb18-4a0c38cd4cfd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date.Fiscal YQMD Month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 52a7c7c6-73b2-453e-aab0-0a2ca077dc96
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD Month
+
+		variation Variación
+			isDefault
+			relationship: e0c28700-d972-4bb2-9553-532c10eb6168
+			defaultHierarchy: LocalDateTable_194cd365-3fb8-44fe-881f-af64dbe34dae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Operating unit number_2'
+		dataType: string
+		lineageTag: ed2cfc43-0e14-45c0-afcb-3b1f38361f31
+		summarizeBy: none
+		sourceColumn: Operating unit number_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: e1d54ab5-9b24-44bc-940a-70dbecfdc44f
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store
+		dataType: string
+		lineageTag: 1835de60-c89f-436b-92e8-e7b64ee0e598
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction type'
+		dataType: string
+		lineageTag: 3fbb7303-263f-4df0-9bf9-d60736b47be3
+		summarizeBy: none
+		sourceColumn: Transaction type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Amount'
+		dataType: double
+		lineageTag: 2d47d6b9-387d-4235-a662-eace7c6d15d0
+		summarizeBy: sum
+		sourceColumn: GL Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product
+		dataType: string
+		lineageTag: 3325e7ac-5d47-481f-8aae-6fb1804dff4d
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Drill -transacción-09c8f00c-7f4a-4c42-b66e-10430c035cc4' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Drill -transacción_Sheet" = Origen{[Item="Drill -transacción",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Drill -transacción_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Budget status", type any}, {"Operating unit number", type text}, {"Chart of Accounts Accounts", type text}, {"Company ID", type text}, {"Operating unit number_1", type text}, {"Crediting", type text}, {"Currency", type text}, {"Date.Date", type date}, {"Date.Fiscal YQMD Month", type date}, {"Operating unit number_2", type text}, {"Category", type text}, {"Store", type text}, {"Transaction type", type text}, {"GL Amount", type number}, {"Product", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

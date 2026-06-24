@@ -1,0 +1,1494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>ac101b1c-15f0-4e80-80be-ab12cb7c56ee</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1813.16</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1813.16</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2025-02-19T15:24:01.3689350Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>SQLAZURE</DataProvider>
+        <ConnectString>Data Source=u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com;Encrypt=True;Trust Server Certificate=True;Authentication=ActiveDirectoryInteractive</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>78dc800d-d28a-403c-b341-c8a5b93f6202</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SelectAllCustomers</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Id</DataField>
+        </Field>
+        <Field Name="SinkCreatedOn">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>SinkCreatedOn</DataField>
+        </Field>
+        <Field Name="SinkModifiedOn">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>SinkModifiedOn</DataField>
+        </Field>
+        <Field Name="autosummarymoduletype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>autosummarymoduletype</DataField>
+        </Field>
+        <Field Name="bankdocumenttype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>bankdocumenttype</DataField>
+        </Field>
+        <Field Name="casetagging">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>casetagging</DataField>
+        </Field>
+        <Field Name="constarget_jp">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>constarget_jp</DataField>
+        </Field>
+        <Field Name="creditcardauthorizationerror">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>creditcardauthorizationerror</DataField>
+        </Field>
+        <Field Name="customsexportorder_in">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>customsexportorder_in</DataField>
+        </Field>
+        <Field Name="customsshippingbill_in">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>customsshippingbill_in</DataField>
+        </Field>
+        <Field Name="deliverydatecontroltype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>deliverydatecontroltype</DataField>
+        </Field>
+        <Field Name="documentstatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>documentstatus</DataField>
+        </Field>
+        <Field Name="einvoicelinespec">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>einvoicelinespec</DataField>
+        </Field>
+        <Field Name="fiscaldoctype_pl">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>fiscaldoctype_pl</DataField>
+        </Field>
+        <Field Name="freightsliptype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>freightsliptype</DataField>
+        </Field>
+        <Field Name="girotype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>girotype</DataField>
+        </Field>
+        <Field Name="incltax">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>incltax</DataField>
+        </Field>
+        <Field Name="intercompanyallowindirectcreation">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanyallowindirectcreation</DataField>
+        </Field>
+        <Field Name="intercompanyallowindirectcreationorig">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanyallowindirectcreationorig</DataField>
+        </Field>
+        <Field Name="intercompanyautocreateorders">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanyautocreateorders</DataField>
+        </Field>
+        <Field Name="intercompanydirectdelivery">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanydirectdelivery</DataField>
+        </Field>
+        <Field Name="intercompanydirectdeliveryorig">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanydirectdeliveryorig</DataField>
+        </Field>
+        <Field Name="intercompanyorder">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanyorder</DataField>
+        </Field>
+        <Field Name="intercompanyorigin">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>intercompanyorigin</DataField>
+        </Field>
+        <Field Name="invoiceautonumbering_lt">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>invoiceautonumbering_lt</DataField>
+        </Field>
+        <Field Name="itemtagging">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>itemtagging</DataField>
+        </Field>
+        <Field Name="listcode">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>listcode</DataField>
+        </Field>
+        <Field Name="mcrorderstopped">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>mcrorderstopped</DataField>
+        </Field>
+        <Field Name="natureofassessee_in">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>natureofassessee_in</DataField>
+        </Field>
+        <Field Name="onetimecustomer">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>onetimecustomer</DataField>
+        </Field>
+        <Field Name="packingslipautonumbering_lt">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>packingslipautonumbering_lt</DataField>
+        </Field>
+        <Field Name="pallettagging">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>pallettagging</DataField>
+        </Field>
+        <Field Name="pdsbatchattribautores">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>pdsbatchattribautores</DataField>
+        </Field>
+        <Field Name="releasestatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>releasestatus</DataField>
+        </Field>
+        <Field Name="reservation">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>reservation</DataField>
+        </Field>
+        <Field Name="returnreplacementcreated">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>returnreplacementcreated</DataField>
+        </Field>
+        <Field Name="returnstatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>returnstatus</DataField>
+        </Field>
+        <Field Name="salesstatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>salesstatus</DataField>
+        </Field>
+        <Field Name="salestype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>salestype</DataField>
+        </Field>
+        <Field Name="settlevoucher">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>settlevoucher</DataField>
+        </Field>
+        <Field Name="shipcarrierblindshipment">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierblindshipment</DataField>
+        </Field>
+        <Field Name="shipcarrierdlvtype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierdlvtype</DataField>
+        </Field>
+        <Field Name="shipcarrierexpeditedshipment">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierexpeditedshipment</DataField>
+        </Field>
+        <Field Name="shipcarrierfuelsurcharge">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierfuelsurcharge</DataField>
+        </Field>
+        <Field Name="shipcarrierresidential">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierresidential</DataField>
+        </Field>
+        <Field Name="skipupdate">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>skipupdate</DataField>
+        </Field>
+        <Field Name="systementrysource">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>systementrysource</DataField>
+        </Field>
+        <Field Name="touched">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>touched</DataField>
+        </Field>
+        <Field Name="unitedvatinvoice_lt">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>unitedvatinvoice_lt</DataField>
+        </Field>
+        <Field Name="skipcreatemarkup">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>skipcreatemarkup</DataField>
+        </Field>
+        <Field Name="skiplineupdate">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>skiplineupdate</DataField>
+        </Field>
+        <Field Name="invoiceregister_lt">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>invoiceregister_lt</DataField>
+        </Field>
+        <Field Name="packingslipregister_lt">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>packingslipregister_lt</DataField>
+        </Field>
+        <Field Name="foreigntrade_mx">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>foreigntrade_mx</DataField>
+        </Field>
+        <Field Name="sourcecertificate_mx">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>sourcecertificate_mx</DataField>
+        </Field>
+        <Field Name="vatnumtabletype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>vatnumtabletype</DataField>
+        </Field>
+        <Field Name="overridesalestax">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>overridesalestax</DataField>
+        </Field>
+        <Field Name="mpsfullrunctpstatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>mpsfullrunctpstatus</DataField>
+        </Field>
+        <Field Name="isintegration">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>isintegration</DataField>
+        </Field>
+        <Field Name="mpsexcludesalesorder">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>mpsexcludesalesorder</DataField>
+        </Field>
+        <Field Name="mpsupdateexcludesalesorder">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>mpsupdateexcludesalesorder</DataField>
+        </Field>
+        <Field Name="commissiontype_it">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>commissiontype_it</DataField>
+        </Field>
+        <Field Name="printdynamicqrcode_in">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>printdynamicqrcode_in</DataField>
+        </Field>
+        <Field Name="invoicetype_w">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>invoicetype_w</DataField>
+        </Field>
+        <Field Name="cfditemporaryexport_mx">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>cfditemporaryexport_mx</DataField>
+        </Field>
+        <Field Name="credmanexcludesalesorder">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>credmanexcludesalesorder</DataField>
+        </Field>
+        <Field Name="credmanreleasedfromcreditcontrol">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>credmanreleasedfromcreditcontrol</DataField>
+        </Field>
+        <Field Name="credmanrejected">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>credmanrejected</DataField>
+        </Field>
+        <Field Name="credmanincreditcontrol">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>credmanincreditcontrol</DataField>
+        </Field>
+        <Field Name="domprocessed">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>domprocessed</DataField>
+        </Field>
+        <Field Name="domignore">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>domignore</DataField>
+        </Field>
+        <Field Name="domexceptiontype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>domexceptiontype</DataField>
+        </Field>
+        <Field Name="subbillcreatedfromsb">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>subbillcreatedfromsb</DataField>
+        </Field>
+        <Field Name="subbillsuppresschilditems">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>subbillsuppresschilditems</DataField>
+        </Field>
+        <Field Name="revrecfolloworiginalpricingmethod">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>revrecfolloworiginalpricingmethod</DataField>
+        </Field>
+        <Field Name="revrecmultiplesoreallocation">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>revrecmultiplesoreallocation</DataField>
+        </Field>
+        <Field Name="gupskippricingcalculation">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>gupskippricingcalculation</DataField>
+        </Field>
+        <Field Name="gupdelaypricingcalculation">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>gupdelaypricingcalculation</DataField>
+        </Field>
+        <Field Name="sysdatastatecode">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>sysdatastatecode</DataField>
+        </Field>
+        <Field Name="linedisc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>linedisc</DataField>
+        </Field>
+        <Field Name="salesid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salesid</DataField>
+        </Field>
+        <Field Name="tdsgroup_in">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>tdsgroup_in</DataField>
+        </Field>
+        <Field Name="addressrefrecid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>addressrefrecid</DataField>
+        </Field>
+        <Field Name="addressreftableid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>addressreftableid</DataField>
+        </Field>
+        <Field Name="bankaccount_lv">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>bankaccount_lv</DataField>
+        </Field>
+        <Field Name="bankcentralbankpurposecode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>bankcentralbankpurposecode</DataField>
+        </Field>
+        <Field Name="bankcentralbankpurposetext">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>bankcentralbankpurposetext</DataField>
+        </Field>
+        <Field Name="cashdisc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>cashdisc</DataField>
+        </Field>
+        <Field Name="cashdiscbasedate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>cashdiscbasedate</DataField>
+        </Field>
+        <Field Name="cashdiscbasedays">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>cashdiscbasedays</DataField>
+        </Field>
+        <Field Name="cashdiscpercent">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>cashdiscpercent</DataField>
+        </Field>
+        <Field Name="commissiongroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>commissiongroup</DataField>
+        </Field>
+        <Field Name="contactpersonid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>contactpersonid</DataField>
+        </Field>
+        <Field Name="countyorigdest">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>countyorigdest</DataField>
+        </Field>
+        <Field Name="covstatus">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>covstatus</DataField>
+        </Field>
+        <Field Name="creditcardapprovalamount">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>creditcardapprovalamount</DataField>
+        </Field>
+        <Field Name="creditcardauthorization">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>creditcardauthorization</DataField>
+        </Field>
+        <Field Name="creditcardcustrefid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>creditcardcustrefid</DataField>
+        </Field>
+        <Field Name="creditnotereasoncode">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>creditnotereasoncode</DataField>
+        </Field>
+        <Field Name="curbankaccount_lv">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>curbankaccount_lv</DataField>
+        </Field>
+        <Field Name="currencycode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>currencycode</DataField>
+        </Field>
+        <Field Name="custaccount">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>custaccount</DataField>
+        </Field>
+        <Field Name="custbankaccount_lv">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>custbankaccount_lv</DataField>
+        </Field>
+        <Field Name="custgroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>custgroup</DataField>
+        </Field>
+        <Field Name="custinvoiceid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>custinvoiceid</DataField>
+        </Field>
+        <Field Name="customerref">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>customerref</DataField>
+        </Field>
+        <Field Name="deadline">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>deadline</DataField>
+        </Field>
+        <Field Name="defaultdimension">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>defaultdimension</DataField>
+        </Field>
+        <Field Name="deliverydate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>deliverydate</DataField>
+        </Field>
+        <Field Name="deliveryname">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>deliveryname</DataField>
+        </Field>
+        <Field Name="deliverypostaladdress">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>deliverypostaladdress</DataField>
+        </Field>
+        <Field Name="directdebitmandate">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>directdebitmandate</DataField>
+        </Field>
+        <Field Name="discpercent">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>discpercent</DataField>
+        </Field>
+        <Field Name="dlvmode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>dlvmode</DataField>
+        </Field>
+        <Field Name="dlvreason">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>dlvreason</DataField>
+        </Field>
+        <Field Name="dlvterm">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>dlvterm</DataField>
+        </Field>
+        <Field Name="einvoiceaccountcode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>einvoiceaccountcode</DataField>
+        </Field>
+        <Field Name="email">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>email</DataField>
+        </Field>
+        <Field Name="enddisc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>enddisc</DataField>
+        </Field>
+        <Field Name="enterprisenumber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>enterprisenumber</DataField>
+        </Field>
+        <Field Name="estimate">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>estimate</DataField>
+        </Field>
+        <Field Name="exportreason">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>exportreason</DataField>
+        </Field>
+        <Field Name="fixedduedate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>fixedduedate</DataField>
+        </Field>
+        <Field Name="fixedexchrate">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>fixedexchrate</DataField>
+        </Field>
+        <Field Name="freightzone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>freightzone</DataField>
+        </Field>
+        <Field Name="intercompanycompanyid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>intercompanycompanyid</DataField>
+        </Field>
+        <Field Name="intercompanyoriginalcustaccount">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>intercompanyoriginalcustaccount</DataField>
+        </Field>
+        <Field Name="intercompanyoriginalsalesid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>intercompanyoriginalsalesid</DataField>
+        </Field>
+        <Field Name="intercompanypurchid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>intercompanypurchid</DataField>
+        </Field>
+        <Field Name="intrastataddvalue_lv">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>intrastataddvalue_lv</DataField>
+        </Field>
+        <Field Name="intrastatfulfillmentdate_hu">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>intrastatfulfillmentdate_hu</DataField>
+        </Field>
+        <Field Name="inventlocationid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>inventlocationid</DataField>
+        </Field>
+        <Field Name="inventsiteid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>inventsiteid</DataField>
+        </Field>
+        <Field Name="invoiceaccount">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>invoiceaccount</DataField>
+        </Field>
+        <Field Name="languageid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>languageid</DataField>
+        </Field>
+        <Field Name="manualentrychangepolicy">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>manualentrychangepolicy</DataField>
+        </Field>
+        <Field Name="markupgroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>markupgroup</DataField>
+        </Field>
+        <Field Name="matchingagreement">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>matchingagreement</DataField>
+        </Field>
+        <Field Name="multilinedisc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>multilinedisc</DataField>
+        </Field>
+        <Field Name="numbersequencegroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>numbersequencegroup</DataField>
+        </Field>
+        <Field Name="packedextensions">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>packedextensions</DataField>
+        </Field>
+        <Field Name="payment">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>payment</DataField>
+        </Field>
+        <Field Name="paymentsched">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>paymentsched</DataField>
+        </Field>
+        <Field Name="paymmode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>paymmode</DataField>
+        </Field>
+        <Field Name="paymspec">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>paymspec</DataField>
+        </Field>
+        <Field Name="pdscustrebategroupid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>pdscustrebategroupid</DataField>
+        </Field>
+        <Field Name="pdsrebateprogramtmagroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>pdsrebateprogramtmagroup</DataField>
+        </Field>
+        <Field Name="port">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>port</DataField>
+        </Field>
+        <Field Name="postingprofile">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>postingprofile</DataField>
+        </Field>
+        <Field Name="pricegroupid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>pricegroupid</DataField>
+        </Field>
+        <Field Name="projid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>projid</DataField>
+        </Field>
+        <Field Name="purchid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>purchid</DataField>
+        </Field>
+        <Field Name="purchorderformnum">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>purchorderformnum</DataField>
+        </Field>
+        <Field Name="quotationid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>quotationid</DataField>
+        </Field>
+        <Field Name="receiptdateconfirmed">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>receiptdateconfirmed</DataField>
+        </Field>
+        <Field Name="receiptdaterequested">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>receiptdaterequested</DataField>
+        </Field>
+        <Field Name="retailchanneltable">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>retailchanneltable</DataField>
+        </Field>
+        <Field Name="returndeadline">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>returndeadline</DataField>
+        </Field>
+        <Field Name="returnitemnum">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>returnitemnum</DataField>
+        </Field>
+        <Field Name="returnreasoncodeid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>returnreasoncodeid</DataField>
+        </Field>
+        <Field Name="returnreplacementid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>returnreplacementid</DataField>
+        </Field>
+        <Field Name="salesgroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salesgroup</DataField>
+        </Field>
+        <Field Name="salesname">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salesname</DataField>
+        </Field>
+        <Field Name="salesoriginid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salesoriginid</DataField>
+        </Field>
+        <Field Name="salespoolid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salespoolid</DataField>
+        </Field>
+        <Field Name="salesunitid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>salesunitid</DataField>
+        </Field>
+        <Field Name="shipcarrieraccount">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>shipcarrieraccount</DataField>
+        </Field>
+        <Field Name="shipcarrieraccountcode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>shipcarrieraccountcode</DataField>
+        </Field>
+        <Field Name="shipcarrierdeliverycontact">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>shipcarrierdeliverycontact</DataField>
+        </Field>
+        <Field Name="shipcarrierid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>shipcarrierid</DataField>
+        </Field>
+        <Field Name="shipcarriername">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>shipcarriername</DataField>
+        </Field>
+        <Field Name="shipcarrierpostaladdress">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>shipcarrierpostaladdress</DataField>
+        </Field>
+        <Field Name="shippingdateconfirmed">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>shippingdateconfirmed</DataField>
+        </Field>
+        <Field Name="shippingdaterequested">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>shippingdaterequested</DataField>
+        </Field>
+        <Field Name="smmcampaignid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>smmcampaignid</DataField>
+        </Field>
+        <Field Name="smmsalesamounttotal">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>smmsalesamounttotal</DataField>
+        </Field>
+        <Field Name="sourcedocumentheader">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>sourcedocumentheader</DataField>
+        </Field>
+        <Field Name="statprocid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>statprocid</DataField>
+        </Field>
+        <Field Name="systementrychangepolicy">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>systementrychangepolicy</DataField>
+        </Field>
+        <Field Name="taxgroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>taxgroup</DataField>
+        </Field>
+        <Field Name="taxperiodpaymentcode_pl">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>taxperiodpaymentcode_pl</DataField>
+        </Field>
+        <Field Name="tcsgroup_in">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>tcsgroup_in</DataField>
+        </Field>
+        <Field Name="transactioncode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>transactioncode</DataField>
+        </Field>
+        <Field Name="transport">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>transport</DataField>
+        </Field>
+        <Field Name="transportationdocument">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>transportationdocument</DataField>
+        </Field>
+        <Field Name="url">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>url</DataField>
+        </Field>
+        <Field Name="vatnum">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>vatnum</DataField>
+        </Field>
+        <Field Name="workersalesresponsible">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>workersalesresponsible</DataField>
+        </Field>
+        <Field Name="workersalestaker">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>workersalestaker</DataField>
+        </Field>
+        <Field Name="einvoicecfdiconfirmnumber_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>einvoicecfdiconfirmnumber_mx</DataField>
+        </Field>
+        <Field Name="satpaymmethod_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>satpaymmethod_mx</DataField>
+        </Field>
+        <Field Name="satpurpose_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>satpurpose_mx</DataField>
+        </Field>
+        <Field Name="certificatenumber_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>certificatenumber_mx</DataField>
+        </Field>
+        <Field Name="fiscaladdress_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>fiscaladdress_mx</DataField>
+        </Field>
+        <Field Name="numregidtrib_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>numregidtrib_mx</DataField>
+        </Field>
+        <Field Name="satincotermcode_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>satincotermcode_mx</DataField>
+        </Field>
+        <Field Name="satshippingreason_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>satshippingreason_mx</DataField>
+        </Field>
+        <Field Name="accountingdistributiontemplate">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>accountingdistributiontemplate</DataField>
+        </Field>
+        <Field Name="fundingsource">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>fundingsource</DataField>
+        </Field>
+        <Field Name="reportingcurrencyfixedexchrate">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>reportingcurrencyfixedexchrate</DataField>
+        </Field>
+        <Field Name="asohorderclass">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>asohorderclass</DataField>
+        </Field>
+        <Field Name="phone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>phone</DataField>
+        </Field>
+        <Field Name="vatnumrecid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>vatnumrecid</DataField>
+        </Field>
+        <Field Name="fintag">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>fintag</DataField>
+        </Field>
+        <Field Name="intentletterid_it">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>intentletterid_it</DataField>
+        </Field>
+        <Field Name="taxid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>taxid</DataField>
+        </Field>
+        <Field Name="eximports_in">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>eximports_in</DataField>
+        </Field>
+        <Field Name="electronicinvoiceframeworktype_fr">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>electronicinvoiceframeworktype_fr</DataField>
+        </Field>
+        <Field Name="servicecode_fr">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>servicecode_fr</DataField>
+        </Field>
+        <Field Name="projectmanager_fr">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>projectmanager_fr</DataField>
+        </Field>
+        <Field Name="servicecoderefrecid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>servicecoderefrecid</DataField>
+        </Field>
+        <Field Name="customsregime_mx">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>customsregime_mx</DataField>
+        </Field>
+        <Field Name="credmanid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>credmanid</DataField>
+        </Field>
+        <Field Name="domiterations">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>domiterations</DataField>
+        </Field>
+        <Field Name="domprocesseddatetime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>domprocesseddatetime</DataField>
+        </Field>
+        <Field Name="tamdeductionid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>tamdeductionid</DataField>
+        </Field>
+        <Field Name="tamrebatereference">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>tamrebatereference</DataField>
+        </Field>
+        <Field Name="subbillbilltoname">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>subbillbilltoname</DataField>
+        </Field>
+        <Field Name="subbillbilltopostaladdress">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>subbillbilltopostaladdress</DataField>
+        </Field>
+        <Field Name="revreccontractenddate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>revreccontractenddate</DataField>
+        </Field>
+        <Field Name="revreccontractstartdate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>revreccontractstartdate</DataField>
+        </Field>
+        <Field Name="revreclatestreversejournal">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>revreclatestreversejournal</DataField>
+        </Field>
+        <Field Name="revrecreallocationid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>revrecreallocationid</DataField>
+        </Field>
+        <Field Name="modifieddatetime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>modifieddatetime</DataField>
+        </Field>
+        <Field Name="modifiedby">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>modifiedby</DataField>
+        </Field>
+        <Field Name="modifiedtransactionid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>modifiedtransactionid</DataField>
+        </Field>
+        <Field Name="createddatetime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>createddatetime</DataField>
+        </Field>
+        <Field Name="createdby">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>createdby</DataField>
+        </Field>
+        <Field Name="createdtransactionid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>createdtransactionid</DataField>
+        </Field>
+        <Field Name="dataareaid">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>dataareaid</DataField>
+        </Field>
+        <Field Name="recversion">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>recversion</DataField>
+        </Field>
+        <Field Name="partition">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>partition</DataField>
+        </Field>
+        <Field Name="sysrowversion">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>sysrowversion</DataField>
+        </Field>
+        <Field Name="recid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>recid</DataField>
+        </Field>
+        <Field Name="tableid">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>tableid</DataField>
+        </Field>
+        <Field Name="versionnumber">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>versionnumber</DataField>
+        </Field>
+        <Field Name="createdon">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>createdon</DataField>
+        </Field>
+        <Field Name="modifiedon">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>modifiedon</DataField>
+        </Field>
+        <Field Name="IsDelete">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IsDelete</DataField>
+        </Field>
+        <Field Name="PartitionId">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PartitionId</DataField>
+        </Field>
+        <Field Name="salesorderintegrationcreationtype">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>salesorderintegrationcreationtype</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.70833in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.29167in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.36042in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>currencycode</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>estimate</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36042in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="custgroup">
+                          <rd:DefaultName>custgroup</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!custgroup.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!estimate.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36042in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="currencycode">
+                          <rd:DefaultName>currencycode</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!currencycode.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <ListLevel>1</ListLevel>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="estimate">
+                          <rd:DefaultName>estimate</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!estimate.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36042in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!estimate.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember>
+                  <Group Name="custgroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!custgroup.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!custgroup.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="currencycode">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!currencycode.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!currencycode.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>custgroup</ToggleItem>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.80833in</Top>
+            <Left>2.29167in</Left>
+            <Height>1.44167in</Height>
+            <Width>3in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="ReportTitle">
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Bepensa Prueba</Value>
+                    <Style>
+                      <FontFamily>Segoe UI Light</FontFamily>
+                      <FontSize>28pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.5in</Height>
+            <Width>5.5in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>2.25in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+</Report>

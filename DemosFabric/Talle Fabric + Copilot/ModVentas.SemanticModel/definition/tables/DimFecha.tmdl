@@ -1,0 +1,82 @@
+table DimFecha
+	lineageTag: 5756e434-fd9a-42e6-b1b9-f8fd25ad6dec
+	sourceLineageTag: [dbo].[DimFecha]
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9e79e28a-102a-4e83-adb9-05847fdde2fd
+		sourceLineageTag: Fecha
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c9b5a07e-fc9e-455f-b780-f06baedd5d17
+		sourceLineageTag: Año
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NombreDelMes
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 75ce00cc-986d-4d97-88d7-e0f76d2cd57e
+		sourceLineageTag: NombreDelMes
+		summarizeBy: none
+		sourceColumn: NombreDelMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 98deaf2d-57ef-4a5b-b7bf-e99186231a19
+		sourceLineageTag: Dia
+		summarizeBy: none
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiaDeLaSemana
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 48e1e012-7489-4518-bcf7-c88d15ec2fe3
+		sourceLineageTag: DiaDeLaSemana
+		summarizeBy: none
+		sourceColumn: DiaDeLaSemana
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Trimestre
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2b834ab7-5ca0-43d4-b16d-fc1ba4dec5b4
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DimFecha = entity
+		mode: directLake
+		source
+			entityName: DimFecha
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

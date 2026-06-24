@@ -1,0 +1,195 @@
+table 'Info Estudiantes'
+	lineageTag: a8a36b82-e41c-40de-8813-bdfc36bc7a79
+
+	column Estudiante
+		dataType: string
+		lineageTag: 11ab6e1d-26b8-483d-844b-aa3197243ff1
+		summarizeBy: none
+		sourceColumn: Estudiante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Foto
+		dataType: string
+		lineageTag: 0bf64b59-14be-4327-8356-3dd4e635fdcd
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Foto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subproducto
+		dataType: string
+		lineageTag: a4306bb8-5520-4d9e-98ae-4a2349b55d6f
+		summarizeBy: none
+		sourceColumn: Subproducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ingresos
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 40e65b8b-22d6-418a-84bd-6b3e7f58e5d2
+		summarizeBy: sum
+		sourceColumn: Ingresos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Semestre
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0fc727d2-c441-495e-a9dc-731fd5cb6157
+		summarizeBy: sum
+		sourceColumn: Semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Servicios al Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: 425fb6a0-53d4-47db-babf-fe7c07ade99b
+		summarizeBy: sum
+		sourceColumn: Servicios al Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP
+		dataType: int64
+		formatString: 0
+		lineageTag: 910e0c8b-d887-4eeb-8133-9ed4d60b4b0b
+		summarizeBy: sum
+		sourceColumn: CP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		lineageTag: 50b1b3f0-49b0-4517-b10a-74316c186784
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entidad
+		dataType: string
+		lineageTag: 579f8d65-9de1-4a8c-9dfb-2dcf70895ed2
+		summarizeBy: none
+		sourceColumn: Entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Municipio
+		dataType: string
+		lineageTag: 941ba35c-dc6c-4d1b-b6f5-cdacf32c91bc
+		summarizeBy: none
+		sourceColumn: Desc_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAT
+		dataType: double
+		lineageTag: f705ce82-06d3-4c72-96ee-9dfc025974fe
+		summarizeBy: sum
+		sourceColumn: LAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LONG
+		dataType: double
+		lineageTag: f75609ca-e362-4a1a-9ae6-c25505a5c27c
+		summarizeBy: sum
+		sourceColumn: LONG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Nombre
+		dataType: string
+		lineageTag: d1003f27-5c36-4217-b0b2-2910eea11f2f
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zona
+		dataType: string
+		lineageTag: 54975bf1-c324-4cf4-bdb4-20ed740b34aa
+		summarizeBy: none
+		sourceColumn: Zona
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genero
+		dataType: string
+		lineageTag: 67015c1e-9057-412a-8369-45903d5e6b54
+		summarizeBy: none
+		sourceColumn: Genero
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estudio
+		dataType: string
+		lineageTag: a9467aa8-7257-4dad-a61f-877f8ffede55
+		summarizeBy: none
+		sourceColumn: Estudio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Área de formación ocupacional'
+		dataType: string
+		lineageTag: ef431d4a-5f71-4b47-a47f-935d323b6da9
+		summarizeBy: none
+		sourceColumn: Área de formación ocupacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column Carrera
+		dataType: string
+		lineageTag: 25deb3be-9ce9-496a-908f-88ef2f975e0b
+		summarizeBy: none
+		sourceColumn: Carrera
+
+		annotation SummarizationSetBy = Automatic
+
+	column Beca
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 562da5ba-0afe-4cfe-bf42-0dc203236aa1
+		summarizeBy: none
+		sourceColumn: Beca
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plantel
+		dataType: string
+		lineageTag: b5c4d550-517f-4c6e-9ef8-2e86ca6d792f
+		summarizeBy: none
+		sourceColumn: Plantel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Info Estudiantes-04328558-144c-45bc-bdd8-05a9f3252e8a' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\DiegoDelaCabadaMoren\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2023\CONALEP\BD_Conalep_Alumnos_Servicio.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Producto", type text}, {"Logo", type text}, {"Subproducto", type text}, {"Ingresos", Int64.Type}, {"Fidelidad (meses)", Int64.Type}, {"Servicios al Cliente", Int64.Type}, {"CP", Int64.Type}, {"Pais", type text}, {"Desc_Estado", type text}, {"Desc_Municipio", type text}, {"LAT", type number}, {"LONG", type number}, {"Nombre", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Producto", "Estudiante"}, {"Desc_Estado", "Entidad"}, {"Fidelidad (meses)", "Semestre"}, {"Logo", "Foto"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

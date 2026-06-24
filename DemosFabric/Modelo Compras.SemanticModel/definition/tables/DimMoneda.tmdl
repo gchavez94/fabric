@@ -1,0 +1,29 @@
+table DimMoneda
+	lineageTag: 46d715c9-f74d-44c6-a3fa-798a923b637a
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: c104b733-edbd-41c0-9271-decb355e1e65
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: d85aa98f-5273-4ad4-bb24-624291bde29a
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimMoneda = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimMoneda = Origen{[Schema="dbo",Item="DimMoneda"]}[Data]
+				in
+				    dbo_DimMoneda
+

@@ -1,0 +1,490 @@
+table Purchline-PurchTable
+	lineageTag: dbca5bb1-5efc-40dd-87dd-fb97bc1b8c44
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 114576f6-d20f-43ca-8d56-03bc08e84893
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1d6a497a-d723-4968-8b0d-3babb5e1fc5d
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		variation Variación
+			isDefault
+			relationship: cb16a8f8-6b35-4b8c-b3a7-68f80ea22980
+			defaultHierarchy: LocalDateTable_791917b0-cca1-4158-90d2-eeeaa012e68b.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ee40b6ba-2950-4f13-a2c5-4c9e05030c76
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		variation Variación
+			isDefault
+			relationship: c25e94df-2e4a-4ba7-b5db-b2b4f78212ca
+			defaultHierarchy: LocalDateTable_90c4ded6-f0e6-4804-9960-51ff9e8a9cc8.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column confirmeddlv
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 19a9ad14-404c-4bce-8a9f-ebcba0a18501
+		summarizeBy: none
+		sourceColumn: confirmeddlv
+
+		variation Variación
+			isDefault
+			relationship: 2618b900-9cc5-4d57-996e-6db09ab64297
+			defaultHierarchy: LocalDateTable_55080ca1-7e67-4ca6-ae83-801cdb49820b.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column inventdimid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a7b54ab2-4da4-4012-a970-41f9c187079b
+		summarizeBy: none
+		sourceColumn: inventdimid
+
+		annotation SummarizationSetBy = Automatic
+
+	column inventtransid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1b8ada66-91ec-4041-a1d8-d748c77f048e
+		summarizeBy: none
+		sourceColumn: inventtransid
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 86cdb5f0-b610-4cb0-95bd-b0116b3b0727
+		summarizeBy: none
+		sourceColumn: purchid
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchprice
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: ce4f4f81-30e9-4e42-b3ba-5a05040cbf26
+		summarizeBy: sum
+		sourceColumn: purchprice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column purchqty
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 9ba306fc-c37d-49a2-8ab6-4462cda397db
+		summarizeBy: sum
+		sourceColumn: purchqty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shippingdateconfirmed
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9c30a40f-03e4-406b-95de-d7d3c3c56f9b
+		summarizeBy: none
+		sourceColumn: shippingdateconfirmed
+
+		variation Variación
+			isDefault
+			relationship: 518d87c6-e95f-402e-97b8-06bb830baf46
+			defaultHierarchy: LocalDateTable_09e5e05b-5483-4c5b-bf44-1e895306e563.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column shippingdaterequested
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b62a2539-8bf4-4fbe-ac3f-e08812f517d1
+		summarizeBy: none
+		sourceColumn: shippingdaterequested
+
+		variation Variación
+			isDefault
+			relationship: 7221d2e5-3479-4034-bcb2-cec19c39b275
+			defaultHierarchy: LocalDateTable_45cb6f74-1089-44a3-bd65-93b31011d1b0.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendaccount
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7b19a15a-f8e3-4cd2-adb9-d36b48915980
+		summarizeBy: none
+		sourceColumn: vendaccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendgroup
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b2fd48f9-6248-448a-b158-299c113353e9
+		summarizeBy: none
+		sourceColumn: vendgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column requestedshipdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dee6becc-8080-41cb-ae86-942f67c00ce7
+		summarizeBy: none
+		sourceColumn: requestedshipdate
+
+		variation Variación
+			isDefault
+			relationship: 52a03edc-4f6e-4d9c-a170-d9f351f73854
+			defaultHierarchy: LocalDateTable_36febf18-32bd-4556-b8e5-b8c70c747ec6.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column confirmedshipdate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8acfc256-568b-414c-bdcb-4607830f42f6
+		summarizeBy: none
+		sourceColumn: confirmedshipdate
+
+		variation Variación
+			isDefault
+			relationship: dfed4276-e0e6-46f8-acf2-162703f94d25
+			defaultHierarchy: LocalDateTable_1a8b5aa9-bf75-42df-a5f0-428673f7d0f3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column dlvterm
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 104b2917-6a32-40cf-aa67-096b2f8830f2
+		summarizeBy: none
+		sourceColumn: dlvterm
+
+		annotation SummarizationSetBy = Automatic
+
+	column createddatetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: faace3ff-e63d-403f-8d60-51306d4a3b3d
+		summarizeBy: none
+		sourceColumn: createddatetime
+
+		variation Variación
+			isDefault
+			relationship: 116203b7-28dd-48d9-9c3f-2db44ec08610
+			defaultHierarchy: LocalDateTable_5eb1c1cd-2d71-493c-b77c-5538a197bbea.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 25e3b77e-46a3-44ca-9241-f1958d498d9b
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataareaid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 22f35261-3758-4f82-87a8-c453df62a389
+		summarizeBy: none
+		sourceColumn: dataareaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b8f2a0a0-462a-438a-a333-5c172d4c0c60
+		summarizeBy: none
+		sourceColumn: createdon
+
+		variation Variación
+			isDefault
+			relationship: c33b8c31-9f98-4f6f-9de7-b8a9a419f334
+			defaultHierarchy: LocalDateTable_8374516f-1ee1-4a36-a1ba-85515cb9d290.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fcc5ed7b-a7df-4bda-ba01-09f5ac5152f3
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		variation Variación
+			isDefault
+			relationship: a31bc77e-a455-475b-af27-e76913abc218
+			defaultHierarchy: LocalDateTable_1a0f42e0-5922-433d-a9e3-1fdbfcab43bb.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bloqueado
+		dataType: int64
+		formatString: 0
+		lineageTag: 62fec743-684a-421a-b2f1-3815a2fb69a8
+		summarizeBy: sum
+		sourceColumn: Bloqueado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Completo
+		dataType: int64
+		formatString: 0
+		lineageTag: b998a620-ece2-4c22-ac7a-6b7a182be38b
+		summarizeBy: sum
+		sourceColumn: Completo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: dfab8e99-cadf-4b42-9667-3c45350141a0
+		summarizeBy: sum
+		sourceColumn: Tipo de entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intercompañia
+		dataType: int64
+		formatString: 0
+		lineageTag: caf85b54-a68d-41ee-84f5-8d6c8442d0bf
+		summarizeBy: sum
+		sourceColumn: Intercompañia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Eliminado
+		dataType: int64
+		formatString: 0
+		lineageTag: b6095fcc-9d0d-4a49-bd1e-6c98106dfe03
+		summarizeBy: sum
+		sourceColumn: Eliminado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finalizado
+		dataType: int64
+		formatString: 0
+		lineageTag: b7cc996a-c343-4be8-b5f2-84db8517664a
+		summarizeBy: sum
+		sourceColumn: Finalizado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modificado
+		dataType: int64
+		formatString: 0
+		lineageTag: fa359792-cecc-4837-8937-b406f1589cde
+		summarizeBy: sum
+		sourceColumn: Modificado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de compra'
+		dataType: int64
+		formatString: 0
+		lineageTag: 752da452-a3fc-4be2-9a12-c2ebadd60703
+		summarizeBy: sum
+		sourceColumn: Tipo de compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estatus de compra'
+		dataType: int64
+		formatString: 0
+		lineageTag: da984114-8f2e-475d-a370-7f674de38afb
+		summarizeBy: sum
+		sourceColumn: Estatus de compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estatus devolución'
+		dataType: int64
+		formatString: 0
+		lineageTag: e401f9c2-fac1-4aa1-be98-9c3d4beae4ce
+		summarizeBy: sum
+		sourceColumn: Estatus devolución
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desperdicio
+		dataType: int64
+		formatString: 0
+		lineageTag: 517329da-b239-4398-9e01-1d557729273f
+		summarizeBy: sum
+		sourceColumn: Desperdicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Producto en stock'
+		dataType: int64
+		formatString: 0
+		lineageTag: a2e6aad9-a564-4140-9f99-984c12496dc7
+		summarizeBy: sum
+		sourceColumn: Producto en stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Impuesto autogenerado'
+		dataType: int64
+		formatString: 0
+		lineageTag: 427a4a55-868b-4be2-b107-397f3c82e0ab
+		summarizeBy: sum
+		sourceColumn: Impuesto autogenerado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metodo de creacion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f588cce-8a90-4037-9d0d-b206685100c4
+		summarizeBy: sum
+		sourceColumn: Metodo de creacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupo de impuestos'
+		dataType: string
+		lineageTag: c31a6dfc-5c9f-4cad-99da-5797d6c846fc
+		summarizeBy: none
+		sourceColumn: Grupo de impuestos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupo de Impuesto'
+		dataType: string
+		lineageTag: dd649e9d-91ce-4f5e-afde-be511b2f82bd
+		summarizeBy: none
+		sourceColumn: Grupo de Impuesto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'codigo de barras'
+		dataType: string
+		lineageTag: e9cf5a4a-eda2-4d9d-98d1-b0c30398fc32
+		summarizeBy: none
+		sourceColumn: codigo de barras
+
+		annotation SummarizationSetBy = Automatic
+
+	column Moneda
+		dataType: string
+		lineageTag: 18070bbc-a222-4937-9cf1-7afffe372fdb
+		summarizeBy: none
+		sourceColumn: Moneda
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de entrega'
+		dataType: string
+		lineageTag: 147d00d0-49a2-41b7-9883-1f3ac8f791e5
+		summarizeBy: none
+		sourceColumn: Nombre de entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item ID'
+		dataType: string
+		lineageTag: a546cda8-f4a9-4dc6-bbec-d01f97a4e63d
+		summarizeBy: none
+		sourceColumn: Item ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column monto
+		dataType: double
+		lineageTag: 3c3fbc3f-1b68-4dc6-888b-006533ff0c6a
+		summarizeBy: sum
+		sourceColumn: monto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column descuento
+		dataType: double
+		lineageTag: 8329fd5f-5ea5-4deb-b871-bc724f5ff569
+		summarizeBy: sum
+		sourceColumn: descuento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Artículo
+		dataType: string
+		lineageTag: 1145fe5a-ae8a-429f-9a51-4c10ffb6bbcb
+		summarizeBy: none
+		sourceColumn: Artículo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidades
+		dataType: string
+		lineageTag: 99c18aa6-b5d7-43e3-972f-2e8bf9ef8093
+		summarizeBy: none
+		sourceColumn: Unidades
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cantidad ordenada'
+		dataType: double
+		lineageTag: 49c4325f-e7d8-4d7d-8551-3d29bb916480
+		summarizeBy: sum
+		sourceColumn: Cantidad ordenada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Purchline-PurchTable = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"5bb3a27e-bc84-41d2-bf55-296bb6efc7a4" = Workspaces{[workspaceId="5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"]}[Data],
+				    #"57f2eafb-b25c-4b9c-89d1-766875cdb526" = #"5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"{[dataflowId="57f2eafb-b25c-4b9c-89d1-766875cdb526"]}[Data],
+				    #"Purchline-PurchTable_" = #"57f2eafb-b25c-4b9c-89d1-766875cdb526"{[entity="Purchline-PurchTable",version=""]}[Data]
+				in
+				    #"Purchline-PurchTable_"
+
+	annotation PBI_ResultType = Table
+

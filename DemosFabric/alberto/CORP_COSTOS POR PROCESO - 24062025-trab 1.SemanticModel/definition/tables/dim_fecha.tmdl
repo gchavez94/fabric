@@ -1,0 +1,37 @@
+table dim_fecha
+	lineageTag: 4759e6fc-59c5-4e87-9413-c08d5f7a1d97
+
+	column Anio
+		dataType: string
+		lineageTag: 13a63291-b79a-4868-8ca7-3faefee82c31
+		summarizeBy: none
+		sourceColumn: Anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo1
+		dataType: string
+		lineageTag: ac7f4f56-a330-4441-822a-27eea9f3b69a
+		summarizeBy: none
+		sourceColumn: Periodo1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fecha = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr"),
+				    dbo_dim_fecha = Origen{[Schema="dbo",Item="dim_fecha"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(dbo_dim_fecha,{{"Anio", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado", "Periodo1", each Text.Combine({[Anio],Text.Middle([Fecha_Fecha],5,2)})),
+				    #"Filas agrupadas" = Table.Group(#"Personalizada agregada", {"Anio", "Periodo1"}, {{"Recuento", each _, type table [Sk_Fecha=nullable text, Fecha_Fecha=nullable text, Anio=nullable text, Numero_Mes=nullable number, Dsc_Mes=nullable text, Dia_Mes=nullable number, Dsc_Dia=nullable text, Mes_Dia=nullable text, Dia_Semana=nullable text, Flg_UltimoDiaMes=nullable number, Dia_Anio=nullable number, Numero_Semana=nullable number, Dsc_Mes_Anio=nullable text, Dsc_Dia_Mes_Anio=nullable text, INSERT_SVR=nullable datetime, UPDATE_SVR=nullable datetime, Periodo1=text]}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Filas agrupadas",{"Recuento"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each Text.StartsWith([Anio], "202"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

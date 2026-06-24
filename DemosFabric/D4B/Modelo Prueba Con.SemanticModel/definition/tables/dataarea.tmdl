@@ -1,0 +1,43 @@
+table dataarea
+	lineageTag: ffa76db3-d8af-4234-8d5c-ac0cdc94ae19
+	sourceLineageTag: [dbo].[dataarea]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eea9fe21-e99f-468f-aa77-bea9dc9f293c
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fno_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4d35cdf9-c60d-4922-a0c8-ca81cb21d3cb
+		sourceLineageTag: fno_id
+		summarizeBy: none
+		sourceColumn: fno_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2f348504-8b19-40b7-a986-dee7268f511b
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dataarea = entity
+		mode: directLake
+		source
+			entityName: dataarea
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

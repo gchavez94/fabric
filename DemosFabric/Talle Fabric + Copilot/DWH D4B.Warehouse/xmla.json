@@ -1,0 +1,597 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "DimArticulo",
+        "sourceLineageTag": "[dbo].[DimArticulo]",
+        "columns": [
+          {
+            "name": "DimArticuloId",
+            "dataType": "int64",
+            "sourceColumn": "DimArticuloId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimArticuloId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Descripcion",
+            "dataType": "string",
+            "sourceColumn": "Descripcion",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Descripcion",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Categoria",
+            "dataType": "string",
+            "sourceColumn": "Categoria",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Categoria",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Formato",
+            "dataType": "string",
+            "sourceColumn": "Formato",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Formato",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DimArticulo",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "DimCliente",
+        "sourceLineageTag": "[dbo].[DimCliente]",
+        "columns": [
+          {
+            "name": "DimClienteId",
+            "dataType": "int64",
+            "sourceColumn": "DimClienteId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimClienteId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NombreCliente",
+            "dataType": "string",
+            "sourceColumn": "NombreCliente",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NombreCliente",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Sucursal",
+            "dataType": "string",
+            "sourceColumn": "Sucursal",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Sucursal",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pais",
+            "dataType": "string",
+            "sourceColumn": "Pais",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pais",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "Estado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Estado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Municipio",
+            "dataType": "string",
+            "sourceColumn": "Municipio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Municipio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Latitud",
+            "dataType": "int64",
+            "sourceColumn": "Latitud",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Latitud",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Longitud",
+            "dataType": "int64",
+            "sourceColumn": "Longitud",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Longitud",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DimCliente",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "DimFecha",
+        "sourceLineageTag": "[dbo].[DimFecha]",
+        "columns": [
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Fecha",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Año",
+            "dataType": "double",
+            "sourceColumn": "Año",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Año",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "NombreDelMes",
+            "dataType": "string",
+            "sourceColumn": "NombreDelMes",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NombreDelMes",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dia",
+            "dataType": "double",
+            "sourceColumn": "Dia",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Dia",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DiaDeLaSemana",
+            "dataType": "double",
+            "sourceColumn": "DiaDeLaSemana",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DiaDeLaSemana",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Trimestre",
+            "dataType": "double",
+            "sourceColumn": "Trimestre",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Trimestre",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DimFecha",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "DimVendedor",
+        "sourceLineageTag": "[dbo].[DimVendedor]",
+        "columns": [
+          {
+            "name": "DimVendedorId",
+            "dataType": "int64",
+            "sourceColumn": "DimVendedorId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimVendedorId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NombreVendedor",
+            "dataType": "string",
+            "sourceColumn": "NombreVendedor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NombreVendedor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DimVendedor",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "FactVentas",
+        "sourceLineageTag": "[dbo].[FactVentas]",
+        "columns": [
+          {
+            "name": "IdVenta",
+            "dataType": "int64",
+            "sourceColumn": "IdVenta",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "IdVenta",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DimClienteId",
+            "dataType": "int64",
+            "sourceColumn": "DimClienteId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimClienteId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DimArticuloId",
+            "dataType": "int64",
+            "sourceColumn": "DimArticuloId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimArticuloId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cantidad",
+            "dataType": "int64",
+            "sourceColumn": "Cantidad",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Cantidad",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Subtotal",
+            "dataType": "int64",
+            "sourceColumn": "Subtotal",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Subtotal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Iva",
+            "dataType": "double",
+            "sourceColumn": "Iva",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Iva",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Total",
+            "dataType": "double",
+            "sourceColumn": "Total",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Total",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DimVendedorId",
+            "dataType": "int64",
+            "sourceColumn": "DimVendedorId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "DimVendedorId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Fecha",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "FactVentas",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

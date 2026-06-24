@@ -1,0 +1,19 @@
+relationship f75d5da5-13dd-4bbc-b170-3ac6040294d5
+	relyOnReferentialIntegrity
+	fromColumn: wrkctrtable.worker
+	toColumn: custinvoicetable.workersalestaker
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 7eeadb76-c37d-a1d1-c451-c7718841a401
+	fromColumn: custinvoicetable.invoiceid
+	toColumn: custinvoicetrans.invoiceid
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 1430606a-210b-4e15-8e47-b063c32428b5
+	relyOnReferentialIntegrity
+	securityFilteringBehavior: none
+	fromColumn: custinvoicetrans.invoiceid
+	toColumn: custtrans.invoice
+

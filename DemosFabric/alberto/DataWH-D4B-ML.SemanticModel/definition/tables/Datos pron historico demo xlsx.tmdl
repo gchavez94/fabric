@@ -1,0 +1,72 @@
+table 'Datos pron historico demo xlsx'
+	lineageTag: 42859906-32bd-40a5-8caf-ec358c8960fa
+	sourceLineageTag: [dbo].[Datos pron historico demo xlsx]
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 521a9ffa-e190-4c82-9f1d-6cd7526cd73c
+		sourceLineageTag: Fecha
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Esperado
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4faf86a8-f27e-48e4-8f34-a31d5298500e
+		sourceLineageTag: Esperado
+		summarizeBy: sum
+		sourceColumn: Esperado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pronóstico
+		dataType: double
+		sourceProviderType: float
+		lineageTag: dbcd7ca7-7643-4e0d-8c1b-5280afe45188
+		sourceLineageTag: Pronóstico
+		summarizeBy: sum
+		sourceColumn: Pronóstico
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Real
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9c327bf8-9cee-4b20-bb77-f0f7b5a7a97b
+		sourceLineageTag: Real
+		summarizeBy: sum
+		sourceColumn: Real
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pronostico_Historico
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b0c30981-cc2a-4bc2-8041-e098db547da1
+		sourceLineageTag: Pronostico_Historico
+		summarizeBy: sum
+		sourceColumn: Pronostico_Historico
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Datos pron historico demo xlsx-c938c80d-61f7-4b71-8fe4-57b6ea21f3ba' = entity
+		mode: directLake
+		source
+			entityName: Datos pron historico demo xlsx
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

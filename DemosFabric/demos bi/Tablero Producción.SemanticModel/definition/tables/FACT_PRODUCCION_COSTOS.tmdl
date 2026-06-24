@@ -1,0 +1,510 @@
+table FACT_PRODUCCION_COSTOS
+	lineageTag: 505ecfc8-f5ba-46e3-9bc7-1e6d0d62ee9e
+
+	measure 'CONSUMO ESTIMADO CANTIDAD' = SUM([CONSUMO_ESTIMADO_CANTIDAD])*RANDBETWEEN(1.8,2.1)
+		lineageTag: 4c47c229-b22f-4915-80e7-c6d777d522dc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MONTO COSTO ESTIMADO' = SUM([MONTO_COSTO_ESTIMADO])*RANDBETWEEN(3.8,4.1)
+		formatString: #,0.00
+		lineageTag: 3e97f948-76ce-4c7f-95e9-cc11ff4cb4f2
+
+	measure 'CONSUMO REALIZADO CANTIDAD' = SUM([CONSUMO_REALIZADO_CANTIDAD])*RANDBETWEEN(1.8,2.1)
+		formatString: #,0.00
+		lineageTag: 220d5fa7-cb8d-4380-9552-8a8a7e5f413c
+
+	measure 'MONTO COSTO REALIZADO' = SUM([MONTO_COSTO_REALIZADO])*RANDBETWEEN(3.8,4.1)
+		formatString: #,0.00
+		lineageTag: 21cff169-5a17-4b6c-bf7e-f36ee3449670
+
+	measure 'MONTO VARIACION CANTIDAD' = SUM([MONTO_VARIACION_CANTIDAD])
+		formatString: #,0.00
+		lineageTag: 1f35951d-553c-44d8-a633-82df754aeeb8
+
+	measure 'MONTO VARIACION TOTAL' = SUM([MONTO_VARIACION_TOTAL])
+		formatString: #,0.00
+		lineageTag: 574dc0db-f1f6-4664-a844-1a8bcf118f3f
+
+	measure 'VARIACION UNIDADES' = SUM([VARIACION_UNIDADES])
+		lineageTag: ff9a9da8-f1c0-455e-a310-23c78bc3b8ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MONTO DIF X VARIACION PRECIO' = SUM([MONTO_DIF_X_VARIACION_PRECIO])
+		formatString: #,0.00
+		lineageTag: 8a74358b-3686-470d-a751-50f789e51c17
+
+	measure C_9L = SUM([C9L])*.95
+		lineageTag: 5b30d4f1-db60-4251-b25e-82cff980a77e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'COSTO UNITARIO C9L' = SUM([COSTO_UNITARIO_C9L])
+		lineageTag: 2d9cfa9a-1402-44db-abb9-6c357255d9c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var Cant' = SUM(FACT_PRODUCCION_COSTOS[Variación Cantidad])*.97
+		lineageTag: 9de0f01d-c1b1-4e44-91cc-4547b6438dc6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Acumulado Consumo Estimado Cantidad' =
+			CALCULATE(
+			    SUM(FACT_PRODUCCION_COSTOS[CONSUMO_ESTIMADO_CANTIDAD])*1.19,                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		lineageTag: c3d8552d-73fb-4ad7-bec5-f7d07b034279
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Acumulado Costo Estimado Cantidad' =
+			CALCULATE(
+			    SUM(FACT_PRODUCCION_COSTOS[MONTO_COSTO_ESTIMADO])*.96,                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		formatString: #,0.00
+		lineageTag: 36ea5631-f2cf-4e27-a008-ac05cfb242a8
+
+	measure 'Acumulado Costo Realizado Cantidad' =
+			CALCULATE(
+			    SUM(FACT_PRODUCCION_COSTOS[MONTO_COSTO_REALIZADO])*.94,                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		lineageTag: a7c5b061-592f-4f1e-ae63-ccd7f6570ea3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Acumulado Cajas 9L' =
+			CALCULATE(
+			    SUM(FACT_PRODUCCION_COSTOS[C9L])*.8,                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		formatString: #,0.00
+		lineageTag: f76edd10-4d02-4e85-aeb2-c9146f2d160d
+
+	measure 'Acumulado Cajas Fisicas' =
+			CALCULATE(
+			    SUM(FACT_PRODUCCION_COSTOS[CONSUMO_REALIZADO_CANTIDAD])*.9,                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		lineageTag: 52ad066f-294c-4809-b6dd-5d189b92a056
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var Monto' = SUM(FACT_PRODUCCION_COSTOS[Variación Monto])*.97
+		formatString: #,0.00
+		lineageTag: 08db320d-7b95-4824-9a35-02d922872197
+
+	measure 'Var X Precio' = SUM(FACT_PRODUCCION_COSTOS[Variación x Precio])*.95
+		lineageTag: 695541d8-92f0-4e9e-a8cc-40e0dc8feb80
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Acumulado Var Cant' =
+			CALCULATE(
+			    [Var Cant],                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		formatString: #,0.00
+		lineageTag: 38010f56-7d46-4b09-907d-b70b782b7666
+
+	measure 'Acumulado Var Monto' =
+			CALCULATE(
+			    [Var Monto],                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		formatString: #,0.00
+		lineageTag: 8c6f749a-6ee6-43cc-b13a-582241eb8ee7
+
+	measure 'Acumulado Var X Precio' =
+			CALCULATE(
+			    [Var X Precio],                -- La expresión que queremos acumular
+			    DATESYTD(DIM_FECHA_CREACION[FECHA])             -- Filtro de fechas para el año hasta la fecha
+			)
+		formatString: #,0.00
+		lineageTag: 92780b57-f7b3-4012-8a94-98bb97a25599
+
+	column ID_PRODUCTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 748f6407-8d35-4316-b804-1dc62de36ac7
+		summarizeBy: none
+		sourceColumn: ID_PRODUCTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CENTRO_COSTOS
+		dataType: int64
+		formatString: 0
+		lineageTag: ca73280d-b3a0-4e7d-a3d3-7d81ced0e071
+		summarizeBy: none
+		sourceColumn: ID_CENTRO_COSTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FECHA_ENTREGA
+		dataType: int64
+		formatString: 0
+		lineageTag: dc17ec23-c788-41bf-bd78-dca86ae5332d
+		summarizeBy: sum
+		sourceColumn: ID_FECHA_ENTREGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FECHA_CREACION
+		dataType: int64
+		formatString: 0
+		lineageTag: 178fd533-4b62-426e-8f6e-613f42b253df
+		summarizeBy: sum
+		sourceColumn: ID_FECHA_CREACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_SITIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 704792c9-ef6a-457c-85e4-908e68404fed
+		summarizeBy: none
+		sourceColumn: ID_SITIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PARTICIPABLE
+		dataType: int64
+		formatString: 0
+		lineageTag: dade8e5c-3a28-454a-9fa4-8f0b103b86b3
+		summarizeBy: sum
+		sourceColumn: ID_PARTICIPABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDEN_PRODUCCION
+		dataType: string
+		lineageTag: 40428d8a-af1e-4b7d-a173-dc974bfccb9d
+		summarizeBy: none
+		sourceColumn: ORDEN_PRODUCCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_ARTICULO
+		dataType: int64
+		formatString: 0
+		lineageTag: 554f908a-4891-4e32-b5c3-9b9b0e9d84a5
+		summarizeBy: sum
+		sourceColumn: TIPO_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_ARTICULO
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f80c007-b016-4e7e-97ae-3d05a0f7e1ce
+		summarizeBy: sum
+		sourceColumn: NIVEL_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONSUMO_ESTIMADO_CANTIDAD
+		dataType: double
+		lineageTag: 0c775ec5-cb12-44c5-b0c6-bce04bb5581a
+		summarizeBy: sum
+		sourceColumn: CONSUMO_ESTIMADO_CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONSUMO_REALIZADO_CANTIDAD
+		dataType: double
+		lineageTag: 8a9139c6-8525-4da2-a1b7-4329af861160
+		summarizeBy: sum
+		sourceColumn: CONSUMO_REALIZADO_CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_COSTO_ESTIMADO
+		dataType: double
+		lineageTag: cebd98f1-3a66-4417-8c5b-c7e2eea127ce
+		summarizeBy: sum
+		sourceColumn: MONTO_COSTO_ESTIMADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_COSTO_REALIZADO
+		dataType: double
+		lineageTag: 1f635e02-665f-4203-b18d-939220355242
+		summarizeBy: sum
+		sourceColumn: MONTO_COSTO_REALIZADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUOTAS_PRESUPUESTO
+		dataType: double
+		lineageTag: 2f620311-e96c-42f8-9798-b0a24c5fc7c2
+		summarizeBy: sum
+		sourceColumn: CUOTAS_PRESUPUESTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUOTAS_PROMEDIO
+		dataType: double
+		lineageTag: 0dda912e-f153-4a20-806d-7e1664ec8749
+		summarizeBy: sum
+		sourceColumn: CUOTAS_PROMEDIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VARIACION_UNIDADES
+		dataType: double
+		lineageTag: 0fb4db4c-7b51-4f4d-b42b-9101eec33e4f
+		summarizeBy: sum
+		sourceColumn: VARIACION_UNIDADES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_VARIACION_CANTIDAD
+		dataType: double
+		lineageTag: 56295017-2173-4b89-a980-70deb5e22ef0
+		summarizeBy: sum
+		sourceColumn: MONTO_VARIACION_CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_DIF_X_VARIACION_PRECIO
+		dataType: double
+		lineageTag: 42e80de1-a7c6-4894-825c-c881ebd8bd95
+		summarizeBy: sum
+		sourceColumn: MONTO_DIF_X_VARIACION_PRECIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_VARIACION_TOTAL
+		dataType: double
+		lineageTag: b3391987-8b18-42c8-b2a5-929dd30e6325
+		summarizeBy: sum
+		sourceColumn: MONTO_VARIACION_TOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column C9L
+		dataType: double
+		lineageTag: 99b493bd-e9bc-4d76-bbba-d7de5666cfa7
+		summarizeBy: sum
+		sourceColumn: C9L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COSTO_UNITARIO_CF
+		dataType: double
+		lineageTag: dc3cc7bd-a770-41c9-b789-efde77c31289
+		summarizeBy: sum
+		sourceColumn: COSTO_UNITARIO_CF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COSTO_UNITARIO_C9L
+		dataType: double
+		lineageTag: 0e00797f-b3dc-48e9-a067-c3d8474b8f88
+		summarizeBy: sum
+		sourceColumn: COSTO_UNITARIO_C9L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PORCENTAJE_COSTO_PRODUCC
+		dataType: double
+		lineageTag: ded6d09d-9aa2-4ae5-94b0-be38f12f3e44
+		summarizeBy: sum
+		sourceColumn: PORCENTAJE_COSTO_PRODUCC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNITARIOS
+		dataType: double
+		lineageTag: a39d422d-28c9-4ef5-8be9-1dc1b4baa919
+		summarizeBy: sum
+		sourceColumn: UNITARIOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONJUNTO_CALCULO
+		dataType: string
+		lineageTag: 2945ea0b-610a-4407-b1a4-9d27bf997387
+		summarizeBy: none
+		sourceColumn: CONJUNTO_CALCULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDAD
+		dataType: string
+		lineageTag: 87f81ba8-c90c-41d1-b0b0-94a6489c84ab
+		summarizeBy: none
+		sourceColumn: UNIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPO_COSTOS
+		dataType: string
+		lineageTag: d1b50fba-88e6-490c-9a8d-3aa8c9bc6cf3
+		summarizeBy: none
+		sourceColumn: GRUPO_COSTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIMENSIONES_INVENTARIO
+		dataType: string
+		lineageTag: 52a3b006-c74c-48f5-bcbe-2922b070138d
+		summarizeBy: none
+		sourceColumn: DIMENSIONES_INVENTARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONJUNTO_PRODUCCION
+		dataType: string
+		lineageTag: 86c5cbad-10dc-49b6-8c3a-0de40206d0d4
+		summarizeBy: none
+		sourceColumn: CONJUNTO_PRODUCCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNICO
+		dataType: int64
+		formatString: 0
+		lineageTag: d8b95813-a8f7-4f40-ac88-7fe5fb2d3034
+		summarizeBy: sum
+		sourceColumn: ID_UNICO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_MODIFICACION
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69ddf3f1-d035-4ca2-ad16-7291f84d0362
+		summarizeBy: none
+		sourceColumn: FECHA_MODIFICACION
+
+		variation Variación
+			isDefault
+			relationship: 015b0a82-d803-475a-98c3-25abd721e4c5
+			defaultHierarchy: LocalDateTable_25428348-646a-4582-9801-0255ac65dc11.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FECHA_CREACION_6
+		dataType: string
+		lineageTag: 715a62ae-38a7-445f-9a00-2215446df0e3
+		summarizeBy: none
+		sourceColumn: ID_FECHA_CREACION_6
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FECHA_ENTREGA_6
+		dataType: string
+		lineageTag: 6a2c8d04-0d6b-4a79-87fa-4a5e330f6211
+		summarizeBy: none
+		sourceColumn: ID_FECHA_ENTREGA_6
+
+		annotation SummarizationSetBy = Automatic
+
+	column VAL_FECHA
+		dataType: string
+		lineageTag: 31e35433-98af-49c2-8c22-a0be525ccc85
+		summarizeBy: none
+		sourceColumn: VAL_FECHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concepto_MP = LOOKUPVALUE(CATALOGO_MP[Concepto],CATALOGO_MP[Grupo_costos],FACT_PRODUCCION_COSTOS[GRUPO_COSTOS])
+		lineageTag: 66963e7f-cd1c-4c25-ad2e-536987755dfc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concepto_ok = IF([Concepto_MP]=BLANK(),FACT_PRODUCCION_COSTOS[GRUPO_COSTOS],[Concepto_MP])
+		lineageTag: b76d727b-4272-4e25-b756-5d577df44eaa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden = ```
+			LOOKUPVALUE(CATALOGO_MP[Orden],CATALOGO_MP[Grupo_costos],FACT_PRODUCCION_COSTOS[GRUPO_COSTOS]) 
+			```
+		formatString: 0
+		lineageTag: dda03663-af6e-442c-bffc-c169338834ec
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Variación Cantidad' = ```
+			FACT_PRODUCCION_COSTOS[CONSUMO_REALIZADO_CANTIDAD]-FACT_PRODUCCION_COSTOS[CONSUMO_ESTIMADO_CANTIDAD] 
+			```
+		lineageTag: 67b6aece-a179-4d13-985f-f45b336de1ff
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Variación Monto' = ```
+			FACT_PRODUCCION_COSTOS[MONTO_COSTO_REALIZADO]-FACT_PRODUCCION_COSTOS[MONTO_COSTO_ESTIMADO] 
+			```
+		lineageTag: 7ffbe151-bb97-40ba-ad67-e7701889f364
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Variación X Precio' = ```
+			(DIVIDE(FACT_PRODUCCION_COSTOS[MONTO_COSTO_REALIZADO],FACT_PRODUCCION_COSTOS[CONSUMO_REALIZADO_CANTIDAD],0)-DIVIDE(FACT_PRODUCCION_COSTOS[MONTO_COSTO_ESTIMADO],FACT_PRODUCCION_COSTOS[CONSUMO_ESTIMADO_CANTIDAD]))*FACT_PRODUCCION_COSTOS[CONSUMO_REALIZADO_CANTIDAD] 
+			```
+		lineageTag: fdb02c4e-cce6-48f5-bbde-08da4df355ad
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FACT_PRODUCCION_COSTOS = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM", [Query="SELECT  [ID_PRODUCTO]#(lf)      ,[ID_CENTRO_COSTOS]#(lf)      ,[ID_FECHA_ENTREGA]#(lf)#(tab)  ,LEFT(ID_FECHA_CREACION,6) [ID_FECHA_CREACION_6]#(lf)#(tab)  ,LEFT(ID_FECHA_ENTREGA,6) [ID_FECHA_ENTREGA_6]#(lf)      ,[ID_FECHA_CREACION]#(lf)      ,[ID_SITIO]#(lf)      ,[ID_PARTICIPABLE]#(lf)      ,[ORDEN_PRODUCCION]#(lf)      ,[TIPO_ARTICULO]#(lf)      ,[NIVEL_ARTICULO]#(lf)      ,[CONSUMO_ESTIMADO_CANTIDAD]#(lf)      ,[CONSUMO_REALIZADO_CANTIDAD]#(lf)      ,[MONTO_COSTO_ESTIMADO]#(lf)      ,[MONTO_COSTO_REALIZADO]#(lf)      ,[CUOTAS_PRESUPUESTO]#(lf)      ,[CUOTAS_PROMEDIO]#(lf)      ,[VARIACION_UNIDADES]#(lf)      ,[MONTO_VARIACION_CANTIDAD]#(lf)      ,[MONTO_DIF_X_VARIACION_PRECIO]#(lf)      ,[MONTO_VARIACION_TOTAL]#(lf)      ,[C9L]#(lf)      ,[COSTO_UNITARIO_CF]#(lf)      ,[COSTO_UNITARIO_C9L]#(lf)      ,[PORCENTAJE_COSTO_PRODUCC]#(lf)      ,[UNITARIOS]#(lf)      ,[CONJUNTO_CALCULO]#(lf)      ,[UNIDAD]#(lf)      ,[GRUPO_COSTOS]#(lf)      ,[DIMENSIONES_INVENTARIO]#(lf)      ,[CONJUNTO_PRODUCCION]#(lf)      ,[ID_UNICO]#(lf)      ,[FECHA_MODIFICACION]#(lf)  FROM [DWH_LM].[dbo].[FACT_PRODUCCION_COSTOS]#(lf)  where left(ID_FECHA_CREACION,6)=202412 OR left(ID_FECHA_CREACION,6)=202411"]),
+				    #"Columna condicional agregada" = Table.AddColumn(Origen, "Personalizado", each if [ID_FECHA_CREACION_6] = [ID_FECHA_ENTREGA_6] then 1 else if [ID_FECHA_ENTREGA] = 999999 then 1 else 0),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna condicional agregada",{{"Personalizado", "VAL_FECHA"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

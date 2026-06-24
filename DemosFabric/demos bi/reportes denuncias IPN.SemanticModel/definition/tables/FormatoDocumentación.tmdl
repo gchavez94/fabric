@@ -1,0 +1,33 @@
+table FormatoDocumentación
+	lineageTag: d21abd5c-3aa8-491c-b5ba-0f7585c24d6d
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b3dc80c-7977-44d1-b967-a51d5ee92e65
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Formato Documentación'
+		dataType: string
+		lineageTag: cde85057-dd16-472d-8b4e-67a706e546f3
+		summarizeBy: none
+		sourceColumn: Formato Documentación
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FormatoDocumentación = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    FormatoDocumentación_Sheet = Origen{[Item="FormatoDocumentación",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(FormatoDocumentación_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Formato Documentación", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+

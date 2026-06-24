@@ -1,0 +1,108 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Fabric_Vendedores",
+                "database": "365zap"
+              },
+              "externalReferences": {
+                "connection": "2418fd80-63cf-408b-8d80-f7feccc00b1c"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWHKH",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "5c7c0957-0551-40fd-8e2d-a17cd99f214e",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "DimVendedor"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      },
+      {
+        "name": "Office 365 Outlook1",
+        "type": "Office365Outlook",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "Copy data1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "inputs": {
+            "method": "post",
+            "path": "/v2/Mail",
+            "body": {
+              "To": "khernandez@d4b.mx",
+              "Subject": "prueba",
+              "Body": "<p>Pipeline exitos</p>"
+            }
+          }
+        }
+      }
+    ],
+    "logicAppsConnectionPayload": {
+      "id": "/subscriptions/ff551a93-6e01-449b-b3ff-d43d094d8faf/resourceGroups/connections-5bb3a27e-bc84-41d2-bf55-296bb6efc7a4/providers/Microsoft.Web/connections/1_1ebf9633-a063-44ce-8b1d-8d7c872f10c8_68fd2cd9-34d1-4f4f-a5d8-af3f05bb48c1",
+      "properties": {
+        "api": {
+          "name": "office365",
+          "id": "/subscriptions/ff551a93-6e01-449b-b3ff-d43d094d8faf/providers/Microsoft.Web/locations/westus/managedApis/office365"
+        }
+      }
+    }
+  }
+}

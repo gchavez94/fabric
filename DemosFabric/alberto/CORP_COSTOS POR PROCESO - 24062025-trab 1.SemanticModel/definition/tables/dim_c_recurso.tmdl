@@ -1,0 +1,90 @@
+table dim_c_recurso
+	lineageTag: 9004f833-f1bf-4fee-9cbf-e93b28887af8
+
+	column Sk_C_Recurso
+		dataType: string
+		lineageTag: 9bead345-e351-4a2c-a15e-7cbfb11559c0
+		summarizeBy: none
+		sourceColumn: Sk_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_C_Recurso
+		dataType: string
+		lineageTag: f1c0dca6-71bc-45e6-87a5-808f8b4840b2
+		summarizeBy: none
+		sourceColumn: Cve_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_C_Recurso
+		dataType: string
+		lineageTag: 18dc52ad-bc35-48b9-855c-5a0c061d3207
+		summarizeBy: none
+		sourceColumn: Dsc_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 5110ed0d-7b69-41fa-a6ef-a082d68cbefd
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_UltimaModificacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4330a902-edb5-4134-a73a-850ab3eb5b98
+		summarizeBy: none
+		sourceColumn: Fecha_UltimaModificacion
+
+		variation Variación
+			isDefault
+			relationship: 6d41055e-8c02-4180-a67b-7fcf861ee67b
+			defaultHierarchy: LocalDateTable_9acab121-4882-431d-9901-28bff679a0b8.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: de756d2a-22bc-4a0a-8f66-d5656a0e3030
+		summarizeBy: none
+		sourceColumn: INSERT_SVR
+
+		variation Variación
+			isDefault
+			relationship: 6880f85f-5b40-4477-a061-1db1137c8ff2
+			defaultHierarchy: LocalDateTable_534acb70-fb39-4d0d-ad41-87d84e0a7923.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 073a2980-4c26-4232-b213-dc6b8ceaed1d
+		summarizeBy: none
+		sourceColumn: UPDATE_SVR
+
+		variation Variación
+			isDefault
+			relationship: 803f8234-0e29-4b89-86b8-a031f1e50c2d
+			defaultHierarchy: LocalDateTable_53492989-07cf-4f08-b57b-ff00a6a3ced2.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_c_recurso = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr"),
+				    dbo_dim_c_recurso = Origen{[Schema="dbo",Item="dim_c_recurso"]}[Data]
+				in
+				    dbo_dim_c_recurso
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

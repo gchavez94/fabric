@@ -1,0 +1,126 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "select * from INFORMATION_SCHEMA.TABLES",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "linkedService": {
+                "name": "DataflowsStagingWarehouse",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "0b4cf406-37b7-4a8a-81db-12d1e4783dd1",
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "_Custom_query_copyfromcds"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "dataverse_cdsgcg_cds2_workspace_29f750ecf23a477bb1c523dc50d41058",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "80ac898d-376d-bb9e-47e9-0934ce17a71f",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "TABLE_CATALOG",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "128"
+                },
+                "sink": {
+                  "name": "TABLE_CATALOG",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TABLE_SCHEMA",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "128"
+                },
+                "sink": {
+                  "name": "TABLE_SCHEMA",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TABLE_NAME",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "128"
+                },
+                "sink": {
+                  "name": "TABLE_NAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TABLE_TYPE",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "10"
+                },
+                "sink": {
+                  "name": "TABLE_TYPE",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy_glg",
+        "dependsOn": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+table INPC
+	lineageTag: c1ce4900-336c-4077-aa44-fe1236339546
+
+	measure 'Valor INPC' = SELECTEDVALUE('INPC'[INPC], 3.95)
+		lineageTag: 44504dd6-5be8-4f48-a1ad-1936f610e1e4
+
+	column INPC
+		lineageTag: b84fe3f5-9cad-40a3-b5bc-95473fdb9319
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition INPC-892582ff-b799-4880-9ebe-e84050d316b4 = calculated
+		mode: import
+		source = GENERATESERIES(0, 10, 0.05)
+

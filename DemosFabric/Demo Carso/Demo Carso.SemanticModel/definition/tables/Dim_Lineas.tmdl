@@ -1,0 +1,51 @@
+table Dim_Lineas
+	lineageTag: 8749d318-704f-41a1-908b-d9e0bd5681f4
+
+	column 'ID Linea'
+		dataType: string
+		lineageTag: a92e9ecf-b99b-4cec-b018-7f25e5410275
+		summarizeBy: none
+		sourceColumn: ID Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		lineageTag: 63be71f0-17e3-4099-9990-a88ab58eca8c
+		summarizeBy: none
+		sourceColumn: Linea
+		sortByColumn: SEQ
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQ
+		dataType: string
+		lineageTag: 3ab08243-323c-43d2-a726-cd263824d0dc
+		summarizeBy: none
+		sourceColumn: SEQ
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Lineas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    DimSegment_Sheet = Origen{[Item="DimSegment",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(DimSegment_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SegmentKey", type text}, {"SegmentName", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"SegmentKey", "ID Linea"}, {"SegmentName", "Linea"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

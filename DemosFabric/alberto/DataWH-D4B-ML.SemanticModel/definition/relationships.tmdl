@@ -1,0 +1,109 @@
+relationship 2d51ee5f-b570-436c-b166-c4388388ae71
+	relyOnReferentialIntegrity
+	fromColumn: CustTrans_Completa.RECID
+	toColumn: Morosidad_From_AML.RECID
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship a8b7c9ea-8f7c-57b0-8b7f-d27d8388652a
+	fromColumn: 'CustTrans (Ajuste Pago adicional)'.CLOSED
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship d6871c1c-e294-38de-d90a-40c4fee5c199
+	crossFilteringBehavior: bothDirections
+	fromColumn: custsettlment-PagoReal.CLOSEDDATE
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship bf9c63a7-ac6f-c39a-3cbf-8309a383db10
+	fromColumn: 'Datos pron historico demo xlsx'.Fecha
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship d0dd0419-de54-0ccc-5b76-01c510bb1bff
+	isActive: false
+	fromColumn: custsettlment-PagoReal.ACCOUNTNUM
+	toColumn: CustTable.ACCOUNTNUM
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 0619eb05-0b4c-d706-59f8-708f3bc02e9b
+	crossFilteringBehavior: bothDirections
+	fromColumn: custsettlment.TRANSRECID
+	toColumn: CustTrans_to_AML.RECID
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship a023ff76-eb92-40d6-77ec-0ec31873fe9c
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Limite de Credito'.ACCOUNTNUM
+	toColumn: CustTrans_to_AML.ACCOUNTNUM
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 72d405e9-cb1e-a2fa-2691-84e552abbc30
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTable.ACCOUNTNUM
+	toColumn: CustTrans_to_AML.ACCOUNTNUM
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship cd946702-e367-a5b5-acf9-62828baed42c
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_PagosReal.CLOSED
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 8f3bf33f-fd97-143b-d50d-9ed8d7d3fe3b
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_from_AML_1.Fecha_Pronostico_Pago
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 306b36a0-6026-55c7-1884-6583cf1eeab0
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_to_AML_2WH.DUEDATE
+	toColumn: Calendario_Trad.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship b175bff1-85ad-ba5d-cd05-f0ad2b61c1f7
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_to_AML.DUEDATE
+	toColumn: Calendario_Trad2.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship dd8c9042-8f2a-6cf4-219a-07e13a4c705c
+	crossFilteringBehavior: bothDirections
+	fromColumn: Calendario_Trad.Date
+	toColumn: CustTrans_to_AML_(ESTIMADOS.DUEDATE
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship b4c93f75-58ab-fbec-4e23-47b8a0329e1a
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_to_AML.CREATEDDATETIME
+	toColumn: Calendar_Creacion.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 7f632b8d-fdc9-ece6-401c-513760051b68
+	crossFilteringBehavior: bothDirections
+	fromColumn: CustTrans_to_AML.DUEDATE
+	toColumn: Calendar_Vencimiento.Date
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 335d6e74-df46-3e3f-afe9-645131082583
+	fromColumn: CustTrans_to_AML_2WH.ACCOUNTNUM
+	toColumn: CustTable.ACCOUNTNUM
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+

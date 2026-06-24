@@ -1,0 +1,357 @@
+table FactPagosFacturas
+	lineageTag: 81309e08-005d-441a-87b6-b88319f89f63
+
+	measure M_MontoLiquidadoPagoFactura = ```
+			
+			Var SeleccionMoneda=SELECTEDVALUE(DimMoneda[Id])
+			Var MontoMXN=SUM(FactPagosFacturas[MontoLiquidadoMXN])
+			Var MontoUSD=SUM(FactPagosFacturas[MontoLiquidadoUSD])
+			Var Resultado=IF(SeleccionMoneda=1,MontoMXN,MontoUSD)
+			RETURN Resultado
+			
+			```
+		lineageTag: 733e4926-dcf2-457a-bb94-2062669be451
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_ConteoFacturasPagadas = ```
+			
+			CALCULATE(DISTINCTCOUNT(FactPagosFacturas[Factura]),FactPagosFacturas[FechaDeCierre]> DATE(1900,1,1))
+			
+			```
+		formatString: 0
+		lineageTag: 7ba970d2-77e9-458c-973e-56a74b3c1bd7
+
+	measure M_MontoFacturaPago = ```
+			
+			Var SeleccionMoneda=SELECTEDVALUE(DimMoneda[Id])
+			Var MontoMXN=SUM(FactPagosFacturas[MontoDeFacturaMXN])
+			Var MontoUSD=SUM(FactPagosFacturas[MontoDeFacturaUSD])
+			Var Resultado=IF(SeleccionMoneda=1,MontoMXN,MontoUSD)
+			RETURN Resultado
+			
+			```
+		lineageTag: edb6ab54-5f26-42be-99cf-64058eead672
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_TiempoPromedio_Recepcion_Factura = ```
+			AVERAGEX(SELECTCOLUMNS(SUMMARIZE(FILTER(FactPagosFacturas,FactPagosFacturas[IdOrdenDeCompra] <> "" && FactPagosFacturas[MaxFechaRecepcion] > DATE(1900,1,1)),FactPagosFacturas[IdOrdenDeCompra],FactPagosFacturas[Factura],"Recepcion",MAX(FactPagosFacturas[MaxFechaRecepcion]),"RegistroFactura",MAX(FactPagosFacturas[FechaTransaccion])),[Recepcion],[RegistroFactura]),[RegistroFactura]-[Recepcion])
+			
+			```
+		lineageTag: 0d7988e1-f19d-464f-ae60-1e0e8d2c0f00
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_TiempoPromedioPagoFactura = ```
+			
+			AVERAGEX(SELECTCOLUMNS(SUMMARIZE(FILTER(FactPagosFacturas,FactPagosFacturas[FechaDeCierre]> DATE(1900,1,1)
+			 && NOT(ISBLANK(FactPagosFacturas[IdOrdenDeCompra]))
+			 ),FactPagosFacturas[IdOrdenDeCompra],FactPagosFacturas[Factura],"UltimoPago",MAX(FactPagosFacturas[FechaUltimoPago]),"ConfirmacionFactura",MAX(FactPagosFacturas[MaxFechaRecepcion])),[UltimoPago],[ConfirmacionFactura]),[UltimoPago]-[ConfirmacionFactura])
+			
+			```
+		lineageTag: df9f8262-ca41-466e-bd17-9e466abed22b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Factura
+		dataType: string
+		lineageTag: 58fdf5e2-c747-4c8a-b092-9a5980663a4f
+		summarizeBy: none
+		sourceColumn: Factura
+
+		annotation SummarizationSetBy = Automatic
+
+	column Divisa
+		dataType: string
+		lineageTag: 9da7f2c5-d8ce-4bf0-96cf-7b2d4574d00b
+		summarizeBy: none
+		sourceColumn: Divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoDeFactura
+		dataType: double
+		lineageTag: 9f866b37-308d-4dcc-8abf-72756d1f701e
+		summarizeBy: sum
+		sourceColumn: MontoDeFactura
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoDeFacturaMXN
+		dataType: double
+		lineageTag: 8bada305-668f-4242-a73c-4421f7dfe870
+		summarizeBy: sum
+		sourceColumn: MontoDeFacturaMXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoDeFacturaUSD
+		dataType: double
+		lineageTag: 120d5e69-6c96-401e-8473-81cd352f7b85
+		summarizeBy: sum
+		sourceColumn: MontoDeFacturaUSD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FormaDePago
+		dataType: string
+		lineageTag: 36e00ceb-09de-4582-98bb-38d94a966e02
+		summarizeBy: none
+		sourceColumn: FormaDePago
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asiento
+		dataType: string
+		lineageTag: 0ba6d98c-dc7b-4e82-b5b5-82233542729c
+		summarizeBy: none
+		sourceColumn: Asiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeDocumento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 213c18b8-f29a-4438-9bd9-2381b00c1305
+		summarizeBy: none
+		sourceColumn: FechaDeDocumento
+
+		variation Variación
+			isDefault
+			relationship: f5244105-a720-40ca-aa3f-77cf2fe8b9fa
+			defaultHierarchy: LocalDateTable_9d8638c4-18f5-4c7e-a166-dc91a11cd4eb.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroDeDocumento
+		dataType: string
+		lineageTag: 34cd6738-4078-4fc8-ba73-e91061c852bc
+		summarizeBy: none
+		sourceColumn: NumeroDeDocumento
+
+		annotation SummarizationSetBy = Automatic
+
+	column CondicionesDePago
+		dataType: string
+		lineageTag: 90548fd7-c4ef-478a-a277-951937fd6325
+		summarizeBy: none
+		sourceColumn: CondicionesDePago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaTransaccion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c581c494-f076-4435-be75-ed1fe29180a5
+		summarizeBy: none
+		sourceColumn: FechaTransaccion
+
+		variation Variación
+			isDefault
+			relationship: e31c0f16-454e-4649-9734-78cc78b0d974
+			defaultHierarchy: LocalDateTable_7912f706-eb67-4527-b752-d0fde533cb7a.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaVencimiento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 007fffd8-d685-4550-aa66-1815e99e9dbe
+		summarizeBy: none
+		sourceColumn: FechaVencimiento
+
+		variation Variación
+			isDefault
+			relationship: 5d6a6bd6-3d3c-47d5-93b2-836d35f778f3
+			defaultHierarchy: LocalDateTable_f8bd85f1-17f2-42fa-b417-c1f670e00a45.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoLiquidadoMXN
+		dataType: double
+		lineageTag: 563bfdfa-2b28-4418-a9f8-5e893bc67774
+		summarizeBy: sum
+		sourceColumn: MontoLiquidadoMXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoLiquidadoUSD
+		dataType: double
+		lineageTag: 2388ab7b-2b43-452e-a316-0ab994638fd9
+		summarizeBy: sum
+		sourceColumn: MontoLiquidadoUSD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DivisaLiquidada
+		dataType: double
+		lineageTag: 371e8b66-b6b6-415f-a9d6-d22c64afe073
+		summarizeBy: sum
+		sourceColumn: DivisaLiquidada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BanderaNoLiquidado
+		dataType: int64
+		formatString: 0
+		lineageTag: 823d56a5-71bc-4339-9100-73ea089d9157
+		summarizeBy: sum
+		sourceColumn: BanderaNoLiquidado
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaUltimoPago
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 808015bf-ec2a-4e05-ad5e-8d81c3952bb3
+		summarizeBy: none
+		sourceColumn: FechaUltimoPago
+
+		variation Variación
+			isDefault
+			relationship: c3007007-4e0c-4bfb-9728-d9db09a5eb84
+			defaultHierarchy: LocalDateTable_e8df2bde-a841-4039-9372-6b62f0a35ca5.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoCur
+		dataType: double
+		lineageTag: 0dfe4184-5959-4b33-a8c1-84f2f0f0a435
+		summarizeBy: sum
+		sourceColumn: MontoCur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ajuste
+		dataType: double
+		lineageTag: dcea054e-dba4-4605-907f-73e80e3130f2
+		summarizeBy: sum
+		sourceColumn: Ajuste
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FechaDeLiquidacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3dc0d8ae-9ca4-4101-8d5b-dc7254da1d50
+		summarizeBy: none
+		sourceColumn: FechaDeLiquidacion
+
+		variation Variación
+			isDefault
+			relationship: 95fa23d2-1c9c-4e6c-9082-034dbbf76d6f
+			defaultHierarchy: LocalDateTable_1e4b7cec-c23f-48e7-acd8-ea71a60f31ce.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeCierre
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43d7019e-5d0b-47c6-b411-0e584aac5bca
+		summarizeBy: none
+		sourceColumn: FechaDeCierre
+
+		variation Variación
+			isDefault
+			relationship: 8ad100b0-d73a-4870-9de4-5237f9e72385
+			defaultHierarchy: LocalDateTable_3bdef9c1-bc69-428d-bcf9-c372f7ce39ff.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AsientoDeCompensacion
+		dataType: string
+		lineageTag: 60b186a8-9735-4d16-a133-ec0d5a15b28b
+		summarizeBy: none
+		sourceColumn: AsientoDeCompensacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: 3c86418f-c8b1-4d7c-9871-119457cb1274
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Compañia
+		dataType: string
+		lineageTag: fde7ceeb-dc49-4e82-a15a-9fef9417e49f
+		summarizeBy: none
+		sourceColumn: Compañia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuenta
+		dataType: string
+		lineageTag: 4b9c228f-df59-4ed6-849a-ad7e7f123734
+		summarizeBy: none
+		sourceColumn: Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaBancariaDelProveedor
+		dataType: string
+		lineageTag: 48e67008-c180-463e-9366-06f61a4fb064
+		summarizeBy: none
+		sourceColumn: CuentaBancariaDelProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: a383ef88-974d-47e6-8c11-662fb7c3d668
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fdb179d-f099-4e6b-b5bd-b553ea87f80c
+		summarizeBy: sum
+		sourceColumn: recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxFechaRecepcion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7c5acf86-7f0c-4582-921e-67ba636f9294
+		summarizeBy: none
+		sourceColumn: MaxFechaRecepcion
+
+		variation Variación
+			isDefault
+			relationship: d6931070-3aeb-4ab3-8c52-38a5f7f1c54a
+			defaultHierarchy: LocalDateTable_4b93c69c-6a31-4d8b-89f5-ba29a4034e77.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPagosFacturas = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_FactPagosFacturas = Origen{[Schema="dbo",Item="FactPagosFacturas"]}[Data]
+				in
+				    dbo_FactPagosFacturas
+

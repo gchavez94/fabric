@@ -1,0 +1,180 @@
+table 'Drill -transacción'
+	lineageTag: 2f17da00-bbb9-483c-be0f-e0923e1e908e
+
+	column 'Budget status'
+		dataType: string
+		lineageTag: 01442e70-021d-403a-aa33-d43a78a5a7af
+		summarizeBy: none
+		sourceColumn: Budget status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Operating unit number'
+		dataType: string
+		lineageTag: 9a979136-aad4-46fd-95ac-953d456e593f
+		summarizeBy: none
+		sourceColumn: Operating unit number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Chart of Accounts Accounts'
+		dataType: string
+		lineageTag: a34e7c5b-c18e-4aeb-a2af-bef46198bda6
+		summarizeBy: none
+		sourceColumn: Chart of Accounts Accounts
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: eab9d2a1-bd7b-4749-ab68-f01e1c1dd648
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Operating unit number_1'
+		dataType: string
+		lineageTag: 3f421d34-0e90-45ec-9cdd-8d13c62e58f4
+		summarizeBy: none
+		sourceColumn: Operating unit number_1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Crediting
+		dataType: string
+		lineageTag: fa41853c-6bb1-41b3-b7f2-4a4b8e957d69
+		summarizeBy: none
+		sourceColumn: Crediting
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Currency
+		dataType: string
+		lineageTag: ef5046c4-ccf3-407c-9c96-dd702e1d52d3
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Date.Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c01a7f37-ef33-4c24-8d76-dae3d3d87386
+		summarizeBy: none
+		sourceColumn: Date.Date
+
+		variation Variación
+			isDefault
+			relationship: 7199964c-6738-4114-8ec3-cf2a5eda8744
+			defaultHierarchy: LocalDateTable_a442228c-8909-4e6c-bb18-4a0c38cd4cfd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date.Fiscal YQMD Month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ce923776-465f-4b30-bfc5-06d214f9aaba
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD Month
+
+		variation Variación
+			isDefault
+			relationship: e0c28700-d972-4bb2-9553-532c10eb6168
+			defaultHierarchy: LocalDateTable_194cd365-3fb8-44fe-881f-af64dbe34dae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Operating unit number_2'
+		dataType: string
+		lineageTag: 6a8372cf-5f3f-43bb-b41b-b579a0f1bda8
+		summarizeBy: none
+		sourceColumn: Operating unit number_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Category
+		dataType: string
+		lineageTag: 1a68735c-95b7-4c29-ba67-34e184fb651f
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Store
+		dataType: string
+		lineageTag: 2972b300-6dee-44a8-9708-ef926637f894
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Transaction type'
+		dataType: string
+		lineageTag: fa890624-ddf0-49dd-9ec9-a8090352d99a
+		summarizeBy: none
+		sourceColumn: Transaction type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'GL Amount'
+		dataType: double
+		lineageTag: 2d8ba483-aaea-4877-aefd-2d59df4959f3
+		summarizeBy: sum
+		sourceColumn: GL Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product
+		dataType: string
+		lineageTag: 3022db8f-e9d7-431e-95b2-385875ee153b
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 'Drill -transacción-09c8f00c-7f4a-4c42-b66e-10430c035cc4' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    #"Drill - transacción_Sheet" = Origen{[Item="Drill - transacción",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Drill - transacción_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Budget status", type text}, {"Operating unit number", type text}, {"Chart of Accounts Accounts", type text}, {"Company ID", type text}, {"Operating unit number_1", type text}, {"Crediting", type text}, {"Currency", type text}, {"Date.Date", type date}, {"Date.Fiscal YQMD Month", type date}, {"Operating unit number_2", type text}, {"Category", type text}, {"Store", type text}, {"Transaction type", type text}, {"GL Amount", type number}, {"Product", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

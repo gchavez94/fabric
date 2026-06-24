@@ -1,0 +1,18 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["CxP"]
+
+ref table CxP
+ref table DateTableTemplate_e60d52e2-c079-458f-9fb6-92bdfdcba9c7
+ref table LocalDateTable_e6d02c82-165b-434c-85d0-31d75655459d
+
+ref cultureInfo en-US
+

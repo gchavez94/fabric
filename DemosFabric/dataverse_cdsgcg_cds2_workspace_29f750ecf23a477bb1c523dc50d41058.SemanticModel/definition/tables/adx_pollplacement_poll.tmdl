@@ -1,0 +1,118 @@
+table adx_pollplacement_poll
+	lineageTag: 5a3def18-01bb-4db9-a73f-cbfaf7de9b8a
+	sourceLineageTag: [dbo].[adx_pollplacement_poll]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 00d30f75-3ab2-4597-ba29-2f97919e0dd2
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 012e9522-ee93-4b99-a58d-760d7e703835
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: df55e4e4-fe41-4737-9640-235cc5d0267a
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_pollid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2f015f6c-a165-40e5-81f7-d0f1169fb116
+		sourceLineageTag: adx_pollid
+		summarizeBy: none
+		sourceColumn: adx_pollid
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_pollplacement_pollid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46fbff15-b182-4782-afcd-a62e056f3ecf
+		sourceLineageTag: adx_pollplacement_pollid
+		summarizeBy: none
+		sourceColumn: adx_pollplacement_pollid
+
+		annotation SummarizationSetBy = Automatic
+
+	column adx_pollplacementid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 892b78b9-3d57-4ec6-bdd7-74bc5e578f10
+		sourceLineageTag: adx_pollplacementid
+		summarizeBy: none
+		sourceColumn: adx_pollplacementid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: df98227e-e79b-405e-ba03-b64e64c8b660
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c646b743-6e04-480b-921f-b069ff1ab7d9
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6f5a0d11-b21f-4dcd-8076-3c159f535b80
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77547e8c-cfe3-4ce3-8af1-c5ca56166476
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition adx_pollplacement_poll-e4318784-fcf0-40ea-afbb-744758661a8b = entity
+		mode: directLake
+		source
+			entityName: adx_pollplacement_poll
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

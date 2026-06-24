@@ -1,0 +1,26 @@
+CREATE TABLE [dbo].[Facturas] (
+
+	[IDFactura] varchar(8000) NULL, 
+	[IDCliente] varchar(8000) NULL, 
+	[FechaFactura] varchar(8000) NULL, 
+	[FechaInicioPago] varchar(8000) NULL, 
+	[FechaCierrePago] varchar(8000) NULL, 
+	[FechaVencimiento] varchar(8000) NULL, 
+	[MontoTotalFactura] varchar(8000) NULL, 
+	[NumeroPagos] varchar(8000) NULL, 
+	[MontoPagado] varchar(8000) NULL, 
+	[MontoPendiente] varchar(8000) NULL, 
+	[MontoIVAmn] varchar(8000) NULL, 
+	[VentaCredito] varchar(8000) NULL, 
+	[Estado] varchar(8000) NULL, 
+	[Antigüedad] varchar(8000) NULL, 
+	[DiasCredito] varchar(8000) NULL, 
+	[TipoDocumento] varchar(8000) NULL, 
+	[Incobrable] varchar(8000) NULL, 
+	[Empresa] varchar(8000) NULL, 
+	[Divisa] varchar(8000) NULL, 
+	[Pagos Retrasado] varchar(8000) NULL, 
+	[Probabilidad de Morosidad NF] varchar(8000) NULL, 
+	[Scored Labels] varchar(8000) NULL, 
+	[Scored Probabilities] varchar(8000) NULL
+);

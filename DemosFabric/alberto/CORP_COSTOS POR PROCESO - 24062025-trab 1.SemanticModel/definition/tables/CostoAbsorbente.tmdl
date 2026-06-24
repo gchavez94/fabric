@@ -1,0 +1,24 @@
+table CostoAbsorbente
+	lineageTag: 74522d99-a3ca-461d-a914-435b6fb69f87
+
+	column 'COSTO ABSORBENTE'
+		dataType: string
+		lineageTag: 6499f808-ece1-4da0-a344-e5d9bf3ca69d
+		summarizeBy: none
+		sourceColumn: COSTO ABSORBENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CostoAbsorbente = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcvb3U3D2Dw7xV3B0CvYPcnL1C3FVitWJVgr2xCYRCwA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"COSTO ABSORBENTE" = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"COSTO ABSORBENTE", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

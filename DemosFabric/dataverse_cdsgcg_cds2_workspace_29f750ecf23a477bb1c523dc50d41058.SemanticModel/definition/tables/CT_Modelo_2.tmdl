@@ -1,0 +1,57 @@
+table CT_Modelo_2
+	lineageTag: ff6ec025-2463-4b27-9ecd-3e05a371e6ff
+	sourceLineageTag: [dbo].[CT_Modelo_2]
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8ae9e5af-8ca5-462f-9354-eeb8a992da9f
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 20938ba7-d08c-4af8-b531-53f605297528
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto_Total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9cbf2847-030d-4c41-aebe-3dcc44cb1f1a
+		sourceLineageTag: Monto_Total
+		summarizeBy: sum
+		sourceColumn: Monto_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Mes
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1774d0d-e3c4-471c-90f0-560c8d228eea
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CT_Modelo_2-ab7a9c6f-1477-491a-9fe4-d2bb5231a253 = entity
+		mode: directLake
+		source
+			entityName: CT_Modelo_2
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

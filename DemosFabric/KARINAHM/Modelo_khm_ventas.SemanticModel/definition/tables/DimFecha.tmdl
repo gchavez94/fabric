@@ -1,0 +1,79 @@
+table DimFecha
+	lineageTag: badde30e-44da-4160-b2b5-119e6d913047
+	sourceLineageTag: [dbo].[DimFecha]
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 75009e49-8548-4c4c-bf63-75168615b6c1
+		sourceLineageTag: Fecha
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5531af2c-8fef-438a-a50d-3c917f0d66e8
+		sourceLineageTag: Año
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3afdd1d8-940e-4772-be49-d1ce8b539bee
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Día
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c842583d-e42d-4a6a-95ff-4a69c1e41b81
+		sourceLineageTag: Día
+		summarizeBy: none
+		sourceColumn: Día
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana del año'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b0522c10-5135-456d-a342-3ca295dca2af
+		sourceLineageTag: Semana del año
+		summarizeBy: none
+		sourceColumn: Semana del año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 66448be2-251e-488a-a145-6e9c5f7f1f38
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimFecha = entity
+		mode: directLake
+		source
+			entityName: DimFecha
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

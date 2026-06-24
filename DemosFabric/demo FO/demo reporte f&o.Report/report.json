@@ -1,0 +1,60 @@
+{
+  "config": "{\"version\":\"5.55\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.55\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU06",
+            "path": "BaseThemes/CY24SU06.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"182L\"}}}}}]}}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "28cb2a78174d2ee734bb",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"07f0b27b093b3c807be0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":169.48616600790513,\"z\":1000,\"width\":889.1699604743083,\"height\":550.197628458498,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"custinvoicetrans.invoiceid\"},{\"queryRef\":\"custinvoicetrans.dataareaid\"},{\"queryRef\":\"custinvoicetrans.currencycode\"},{\"queryRef\":\"Sum(custinvoicetrans.lineamount)\"},{\"queryRef\":\"Sum(custinvoicetrans.lineamountmst)\"},{\"queryRef\":\"custinvoicetrans.name\"},{\"queryRef\":\"Sum(custinvoicetrans.qty)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"custinvoicetrans\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"invoiceid\"},\"Name\":\"custinvoicetrans.invoiceid\",\"NativeReferenceName\":\"invoiceid\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"dataareaid\"},\"Name\":\"custinvoicetrans.dataareaid\",\"NativeReferenceName\":\"dataareaid\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"currencycode\"},\"Name\":\"custinvoicetrans.currencycode\",\"NativeReferenceName\":\"currencycode\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"lineamount\"}},\"Function\":0},\"Name\":\"Sum(custinvoicetrans.lineamount)\",\"NativeReferenceName\":\"Suma de lineamount\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"lineamountmst\"}},\"Function\":0},\"Name\":\"Sum(custinvoicetrans.lineamountmst)\",\"NativeReferenceName\":\"Suma de lineamountmst\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"name\"},\"Name\":\"custinvoicetrans.name\",\"NativeReferenceName\":\"name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"qty\"}},\"Function\":0},\"Name\":\"Sum(custinvoicetrans.qty)\",\"NativeReferenceName\":\"Suma de qty\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 550.20,
+          "width": 889.17,
+          "x": 0.00,
+          "y": 169.49,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"1a870e8471dfd013cbe2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":279.8218531996794,\"height\":60.26932222762326,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dataarea.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataarea\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"name\"},\"Name\":\"dataarea.name\",\"NativeReferenceName\":\"Empresa\"}]},\"columnProperties\":{\"dataarea.name\":{\"displayName\":\"Empresa\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 60.27,
+          "width": 279.82,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"324ffc24b8cab85a4681\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1027.0355731225295,\"y\":0,\"z\":3000,\"width\":137.86561264822134,\"height\":299.7628458498024,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"custtrans.invoice\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"custtrans\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"invoice\"},\"Name\":\"custtrans.invoice\",\"NativeReferenceName\":\"invoice\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 299.76,
+          "width": 137.87,
+          "x": 1027.04,
+          "y": 0.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

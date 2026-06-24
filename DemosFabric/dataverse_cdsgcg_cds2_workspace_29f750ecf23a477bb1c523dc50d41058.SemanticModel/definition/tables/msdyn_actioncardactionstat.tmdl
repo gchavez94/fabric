@@ -1,0 +1,578 @@
+table msdyn_actioncardactionstat
+	lineageTag: 776191ce-93fa-4ead-ad95-bc68a7d469df
+	sourceLineageTag: [dbo].[msdyn_actioncardactionstat]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f54db876-202d-466a-b5fb-5cc600540925
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 24825e9c-a365-4dd6-b0b2-b7d91e973413
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d0b1c527-f311-4641-81a2-ee2a5c0c6887
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: aa7d3c59-2c19-432f-a96f-28fad37b6b6d
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9fa1d83b-323d-4d4e-a565-6f2297effa97
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56b0b886-531b-462a-8ff4-ba0a52b9a12f
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7cbd73de-216c-445f-9644-04e7951cd11d
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c736e545-cd10-4af1-b40a-15ae515865e9
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05d59caa-a5f5-4123-bdab-14de2f94a81b
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 868e85cb-5662-4894-91c3-e49c22c3482f
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c7169027-1f91-492e-bdec-ac2a87eaa682
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f8eb4a3-d910-4d4f-a047-9ea3e97e7661
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5b4d83f-dea3-4a93-a1c1-8303899841c1
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_cardtypeid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c14b389e-7b39-4b08-9382-3423e062d8eb
+		sourceLineageTag: msdyn_cardtypeid
+		summarizeBy: none
+		sourceColumn: msdyn_cardtypeid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_cardtypeid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2bb6ed71-bb24-49fa-8c63-c8cf6f2b584a
+		sourceLineageTag: msdyn_cardtypeid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_cardtypeid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c132d164-5086-43be-a0de-31eb9e60a349
+		sourceLineageTag: owningbusinessunit
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e1220fd0-3c24-4f81-8f7c-986a35f60d0c
+		sourceLineageTag: owningbusinessunit_entitytype
+		summarizeBy: none
+		sourceColumn: owningbusinessunit_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 69a6a416-5f1b-4a38-9e93-1e6849ee5a77
+		sourceLineageTag: owningteam
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77a668ff-e8dc-4c08-a2e5-7df3d5f5f684
+		sourceLineageTag: owningteam_entitytype
+		summarizeBy: none
+		sourceColumn: owningteam_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 63c25e44-8b7d-4f97-8c67-068635ce9570
+		sourceLineageTag: owninguser
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a3a013fc-6302-410f-a1ce-16aca230d4a2
+		sourceLineageTag: owninguser_entitytype
+		summarizeBy: none
+		sourceColumn: owninguser_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 370a133c-0463-41c2-8b5e-aa654daa2a61
+		sourceLineageTag: ownerid
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3e590977-a4a8-4b22-be42-6bf728960a6c
+		sourceLineageTag: ownerid_entitytype
+		summarizeBy: none
+		sourceColumn: ownerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 574796bd-fa3c-4ea4-855e-43cb9e48dd66
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 957cbdc3-95b5-4d10-a6c4-2cbad0a8c7df
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1fe68122-1790-4d01-98aa-2655f0b2c241
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b655c4d6-c0ab-4d6d-8442-a6a60bce047a
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7157d73b-7b1f-4c78-baef-06f79d136cbc
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d9c8ecf5-7d6f-4b05-81c4-e5c5b859fdd0
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d5739913-49ff-4acd-b6e8-285a93e5bc86
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec95c8f8-f178-4912-858f-452ef1158e2d
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dc6903bf-2502-425d-82b7-6b0523c7b9ce
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b9152b1-091e-43ab-b3ef-6f18be43f9b1
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 291694aa-e66e-472f-a623-320e266eaeec
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_actioncardactionstatid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5972af9c-1fc1-4309-9a57-92259b638bee
+		sourceLineageTag: msdyn_actioncardactionstatid
+		summarizeBy: none
+		sourceColumn: msdyn_actioncardactionstatid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_actioncardid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f7bf231e-69ee-4a5b-83bc-b90d68e1dd8e
+		sourceLineageTag: msdyn_actioncardid
+		summarizeBy: none
+		sourceColumn: msdyn_actioncardid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_cardtype
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7855606d-4fcf-46ed-ab0b-62a2bb6660b3
+		sourceLineageTag: msdyn_cardtype
+		summarizeBy: sum
+		sourceColumn: msdyn_cardtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_cardtypeidname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4990bee0-fe24-4221-9584-9908cc1ab6d0
+		sourceLineageTag: msdyn_cardtypeidname
+		summarizeBy: none
+		sourceColumn: msdyn_cardtypeidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_datapoint
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e3f58c5-63e6-4ec8-891f-1a1508495bc9
+		sourceLineageTag: msdyn_datapoint
+		summarizeBy: none
+		sourceColumn: msdyn_datapoint
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ead588ff-bd8b-480e-9be4-49e280e750e5
+		sourceLineageTag: msdyn_name
+		summarizeBy: none
+		sourceColumn: msdyn_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_regardingobjectid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0eef055f-b673-49f3-9ff1-8f2813298777
+		sourceLineageTag: msdyn_regardingobjectid
+		summarizeBy: none
+		sourceColumn: msdyn_regardingobjectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_regardingobjectlogicalname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6bf65577-5c86-49a8-9f68-8336bd932757
+		sourceLineageTag: msdyn_regardingobjectlogicalname
+		summarizeBy: none
+		sourceColumn: msdyn_regardingobjectlogicalname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_regardingobjecttypecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b3070f59-9aaf-4011-b2b9-064612415bb4
+		sourceLineageTag: msdyn_regardingobjecttypecode
+		summarizeBy: sum
+		sourceColumn: msdyn_regardingobjecttypecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_userid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9f6d7885-526e-451e-9968-2ebbd3dad43d
+		sourceLineageTag: msdyn_userid
+		summarizeBy: none
+		sourceColumn: msdyn_userid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_value
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a6db1f5b-6bfd-4f9a-98ef-df3ebffb824a
+		sourceLineageTag: msdyn_value
+		summarizeBy: sum
+		sourceColumn: msdyn_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b71d0e5f-0668-4d62-a8fa-324a26e6268a
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f519817c-ebc6-47be-bb75-31af2808da0e
+		sourceLineageTag: owneridname
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridtype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7a4e0126-30f0-4fee-9c35-0dd75a536cff
+		sourceLineageTag: owneridtype
+		summarizeBy: none
+		sourceColumn: owneridtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a57ebee6-779f-4e09-9900-aaa7560af222
+		sourceLineageTag: owneridyominame
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunitname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4548efd9-a6c2-4147-a466-2e5e5321ea72
+		sourceLineageTag: owningbusinessunitname
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d3e2a85d-42ab-48c0-be97-b9ccda767fc0
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7d97518d-52b8-4b1d-a7a5-f27fdea8b804
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 179ea986-5f0a-429d-88b2-53f00d48db75
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 08cb34ed-bbbb-471a-b4e8-1eb3a2f0e829
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0e1992f-ac71-4db7-9327-dfbc24f4f53c
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition msdyn_actioncardactionstat-9ddd3a75-24c4-4875-87a6-6940cb5908ff = entity
+		mode: directLake
+		source
+			entityName: msdyn_actioncardactionstat
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

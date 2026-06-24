@@ -1,0 +1,23 @@
+table DEPRECIACION
+	lineageTag: a012c86d-cda3-40d6-b09e-910e82b44eff
+
+	column DEPRECIACIÓN
+		dataType: string
+		lineageTag: 2741f481-db0b-49aa-b176-06034658c373
+		summarizeBy: none
+		sourceColumn: DEPRECIACIÓN
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DEPRECIACION = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcvb3U3BxDQhydfZ0dPY8PNlPKVYnWinYE0M0FgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [DEPRECIACIÓN = _t])
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

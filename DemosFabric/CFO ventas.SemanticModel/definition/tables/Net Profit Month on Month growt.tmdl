@@ -1,0 +1,53 @@
+table 'Net Profit Month on Month growt'
+	lineageTag: 45ea656d-90b4-42c4-ba75-9b29c49af8ad
+
+	column 'Date.Fiscal YQMD'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c0da0c1f-fa39-45f7-81e5-2f2d777026d0
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD
+
+		variation Variación
+			isDefault
+			relationship: 102d9ff8-7985-4d59-b6c7-c32fe5ba882a
+			defaultHierarchy: LocalDateTable_9338ca9b-0210-4779-a66e-56e69750bcb9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Operating Profit MoM Growth'
+		dataType: double
+		lineageTag: cae82c2a-7334-4db9-b85a-c13e1e377037
+		summarizeBy: sum
+		sourceColumn: Operating Profit MoM Growth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Operating Profit %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4274ee83-705d-483d-96e7-499ad1148254
+		summarizeBy: sum
+		sourceColumn: Operating Profit %
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Net Profit Month on Month growt-4ce450b6-729c-49a2-9c38-7febe997f544' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    #"Net Profit Month on Month growt_Sheet" = Origen{[Item="Net Profit Month on Month growt",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Net Profit Month on Month growt_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date.Fiscal YQMD", type date}, {"Operating Profit MoM Growth", type number}, {"Operating Profit %", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

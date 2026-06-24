@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data1",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "sqlReaderQuery": "SELECT  [CodigoGrupoCliente]\n      ,[Nombre_Grupo_Sucursal]\n      ,A.[CodigoSucursal]\n      ,[CP]\n      ,[Pais]\n      ,[Colonia]\n      ,[Desc_Estado]\n      ,[Codigo_Estado]\n      ,[Desc_Municipio]\n      ,[Codigo_Municipio]\n      ,[LAT]\n      ,[LONG]\n      ,[NivelDeServicio]\n      ,[Region]\n      ,CASE WHEN [NivelDeServicio]='A' THEN 'ALTO'\n\t    WHEN [NivelDeServicio]='B' THEN 'MEDIO'\n            WHEN [NivelDeServicio]='C' THEN 'MEDIO'\n            ELSE 'NO APLICA' END AS DescripcionServicio\n\n  FROM [dbo].[Fabric_Clientes] A\n  LEFT JOIN  [dbo].[Fabric_InfoComplementariaCliente] B\n  ON A.[CodigoSucursal]=B.[CodigoSucursal]",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "database": "365zap"
+              },
+              "externalReferences": {
+                "connection": "2418fd80-63cf-408b-8d80-f7feccc00b1c"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWHKH",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "5c7c0957-0551-40fd-8e2d-a17cd99f214e",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "DimCliente"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ]
+  }
+}

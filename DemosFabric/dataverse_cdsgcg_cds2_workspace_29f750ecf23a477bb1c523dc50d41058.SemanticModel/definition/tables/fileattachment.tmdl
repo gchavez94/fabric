@@ -1,0 +1,240 @@
+table fileattachment
+	lineageTag: 6b4aeb3a-bf9e-45df-b2be-ec52c46453d4
+	sourceLineageTag: [dbo].[fileattachment]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ce78b48-cc4c-4c83-a4ca-f627ca0ace68
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 71a37ea3-a16a-4c43-8cd3-8de6d05b1faa
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8be9fca9-4c75-4760-8454-81bcfb06e188
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column iscommitted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e3de40b5-c71b-4e98-af18-c8e393a6064d
+		sourceLineageTag: iscommitted
+		summarizeBy: none
+		sourceColumn: iscommitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column objectid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1af6ac96-b004-4df2-b302-acde56d6f637
+		sourceLineageTag: objectid
+		summarizeBy: none
+		sourceColumn: objectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column objectid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d52b85f1-1d6f-46b1-a303-6cb45757d257
+		sourceLineageTag: objectid_entitytype
+		summarizeBy: none
+		sourceColumn: objectid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column body
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9807de35-194e-4427-9830-f818be799d35
+		sourceLineageTag: body
+		summarizeBy: none
+		sourceColumn: body
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e964e262-eb0c-4781-a2fe-58969963de8f
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column fileattachmentid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 472e6db8-1cf9-4279-9314-8122fb7e089c
+		sourceLineageTag: fileattachmentid
+		summarizeBy: none
+		sourceColumn: fileattachmentid
+
+		annotation SummarizationSetBy = Automatic
+
+	column filename
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 06b616c2-247d-427d-8d4f-a9ee23775d04
+		sourceLineageTag: filename
+		summarizeBy: none
+		sourceColumn: filename
+
+		annotation SummarizationSetBy = Automatic
+
+	column filepointer
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c866e78-05f9-4738-a179-6bccda5eb019
+		sourceLineageTag: filepointer
+		summarizeBy: none
+		sourceColumn: filepointer
+
+		annotation SummarizationSetBy = Automatic
+
+	column filesizeinbytes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4080ee0f-0693-4612-97ce-c7ea2c70d2b7
+		sourceLineageTag: filesizeinbytes
+		summarizeBy: sum
+		sourceColumn: filesizeinbytes
+
+		annotation SummarizationSetBy = Automatic
+
+	column mimetype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b9d2934e-ef8c-475c-9027-6001cc87e840
+		sourceLineageTag: mimetype
+		summarizeBy: none
+		sourceColumn: mimetype
+
+		annotation SummarizationSetBy = Automatic
+
+	column objectidtypecode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d05830cc-e84d-49e8-8e12-ec2bd5d8d4c8
+		sourceLineageTag: objectidtypecode
+		summarizeBy: none
+		sourceColumn: objectidtypecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column objecttypecode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb198e51-5baa-49e8-b62b-3d7e46b51e19
+		sourceLineageTag: objecttypecode
+		summarizeBy: none
+		sourceColumn: objecttypecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column prefix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88d00beb-ff72-4a3e-a7da-ff452b308354
+		sourceLineageTag: prefix
+		summarizeBy: none
+		sourceColumn: prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column regardingfieldname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f52a9bb-a49c-40d9-8500-773d88e581f2
+		sourceLineageTag: regardingfieldname
+		summarizeBy: none
+		sourceColumn: regardingfieldname
+
+		annotation SummarizationSetBy = Automatic
+
+	column storagepointer
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f8e2ea87-dd3b-443a-905a-4ece70185b6e
+		sourceLineageTag: storagepointer
+		summarizeBy: none
+		sourceColumn: storagepointer
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8431537b-0e0d-419f-abd3-285f73895c27
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 418e7163-d43e-48b1-bd13-ce64d8cdd661
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column AttachmentBlobUri
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d66f0a4-bf6e-4313-85bb-0286d56ce8c1
+		sourceLineageTag: AttachmentBlobUri
+		summarizeBy: none
+		sourceColumn: AttachmentBlobUri
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e8890e3a-6f0c-4ebf-bd6f-4ac1f65b915a
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fileattachment-c33253a5-eed6-4bd4-b40d-aca8053458f4 = entity
+		mode: directLake
+		source
+			entityName: fileattachment
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,56 @@
+table Calendar_TEST
+	lineageTag: e7a0cc22-9e66-4157-a584-6932beab0ed8
+	sourceLineageTag: [dbo].[Calendar_TEST]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6322bb25-11d0-486c-9ba5-91c53030d3b1
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8ee46f44-1807-4ecc-932c-afcf4bd27629
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 312c7906-3292-4878-b39f-780abc53a9a3
+		sourceLineageTag: Month_Name
+		summarizeBy: none
+		sourceColumn: Month_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8f61084d-5026-4d89-a85c-305f114e6b8d
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar_TEST-872b70a2-b973-4e89-9175-ec182dbf69dd = entity
+		mode: directLake
+		source
+			entityName: Calendar_TEST
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

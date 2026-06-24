@@ -1,0 +1,133 @@
+table h_operaciones
+	lineageTag: 3b5c2d88-a7b0-4a58-911a-f9a2bef2748e
+
+	column SK_Compania
+		dataType: string
+		lineageTag: 4843d781-69ac-45c8-a380-c5564757258e
+		summarizeBy: none
+		sourceColumn: SK_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 3298a0d5-6a08-4ac0-b7d7-a9cf500da788
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_A_Localidad
+		dataType: string
+		lineageTag: d55c86bb-5fd9-4cab-a921-79bf68651748
+		summarizeBy: none
+		sourceColumn: SK_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_B_ProcesoProductivo
+		dataType: string
+		lineageTag: 5a06f3c0-4393-4661-b778-2bd50d72b96c
+		summarizeBy: none
+		sourceColumn: SK_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_C_Recurso
+		dataType: string
+		lineageTag: 9827e83d-e213-4dfc-975d-ea254eae5bee
+		summarizeBy: none
+		sourceColumn: SK_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_Fisica
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a6b52cf7-3535-4a4b-a82b-ba9ef04e3d98
+		summarizeBy: none
+		sourceColumn: Fecha_Fisica
+
+		variation Variación
+			isDefault
+			relationship: 1ef1b1fb-c717-4230-9c7a-10a87d43a4b8
+			defaultHierarchy: LocalDateTable_da3084c8-7db1-4a53-9754-841f96ce1657.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: double
+		lineageTag: 6fdb5b85-d25c-419b-b81c-e62be658d811
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'dim_compania.Dsc_Pais'
+		dataType: string
+		lineageTag: 1c9085eb-3c8e-4bd5-9016-ce22379952fe
+		summarizeBy: none
+		sourceColumn: dim_compania.Dsc_Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dim_a_localidad.Dsc_A_Localidad'
+		dataType: string
+		lineageTag: 68f741c9-fb2f-40d4-a8e6-a6d6b9ed5543
+		summarizeBy: none
+		sourceColumn: dim_a_localidad.Dsc_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dim_b_proceso_productivo.Dsc_B_ProcesoProductivo'
+		dataType: string
+		lineageTag: 181bee0d-efa4-4c05-9e24-dc2ffd431ea2
+		summarizeBy: none
+		sourceColumn: dim_b_proceso_productivo.Dsc_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Articulo_Producido
+		dataType: string
+		lineageTag: 4062d8aa-e84e-4dd9-b15c-ab52b5586bab
+		summarizeBy: none
+		sourceColumn: Cve_Articulo_Producido
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_B_ProcesoProductivo
+		dataType: string
+		lineageTag: fdeb7eba-da5a-444e-b2a0-a8c24e40880b
+		summarizeBy: none
+		sourceColumn: Cve_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo
+		dataType: string
+		lineageTag: afbb3deb-0795-4055-9275-5159176dccf7
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition h_operaciones = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr", [Query="   Select SK_Compania,HO.Cve_Compania,#(lf)  HO.SK_A_Localidad,Cve_B_ProcesoProductivo,SK_B_ProcesoProductivo, SK_C_Recurso,#(lf)      Fecha_Fisica, LEft(CONVERT(varchar, Fecha_Financiera, 112),6) Periodo,Cve_Articulo_Producido,Sum(Cantidad) Cantidad #(lf)From H_Operaciones HO#(lf)--Left Join dim_a_localidad L ON HO.Sk_A_Localidad = HO.Sk_A_Localidad#(lf)Where Cve_TipoTransaccion= 2#(lf)Group By#(lf)SK_Compania,HO.Cve_Compania,HO.Sk_A_Localidad,Cve_B_ProcesoProductivo, SK_B_ProcesoProductivo,SK_C_Recurso,#(lf)      Fecha_Fisica,Fecha_Financiera,Cve_Articulo_Producido"]),
+				    #"Consultas combinadas" = Table.NestedJoin(Origen, {"SK_Compania"}, dim_compania, {"Sk_Compania"}, "dim_compania", JoinKind.LeftOuter),
+				    #"Se expandió dim_compania" = Table.ExpandTableColumn(#"Consultas combinadas", "dim_compania", {"Dsc_Pais"}, {"dim_compania.Dsc_Pais"}),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Se expandió dim_compania", {"SK_A_Localidad"}, dim_a_localidad, {"Sk_A_Localidad"}, "dim_a_localidad", JoinKind.LeftOuter),
+				    #"Se expandió dim_a_localidad" = Table.ExpandTableColumn(#"Consultas combinadas1", "dim_a_localidad", {"Dsc_A_Localidad"}, {"dim_a_localidad.Dsc_A_Localidad"}),
+				    #"Consultas combinadas2" = Table.NestedJoin(#"Se expandió dim_a_localidad", {"SK_B_ProcesoProductivo"}, dim_b_proceso_productivo, {"Sk_B_ProcesoProductivo"}, "dim_b_proceso_productivo", JoinKind.LeftOuter),
+				    #"Se expandió dim_b_proceso_productivo" = Table.ExpandTableColumn(#"Consultas combinadas2", "dim_b_proceso_productivo", {"Dsc_B_ProcesoProductivo"}, {"dim_b_proceso_productivo.Dsc_B_ProcesoProductivo"})
+				in
+				    #"Se expandió dim_b_proceso_productivo"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

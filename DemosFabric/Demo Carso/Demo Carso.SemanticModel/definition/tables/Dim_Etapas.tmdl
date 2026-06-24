@@ -1,0 +1,82 @@
+table Dim_Etapas
+	lineageTag: f847c947-b599-4a3b-b9f2-c59505bec33b
+
+	column 'ID Etapa'
+		dataType: string
+		lineageTag: 2688ee21-0504-4b40-a146-40e60dd10269
+		summarizeBy: none
+		sourceColumn: ID Etapa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: 449f5610-b190-4068-befa-778e5670bb97
+		summarizeBy: none
+		sourceColumn: Etapa
+		sortByColumn: Seq
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seq
+		dataType: int64
+		formatString: 0
+		lineageTag: e051ff51-a1a6-40be-bc47-e13897c262a0
+		summarizeBy: sum
+		sourceColumn: Seq
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Planeado'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3825de60-3ffc-44a5-992a-58ceb7fa80de
+		summarizeBy: sum
+		sourceColumn: Tiempo Planeado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Fin'
+		dataType: string
+		lineageTag: 290011c3-5df6-4e2f-91a2-029368335614
+		summarizeBy: none
+		sourceColumn: Fecha Fin
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Real'
+		dataType: string
+		lineageTag: d7afd7f3-d097-4636-8f7f-34d269bee964
+		summarizeBy: none
+		sourceColumn: Tiempo Real
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Etapas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    DimStage_Sheet = Origen{[Item="DimStage",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(DimStage_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"StageKey", type text}, {"StageName", type text}, {"Seq", Int64.Type}, {"PlannedDays", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"StageKey", "ID Etapa"}, {"StageName", "Etapa"}, {"PlannedDays", "Tiempo Planeado"}, {"DateEnd", "Fecha Fin"}, {"RealDays", "Tiempo Real"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

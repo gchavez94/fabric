@@ -1,0 +1,89 @@
+table Calendar_Vencimiento
+	lineageTag: e4128ad6-cbae-4f7f-ad98-9183825b9335
+	sourceLineageTag: [dbo].[Calendar_Vencimiento]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: eaa0901a-3499-4a81-833d-66d33f050fa0
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8661d5b4-eb36-499c-a2b3-dd5da368f0ab
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Nombre
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5595eba5-b6d4-42cc-939c-c5839f9a8dc2
+		sourceLineageTag: Mes_Nombre
+		summarizeBy: none
+		sourceColumn: Mes_Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 80dcb46b-0f13-4a11-a724-de0b4b13e3c1
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b37d8c84-f728-4c9b-89d8-dddb71dcc87a
+		sourceLineageTag: Año
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 01a83a95-bd50-4481-85e6-91ea768acd1e
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b617a3e6-0e63-4b4e-9290-14b76fe5f0a0
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar_Vencimiento-1246885a-9243-4fe5-ab6f-b26cc2f92821 = entity
+		mode: directLake
+		source
+			entityName: Calendar_Vencimiento
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

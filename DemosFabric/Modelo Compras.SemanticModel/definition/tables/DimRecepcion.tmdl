@@ -1,0 +1,20 @@
+table DimRecepcion
+	lineageTag: 01ffc65d-7dbe-4b57-9aa5-052c9083d07e
+
+	column RecepcionDelProducto
+		dataType: string
+		lineageTag: 09e3531f-6c59-4aa3-b46b-3bcdb1d74a4d
+		summarizeBy: none
+		sourceColumn: RecepcionDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimRecepcion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimRecepcion = Origen{[Schema="dbo",Item="DimRecepcion"]}[Data]
+				in
+				    dbo_DimRecepcion
+

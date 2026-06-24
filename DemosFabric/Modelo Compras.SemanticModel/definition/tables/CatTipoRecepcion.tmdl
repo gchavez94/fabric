@@ -1,0 +1,45 @@
+table CatTipoRecepcion
+	lineageTag: e5394806-6e61-4312-ac5a-2f747de71f26
+
+	measure M_ConteoTipoRecepciones = ```
+			
+			Var M1=[M_ConteoRecepcionTotal]+0
+			Var M2=[M_ConteoRecepcionParcial]+0
+			RETURN 
+			 
+			IF  (HASONEVALUE(CatTipoRecepcion[Descripcion]),SWITCH(VALUES(CatTipoRecepcion[Id]),
+			1, M1, 
+			2, M2))
+			
+			```
+		formatString: 0
+		lineageTag: 7e301fe5-9e23-4c88-956d-3d012351ca5c
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e5e52df-0392-41f8-ab9a-8ad85e6ec6c2
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: d92c73ab-9d1c-4eaa-ab6e-3ecd04e52512
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CatTipoRecepcion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_CatTipoRecepcion = Origen{[Schema="dbo",Item="CatTipoRecepcion"]}[Data]
+				in
+				    dbo_CatTipoRecepcion
+
+	annotation PBI_ResultType = Table
+

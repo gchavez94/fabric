@@ -1,0 +1,118 @@
+table teamprofiles
+	lineageTag: 6a44adc2-0347-4d75-b5db-be3d959bf1d5
+	sourceLineageTag: [dbo].[teamprofiles]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1eb734f0-24f3-4c3d-9590-8bf04ad4be7b
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 48ce4a21-a9d9-41e7-aa75-2615429aed76
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c5ea006b-7851-4e67-9ac2-747c0633995e
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column fieldsecurityprofileid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3c1f6a30-5af8-430a-a9a8-ef8afcabebd5
+		sourceLineageTag: fieldsecurityprofileid
+		summarizeBy: none
+		sourceColumn: fieldsecurityprofileid
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f43ddaea-3a96-4cd5-b222-d094c1060760
+		sourceLineageTag: teamid
+		summarizeBy: none
+		sourceColumn: teamid
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamprofileid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 60a8da96-dc56-41d9-9354-8d2e38b35609
+		sourceLineageTag: teamprofileid
+		summarizeBy: none
+		sourceColumn: teamprofileid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 10b32846-1f44-4ea3-95ed-6bdd3245b1fa
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 250f03bb-966f-4ff5-a712-9c1af6d69174
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1d843438-9b4e-43ea-b166-294b39cd9e6d
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cc07aea5-9928-4243-b4f8-d92db27b32f4
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition teamprofiles-f1ceceb1-20d7-4f8b-a7c1-c4b9fea0b2bd = entity
+		mode: directLake
+		source
+			entityName: teamprofiles
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

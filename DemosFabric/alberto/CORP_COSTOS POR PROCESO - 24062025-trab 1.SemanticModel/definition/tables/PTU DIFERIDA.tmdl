@@ -1,0 +1,23 @@
+table 'PTU DIFERIDA'
+	lineageTag: 6e43f25c-9677-4d0e-8936-bd9993aca60c
+
+	column 'PTU DIFERIDA'
+		dataType: string
+		lineageTag: cf888505-0bc2-49c7-84b4-4f1248aaf138
+		summarizeBy: none
+		sourceColumn: PTU DIFERIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PTU DIFERIDA' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcvb3UwgICVVw8XRzDfJ0cVSK1YlWCvZEF4wFAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"PTU DIFERIDA" = _t])
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

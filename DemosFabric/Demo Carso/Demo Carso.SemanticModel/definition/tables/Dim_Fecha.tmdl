@@ -1,0 +1,77 @@
+table Dim_Fecha
+	lineageTag: 95ac2de1-71a1-4b19-ab00-207046e2d871
+	dataCategory: Time
+
+	column Fecha
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: 8865fccd-0366-40b7-a569-239a391990ca
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 61e1683e-6913-4daf-b41d-426d1610742c
+		summarizeBy: sum
+		sourceColumn: Año
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Mes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 46d1c663-667e-47cc-9caa-5ac63a84efad
+		summarizeBy: sum
+		sourceColumn: Numero Mes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 16e41399-d1eb-48c0-96b2-23bda000e643
+		summarizeBy: none
+		sourceColumn: Mes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Año'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 413918dd-fa8c-4110-a40f-bd2f6a8ff45a
+		summarizeBy: none
+		sourceColumn: Mes Año
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Dim_Fecha = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\RicardoRodríguezHerr\Downloads\PoC Carso\Demo_CARSO_PBI_Datos.xlsx"), null, true),
+				    DimDate_Sheet = Origen{[Item="DimDate",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(DimDate_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date", type datetime}, {"Year", Int64.Type}, {"Month", Int64.Type}, {"MonthName", type text}, {"YearMonth", type date}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Date", "Fecha"}, {"Year", "Año"}, {"Month", "Numero Mes"}, {"MonthName", "Mes"}, {"YearMonth", "Mes Año"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

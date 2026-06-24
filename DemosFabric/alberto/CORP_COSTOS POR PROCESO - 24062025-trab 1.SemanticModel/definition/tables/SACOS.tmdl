@@ -1,0 +1,23 @@
+table SACOS
+	lineageTag: 4f049d80-14dd-476e-ab74-293bc485ae22
+
+	column SACOS
+		dataType: string
+		lineageTag: b3ea119f-bf62-4668-99f2-8156d90e84cc
+		summarizeBy: none
+		sourceColumn: SACOS
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SACOS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcvb3Uwh2dPYPVorViVYK9oTzYgE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [SACOS = _t])
+				in
+				    Origen
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

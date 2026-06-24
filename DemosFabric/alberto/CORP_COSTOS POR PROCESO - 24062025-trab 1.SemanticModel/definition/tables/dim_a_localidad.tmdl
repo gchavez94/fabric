@@ -1,0 +1,101 @@
+table dim_a_localidad
+	lineageTag: 9b9a23f5-4af6-4bbd-8c42-944d13027744
+
+	column Sk_A_Localidad
+		dataType: string
+		lineageTag: 5e597929-b111-45ec-ae30-6ec6a9cf5652
+		summarizeBy: none
+		sourceColumn: Sk_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_A_Localidad
+		dataType: string
+		lineageTag: 61bf3d32-cf3b-4d6f-9896-8ade09c90b29
+		summarizeBy: none
+		sourceColumn: Cve_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_A_Localidad
+		dataType: string
+		lineageTag: b4be473e-94d0-49a2-ba76-7558c54e82d0
+		summarizeBy: none
+		sourceColumn: Dsc_A_Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 2e2049b1-bd0d-4f08-a0f6-c70e900a404e
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_UltimaModificacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b9ad030f-665d-4253-b792-8ddde6779453
+		summarizeBy: none
+		sourceColumn: Fecha_UltimaModificacion
+
+		variation Variación
+			isDefault
+			relationship: 6fcdd5de-8009-4ab4-9c9c-71968d7da206
+			defaultHierarchy: LocalDateTable_291ab99d-dcbd-43ce-bdd3-6dc50381e809.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3f537754-839f-43a1-b50e-464ed1477b39
+		summarizeBy: none
+		sourceColumn: INSERT_SVR
+
+		variation Variación
+			isDefault
+			relationship: 3f8853db-ee24-4fec-ae07-b0a931656084
+			defaultHierarchy: LocalDateTable_86634656-0c20-40a3-a0f3-222989b03485.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7da1a8e0-f1e9-40bc-8fb5-f0c9b5805191
+		summarizeBy: none
+		sourceColumn: UPDATE_SVR
+
+		variation Variación
+			isDefault
+			relationship: 6f0f7a30-36aa-4781-8edc-57a827529194
+			defaultHierarchy: LocalDateTable_68a16d45-49e5-4c38-a26d-b7de3b4d087f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dim_compania.Dsc_Pais'
+		dataType: string
+		lineageTag: b652f8a0-34a4-4804-994c-0e4777fd5129
+		summarizeBy: none
+		sourceColumn: dim_compania.Dsc_Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_a_localidad = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr"),
+				    dbo_dim_a_localidad = Origen{[Schema="dbo",Item="dim_a_localidad"]}[Data],
+				    #"Consultas combinadas" = Table.NestedJoin(dbo_dim_a_localidad, {"Cve_Compania"}, dim_compania, {"CVE_Compania"}, "dim_compania", JoinKind.LeftOuter),
+				    #"Se expandió dim_compania" = Table.ExpandTableColumn(#"Consultas combinadas", "dim_compania", {"Dsc_Pais"}, {"dim_compania.Dsc_Pais"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Se expandió dim_compania", each ([Cve_Compania] <> "APE" and [Cve_Compania] <> "CDO" and [Cve_Compania] <> "CME" and [Cve_Compania] <> "FCM" and [Cve_Compania] <> "GCA" and [Cve_Compania] <> "SAC" and [Cve_Compania] <> "TCA"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

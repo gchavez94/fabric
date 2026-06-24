@@ -1,0 +1,66 @@
+relationship aab60fb5-ccee-45cd-8fb6-dc826adcf118
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Costos.'Mes Año'
+	toColumn: LocalDateTable_15841faa-ac03-442f-80e7-db4612f84ad9.Date
+
+relationship a12fc1c4-80df-ec5b-98df-a84ba4d4500f
+	fromColumn: Fact_Presupuesto.'Fecha Inicio'
+	toColumn: Dim_Fecha.Fecha
+
+relationship 862fa192-dae4-1ee1-0c78-23cb50ab26cb
+	fromColumn: Fact_Presupuesto.'ID Etapa'
+	toColumn: Dim_Etapas.'ID Etapa'
+
+relationship AutoDetected_e2e4637c-050e-421f-b745-1cc6de24e697
+	fromColumn: Fact_Presupuesto.'ID Proyecto'
+	toColumn: Dim_Proyectos.'ID Proyecto'
+
+relationship AutoDetected_a95d91b3-fee3-45d5-b653-271f4bd180e9
+	fromColumn: Fact_Costos.'ID Proyecto'
+	toColumn: Dim_Proyectos.'ID Proyecto'
+
+relationship AutoDetected_4fdf2226-12a2-459b-ae67-6226d5c7115a
+	fromColumn: Fact_Presupuesto.'ID Linea'
+	toColumn: Dim_Lineas.'ID Linea'
+
+relationship AutoDetected_3d7248c3-a3a1-4cd7-b7d4-ad1494635452
+	fromColumn: Fact_Costos.'ID Linea'
+	toColumn: Dim_Lineas.'ID Linea'
+
+relationship d47bb643-220b-058c-0b17-6f4e9ff679be
+	fromColumn: Fact_Costos.Fecha
+	toColumn: Dim_Fecha.Fecha
+
+relationship e409e9c9-f29f-00f5-7bce-836e398e10d0
+	fromColumn: Fact_Costos.'ID Etapa'
+	toColumn: Dim_Etapas.'ID Etapa'
+
+relationship e4099f5a-0631-3223-4a3a-a96a32b7ece1
+	fromColumn: Fact_Presupuesto.Type
+	toColumn: Dim_Tipo.Tipo
+
+relationship bfd1d434-1393-48c7-5ec4-f93fd329f4fe
+	fromColumn: Fact_Costos.Type
+	toColumn: Dim_Tipo.Tipo
+
+relationship d606f3e9-32d6-4ef7-875f-67132117f4fa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Fact Proyectos'.'Fecha Inicio'
+	toColumn: LocalDateTable_6a7a896f-07d3-44b7-9c5b-fef16ed9ba6c.Date
+
+relationship AutoDetected_e8e1d7ea-1bb0-46e0-9dc4-4b46b6c47b4c
+	fromColumn: 'Fact Proyectos'.'ID Proyecto'
+	toColumn: Dim_Proyectos.'ID Proyecto'
+
+relationship AutoDetected_c55571b2-cc65-4710-9d66-994735f04f53
+	fromColumn: 'Fact Proyectos'.'ID Linea'
+	toColumn: Dim_Lineas.'ID Linea'
+
+relationship AutoDetected_e576f774-8631-4c86-8718-6beb8cebb4e8
+	fromColumn: 'Fact Proyectos'.'ID Etapa'
+	toColumn: Dim_Etapas.'ID Etapa'
+
+relationship AutoDetected_7fa1c5f8-bf9a-4833-bf59-0e822b0ff7fe
+	fromColumn: 'Fact Proyectos'.Tipo
+	toColumn: Dim_Tipo.Tipo
+

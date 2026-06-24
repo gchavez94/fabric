@@ -1,0 +1,107 @@
+table Calendario_Trad
+	lineageTag: 93097ce4-a281-4318-b5bb-4ccc6210a531
+	sourceLineageTag: [dbo].[Calendario_Trad]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ee8c7e18-7d67-4866-958a-ad58e1ea8622
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5ebb97c5-f20d-4988-a307-a93e6d85ba45
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Nombre
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5c82c2e9-4a4c-4aeb-bdc9-054b4494ba55
+		sourceLineageTag: Mes_Nombre
+		summarizeBy: none
+		sourceColumn: Mes_Nombre
+		sortByColumn: Mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c053b310-5fa2-4bd7-b106-fbc3207150d8
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 656723cc-19e9-45d7-8f8b-b484c3d21758
+		sourceLineageTag: Año
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 75ae9659-658b-4a9b-af72-1a540122945c
+		sourceLineageTag: Mes
+		summarizeBy: sum
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e0fb1bcd-8abb-4671-b64e-b42d5506fe97
+		sourceLineageTag: Trimestre
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Fecha
+		lineageTag: 0f14e069-0241-407a-8576-65c5af888e82
+
+		level Año
+			lineageTag: 86a22f32-ac08-4856-bd1c-b5c028f4bc6a
+			column: Año
+
+		level Trimestre
+			lineageTag: 01209792-1405-4a66-86fe-b2fbaa37b5ad
+			column: Trimestre
+
+		level Mes
+			lineageTag: af249a7f-c043-4dc6-8f09-d222cdb4a72d
+			column: Mes_Nombre
+
+	partition Calendario_Trad-7ff8f95d-37de-42da-b268-4587aa0c9654 = entity
+		mode: directLake
+		source
+			entityName: Calendario_Trad
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

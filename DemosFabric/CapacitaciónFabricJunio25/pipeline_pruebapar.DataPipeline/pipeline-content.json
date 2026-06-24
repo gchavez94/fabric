@@ -1,0 +1,96 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data2",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": {
+              "value": "SELECT TOP (100) [VENTA_ID],\n\t\t\t[DimFechaId],\n\t\t\t[DimClienteId],\n\t\t\t[DimArticuloId],\n\t\t\t[CANTIDAD],\n\t\t\t[SUBTOTAL],\n\t\t\t[IVA],\n\t\t\t[DimVendedorId],\n\t\t\t[Total]\nFROM [DWH Karina].[dbo].[FactVentas]\nWHERE [DimFechaId] BETWEEN \n'@{formatDateTime(addhours(utcnow(), -6),'yyyy-MM-dd HH:mm:ss')}'\nAND '@{formatDateTime(addhours(utcnow(), -6),'yyyy-MM-dd HH:mm:ss')}'",
+              "type": "Expression"
+            },
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWHKH",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "5c7c0957-0551-40fd-8e2d-a17cd99f214e",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {}
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DWH Karina",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "0ecf8b1a-a92e-4afb-add1-4a558f2ab70b",
+                    "workspaceId": "5bb3a27e-bc84-41d2-bf55-296bb6efc7a4"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "FactVentas"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "ParametroLake": {
+        "type": "string",
+        "defaultValue": "LKHKH"
+      },
+      "fechaInicio": {
+        "type": "string",
+        "defaultValue": "@formatDateTime(addhours(utcnow(), -6),'yyyy-MM-dd HH:mm:ss')"
+      },
+      "fechafin": {
+        "type": "string",
+        "defaultValue": "@formatDateTime(addhours(utcnow(), -6),'yyyy-MM-dd HH:mm:ss')"
+      }
+    }
+  }
+}

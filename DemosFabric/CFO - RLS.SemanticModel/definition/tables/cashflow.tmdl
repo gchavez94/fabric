@@ -1,0 +1,77 @@
+table cashflow
+	lineageTag: 8edf92fa-c948-4f20-bd78-616b3f75666f
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: db278b20-6ca3-460a-98b1-25e31c2ecacf
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 485e2572-28dd-41e6-9101-21250c47508f
+			defaultHierarchy: LocalDateTable_5a5e0fd0-bda2-434b-9a47-fbc3511bc4a9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CxC
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: fbd43910-bf00-41d0-912b-8d2b3d343905
+		summarizeBy: sum
+		sourceColumn: CxC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CxP
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3fd2af95-6ca0-4991-9528-01548911f187
+		summarizeBy: sum
+		sourceColumn: CxP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nómina
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8fec8243-5872-4cc9-8f72-d527309c5dd5
+		summarizeBy: sum
+		sourceColumn: Nómina
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyectos
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 50a1e8b3-dbb0-4148-b31d-bf9c5f0777a4
+		summarizeBy: sum
+		sourceColumn: Proyectos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7dbe0e4e-1262-4aa7-b39d-5a099478113f
+		summarizeBy: sum
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cashflow-b7b2149e-85e4-4888-af5c-a2a6206263fa = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Mis Documentos\CFO - Promujer.xlsx"), null, true),
+				    cashflow_Sheet = Origen{[Item="cashflow",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(cashflow_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Fecha", type date}, {"CxC", Int64.Type}, {"CxP", Int64.Type}, {"Nómina", Int64.Type}, {"Proyectos", Int64.Type}, {"Actual", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

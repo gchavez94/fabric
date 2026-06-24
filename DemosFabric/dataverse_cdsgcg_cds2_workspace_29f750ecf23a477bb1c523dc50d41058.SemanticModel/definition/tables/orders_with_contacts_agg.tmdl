@@ -1,0 +1,67 @@
+table orders_with_contacts_agg
+	lineageTag: 72203275-37da-45d4-b615-651cda30241a
+	sourceLineageTag: [dbo].[orders_with_contacts_agg]
+
+	column contactid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d787566e-ad24-49bd-9964-94c0dc7b38dc
+		sourceLineageTag: contactid
+		summarizeBy: none
+		sourceColumn: contactid
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d11ad8e6-e8fe-42ac-b34e-f5c0c17e8859
+		sourceLineageTag: order_purchase_timestamp
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 8acc374d-ca0f-4b1b-ad9b-16b2d20a0b40
+		sourceLineageTag: price
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Key
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 32cb2e7c-05fa-4cba-8dd0-ba376cd71a98
+		sourceLineageTag: Key
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column UniqueInt
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b518d4a7-603b-454d-aa98-b9d4ec11e00f
+		sourceLineageTag: UniqueInt
+		summarizeBy: sum
+		sourceColumn: UniqueInt
+
+		annotation SummarizationSetBy = Automatic
+
+	partition orders_with_contacts_agg-f8c05e29-9077-4b82-90d6-42c67409853d = entity
+		mode: directLake
+		source
+			entityName: orders_with_contacts_agg
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

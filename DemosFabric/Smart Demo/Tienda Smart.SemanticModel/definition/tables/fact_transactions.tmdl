@@ -1,0 +1,170 @@
+table fact_transactions
+	lineageTag: 15bc4c46-f597-47d6-8cbe-8816854c8a06
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 155a96ac-22b4-4073-8564-7d0356148de0
+		summarizeBy: none
+		sourceColumn: fecha
+
+		variation Variación
+			isDefault
+			relationship: f697582c-8dfc-4f93-9cfb-db74decdbe38
+			defaultHierarchy: LocalDateTable_c368d9e6-8530-4c96-8a92-53c065e87d98.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column tienda
+		dataType: string
+		lineageTag: 7cd9d2c9-2293-49c2-874d-f3776517449f
+		summarizeBy: none
+		sourceColumn: tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column tamano_tienda
+		dataType: string
+		lineageTag: 8b9383b1-7354-4219-a9a9-8752c42c942c
+		summarizeBy: none
+		sourceColumn: tamano_tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column perfil_cliente
+		dataType: string
+		lineageTag: c325d2e6-0a68-4851-ba2f-ec2494fdecad
+		summarizeBy: none
+		sourceColumn: perfil_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: 1e3af292-69ee-4dc2-a073-533d57703405
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto
+		dataType: string
+		lineageTag: 52c4cc6e-5e5a-4853-b906-974bab71e025
+		summarizeBy: none
+		sourceColumn: producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Venta
+		dataType: decimal
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: 05d6a164-1e8c-4c25-bab2-f86190c8c186
+		summarizeBy: sum
+		sourceColumn: Venta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column cantidad
+		dataType: int64
+		formatString: #,0
+		lineageTag: 42093ba9-6f59-464d-b131-ac2897772524
+		summarizeBy: sum
+		sourceColumn: cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column descuento_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 24bf484d-4227-4504-8ba9-9bbf3f3182e8
+		summarizeBy: none
+		sourceColumn: descuento_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% descuento'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d7b05564-2d11-4f25-afcb-d76ad9a9af43
+		summarizeBy: sum
+		sourceColumn: % descuento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Margen
+		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ff91de47-a33a-40b3-b55f-b0fd290d8457
+		summarizeBy: sum
+		sourceColumn: Margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Margen'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ae6299db-00b7-44d9-870b-dba2232f717d
+		summarizeBy: sum
+		sourceColumn: % Margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LYTD Venta'
+		dataType: decimal
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: be769021-2080-4c87-9ab7-56071d1ab2c5
+		summarizeBy: sum
+		sourceColumn: LYTD Venta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column 'LYTD Margen'
+		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 00be147f-deca-41a7-878a-96fd6933629d
+		summarizeBy: sum
+		sourceColumn: LYTD Margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LYTD % Margen'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 60a73c02-dae2-4e66-9feb-5f502f0f663b
+		summarizeBy: sum
+		sourceColumn: LYTD % Margen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_transactions = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Databases("u4hc3hufgzquhfi2wwtnrivj2i-p2rlgw4extjedp2vffv3n36huq.datawarehouse.fabric.microsoft.com"),
+				    CatManagement = Origen{[Name="CatManagement"]}[Data],
+				    dbo_fact_transactions = CatManagement{[Schema="dbo",Item="fact_transactions"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(dbo_fact_transactions,{{"precio", "Venta"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "% descuento", each [porcentaje_descuento]/100),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Personalizada agregada",{{"% descuento", Percentage.Type}}),
+				    #"Personalizada agregada1Margen" = Table.AddColumn(#"Tipo cambiado", "Margen", each [Venta]*Number.RandomBetween(1,20)/100),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1Margen",{{"descuento_flag", type logical}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"porcentaje_descuento"}),
+				    #"Personalizada agregada2%Margen" = Table.AddColumn(#"Columnas quitadas", "% Margen", each [Margen]/[Venta]),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada2%Margen",{{"% Margen", Percentage.Type}}),
+				    #"Personalizada agregada3LYTDVenta" = Table.AddColumn(#"Tipo cambiado2", "LYTD Venta", each [Venta]*Number.RandomBetween(80,115)/100),
+				    #"Personalizada agregadaLYTDMargen" = Table.AddColumn(#"Personalizada agregada3LYTDVenta", "LYTD Margen", each [LYTD Venta]*Number.RandomBetween(2,14)/100),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregadaLYTDMargen", "LYTD % Margen", each [LYTD Margen]/[LYTD Venta]),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"LYTD Venta", Currency.Type}, {"LYTD Margen", Currency.Type}, {"LYTD % Margen", Percentage.Type}, {"Margen", Currency.Type}, {"Venta", Currency.Type}})
+				in
+				    #"Tipo cambiado3"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

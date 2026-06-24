@@ -1,0 +1,39 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.126.1261.0 (24.02)
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["cre86_tabladenuncia","Acciones","Áreas","Autoridad","Categoría","CategoríaVictimario","CausalesIncompetencia","Clasificación","DependenciaPolitécnica","DerechoProbablementeViolentado","DocsSeguimiento","EstatusActual","FormatoDocumentación","Genero","Materia","MedioIngreso","Motivo de conclusión","Rango de edad","Tematica"]
+
+ref table cre86_tabladenuncia
+ref table Acciones
+ref table DateTableTemplate_906abb59-4af7-4c2c-936a-d54bb2078629
+ref table Áreas
+ref table Autoridad
+ref table Categoría
+ref table CategoríaVictimario
+ref table CausalesIncompetencia
+ref table Clasificación
+ref table DependenciaPolitécnica
+ref table DerechoProbablementeViolentado
+ref table DocsSeguimiento
+ref table EstatusActual
+ref table FormatoDocumentación
+ref table Genero
+ref table Materia
+ref table MedioIngreso
+ref table 'Motivo de conclusión'
+ref table 'Rango de edad'
+ref table Tematica
+ref table Date
+ref table LocalDateTable_6e138062-7753-40f0-b411-fc73eb0d359f
+
+ref cultureInfo es-MX
+

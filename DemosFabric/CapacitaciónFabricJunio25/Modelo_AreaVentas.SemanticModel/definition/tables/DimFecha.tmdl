@@ -1,0 +1,128 @@
+table DimFecha
+	lineageTag: 75277d29-7e60-474d-bc77-46505a379a0f
+	sourceLineageTag: [dbo].[DimFecha]
+
+	column DimFechaId
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9493f4ec-a327-4185-b82a-e014bca41112
+		sourceLineageTag: DimFechaId
+		summarizeBy: none
+		sourceColumn: DimFechaId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 8478e9ec-b660-4664-8832-cc4914936176
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Nombre del mes'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b05f8c82-f33e-4d3b-be25-bafd909cba1f
+		sourceLineageTag: Nombre del mes
+		summarizeBy: none
+		sourceColumn: Nombre del mes
+		sortByColumn: Mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 82480a36-89d9-4fce-bfe9-e7c6f029becc
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Día de la semana'
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b2422dc3-c6aa-49d1-b50d-95ea218cd568
+		sourceLineageTag: Día de la semana
+		summarizeBy: none
+		sourceColumn: Día de la semana
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Nombre del día'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ba0891d2-0c34-4f59-8658-67916411e358
+		sourceLineageTag: Nombre del día
+		summarizeBy: none
+		sourceColumn: Nombre del día
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inicio del mes'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4c8a3625-0d09-4e45-9656-af9606d36438
+		sourceLineageTag: Inicio del mes
+		summarizeBy: none
+		sourceColumn: Inicio del mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final del mes'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b1d9ec39-e306-4696-84c1-53721f9a0596
+		sourceLineageTag: Final del mes
+		summarizeBy: none
+		sourceColumn: Final del mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Días del mes'
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a69072e5-7077-41e1-a190-a9963e59152b
+		sourceLineageTag: Días del mes
+		summarizeBy: none
+		sourceColumn: Días del mes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Inicio del trimestre'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2e5d45ca-87c1-480b-b2ef-31424962d10a
+		sourceLineageTag: Inicio del trimestre
+		summarizeBy: none
+		sourceColumn: Inicio del trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimFecha = entity
+		mode: directLake
+		source
+			entityName: DimFecha
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

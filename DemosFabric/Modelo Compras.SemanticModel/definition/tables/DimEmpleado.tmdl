@@ -1,0 +1,43 @@
+table DimEmpleado
+	lineageTag: 32e88038-ae63-4dbb-9b7c-26cb3a39f87a
+
+	column IdEmpleado
+		dataType: int64
+		formatString: 0
+		lineageTag: 23503c36-1e64-459a-8af3-637f68042894
+		summarizeBy: none
+		sourceColumn: IdEmpleado
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroDeEmpleado
+		dataType: string
+		lineageTag: dbbada0a-8eab-45de-8494-e575e59c3071
+		summarizeBy: none
+		sourceColumn: NumeroDeEmpleado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 755b1093-a233-48f2-a012-af8bbb4acd10
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEmpleado = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Empleado.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdEmpleado", Int64.Type}, {"NumeroDeEmpleado", type text}, {"Nombre", type text}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

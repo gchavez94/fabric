@@ -1,0 +1,53 @@
+table 'Net Profit Month on Month growt'
+	lineageTag: 3074431b-647b-4c0d-8013-bcf5e2818689
+
+	column 'Date.Fiscal YQMD'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3156d5c-1b94-4ed2-9f1e-676ef49b781d
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD
+
+		variation Variación
+			isDefault
+			relationship: 102d9ff8-7985-4d59-b6c7-c32fe5ba882a
+			defaultHierarchy: LocalDateTable_9338ca9b-0210-4779-a66e-56e69750bcb9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Operating Profit MoM Growth'
+		dataType: double
+		lineageTag: d1fe0e01-1c66-4cf9-89b3-fc5f6ac93c57
+		summarizeBy: sum
+		sourceColumn: Operating Profit MoM Growth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Operating Profit %'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ce41738d-41a3-4ff4-af34-b033da756146
+		summarizeBy: sum
+		sourceColumn: Operating Profit %
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Net Profit Month on Month growt-4ce450b6-729c-49a2-9c38-7febe997f544' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Net Profit Month on Month growt_Sheet" = Origen{[Item="Net Profit Month on Month growt",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Net Profit Month on Month growt_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date.Fiscal YQMD", type date}, {"Operating Profit MoM Growth", type number}, {"Operating Profit %", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

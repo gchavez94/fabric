@@ -1,0 +1,134 @@
+table custsettlment
+	lineageTag: efe40015-3e57-4373-aeed-9d1938fe7c95
+	sourceLineageTag: [dbo].[custsettlment]
+
+	column TRANSRECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 190853f1-5743-4adf-a6ab-715126049f2c
+		sourceLineageTag: TRANSRECID
+		summarizeBy: count
+		sourceColumn: TRANSRECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 188dcc61-1a97-4aac-81de-8a3f284d78d1
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: sum
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXCHADJUSTMENT
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 20612064-a882-44a0-8736-16f1bbde596d
+		sourceLineageTag: EXCHADJUSTMENT
+		summarizeBy: sum
+		sourceColumn: EXCHADJUSTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OFFSETTRANSVOUCHER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d55739a7-c7cd-49cb-aa41-00a1fcc7f169
+		sourceLineageTag: OFFSETTRANSVOUCHER
+		summarizeBy: none
+		sourceColumn: OFFSETTRANSVOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEAMOUNTCUR
+		dataType: double
+		sourceProviderType: float
+		lineageTag: cd3c7d56-4d3a-439a-8764-0a4814887cd3
+		sourceLineageTag: SETTLEAMOUNTCUR
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEAMOUNTMST
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 76861c58-977c-414d-862b-e0abd247a5d4
+		sourceLineageTag: SETTLEAMOUNTMST
+		summarizeBy: sum
+		sourceColumn: SETTLEAMOUNTMST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEMENTVOUCHER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d495489e-44cb-483b-9a0c-98fc974c8fbd
+		sourceLineageTag: SETTLEMENTVOUCHER
+		summarizeBy: none
+		sourceColumn: SETTLEMENTVOUCHER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7fb74082-59c3-402d-8269-96110e1de465
+		sourceLineageTag: TRANSDATE
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSEDDATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 423c120f-8940-4274-aa9e-e3707303fca0
+		sourceLineageTag: CLOSEDDATE
+		summarizeBy: none
+		sourceColumn: CLOSEDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 65b40058-79dd-4708-887b-4a4547801006
+		sourceLineageTag: TRANSTYPE
+		summarizeBy: sum
+		sourceColumn: TRANSTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5fc31d53-09a0-45aa-9349-0efc2b1884d0
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition custsettlment = entity
+		mode: directLake
+		source
+			entityName: custsettlment
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,16 @@
+expression 'Errors in historia' =
+		let
+		Source = historia,
+		#"Added Index" = Table.AddIndexColumn(Source, "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Año", "Mes", "Compañía ", "Net Sales", "COGS", "Gross Margin %", "Gross Margin", "Expenses", "Operating Profit %", "Return on Assets", "Return on Equity", "Current Assets", "Current Liabilities", "Working Capital", "Quick Ratio", "Assets", "Liabilities", "Debt Ratio", "Debt to Equity Ratio", "Long Term Debt to Equity Rat"}),
+		#"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Año", "Mes", "Compañía ", "Net Sales", "COGS", "Gross Margin %", "Gross Margin", "Expenses", "Operating Profit %", "Return on Assets", "Return on Equity", "Current Assets", "Current Liabilities", "Working Capital", "Quick Ratio", "Assets", "Liabilities", "Debt Ratio", "Debt to Equity Ratio", "Long Term Debt to Equity Rat"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"Mes", type text}})
+		in
+		  #"Changed Type"
+	lineageTag: 5ecd6fd0-9230-46ca-88a8-19b316ba16fa
+	queryGroup: 'Query Errors - 06/12/2017 01:11:17 p  m'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,676 @@
+table DIM_PRODUCTOS
+	lineageTag: 15b2bf7d-7a04-4173-9fff-b3bac3cf6467
+
+	column ID_PRODUCTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 4224950c-ac8f-450f-95fe-60b17c0614e2
+		summarizeBy: none
+		sourceColumn: ID_PRODUCTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 91958be0-037b-4d5c-9017-8c5d876ea6fd
+		summarizeBy: sum
+		sourceColumn: PRODUCTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU
+		dataType: string
+		lineageTag: 0c2eea9b-e403-45ef-85af-0ecf6479583e
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION
+		dataType: string
+		lineageTag: bd18e636-4bb9-43da-b678-fb0f23b3c142
+		summarizeBy: none
+		sourceColumn: DESCRIPCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARCA
+		dataType: string
+		lineageTag: f52f118d-7862-4a57-a825-aef970d5a5fe
+		summarizeBy: none
+		sourceColumn: MARCA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAMEALIAS
+		dataType: string
+		lineageTag: 77984572-b316-4166-ab91-aa9240141d2d
+		summarizeBy: none
+		sourceColumn: NAMEALIAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAPACIDAD
+		dataType: int64
+		formatString: 0
+		lineageTag: 8685a012-f900-4400-8e02-fd0e44bbef15
+		summarizeBy: sum
+		sourceColumn: CAPACIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PIEZAS_X_CAJA
+		dataType: int64
+		formatString: 0
+		lineageTag: 66988cf3-18bd-4c17-a81c-166a7d7954b4
+		summarizeBy: sum
+		sourceColumn: PIEZAS_X_CAJA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SABOR
+		dataType: string
+		lineageTag: fabbc770-50c9-40ec-923f-815bfe1e87b1
+		summarizeBy: none
+		sourceColumn: SABOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENVASE
+		dataType: string
+		lineageTag: 6847a6a9-b324-4aac-a9b5-6c38700712a2
+		summarizeBy: none
+		sourceColumn: ENVASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAVE_TIPO
+		dataType: string
+		lineageTag: e2b0b2ab-92f7-4c94-91de-83beb71a875b
+		summarizeBy: none
+		sourceColumn: CLAVE_TIPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAMILIA
+		dataType: string
+		lineageTag: 4b988c4e-74bf-454a-8f30-87db5c43e8c5
+		summarizeBy: none
+		sourceColumn: FAMILIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRADOS_ALCOHOL
+		dataType: string
+		lineageTag: 0a422e27-32e5-4e04-908d-f5b873babe30
+		summarizeBy: none
+		sourceColumn: GRADOS_ALCOHOL
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEA
+		dataType: string
+		lineageTag: c610f4ef-ca43-4a57-a134-735e94f6ac4e
+		summarizeBy: none
+		sourceColumn: LINEA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESENTACION
+		dataType: string
+		lineageTag: 9529513d-f7ee-41b2-9909-8c4b3009a0ac
+		summarizeBy: none
+		sourceColumn: PRESENTACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU-CLASE
+		dataType: string
+		lineageTag: 9225df58-ada6-43ca-9ef8-814480b078b7
+		summarizeBy: none
+		sourceColumn: SKU-CLASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBCATEGORIA
+		dataType: string
+		lineageTag: a6185b73-974b-4c60-9dd0-6084c3a6dc3c
+		summarizeBy: none
+		sourceColumn: SUBCATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBFAMILIA
+		dataType: string
+		lineageTag: 924aa6dd-8a49-4597-bf8a-1aba89870bbe
+		summarizeBy: none
+		sourceColumn: SUBFAMILIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_DE_PRODUCCION
+		dataType: string
+		lineageTag: 1e569380-22fd-48b9-8197-59fb575dca19
+		summarizeBy: none
+		sourceColumn: TIPO_DE_PRODUCCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBMARCA
+		dataType: string
+		lineageTag: 21c4d020-d7b0-4d77-8e18-0d255f82ef94
+		summarizeBy: none
+		sourceColumn: SUBMARCA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DO
+		dataType: string
+		lineageTag: 432aff39-cce3-4d9d-be08-91fcabe195ff
+		summarizeBy: none
+		sourceColumn: DO
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDAD
+		dataType: string
+		lineageTag: 3860f3cf-560c-4faf-b652-f8adb610bc25
+		summarizeBy: none
+		sourceColumn: UNIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTO_PADRE
+		dataType: string
+		lineageTag: b5523238-d870-451a-977e-89d9edac2032
+		summarizeBy: none
+		sourceColumn: PRODUCTO_PADRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAIS_ORIGEN
+		dataType: string
+		lineageTag: 96a7b646-1fd2-4ea6-ae63-f35d923db8de
+		summarizeBy: none
+		sourceColumn: PAIS_ORIGEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTO_TERMINADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 42055f92-1b49-4e71-9b5f-bf8912397d57
+		summarizeBy: sum
+		sourceColumn: PRODUCTO_TERMINADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FACTOR_CAJA_CJ9L
+		dataType: double
+		lineageTag: b96db883-7ae0-47fe-b4b8-2b2cae7164df
+		summarizeBy: sum
+		sourceColumn: FACTOR_CAJA_CJ9L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_CAJA_L
+		dataType: double
+		lineageTag: 71a4259c-dd82-4172-96e6-9ac447814893
+		summarizeBy: sum
+		sourceColumn: FACTOR_CAJA_L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_CAJA_PIEZA
+		dataType: double
+		lineageTag: 685bf22e-567e-43b8-91e6-fb3ede32caa0
+		summarizeBy: sum
+		sourceColumn: FACTOR_CAJA_PIEZA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_PALLET_CAJA
+		dataType: double
+		lineageTag: cc802450-37b5-4c0c-881c-15b41155b6cb
+		summarizeBy: sum
+		sourceColumn: FACTOR_PALLET_CAJA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_PIEZA_CAJA
+		dataType: double
+		lineageTag: 9c68e266-02ba-4ff6-9dd0-fbfe51b9a749
+		summarizeBy: sum
+		sourceColumn: FACTOR_PIEZA_CAJA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_PIEZA_L
+		dataType: double
+		lineageTag: 486e7435-3001-44e6-9221-601840d5cc56
+		summarizeBy: sum
+		sourceColumn: FACTOR_PIEZA_L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_CAJA_PALLET
+		dataType: double
+		lineageTag: 46e7c074-4294-461a-b40f-f4475dac7371
+		summarizeBy: sum
+		sourceColumn: FACTOR_CAJA_PALLET
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_CJ9L_CAJA
+		dataType: double
+		lineageTag: 6a91bcce-a2d2-463f-8158-f8700c65cf0d
+		summarizeBy: sum
+		sourceColumn: FACTOR_CJ9L_CAJA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_L_CAJA
+		dataType: double
+		lineageTag: 6d9a8304-51f5-4d20-9314-56fa1314e7a0
+		summarizeBy: sum
+		sourceColumn: FACTOR_L_CAJA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_ROLLO_M
+		dataType: double
+		lineageTag: 96ba486c-1a06-40f8-afab-f404fc710418
+		summarizeBy: sum
+		sourceColumn: FACTOR_ROLLO_M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_CAJA_M
+		dataType: double
+		lineageTag: 9cf3ddda-d3c2-4f48-9578-72bb67905ee0
+		summarizeBy: sum
+		sourceColumn: FACTOR_CAJA_M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_GAL_L
+		dataType: double
+		lineageTag: a9b4c7f0-ce3c-4b93-a9e9-953f9681b63d
+		summarizeBy: sum
+		sourceColumn: FACTOR_GAL_L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_L_GAL
+		dataType: double
+		lineageTag: cf95b05e-3bba-400d-a12b-91874b554f85
+		summarizeBy: sum
+		sourceColumn: FACTOR_L_GAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_KG_L
+		dataType: double
+		lineageTag: 4b00394e-18fa-45a9-a904-547c426a8282
+		summarizeBy: sum
+		sourceColumn: FACTOR_KG_L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_L_KG
+		dataType: double
+		lineageTag: 0ca064aa-8b70-4085-a243-afd18100bfa0
+		summarizeBy: sum
+		sourceColumn: FACTOR_L_KG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_MILLAR_PIEZAS
+		dataType: double
+		lineageTag: f306fdd3-a965-4ed0-8dda-36f5dbf2e64a
+		summarizeBy: sum
+		sourceColumn: FACTOR_MILLAR_PIEZAS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_PALLET_300ML-12
+		dataType: double
+		lineageTag: 0bdc799f-502e-434f-b74b-4176e97aa090
+		summarizeBy: sum
+		sourceColumn: FACTOR_PALLET_300ML-12
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FACTOR_PIEZAS_GRAMAJE
+		dataType: double
+		lineageTag: d5b05548-4396-4d9a-9e02-9a2fb3834514
+		summarizeBy: sum
+		sourceColumn: FACTOR_PIEZAS_GRAMAJE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GRUPO_MATERIA_PRIMA
+		dataType: string
+		lineageTag: 4da34964-2106-4be5-b6f7-06fbc0462ddf
+		summarizeBy: none
+		sourceColumn: GRUPO_MATERIA_PRIMA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CARGA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3b30966d-6e95-4577-be0a-088a5818fc9d
+		summarizeBy: none
+		sourceColumn: FECHA_CARGA
+
+		variation Variación
+			isDefault
+			relationship: 24892a23-3fde-4578-945e-7faf9c37ce8f
+			defaultHierarchy: LocalDateTable_69b15ca2-c77d-40a9-a987-fc1cfc7faa6f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_MARCA_FINANZAS
+		dataType: string
+		lineageTag: 969ec035-9039-443a-8a77-94966590e937
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_MARCA_FINANZAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PRODUCTO_TERMINADO
+		dataType: string
+		lineageTag: 16adc41a-3256-4b0f-9adf-193b7aa035d0
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PRODUCTO_TERMINADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PLANEACION_1
+		dataType: string
+		lineageTag: 8e5d88f0-a572-41c1-9396-d5b4662909f5
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PLANEACION_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PLANEACION_2
+		dataType: string
+		lineageTag: 7822de09-f7d1-4677-b97d-ff0d44d1dfef
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PLANEACION_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PLANEACION_3
+		dataType: string
+		lineageTag: 9f18515e-b69c-4fd6-b481-bf54bdbfce4e
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PLANEACION_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PLANEACION_4
+		dataType: string
+		lineageTag: 82066315-dcd4-4e6d-8c85-faaa29d2551c
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PLANEACION_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGRUPADOR_PLANEACION_5
+		dataType: string
+		lineageTag: 81429858-8b7b-424f-ba93-cae45fbb65fb
+		summarizeBy: none
+		sourceColumn: AGRUPADOR_PLANEACION_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEA_DE_NEGOCIO
+		dataType: string
+		lineageTag: 21e96fc3-34a9-48a4-93c8-98792a651a19
+		summarizeBy: none
+		sourceColumn: LINEA_DE_NEGOCIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPO_COSTOS
+		dataType: string
+		lineageTag: 171825fb-fbdb-474b-b105-bf5eb814d4f4
+		summarizeBy: none
+		sourceColumn: GRUPO_COSTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_PRODUCTO
+		dataType: int64
+		formatString: 0
+		lineageTag: bf367add-3749-428c-bb86-ba778e432bfe
+		summarizeBy: sum
+		sourceColumn: TIPO_PRODUCTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDAD_MEDIDA
+		dataType: string
+		lineageTag: c74b3ead-a1a3-4549-aa83-8f6cb2b3f923
+		summarizeBy: none
+		sourceColumn: UNIDAD_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ABCVALUE
+		dataType: string
+		lineageTag: 8678daee-df2c-4b53-a435-d3a2a471ba7b
+		summarizeBy: none
+		sourceColumn: ABCVALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPO_ARTICULO
+		dataType: string
+		lineageTag: 636551e0-35f4-47d0-b463-dafe36d29d6b
+		summarizeBy: none
+		sourceColumn: GRUPO_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BRAND OWNER'
+		dataType: string
+		lineageTag: e6c8010a-e204-48df-899c-543320a60f7e
+		summarizeBy: none
+		sourceColumn: BRAND OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: ad5cc04e-ec4e-437c-8a4a-bd4d8b736190
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DESTINO DE PRODUCCION'
+		dataType: string
+		lineageTag: f7225286-710c-4ae9-ba00-6eac0ac2b413
+		summarizeBy: none
+		sourceColumn: DESTINO DE PRODUCCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEA2
+		dataType: string
+		lineageTag: a099fc3e-4946-4e82-93b6-ed75cfc5d9ee
+		summarizeBy: none
+		sourceColumn: LINEA2
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARCA_2
+		dataType: string
+		lineageTag: 9d7c808b-b31c-48d8-9db2-b09b04acf480
+		summarizeBy: none
+		sourceColumn: MARCA_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEGMENTO
+		dataType: string
+		lineageTag: ec051312-9adb-4da7-b792-fa4216ed5a7d
+		summarizeBy: none
+		sourceColumn: SEGMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EAN13
+		dataType: string
+		lineageTag: 50ef65b6-cd93-4a7f-8ceb-637b02f1ee93
+		summarizeBy: none
+		sourceColumn: EAN13
+
+		annotation SummarizationSetBy = Automatic
+
+	column DUN14
+		dataType: string
+		lineageTag: 1edcf49b-787e-4b27-865f-a2ee2e8cc3d8
+		summarizeBy: none
+		sourceColumn: DUN14
+
+		annotation SummarizationSetBy = Automatic
+
+	column LIN_PROD
+		dataType: string
+		lineageTag: 6befffa3-e885-49cf-abf3-9fdc0e23e4ae
+		summarizeBy: none
+		sourceColumn: LIN_PROD
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUC
+		dataType: string
+		lineageTag: 4ce8ca2e-c12f-4dbc-8793-8a8379f069ca
+		summarizeBy: none
+		sourceColumn: CUC
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILIAL_TERCERO
+		dataType: string
+		lineageTag: 9e30e99b-949b-4387-b2f5-01df75237a0b
+		summarizeBy: none
+		sourceColumn: FILIAL_TERCERO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANAL
+		dataType: string
+		lineageTag: 6a76c9e3-69e5-434e-bc0d-fc9c6292736d
+		summarizeBy: none
+		sourceColumn: CANAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUCURSAL
+		dataType: string
+		lineageTag: 8cecf6eb-5c1c-47b9-a278-0529cb33f673
+		summarizeBy: none
+		sourceColumn: SUCURSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA
+		dataType: string
+		lineageTag: 453a9264-7b18-48a7-bf4e-ba5f4f94d2f3
+		summarizeBy: none
+		sourceColumn: AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CENTRO_DE_COSTOS
+		dataType: string
+		lineageTag: 529bf74f-fdfd-438d-bde2-72d63efefdd0
+		summarizeBy: none
+		sourceColumn: CENTRO_DE_COSTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTICIPABLE
+		dataType: string
+		lineageTag: 0e4894ef-ea05-46e7-839b-6c09aa2cc0b3
+		summarizeBy: none
+		sourceColumn: PARTICIPABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEPARTAMENTO
+		dataType: string
+		lineageTag: b6b1ada0-1db7-4b8f-a277-acee4a509569
+		summarizeBy: none
+		sourceColumn: DEPARTAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_NOMBRE = ```
+			LOOKUPVALUE(DIM_CENTRO_COSTOS[CC_NOMBRE],DIM_CENTRO_COSTOS[CC_VALOR],DIM_PRODUCTOS[CENTRO_DE_COSTOS]) 
+			```
+		lineageTag: 81ab1b63-ae13-4cea-87be-0880ab89ce9d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PART_NOMBRE = LOOKUPVALUE(DIM_PART[PART_NOMBRE],DIM_PART[PART_VALOR],DIM_PRODUCTOS[PARTICIPABLE])
+		lineageTag: 15ce0c80-b6ff-44e8-bb0a-a21a2e9ac21a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PRODUCTOS = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_DIM_PRODUCTOS = Origen{[Schema="dbo",Item="DIM_PRODUCTOS"]}[Data]
+				in
+				    dbo_DIM_PRODUCTOS
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,258 @@
+relationship f5244105-a720-40ca-aa3f-77cf2fe8b9fa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaDeDocumento
+	toColumn: LocalDateTable_9d8638c4-18f5-4c7e-a166-dc91a11cd4eb.Date
+
+relationship e31c0f16-454e-4649-9734-78cc78b0d974
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaTransaccion
+	toColumn: LocalDateTable_7912f706-eb67-4527-b752-d0fde533cb7a.Date
+
+relationship 5d6a6bd6-3d3c-47d5-93b2-836d35f778f3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaVencimiento
+	toColumn: LocalDateTable_f8bd85f1-17f2-42fa-b417-c1f670e00a45.Date
+
+relationship c3007007-4e0c-4bfb-9728-d9db09a5eb84
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaUltimoPago
+	toColumn: LocalDateTable_e8df2bde-a841-4039-9372-6b62f0a35ca5.Date
+
+relationship 95fa23d2-1c9c-4e6c-9082-034dbbf76d6f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaDeLiquidacion
+	toColumn: LocalDateTable_1e4b7cec-c23f-48e7-acd8-ea71a60f31ce.Date
+
+relationship 8ad100b0-d73a-4870-9de4-5237f9e72385
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.FechaDeCierre
+	toColumn: LocalDateTable_3bdef9c1-bc69-428d-bcf9-c372f7ce39ff.Date
+
+relationship d6931070-3aeb-4ab3-8c52-38a5f7f1c54a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactPagosFacturas.MaxFechaRecepcion
+	toColumn: LocalDateTable_4b93c69c-6a31-4d8b-89f5-ba29a4034e77.Date
+
+relationship f019e40f-9af1-4fbf-84d4-48d9f023f257
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasProveedorAbiertas.FechaDeRegistroVto
+	toColumn: LocalDateTable_28d7883c-0648-4565-8efd-64a75c18ce10.Date
+
+relationship 29409bb9-42e7-4060-b5cc-48186d5c855c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasProveedorAbiertas.FechaDeVencimiento
+	toColumn: LocalDateTable_c04b4989-3e07-44ca-bd83-dfaa73d589ea.Date
+
+relationship f2400dc7-2f27-4b98-a2b6-971f70b2c4c3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasProveedorAbiertas.FechaDelDescuentoPorProntoPago
+	toColumn: LocalDateTable_804147e6-13ac-457c-9076-15e8cbb1045e.Date
+
+relationship 867678cc-4cdf-4796-b26f-fd8828def325
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasProveedorAbiertas.FechaDeDocumento
+	toColumn: LocalDateTable_23f753af-0c98-43c7-bda5-0534cee5ecdf.Date
+
+relationship aafa70d0-e77c-4f3b-a6b0-a63e8f8c33a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasDeProveedorPendientes.FechaDeLaFactura
+	toColumn: LocalDateTable_4da625e5-6cd5-4526-a835-0ad3a7778294.Date
+
+relationship aa2d4ebf-7d63-46f9-a6c9-8288e58794df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFacturasDeProveedorPendientes.FechaDeRecepcionDeLaFactura
+	toColumn: LocalDateTable_349cda89-d4f8-4634-844a-54c315652fba.Date
+
+relationship 03ccb2d6-33b1-4f40-ba44-5ec0ff072dd9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimSolicitudDeCompraRequisicion.FechaCreacion
+	toColumn: LocalDateTable_19557333-cc06-43ba-b9e0-fe9391a61ca6.Date
+
+relationship 3d2f68ff-3c4e-4128-9330-4f879cf6c981
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimFecha.Fecha
+	toColumn: LocalDateTable_1f443b97-44c8-4787-8227-0e0a64551508.Date
+
+relationship 155eef2b-72bd-4473-add7-4dceecb8380e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimOrdenDeCompra.FechaCreacion
+	toColumn: LocalDateTable_c7feac8b-4bd5-414f-be96-1bf7710ae854.Date
+
+relationship AutoDetected_e630772b-5d53-4fc0-97a4-48aecf0306d3
+	crossFilteringBehavior: bothDirections
+	fromColumn: sdcr_oc.IdOrdenDeCompra
+	toColumn: DimOrdenDeCompra.IdOrdenDeCompra
+
+relationship 28acae8b-618a-adba-429e-3f301a3db0cc
+	fromColumn: sdcr_oc.IdProducto
+	toColumn: DimProducto.IdProducto
+
+relationship 8f706445-c671-32ec-0bd2-212ca6de00eb
+	crossFilteringBehavior: bothDirections
+	fromColumn: sdcr_oc.IdSolicitudDeCompraRequisicion
+	toColumn: DimSolicitudDeCompraRequisicion.IdSolicitudDeCompraRequisicion
+
+relationship ac1c60b3-3b41-b427-615d-fe4790a5b7ad
+	fromColumn: FactPagosFacturas.IdOrdenDeCompra
+	toColumn: DimOrdenDeCompra.IdOrdenDeCompra
+
+relationship afbbf89c-81c3-7328-faac-32eac83ae790
+	fromColumn: FactPagosFacturas.Factura
+	toColumn: DimFactura.IdFactura
+
+relationship 0cd51b0f-89aa-1ef1-1989-2d5fa5e366e5
+	fromColumn: FactFacturasProveedorAbiertas.IdOrdenDeCompra
+	toColumn: DimOrdenDeCompra.IdOrdenDeCompra
+
+relationship 3311d368-028f-90a6-1a0e-e7f928240a50
+	crossFilteringBehavior: bothDirections
+	fromColumn: FactFacturasDeProveedorPendientes.IdOrdenDeCompra
+	toColumn: DimOrdenDeCompra.IdOrdenDeCompra
+
+relationship 680c6528-b04b-f432-428e-bf313f6f0500
+	fromColumn: FactFacturasProveedorAbiertas.Factura
+	toColumn: DimFactura.IdFactura
+
+relationship 0ca01a53-e43d-41d2-995f-f5585bc61170
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactSolicitudDeCompraRequisicion.modifieddatetime
+	toColumn: LocalDateTable_312a3e9f-326e-42e1-a935-7936d176f9bd.Date
+
+relationship a4d4efed-2792-4a24-8d42-ad655a11443e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactSolicitudDeCompraRequisicion.FechaDeEnvío
+	toColumn: LocalDateTable_dd99f5b6-f15e-4e65-8611-ae7a456ba0df.Date
+
+relationship 82748f6c-4ec7-4c00-bb86-a69ea7a66714
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactSolicitudDeCompraRequisicion.FechaContable
+	toColumn: LocalDateTable_c5d16db7-e04a-4a06-a751-b26720516a19.Date
+
+relationship db0cb415-ad3a-46c6-b11d-fd837b742d36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactSolicitudDeCompraRequisicion.FechaSolicitada
+	toColumn: LocalDateTable_6a14c0c9-d4b9-4743-9d80-ec3ae02f5c37.Date
+
+relationship 661fbf13-20dc-00b4-6bc2-59ad6ddb63ce
+	fromColumn: FactSolicitudDeCompraRequisicion.IdEstadoLinea
+	toColumn: DimEstadoSolicitudDeCompraReq.IdEstado
+
+relationship 179ed53a-cb56-8667-c3f4-df31c5b35d83
+	fromColumn: FactSolicitudDeCompraRequisicion.FechaCreacion
+	toColumn: DimFecha.Fecha
+
+relationship 3bda51de-26f7-bcf9-3836-ac95e7a44287
+	fromColumn: FactSolicitudDeCompraRequisicion.IdSdcrOc
+	toColumn: sdcr_oc.IdSdcrOc
+
+relationship a73df2e2-cc09-5b88-55c7-bd8021286453
+	fromColumn: FactSolicitudDeCompraRequisicion.IdRazon
+	toColumn: DimRazon.IdRazon
+
+relationship 3303f547-f496-8e23-a768-dcf52ea43f67
+	fromColumn: FactSolicitudDeCompraRequisicion.IdPreparador
+	toColumn: DimEmpleado.IdEmpleado
+
+relationship a3a94372-c2bf-2d1b-9db0-e30a50884a73
+	crossFilteringBehavior: bothDirections
+	fromColumn: FactSolicitudDeCompraRequisicion.IdCategoriaDeCompras
+	toColumn: DimCategoriaDeCompras.IdCategoriaDeCompras
+
+relationship AutoDetected_992fc2b2-cfcd-4857-8c7b-6a0e3be719d2
+	crossFilteringBehavior: bothDirections
+	fromColumn: sdcr_oc.IdProyecto
+	toColumn: DimProyecto.IdProyecto
+
+relationship 5cbd804c-2d52-445e-b6fd-5f3ab2500dcf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeRecepcionSolicitada
+	toColumn: LocalDateTable_ec40d0b6-d481-47b7-8440-7d0373891a6d.Date
+
+relationship 11843d98-a7b0-49c8-9887-8c97c4dfc4a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeServicio
+	toColumn: LocalDateTable_7c5aa1cc-2cca-4598-acc2-1f953278d0d2.Date
+
+relationship 2e0333d9-0600-4771-82ce-8612f221646e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaContable
+	toColumn: LocalDateTable_0b72f80e-5df9-4b9d-a728-66cb0a94ea5e.Date
+
+relationship dc20c90b-67f3-4299-9c48-1f3acc9ab2bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeEnvioConfirmada
+	toColumn: LocalDateTable_7fa857f6-2fb4-4c6f-8b0b-0b689d7e2cf4.Date
+
+relationship d7e0dcfc-21ee-4494-a72e-3d07f751fc7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeRecepcionConfirmada
+	toColumn: LocalDateTable_4fca8da3-ffce-4193-b2b5-4fb8c8bb44f3.Date
+
+relationship 351036ed-e9a0-4565-bab1-fc17beb61164
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeVencimiento
+	toColumn: LocalDateTable_32ce6f9e-a20d-4ea3-a97d-6ad95f688ec3.Date
+
+relationship 1ae09ef7-f456-4839-bc1f-c4afba0bf26b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeCreacionOrdenDeCompra
+	toColumn: LocalDateTable_a9b440a4-0cbb-490a-858d-9aa27704cc3b.Date
+
+relationship fd8f1e0b-1d81-416b-97b9-a8eac0153df0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaDeCreacionSolicitud
+	toColumn: LocalDateTable_0aa54e94-df51-43c5-9338-dad4558ab5e9.Date
+
+relationship 1ebce55a-ff58-4319-a4f6-62e03159aa36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactOrdenDeCompra.FechaRecepcion
+	toColumn: LocalDateTable_7b8b302f-364d-458b-bf7f-59c47900230e.Date
+
+relationship AutoDetected_3eace3c2-a36a-4c2e-b4be-439360553b27
+	crossFilteringBehavior: bothDirections
+	fromColumn: FactOrdenDeCompra.IdSdcrOc
+	toColumn: sdcr_oc.IdSdcrOc
+
+relationship AutoDetected_c5e7aead-651a-4439-8c9e-80a3435c6fe7
+	fromColumn: FactOrdenDeCompra.IdEstadoDeOrdenDeCompra
+	toColumn: DimEstadoOrdenDeCompra.IdEstadoDeOrdenDeCompra
+
+relationship AutoDetected_af2cb83d-c101-4c31-9e00-3601b8501c6b
+	fromColumn: FactOrdenDeCompra.IdEstadoDeAprobacion
+	toColumn: DimEstadoAprobacion.IdEstadoDeAprobacion
+
+relationship 2546712f-345b-40a4-ae56-444458f7a060
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactRecepcion.FechaRecepcion
+	toColumn: LocalDateTable_d8375248-be06-437a-a1e7-3e573d3472a5.Date
+
+relationship 1b539ce6-943d-4821-ad1f-3540aeb980d9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactRecepcion.FechaPrevista
+	toColumn: LocalDateTable_b25ab197-5acd-4930-bbd7-63d8e0c0587d.Date
+
+relationship AutoDetected_b7c343c2-3b84-4b56-96ce-c0305faf3715
+	crossFilteringBehavior: bothDirections
+	fromColumn: FactRecepcion.RecepcionDelProducto
+	toColumn: DimRecepcion.RecepcionDelProducto
+
+relationship AutoDetected_4041b94f-5dd7-4120-bd0d-80a166cc8e77
+	fromColumn: FactRecepcion.IdOrdenDeCompra
+	toColumn: DimOrdenDeCompra.IdOrdenDeCompra
+
+relationship 08ae1509-38a4-cf64-87e2-84854d20e768
+	fromColumn: FactRecepcion.NumeroDeProducto
+	toColumn: DimProducto.IdProducto
+
+relationship 0fafddb9-ca44-d79b-94a4-77ead828bb1e
+	fromColumn: FactPagosFacturas.Cuenta
+	toColumn: DimProveedor.IdCuentaProveedor
+
+relationship c83c0701-9eae-02b1-3473-8ed76cba2214
+	fromColumn: sdcr_oc.CuentaDeProveedor
+	toColumn: DimProveedor.IdCuentaProveedor
+
+relationship 2a9d2fdd-4c3c-3f73-ba3e-e270a9fe299e
+	fromColumn: FactFacturasProveedorAbiertas.CuentaDeProveedor
+	toColumn: DimProveedor.IdCuentaProveedor
+

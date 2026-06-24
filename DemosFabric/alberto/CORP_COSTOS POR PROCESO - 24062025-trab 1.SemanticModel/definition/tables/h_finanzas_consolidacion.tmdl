@@ -1,0 +1,416 @@
+table h_finanzas_consolidacion
+	lineageTag: e55655f3-fef4-4132-9fde-3918f5d8a35d
+
+	column Desc_Localidad = LOOKUPVALUE(dim_a_localidad[Dsc_A_Localidad],dim_a_localidad[Sk_A_Localidad],h_finanzas_consolidacion[SK_A_localidad])
+		lineageTag: 4df539bb-cb52-47c9-b71a-ada173e65abb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Proceso = LOOKUPVALUE(dim_b_proceso_productivo[Dsc_B_ProcesoProductivo],dim_b_proceso_productivo[Sk_B_ProcesoProductivo],h_finanzas_consolidacion[SK_B_ProcesoProductivo])
+		lineageTag: 8ead6728-a086-4cca-8adc-4c82dae0258d
+		summarizeBy: none
+		sortByColumn: 'PROCESOS.ORDEN'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Consolidacion
+		dataType: string
+		lineageTag: f306f277-c679-408e-a7e6-0d526d436e7c
+		summarizeBy: none
+		sourceColumn: Consolidacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_Compania
+		dataType: string
+		lineageTag: 08fba12b-8ce0-44b0-99d9-f712ce921e61
+		summarizeBy: none
+		sourceColumn: Cve_Compania
+
+		annotation SummarizationSetBy = Automatic
+
+	column PorcentajeMayoritario
+		dataType: double
+		lineageTag: ba50b82c-8b20-43a7-9655-937a1f41c9e6
+		summarizeBy: sum
+		sourceColumn: PorcentajeMayoritario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Scenario
+		dataType: string
+		lineageTag: a07892fa-fc00-4240-8a56-e3ce8eb3c5e4
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCredit
+		dataType: int64
+		formatString: 0
+		lineageTag: f3f51255-9d88-4da2-afef-936973f4e7c0
+		summarizeBy: sum
+		sourceColumn: IsCredit
+
+		annotation SummarizationSetBy = Automatic
+
+	column JournalCategory
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c5997bf-c78c-4306-97c8-3f803ef848fe
+		summarizeBy: sum
+		sourceColumn: JournalCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostingType
+		dataType: int64
+		formatString: 0
+		lineageTag: 4711c0a7-d8c8-4eaa-8784-9463d40a31a4
+		summarizeBy: sum
+		sourceColumn: PostingType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaContable
+		dataType: string
+		lineageTag: 0a415eef-9905-4894-89f6-0d8795d27852
+		summarizeBy: none
+		sourceColumn: CuentaContable
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParteRelacionada
+		dataType: string
+		lineageTag: bcabcdff-e746-47ee-9c61-a6e1ff6e053b
+		summarizeBy: none
+		sourceColumn: ParteRelacionada
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImporteSinIntercompanias
+		dataType: double
+		lineageTag: 2a768e13-07ca-4a71-815e-75dd8b1020e0
+		summarizeBy: sum
+		sourceColumn: ImporteSinIntercompanias
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UtilidadVentaActivoFijo
+		dataType: double
+		lineageTag: 0222fccd-70bf-4875-87cb-c0acb8524ab2
+		summarizeBy: sum
+		sourceColumn: UtilidadVentaActivoFijo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PerdidaVentaActivoFijo
+		dataType: double
+		lineageTag: d4ce224c-5a96-4105-9ec5-ae6f46e80b65
+		summarizeBy: sum
+		sourceColumn: PerdidaVentaActivoFijo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InventariosIntercoResultados
+		dataType: double
+		lineageTag: 3b934151-99e8-4459-bbbc-5b655009717f
+		summarizeBy: sum
+		sourceColumn: InventariosIntercoResultados
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProcesoProductivo
+		dataType: string
+		lineageTag: 413c4a92-9f3b-4e99-bf60-13c4f1cf30b1
+		summarizeBy: none
+		sourceColumn: ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: 9125df03-043f-405e-bcba-f4d2ea8f2039
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Importe
+		dataType: double
+		formatString: #,0
+		lineageTag: 7f29bec0-8b7f-4a95-b03b-27b4e0faa6c6
+		summarizeBy: sum
+		sourceColumn: Importe
+
+		annotation SummarizationSetBy = Automatic
+
+	column EliminacionesCapitalTotal
+		dataType: double
+		lineageTag: 86b84ab3-9538-4e5c-a6eb-4c54fb5521e8
+		summarizeBy: sum
+		sourceColumn: EliminacionesCapitalTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Intercompanias
+		dataType: double
+		lineageTag: 3abb6617-466f-4f24-8695-e4e53c74ced4
+		summarizeBy: sum
+		sourceColumn: Intercompanias
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ImporteMayoritario
+		dataType: double
+		lineageTag: 327b9144-6082-4cf5-a7a6-12efe445d057
+		summarizeBy: sum
+		sourceColumn: ImporteMayoritario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Periodo
+		dataType: string
+		lineageTag: e24bd030-5f46-47c0-be3a-d735cd46328d
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column EliminacionesCapitalMinoritario
+		dataType: double
+		lineageTag: d2737355-d3d8-4a9e-8447-a0c5217b6b80
+		summarizeBy: sum
+		sourceColumn: EliminacionesCapitalMinoritario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EliminacionesCapitalMayoritario
+		dataType: double
+		lineageTag: 95fb432d-fb0d-49e7-8621-c6096cbd8dc1
+		summarizeBy: sum
+		sourceColumn: EliminacionesCapitalMayoritario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ImporteMinoritario
+		dataType: double
+		lineageTag: 5527249c-250d-4c36-8b3d-c5aaef5c1633
+		summarizeBy: sum
+		sourceColumn: ImporteMinoritario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Localidad
+		dataType: string
+		lineageTag: 3afb9164-43ce-449d-a0c7-6ddd6deeffef
+		summarizeBy: none
+		sourceColumn: Localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recurso
+		dataType: string
+		lineageTag: f7225a31-afe5-4077-8ef2-7d736ff94a75
+		summarizeBy: none
+		sourceColumn: Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_GLD
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bce68303-5cbb-4439-985d-d71ba3c94c7e
+		summarizeBy: none
+		sourceColumn: INSERT_GLD
+
+		variation Variación
+			isDefault
+			relationship: e32b987a-8f8c-4baf-9de5-7f4ece6d3a38
+			defaultHierarchy: LocalDateTable_e305e8c0-6f0d-452e-a446-9c8de2342272.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_GLD
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6cf3de08-2574-4e55-adb8-415d5ae827a5
+		summarizeBy: none
+		sourceColumn: UPDATE_GLD
+
+		variation Variación
+			isDefault
+			relationship: b0707211-9b9f-4b46-affb-257d8a32abb1
+			defaultHierarchy: LocalDateTable_fce4e3a4-9667-40a4-a91a-91ab9771642e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo1
+		dataType: string
+		lineageTag: 928ae002-31ad-474a-ae75-64c93508f7b6
+		summarizeBy: none
+		sourceColumn: Periodo1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_A_localidad
+		dataType: string
+		lineageTag: 47df25d1-c454-40f0-b0a7-0075f5581be3
+		summarizeBy: none
+		sourceColumn: SK_A_localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_C_Recurso
+		dataType: string
+		lineageTag: c7af0bea-6b34-48d6-a666-31d88c1c6678
+		summarizeBy: none
+		sourceColumn: SK_C_Recurso
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_B_ProcesoProductivo
+		dataType: string
+		lineageTag: 925ac37c-e512-47a0-92a3-04b3de0cd356
+		summarizeBy: none
+		sourceColumn: SK_B_ProcesoProductivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sk_CuentasContables
+		dataType: string
+		lineageTag: b78f6347-a646-4de0-83a5-1b9d4cd8aa85
+		summarizeBy: none
+		sourceColumn: Sk_CuentasContables
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dim_cuentas_contables.TipoCosto'
+		dataType: string
+		lineageTag: b51c97a6-29c8-49b2-90aa-9efbc4f769ed
+		summarizeBy: none
+		sourceColumn: dim_cuentas_contables.TipoCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dim_cuentas_contables.Partida'
+		dataType: string
+		lineageTag: 6d6cf6dc-f7c3-49ce-be3e-9952a1a5e9ec
+		summarizeBy: none
+		sourceColumn: dim_cuentas_contables.Partida
+		sortByColumn: 'dim_cuentas_contables.CONCEPTOS.ORDEN'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PROCESOS_ORDEN
+		dataType: string
+		lineageTag: 74272a30-b384-4c9e-a22a-306d6f62d766
+		summarizeBy: none
+		sourceColumn: ID_PROCESOS_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PROCESOS.ORDEN'
+		dataType: int64
+		formatString: 0
+		lineageTag: 556055fa-ab4f-4b1f-9972-8ee6f231ca15
+		summarizeBy: none
+		sourceColumn: PROCESOS.ORDEN
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = User
+
+	column Cve_MonedaLocal
+		dataType: string
+		lineageTag: 13e488c9-56fa-40fb-9c01-bd4c8ed936f0
+		summarizeBy: none
+		sourceColumn: Cve_MonedaLocal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImporteMXN
+		dataType: double
+		lineageTag: d144d24b-36c8-4f65-a624-15a199cf3aeb
+		summarizeBy: sum
+		sourceColumn: ImporteMXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ImporteUSD
+		dataType: double
+		lineageTag: 01b3a561-b50f-46ba-a562-00709441da15
+		summarizeBy: sum
+		sourceColumn: ImporteUSD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'dim_cuentas_contables.CONCEPTOS.ORDEN'
+		dataType: double
+		lineageTag: 8131c816-fd7c-4472-88b3-6892f85965af
+		summarizeBy: sum
+		sourceColumn: dim_cuentas_contables.CONCEPTOS.ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Catalogo_CuentasContables
+		dataType: string
+		lineageTag: 4961aba5-fcab-4798-b2a5-040deb203744
+		summarizeBy: none
+		sourceColumn: Catalogo_CuentasContables
+
+		annotation SummarizationSetBy = Automatic
+
+	partition h_finanzas_consolidacion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "gld", [Query="Select *,CASE #(lf)When procesoproductivo = 101 THEN '101'#(lf)When procesoproductivo = 102 THEN '102'#(lf)When procesoproductivo = 104 THEN '104'#(lf)WHEN PROCESOPRODUCTIVO in ('105','106') THEN '105-106'#(lf)When procesoproductivo = 107 THEN '107'#(lf)When procesoproductivo = 108 THEN '108'#(lf)When procesoproductivo = 109 THEN '109'#(lf)When procesoproductivo = 111 THEN '111'#(lf)When procesoproductivo = 113 THEN '113'#(lf)ELSE cast(PROCESOPRODUCTIVO as char)#(lf)END ID_PROCESOS_ORDEN#(lf)#(lf)From H_finanzas_Consolidacion#(lf)Where ProcesoProductivo IN ('101','102','104','105','106','107','108','109','111','113') #(lf)and #(lf)(((CuentaContable Like '5201%' or CuentaContable Like '5202%')AND Cve_Compania <> 'CTK'  ) #(lf)       or (Left(CuentaContable,2)IN ('71','72','73','74','75')and Cve_Compania = 'CTK'))"]),
+				    #"Consultas combinadas1" = Table.NestedJoin(Origen, {"ID_PROCESOS_ORDEN"}, PROCESOS, {"ID_PROCESOS"}, "PROCESOS", JoinKind.LeftOuter),
+				    #"Se expandió PROCESOS" = Table.ExpandTableColumn(#"Consultas combinadas1", "PROCESOS", {"ORDEN"}, {"PROCESOS.ORDEN"}),
+				    #"Filas ordenadas" = Table.Sort(#"Se expandió PROCESOS",{{"PROCESOS.ORDEN", Order.Ascending}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Filas ordenadas",{{"Localidad", type text}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Tipo cambiado1",{{"ProcesoProductivo", type text}, {"Segmento", type text}}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Tipo cambiado", {"Sk_CuentasContables"}, dim_cuentas_contables, {"Sk_CuentasContables"}, "dim_cuentas_contables", JoinKind.LeftOuter),
+				    #"Se expandió dim_cuentas_contables" = Table.ExpandTableColumn(#"Consultas combinadas", "dim_cuentas_contables", {"TipoCosto", "Partida", "CONCEPTOS.ORDEN"}, {"dim_cuentas_contables.TipoCosto", "dim_cuentas_contables.Partida", "dim_cuentas_contables.CONCEPTOS.ORDEN"}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Se expandió dim_cuentas_contables", "Periodo1", each Text.Start([Periodo],6))
+				in
+				    #"Personalizada agregada"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,115 @@
+table dim_cuentas_contables
+	lineageTag: 35d0fa99-3bb1-4dab-86e9-49fa16319fd1
+
+	column Sk_CuentasContables
+		dataType: string
+		lineageTag: 54cfe52e-0753-41f2-9ca0-5702ba5ef076
+		summarizeBy: none
+		sourceColumn: Sk_CuentasContables
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cve_CuentaContable
+		dataType: string
+		lineageTag: 189efb20-3849-4a80-8dea-54c5a6af8d6c
+		summarizeBy: none
+		sourceColumn: Cve_CuentaContable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuenta_Consolidacion
+		dataType: string
+		lineageTag: 141d160f-dd93-4051-b282-5b9b30608a16
+		summarizeBy: none
+		sourceColumn: Cuenta_Consolidacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_CuentaContable
+		dataType: string
+		lineageTag: e7ee6fdb-a3cc-4029-9c66-912ca336a889
+		summarizeBy: none
+		sourceColumn: Dsc_CuentaContable
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoCosto
+		dataType: string
+		lineageTag: 5dcda29b-c6b3-4d10-9825-551e0e1e32d1
+		summarizeBy: none
+		sourceColumn: TipoCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partida
+		dataType: string
+		lineageTag: c14e3943-a99f-4ad6-b15a-8ccee95b9ad0
+		summarizeBy: none
+		sourceColumn: Partida
+		sortByColumn: 'CONCEPTOS.ORDEN'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dsc_Catalogo
+		dataType: string
+		lineageTag: 81d3c25d-3b25-4fd4-8ad1-81d2237cbb2d
+		summarizeBy: none
+		sourceColumn: Dsc_Catalogo
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ed0ed939-6852-4903-bfba-def6b260a974
+		summarizeBy: none
+		sourceColumn: INSERT_SVR
+
+		variation Variación
+			isDefault
+			relationship: ebae65d4-18f8-4a67-97c8-1a16b1f2ba4c
+			defaultHierarchy: LocalDateTable_c5e708e2-bc00-43c3-b415-98921560277e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_SVR
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d8346052-28ea-41e9-9b97-4d5bf11edc61
+		summarizeBy: none
+		sourceColumn: UPDATE_SVR
+
+		variation Variación
+			isDefault
+			relationship: a432b66f-db81-464c-b583-80d94a3ebe8d
+			defaultHierarchy: LocalDateTable_94131467-9ebf-4949-a6bf-77491463bb20.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CONCEPTOS.ORDEN'
+		dataType: double
+		lineageTag: 8ff310ca-5eb1-4cae-9e02-c69c4cc9ad60
+		summarizeBy: none
+		sourceColumn: CONCEPTOS.ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_cuentas_contables = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("eu2-cal-syn-ws-prd-ondemand.sql.azuresynapse.net", "svr", [Query="Select * From Dim_Cuentas_Contables#(lf)Where-- (Cve_CuentaContable like '5201%' or Cve_CuentaContable like '5202%') #(lf) --and#(lf) Tipocosto <>'Desconocido' and Partida <>'Desconocido'"]),
+				    #"Consultas combinadas" = Table.NestedJoin(Origen, {"Partida"}, CONCEPTOS, {"CONCEPTO"}, "CONCEPTOS", JoinKind.LeftOuter),
+				    #"Se expandió CONCEPTOS" = Table.ExpandTableColumn(#"Consultas combinadas", "CONCEPTOS", {"ORDEN"}, {"CONCEPTOS.ORDEN"}),
+				    #"Filas ordenadas" = Table.Sort(#"Se expandió CONCEPTOS",{{"CONCEPTOS.ORDEN", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

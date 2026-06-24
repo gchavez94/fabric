@@ -1,0 +1,46 @@
+table DimProducto
+	lineageTag: 0fecb42f-8bdd-42b7-bb9d-c26dc89eac4f
+
+	column IdProducto
+		dataType: string
+		lineageTag: ca8ea392-12d2-4781-9297-3436eb2f68b3
+		summarizeBy: none
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoDeProducto
+		dataType: int64
+		formatString: 0
+		lineageTag: ca0f25c8-ea8c-4ba5-a204-571adf34635b
+		summarizeBy: sum
+		sourceColumn: TipoDeProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoDeServicio
+		dataType: int64
+		formatString: 0
+		lineageTag: e33d4b32-88a2-4a19-8d41-420a93ebc6ab
+		summarizeBy: sum
+		sourceColumn: TipoDeServicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeProducto
+		dataType: string
+		lineageTag: bd6ce618-23c2-4fef-9d98-8cf196a24a54
+		summarizeBy: none
+		sourceColumn: NombreDeProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProducto = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimProducto = Origen{[Schema="dbo",Item="DimProducto"]}[Data]
+				in
+				    dbo_DimProducto
+

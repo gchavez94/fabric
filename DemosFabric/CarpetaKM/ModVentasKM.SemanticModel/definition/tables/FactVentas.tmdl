@@ -1,0 +1,102 @@
+table FactVentas
+	lineageTag: 281ea3ab-4a2e-4841-bac0-09a7b2cbd91b
+	sourceLineageTag: [dbo].[FactVentas]
+
+	column VENTA_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b9723201-ba95-4731-800d-ae89754ff6e0
+		sourceLineageTag: VENTA_ID
+		summarizeBy: count
+		sourceColumn: VENTA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6db4b7e5-08fb-4b92-9e8b-b8670a8f1f54
+		sourceLineageTag: FECHA
+		summarizeBy: none
+		sourceColumn: FECHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUCURSAL_CLIENTE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 30e5f10e-29ba-4f4d-81b9-72f76ad1c3fc
+		sourceLineageTag: SUCURSAL_CLIENTE
+		summarizeBy: sum
+		sourceColumn: SUCURSAL_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARTICULO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4df732f9-d76d-4ee3-b8cf-40a6e2d5eed5
+		sourceLineageTag: ARTICULO
+		summarizeBy: sum
+		sourceColumn: ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANTIDAD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 711b3347-591e-4648-b9fd-59279cf60aa1
+		sourceLineageTag: CANTIDAD
+		summarizeBy: sum
+		sourceColumn: CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBTOTAL
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 08971497-dee6-4f77-aa1a-3b5bb1230154
+		sourceLineageTag: SUBTOTAL
+		summarizeBy: sum
+		sourceColumn: SUBTOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column IVA
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2e5e25c8-6185-44b8-b51d-61f42416699f
+		sourceLineageTag: IVA
+		summarizeBy: sum
+		sourceColumn: IVA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VENDEDOR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cce89eb0-78ff-4fd3-9c46-0a2abd429ea4
+		sourceLineageTag: VENDEDOR
+		summarizeBy: none
+		sourceColumn: VENDEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactVentas = entity
+		mode: directLake
+		source
+			entityName: FactVentas
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

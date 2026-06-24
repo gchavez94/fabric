@@ -1,0 +1,118 @@
+table msdyn_msdyn_cannedmessage_liveworkstream
+	lineageTag: 2d56d22b-acc6-429e-9f0e-02a0c6e48673
+	sourceLineageTag: [dbo].[msdyn_msdyn_cannedmessage_liveworkstream]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8648341-0c18-4dcf-8b60-68c28e9ccfb4
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0d3ef02d-3cf6-45ca-93a9-89357ce8f815
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 714efa54-7598-47d7-bc25-48d21fb99d76
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_cannedmessageid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7df9ae25-af85-4e84-a719-a31ccd971d63
+		sourceLineageTag: msdyn_cannedmessageid
+		summarizeBy: none
+		sourceColumn: msdyn_cannedmessageid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_liveworkstreamid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 235a762a-0bfb-43e1-a570-2151408afb25
+		sourceLineageTag: msdyn_liveworkstreamid
+		summarizeBy: none
+		sourceColumn: msdyn_liveworkstreamid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_msdyn_cannedmessage_liveworkstreamid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 772777f4-c113-4af2-86f7-53c1b06b38a5
+		sourceLineageTag: msdyn_msdyn_cannedmessage_liveworkstreamid
+		summarizeBy: none
+		sourceColumn: msdyn_msdyn_cannedmessage_liveworkstreamid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c41c6f91-f63a-43bf-8c96-d3396fe0765a
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 62adcaa4-eac6-4a02-8d7f-9ffef862fceb
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 59f8a551-5d05-454a-84ee-6d71a4fc76f2
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 71797264-a69c-49ce-8240-d044028e4df8
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition msdyn_msdyn_cannedmessage_liveworkstream-4bd4273a-f093-459f-9fe3-0c591cc420f5 = entity
+		mode: directLake
+		source
+			entityName: msdyn_msdyn_cannedmessage_liveworkstream
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

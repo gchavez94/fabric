@@ -1,0 +1,927 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "StagingArticulos",
+        "sourceLineageTag": "[dbo].[StagingArticulos]",
+        "columns": [
+          {
+            "name": "Source.Name",
+            "dataType": "string",
+            "sourceColumn": "Source.Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Source.Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CodigoArticulo",
+            "dataType": "int64",
+            "sourceColumn": "CodigoArticulo",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CodigoArticulo",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DescArticulo",
+            "dataType": "string",
+            "sourceColumn": "DescArticulo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DescArticulo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Categoria",
+            "dataType": "string",
+            "sourceColumn": "Categoria",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Categoria",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Formato",
+            "dataType": "string",
+            "sourceColumn": "Formato",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Formato",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingArticulos",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingClientes",
+        "sourceLineageTag": "[dbo].[StagingClientes]",
+        "columns": [
+          {
+            "name": "CodigoGrupoCliente",
+            "dataType": "int64",
+            "sourceColumn": "CodigoGrupoCliente",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CodigoGrupoCliente",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nombre Grupo Sucursal",
+            "dataType": "string",
+            "sourceColumn": "Nombre Grupo Sucursal",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nombre Grupo Sucursal",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CodigoSucursal",
+            "dataType": "int64",
+            "sourceColumn": "CodigoSucursal",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CodigoSucursal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CP",
+            "dataType": "int64",
+            "sourceColumn": "CP",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CP",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pais",
+            "dataType": "string",
+            "sourceColumn": "Pais",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pais",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Colonia",
+            "dataType": "string",
+            "sourceColumn": "Colonia",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Colonia",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Desc_Estado",
+            "dataType": "string",
+            "sourceColumn": "Desc_Estado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Desc_Estado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Codigo_Estado",
+            "dataType": "string",
+            "sourceColumn": "Codigo_Estado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Codigo_Estado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Desc_Municipio",
+            "dataType": "string",
+            "sourceColumn": "Desc_Municipio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Desc_Municipio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Codigo_Municipio",
+            "dataType": "int64",
+            "sourceColumn": "Codigo_Municipio",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Codigo_Municipio",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LAT",
+            "dataType": "int64",
+            "sourceColumn": "LAT",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "LAT",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LONG",
+            "dataType": "int64",
+            "sourceColumn": "LONG",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "LONG",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingClientes",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingGrupoCliente",
+        "sourceLineageTag": "[dbo].[StagingGrupoCliente]",
+        "columns": [
+          {
+            "name": "CodigoGrupoCliente",
+            "dataType": "int64",
+            "sourceColumn": "CodigoGrupoCliente",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CodigoGrupoCliente",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NombreGrupoCliente",
+            "dataType": "string",
+            "sourceColumn": "NombreGrupoCliente",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NombreGrupoCliente",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "URL Web",
+            "dataType": "string",
+            "sourceColumn": "URL Web",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "URL Web",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingGrupoCliente",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingVendedor",
+        "sourceLineageTag": "[dbo].[StagingVendedor]",
+        "columns": [
+          {
+            "name": "Vendedor",
+            "dataType": "int64",
+            "sourceColumn": "Vendedor",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Vendedor",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NombreVendedor",
+            "dataType": "string",
+            "sourceColumn": "NombreVendedor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NombreVendedor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingVendedor",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingVentasMayoreo",
+        "sourceLineageTag": "[dbo].[StagingVentasMayoreo]",
+        "columns": [
+          {
+            "name": "Source.Name",
+            "dataType": "string",
+            "sourceColumn": "Source.Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Source.Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "VENTA_ID",
+            "dataType": "int64",
+            "sourceColumn": "VENTA_ID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENTA_ID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FECHA",
+            "dataType": "dateTime",
+            "sourceColumn": "FECHA",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "FECHA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUCURSAL_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SUCURSAL_CLIENTE",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUCURSAL_CLIENTE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ARTICULO",
+            "dataType": "int64",
+            "sourceColumn": "ARTICULO",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ARTICULO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CANTIDAD",
+            "dataType": "int64",
+            "sourceColumn": "CANTIDAD",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CANTIDAD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUBTOTAL",
+            "dataType": "int64",
+            "sourceColumn": "SUBTOTAL",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUBTOTAL",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IVA",
+            "dataType": "double",
+            "sourceColumn": "IVA",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "IVA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "VENDEDOR",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENDEDOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingVentasMayoreo",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingVentasMenudeo",
+        "sourceLineageTag": "[dbo].[StagingVentasMenudeo]",
+        "columns": [
+          {
+            "name": "Source.Name",
+            "dataType": "string",
+            "sourceColumn": "Source.Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Source.Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "VENTA_ID",
+            "dataType": "int64",
+            "sourceColumn": "VENTA_ID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENTA_ID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FECHA",
+            "dataType": "dateTime",
+            "sourceColumn": "FECHA",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "FECHA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUCURSAL_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SUCURSAL_CLIENTE",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUCURSAL_CLIENTE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ARTICULO",
+            "dataType": "int64",
+            "sourceColumn": "ARTICULO",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ARTICULO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CANTIDAD",
+            "dataType": "int64",
+            "sourceColumn": "CANTIDAD",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CANTIDAD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUBTOTAL",
+            "dataType": "int64",
+            "sourceColumn": "SUBTOTAL",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUBTOTAL",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IVA",
+            "dataType": "int64",
+            "sourceColumn": "IVA",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "IVA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "VENDEDOR",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENDEDOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingVentasMenudeo",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "StagingVentas",
+        "sourceLineageTag": "[dbo].[StagingVentas]",
+        "columns": [
+          {
+            "name": "Source.Name",
+            "dataType": "string",
+            "sourceColumn": "Source.Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Source.Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "VENTA_ID",
+            "dataType": "int64",
+            "sourceColumn": "VENTA_ID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENTA_ID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FECHA",
+            "dataType": "dateTime",
+            "sourceColumn": "FECHA",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "FECHA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUCURSAL_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SUCURSAL_CLIENTE",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUCURSAL_CLIENTE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ARTICULO",
+            "dataType": "int64",
+            "sourceColumn": "ARTICULO",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ARTICULO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CANTIDAD",
+            "dataType": "int64",
+            "sourceColumn": "CANTIDAD",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "CANTIDAD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUBTOTAL",
+            "dataType": "int64",
+            "sourceColumn": "SUBTOTAL",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "SUBTOTAL",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IVA",
+            "dataType": "double",
+            "sourceColumn": "IVA",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "IVA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "VENDEDOR",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "VENDEDOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "StagingVentas",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

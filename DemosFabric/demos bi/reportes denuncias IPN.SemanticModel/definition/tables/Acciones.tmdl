@@ -1,0 +1,34 @@
+table Acciones
+	lineageTag: 05a24bcd-1070-4e03-9c45-bc2276d6379e
+
+	column id
+		dataType: string
+		lineageTag: 42ca9bed-4f28-48da-8651-655263246462
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Acciones
+		dataType: string
+		lineageTag: 55761557-2f25-422b-a04f-a18c7d490d58
+		summarizeBy: none
+		sourceColumn: Acciones
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Acciones = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    Acciones_Sheet = Origen{[Item="Acciones",Kind="Sheet"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(Acciones_Sheet,{{"Column2", "Acciones"}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Columnas con nombre cambiado", [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

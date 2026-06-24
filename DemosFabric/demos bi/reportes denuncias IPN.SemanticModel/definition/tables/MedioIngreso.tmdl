@@ -1,0 +1,33 @@
+table MedioIngreso
+	lineageTag: 22a5f44b-0c45-4c59-b587-372e6ebb50ac
+
+	column id
+		dataType: string
+		lineageTag: 47188063-3e90-4e69-9760-516f816f0ab3
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Medio de ingreso'
+		dataType: string
+		lineageTag: 5472d8af-6ce6-4858-9049-3761d27ff685
+		summarizeBy: none
+		sourceColumn: Medio de ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MedioIngreso = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2024\IPN\PoC\catalogos.xlsx"), null, true),
+				    MedioIngreso_Sheet = Origen{[Item="MedioIngreso",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(MedioIngreso_Sheet, [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

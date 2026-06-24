@@ -1,0 +1,41 @@
+table dataProductos
+	lineageTag: 49c3e82c-fbd5-488a-8b63-0df0fe96643f
+
+	column SKU
+		dataType: string
+		lineageTag: f7ac58ca-79bb-4a16-afd4-e55e07d4ada8
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTO
+		dataType: int64
+		formatString: 0
+		lineageTag: a2f6d13b-b9c1-4c41-b014-750c66d7a605
+		summarizeBy: sum
+		sourceColumn: PRODUCTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 79346e83-1830-42d9-864a-03baf94d1f51
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dataProductos = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\Downloads\dataProductos.xlsx"), null, true),
+				    dataProductos_Sheet = Origen{[Item="dataProductos",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(dataProductos_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SKU", type text}, {"PRODUCTO", Int64.Type}, {"Nombre", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

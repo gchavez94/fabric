@@ -1,0 +1,5 @@
+CREATE TABLE [dbo].[CustTrans (EXCHADJUSTMENT)] (
+
+	[EXCHADJUSTMENT] float NULL, 
+	[RECID] bigint NULL
+);

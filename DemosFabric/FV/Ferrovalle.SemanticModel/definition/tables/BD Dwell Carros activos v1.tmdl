@@ -1,0 +1,533 @@
+table 'BD Dwell Carros activos v1'
+	lineageTag: 8c00c42c-01b8-4fa7-ac0b-b32946e5b5bd
+
+	column 'Id Mov'
+		dataType: string
+		lineageTag: 0fadd310-084c-415a-baef-2a01ab0fb016
+		summarizeBy: none
+		sourceColumn: Id Mov
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de servicio'
+		dataType: string
+		lineageTag: 573ae6df-2812-4f02-9349-f9b44d5ebf1c
+		summarizeBy: none
+		sourceColumn: Tipo de servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Identificador Carro'
+		dataType: string
+		lineageTag: 183c200d-24a2-4038-9d25-8296f5d769e4
+		summarizeBy: none
+		sourceColumn: Identificador Carro
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de llegada'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ad67bac3-0ea7-42fe-b3ed-86112952cc65
+		summarizeBy: none
+		sourceColumn: Fecha de llegada
+
+		variation Variación
+			isDefault
+			relationship: cb6a8247-50a0-45a8-b965-54309e2daba3
+			defaultHierarchy: LocalDateTable_9641cfaf-9e91-43d0-a839-8328364c4231.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Ini Patio Recibo'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c11170ce-1f57-4226-a369-c6d53d0750ef
+		summarizeBy: none
+		sourceColumn: Fecha Ini Patio Recibo
+
+		variation Variación
+			isDefault
+			relationship: 306f8456-3cb1-460c-83fa-4326c1e84f71
+			defaultHierarchy: LocalDateTable_79818cfb-05f0-4793-bb96-795769716d9c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Fin Patio Recibo'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c119e40a-7e1c-40a0-accc-79f7084e9167
+		summarizeBy: none
+		sourceColumn: Fecha Fin Patio Recibo
+
+		variation Variación
+			isDefault
+			relationship: f7ce1b64-0c40-4385-88de-f5beaff5e341
+			defaultHierarchy: LocalDateTable_01fb41bf-3fb5-4943-af38-d9d91b837c68.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Ini Patio Clasificacion'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 446f4191-4973-4aa7-a14e-4815bb085f97
+		summarizeBy: none
+		sourceColumn: Fecha Ini Patio Clasificacion
+
+		variation Variación
+			isDefault
+			relationship: a1edc61e-499c-4df3-8ab5-aaec071be7e8
+			defaultHierarchy: LocalDateTable_fba3c2a9-adb7-4a95-836c-6c6a6dc45d7c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Ini Patio Despacho'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 80538489-58ea-4513-93ba-3bf5338d1afb
+		summarizeBy: none
+		sourceColumn: Fecha Ini Patio Despacho
+
+		variation Variación
+			isDefault
+			relationship: bc8de76b-2c64-44a4-8949-f2a1e9b98fac
+			defaultHierarchy: LocalDateTable_76707c5f-2489-4c59-b1bf-e943d0e221ea.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Ofrecimiento a CO'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4f787113-81fd-46b7-9550-062a1256faab
+		summarizeBy: none
+		sourceColumn: Fecha Ofrecimiento a CO
+
+		variation Variación
+			isDefault
+			relationship: 9380ad0b-f85a-40cf-b31d-79a861833f14
+			defaultHierarchy: LocalDateTable_b6bb6628-65aa-46ee-8a22-3a5bd1f4edbc.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de Salida'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df5ea90e-b5eb-402f-9b6b-6364d5f10075
+		summarizeBy: none
+		sourceColumn: Fecha de Salida
+
+		variation Variación
+			isDefault
+			relationship: 6540ed64-f097-45e3-b8af-55a562061452
+			defaultHierarchy: LocalDateTable_ee88ed8b-edfb-4e9c-b521-0048bd1e9543.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo permanencia'
+		dataType: string
+		lineageTag: c1936bda-86f0-47b0-9517-f5c047b7a662
+		summarizeBy: none
+		sourceColumn: Tiempo permanencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estacion de arribo'
+		dataType: string
+		lineageTag: d59c035c-ecee-4241-bfbc-67fff7d2655e
+		summarizeBy: none
+		sourceColumn: Estacion de arribo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patio de arribo'
+		dataType: string
+		lineageTag: 55375f7a-4a42-49a9-a66e-59c6e0df8ce8
+		summarizeBy: none
+		sourceColumn: Patio de arribo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Via de arribo'
+		dataType: string
+		lineageTag: 54e410b3-2b2b-4adb-a0b3-1f12b40956f2
+		summarizeBy: none
+		sourceColumn: Via de arribo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ultimo movimiento'
+		dataType: string
+		lineageTag: 9066978f-ec27-4233-97da-9fa8b79d39a2
+		summarizeBy: none
+		sourceColumn: Ultimo movimiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Ultimo movimiento'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 35daa459-0a25-4cdd-8ef3-77ee39584761
+		summarizeBy: none
+		sourceColumn: Fecha Ultimo movimiento
+
+		variation Variación
+			isDefault
+			relationship: 4e4a3106-d5f1-4d0a-ae71-464e9ea7e80f
+			defaultHierarchy: LocalDateTable_ece4a114-2e0a-488f-b581-b87ce4d3ed11.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estacion actual'
+		dataType: string
+		lineageTag: cb7d4984-524e-4fde-b62f-fe1495354374
+		summarizeBy: none
+		sourceColumn: Estacion actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patio actual'
+		dataType: string
+		lineageTag: 33b61772-22ff-4b3e-ae53-07efdff7a8c4
+		summarizeBy: none
+		sourceColumn: Patio actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Via actual'
+		dataType: string
+		lineageTag: c7defc9b-36d7-4efd-882c-5b4bd4ce5a95
+		summarizeBy: none
+		sourceColumn: Via actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FFCC llegada'
+		dataType: string
+		lineageTag: 699088cf-c207-4419-a1b3-a260ba8e818e
+		summarizeBy: none
+		sourceColumn: FFCC llegada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tren llegada'
+		dataType: string
+		lineageTag: 58f96190-0a4b-4af3-a4fd-4ec13995bd16
+		summarizeBy: none
+		sourceColumn: Tren llegada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FFCC salida'
+		dataType: string
+		lineageTag: fab00fa7-005e-4343-997d-a4a991c839a2
+		summarizeBy: none
+		sourceColumn: FFCC salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tren salida'
+		dataType: string
+		lineageTag: 70162463-2319-4a08-9a54-46790da9581a
+		summarizeBy: none
+		sourceColumn: Tren salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lote
+		dataType: string
+		lineageTag: 53b4ada0-61d4-4ebd-a3af-07935b552b4d
+		summarizeBy: none
+		sourceColumn: Lote
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estatus llegada'
+		dataType: string
+		lineageTag: 7763477d-adf4-4c42-8a78-df281ace98d6
+		summarizeBy: none
+		sourceColumn: Estatus llegada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de posicionado'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e2561fee-2ec8-4e14-86ab-9aff78cfa46d
+		summarizeBy: none
+		sourceColumn: Fecha de posicionado
+
+		variation Variación
+			isDefault
+			relationship: 1a34195a-13fc-41b1-bcad-29402bbeede4
+			defaultHierarchy: LocalDateTable_38bf5b7b-ec1c-4bda-9832-ec0b6f2e3c67.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Via de posicionado'
+		dataType: string
+		lineageTag: f1f3d0b7-84b8-4ad5-8a1b-b80e1f441423
+		summarizeBy: none
+		sourceColumn: Via de posicionado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de liberado'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 80c567bf-7c6d-42f7-8ade-e11865c48169
+		summarizeBy: none
+		sourceColumn: Fecha de liberado
+
+		variation Variación
+			isDefault
+			relationship: 6abb4790-7b83-4da7-a770-3185657f20ea
+			defaultHierarchy: LocalDateTable_7e87e45e-a5b6-4ade-87b4-2177437fafdd.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ultimo ingreso'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08ceaa28-d33d-4fdf-a2fb-b645b0e0ac7e
+		summarizeBy: none
+		sourceColumn: Fecha ultimo ingreso
+
+		variation Variación
+			isDefault
+			relationship: 269ce719-058a-4eec-8e57-830212f9b9ac
+			defaultHierarchy: LocalDateTable_674dc3ef-98b6-4731-af1f-cf7e166d9899.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ini Detencion'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7df1532-53fc-46cc-91e0-c0eba927c0ab
+		summarizeBy: none
+		sourceColumn: Fecha ini Detencion
+
+		variation Variación
+			isDefault
+			relationship: ed20698a-3f08-41e8-95f8-5a2da26ccef2
+			defaultHierarchy: LocalDateTable_6f1ae0c0-6d8e-47d5-a996-fb0705657653.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha fin detencion'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09e68cf4-44bf-4dd5-8319-6d45cd0c321e
+		summarizeBy: none
+		sourceColumn: Fecha fin detencion
+
+		variation Variación
+			isDefault
+			relationship: 878ef5aa-cd43-4d9b-8e33-81aca6a64e4b
+			defaultHierarchy: LocalDateTable_2c137cb5-123e-4002-b9f4-51857e0a6c03.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ini Bado'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9a581b0-d263-418f-92ee-9a5660dfd231
+		summarizeBy: none
+		sourceColumn: Fecha ini Bado
+
+		variation Variación
+			isDefault
+			relationship: bcd37b8e-b4e2-4b31-af31-b89887c623a9
+			defaultHierarchy: LocalDateTable_443151a2-2320-4607-9e5f-58ab5892702a.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha fin Bado'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1d02fc84-a064-4f7c-9a55-85842b7f923b
+		summarizeBy: none
+		sourceColumn: Fecha fin Bado
+
+		variation Variación
+			isDefault
+			relationship: 05b47a59-e3af-4fc2-b54f-d1f4af6219a2
+			defaultHierarchy: LocalDateTable_63cc16fd-b383-4e61-ad2d-1871d71472a4.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estatus actual'
+		dataType: string
+		lineageTag: ea2755f3-7d12-4d36-8f2d-c211bc7d7829
+		summarizeBy: none
+		sourceColumn: Estatus actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo carro RMI'
+		dataType: string
+		lineageTag: adf57e87-44ea-487d-ad3f-1c0c8f42fc87
+		summarizeBy: none
+		sourceColumn: Tipo carro RMI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo carro AAR'
+		dataType: string
+		lineageTag: 6a0aba20-088a-4d01-a04c-1868952e56ab
+		summarizeBy: none
+		sourceColumn: Tipo carro AAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id_producto
+		dataType: int64
+		formatString: 0
+		lineageTag: 9937ff56-f184-47b5-8c7d-b7b430bdbdc0
+		summarizeBy: sum
+		sourceColumn: Id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origen
+		dataType: string
+		lineageTag: 054f07cf-c71c-4179-8111-9b6b60c4b81b
+		summarizeBy: none
+		sourceColumn: Origen
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destino
+		dataType: string
+		lineageTag: dc049d58-4af1-47ae-a5da-bd0b71481a0e
+		summarizeBy: none
+		sourceColumn: Destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entidad emisora'
+		dataType: string
+		lineageTag: df583707-a44b-4675-ac7d-dddf17a8a3aa
+		summarizeBy: none
+		sourceColumn: Entidad emisora
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entidad receptora'
+		dataType: string
+		lineageTag: 7b3e56a5-eb98-4382-8115-726d1faf4726
+		summarizeBy: none
+		sourceColumn: Entidad receptora
+
+		annotation SummarizationSetBy = Automatic
+
+	column Personalizado
+		dataType: string
+		lineageTag: 5320bbb2-23f2-4de7-b5f3-b87618139e69
+		summarizeBy: none
+		sourceColumn: Personalizado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Posicionado-liberado
+		dataType: double
+		lineageTag: aa612c12-1145-4bde-bd85-51486d0169e6
+		summarizeBy: sum
+		sourceColumn: Posicionado-liberado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tiempo Reparacion'
+		dataType: double
+		lineageTag: e5cc6926-06e5-4fba-8dda-49b9befb1458
+		summarizeBy: sum
+		sourceColumn: Tiempo Reparacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Permanencia Recibo'
+		dataType: double
+		lineageTag: e222e0c4-2747-4120-8cd2-c167922dd98f
+		summarizeBy: sum
+		sourceColumn: Permanencia Recibo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Recibo Horas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e65d107-51d7-42c8-bbb8-355ad294e5c5
+		summarizeBy: sum
+		sourceColumn: Recibo Horas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Horas posic-lib'
+		dataType: double
+		lineageTag: fea27228-2e0a-475e-9b29-7a94934c5b38
+		summarizeBy: sum
+		sourceColumn: Horas posic-lib
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'BD Dwell Carros activos v1' = m
+		mode: import
+		source = ```
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\GabrielArmandoChávez\GONZALEZ CORTINA GLENDER Y CIA\ZAP BI - Documentos compartidos\02 OPORTUNIDADES\Oportunidades 2025\Ferrovalle\POV data\BD Dwell Carros activos v1.csv"),[Delimiter=",", Columns=41, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id_Mov", type text}, {"Tipo_de_servicio", type text}, {"Identificador_Carro", type text}, {"Fecha_de_llegada", type datetime}, {"Fecha_Ini_P_Recibo", type datetime}, {"Fecha_Fin_P_Recibo", type datetime}, {"Fecha_Ini_P_Clasificacion", type datetime}, {"Fecha_Ini_P_Despacho", type datetime}, {"Fecha_Ofrecimiento_a_CO", type datetime}, {"Fecha_de_Salida", type datetime}, {"Tiempo_permanencia", type text}, {"Estacion_de_arribo", type text}, {"Patio_de_arribo", type text}, {"Via_de_arribo", type text}, {"Ultimo_movimiento", type text}, {"Fecha_Ultimo_movimiento", type datetime}, {"Estacion_actual", type text}, {"Patio_actual", type text}, {"Via_actual", type text}, {"FFCC_llegada", type text}, {"Tren_llegada", type text}, {"FFCC_salida", type text}, {"Tren_salida", type text}, {"Lote", type text}, {"Estatus_llegada", type text}, {"Fecha_de_posicionado", type datetime}, {"Via_de_posicionado", type text}, {"Fecha_de_liberado", type datetime}, {"Fecha_ultimo_ingreso", type datetime}, {"Fecha_ini_Detencion", type datetime}, {"Fecha_fin_detencion", type datetime}, {"Fecha_ini_Bado", type datetime}, {"Fecha_fin_Bado", type datetime}, {"Estatus_actual", type text}, {"Tipo_carro_RMI", type text}, {"Tipo_carro_AAR", type text}, {"Id_producto", Int64.Type}, {"Origen", type text}, {"Destino", type text}, {"Entidad_emisora", type text}, {"Entidad_receptora", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado", "Pos-lib", each [Fecha_de_liberado] - [Fecha_de_posicionado]),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Tiempo Reparacion", each [Fecha_fin_Bado]-[Fecha_ini_Bado]),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Permanencia Recibo", each [Fecha_Fin_P_Recibo]-[Fecha_Ini_P_Recibo]),
+				    #"Columna condicional agregada" = Table.AddColumn(#"Personalizada agregada2", "Personalizado", each if [Patio_actual] = "DESP1" then "3 Desp Oriente" 
+				else if [Patio_actual] = "DESP2" then "4 Desp Poniente" 
+				else if [Patio_actual] = "CLAS1" then "2 Clasificación" 
+				else if [Patio_actual] = "CLAS2" then "2 Clasificación" 
+				else if [Patio_actual] = "RECIBO" then "1 Recibo" 
+				else if [Patio_actual] = "OPER12" then "6 Lechería" 
+				else if [Patio_actual] = "CIRC12" then "6 Lechería" 
+				else if [Patio_actual] = "OPER02" then "5 S.Pablo" 
+				else if List.Contains({"02703","02726"},[Via_actual]) then "5 S.Pablo" 
+				else if [Patio_actual] = "CIRC03" then "5 S.Pablo" 
+				else if [Patio_actual] = "CIRC02" then "5 S.Pablo" 
+				else if [Patio_actual] = "DESP 1" then "3 Desp Oriente" 
+				else if [Patio_actual] = "DESP 2" then "4 Desp Poniente" 
+				else if [Patio_actual] = "CLAS 1" then "2 Clasificación" 
+				else if [Patio_actual] = "CLAS 2" then "2 Clasificación" 
+				else if List.Contains({"REMEDI","TALLER","TOMA"},[Patio_actual]) then "7 Taller" 
+				else if [Patio_actual] = "CIRCUL" and [Via_actual] = "306" then "7 Taller" 
+				else if [Patio_actual] = "CIRCUL" and not (List.Contains({"JUAREZ1","JUAREZ2","JUAREZ3","JUAREZ4","JUAREZ5","LADERO TS1","LADERO TS2","306"},[Via_actual])) then "9 Circulación" 
+				else if [Patio_actual] = "CIRC17" and not (List.Contains({"JUAREZ1","JUAREZ2","JUAREZ3","JUAREZ4","JUAREZ5","LADERO TS1","LADERO TS2"},[Via_actual])) then "9 Circulación" 
+				else if [Patio_actual] = "INTERC" then "6 Lechería" 
+				else if [Patio_actual] = "CIRC14" then "8 Industria" 
+				else if  Text.StartsWith([Patio_actual],"INDU")  then "8 Industria" 
+				else if List.Contains({"JUAREZ1","JUAREZ2","JUAREZ3","JUAREZ4","JUAREZ5","LADERO TS1","LADERO TS2"},[Via_actual]) then "8 Laderos" 
+				else if [Patio_actual] <> "5 S.Pablo" and not (Text.StartsWith([Patio_actual],"INDU")) and [Estacion_actual] = "A0007" and not (List.Contains({"CIRCUL","CIRC17","TOMA"},[Patio_actual])) then "9 Pantaco" 
+				else if not (Text.StartsWith([Patio_actual],"INDU")) and [Estacion_actual] = "VK027" and [Patio_actual] <> "TOMA" then "10 Los Reyes"  
+				else if not (Text.StartsWith([Patio_actual],"INDU")) and List.Contains({"S0015","S0033"},[Estacion_actual]) and [Estacion_actual] = "S0015" then "11 Xal / Tepx" 
+				else if not (Text.StartsWith([Patio_actual],"INDU")) and [Via_actual] <> "MUERTA" and [Estacion_actual] = "H0019" then "12 Nvo Patio" 
+				else if not (Text.StartsWith([Patio_actual],"INDU")) and [Estacion_actual] = "A0029" and not (List.Contains({"CIRCUL","CIRC17","TOMA"},[Patio_actual])) then "13 Cuautitlán" 
+				else if List.Contains({"LINEA N","LINEA NA","15302","15303","15304"},[Via_actual]) then "14 Almacen" 
+				else "A Industria"),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columna condicional agregada",{{"Tiempo Reparacion", type duration}, {"Permanencia Recibo", type duration}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado2",{{"Pos-lib", type duration}}),
+				    #"Horas insertadas" = Table.AddColumn(#"Tipo cambiado1", "Recibo Horas", each Duration.Hours([Permanencia Recibo]), Int64.Type),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Horas insertadas",{{"Pos-lib", "Posicionado-liberado"}}),
+				    #"Total de horas insertadas" = Table.AddColumn(#"Columnas con nombre cambiado", "Total de horas", each Duration.TotalHours([#"Posicionado-liberado"]), type number),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Total de horas insertadas",{{"Total de horas", "Horas posic-lib"}, {"Id_Mov", "Id Mov"}, {"Via_actual", "Via actual"}, {"Patio_actual", "Patio actual"}, {"Estacion_actual", "Estacion actual"}, {"Estatus_actual", "Estatus actual"}, {"Fecha_de_posicionado", "Fecha de posicionado"}, {"Fecha_de_liberado", "Fecha de liberado"}, {"Fecha_de_llegada", "Fecha de llegada"}, {"Tipo_de_servicio", "Tipo de servicio"}, {"Identificador_Carro", "Identificador Carro"}, {"Entidad_emisora", "Entidad emisora"}, {"Entidad_receptora", "Entidad receptora"}, {"Via_de_arribo", "Via de arribo"}, {"Estacion_de_arribo", "Estacion de arribo"}, {"Patio_de_arribo", "Patio de arribo"}, {"Estatus_llegada", "Estatus llegada"}, {"Fecha_de_Salida", "Fecha de Salida"}, {"Fecha_fin_Bado", "Fecha fin Bado"}, {"Fecha_fin_detencion", "Fecha fin detencion"}, {"Fecha_Fin_P_Recibo", "Fecha Fin Patio Recibo"}, {"Fecha_Ini_P_Clasificacion", "Fecha Ini Patio Clasificacion"}, {"Fecha_Ini_P_Despacho", "Fecha Ini Patio Despacho"}, {"Fecha_ini_Detencion", "Fecha ini Detencion"}, {"Fecha_Ini_P_Recibo", "Fecha Ini Patio Recibo"}, {"Fecha_ini_Bado", "Fecha ini Bado"}, {"Fecha_Ofrecimiento_a_CO", "Fecha Ofrecimiento a CO"}, {"Fecha_ultimo_ingreso", "Fecha ultimo ingreso"}, {"Fecha_Ultimo_movimiento", "Fecha Ultimo movimiento"}, {"FFCC_llegada", "FFCC llegada"}, {"FFCC_salida", "FFCC salida"}, {"Tiempo_permanencia", "Tiempo permanencia"}, {"Tipo_carro_AAR", "Tipo carro AAR"}, {"Tipo_carro_RMI", "Tipo carro RMI"}, {"Tren_llegada", "Tren llegada"}, {"Tren_salida", "Tren salida"}, {"Ultimo_movimiento", "Ultimo movimiento"}, {"Via_de_posicionado", "Via de posicionado"}})
+				in
+				    #"Columnas con nombre cambiado1"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

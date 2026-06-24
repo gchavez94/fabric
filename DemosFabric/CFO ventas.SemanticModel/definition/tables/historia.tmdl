@@ -1,0 +1,351 @@
+table historia
+	lineageTag: ae63fd6c-0d28-46ce-92e7-f52db0724999
+
+	measure 'Margen Bruto Euros' = (sum(historia[Margen bruto])*'Dll-Euro'[Parameter Value])
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: aa20b4aa-fb9a-4046-a8b2-2ca38ea5e829
+
+	measure Euros = (sum(historia[Dolares])*'Dll-Euro'[Parameter Value])*INPC[Valor INPC] /100+(sum(historia[Dolares])*'Dll-Euro'[Parameter Value])
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: b9ce7ac9-da25-4818-b94a-63d39bb22a84
+
+	measure '% Margen Euros' = [Margen Bruto Euros]/[Euros]
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: ca5c5a70-1094-4017-9b8a-f244bb076e05
+
+	column Año
+		dataType: string
+		lineageTag: 9cb77edc-dd4b-4529-8cca-b46bc512276e
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Mes
+		dataType: string
+		lineageTag: 339aa794-74c4-408a-ab05-e6c2d5563ae7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: 'Mes Num'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Sucursal
+		dataType: string
+		lineageTag: 030de95e-dc84-4702-b575-771307950d24
+		summarizeBy: none
+		sourceColumn: Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Net Sales'
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 331defe5-fce3-4709-82f7-95a23a7a158f
+		summarizeBy: sum
+		sourceColumn: Net Sales
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column COGS
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: cf5d9166-49e9-49a5-b648-537a5a5e1069
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gross Margin %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ee18f036-1c9d-4ec7-8371-69a09b8a5815
+		summarizeBy: average
+		sourceColumn: Gross Margin %
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Margin'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eb114a99-2dc8-406f-8a7a-301fbf4d4c57
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Expenses
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8129c67a-2da5-472b-8ee6-a2ffd523219c
+		summarizeBy: sum
+		sourceColumn: Expenses
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Operating Profit %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: babebefe-c683-4c89-a633-0aedbd1c255c
+		summarizeBy: average
+		sourceColumn: Operating Profit %
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Return on Assets'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 33cf50df-b731-4c1a-80ac-a396336b3c6f
+		summarizeBy: average
+		sourceColumn: Return on Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Return on Equity'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f6cca6ee-5a30-4ab5-a7a5-74756664f2db
+		summarizeBy: average
+		sourceColumn: Return on Equity
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Assets'
+		dataType: double
+		lineageTag: 9a687e89-a0d9-4c2d-8df1-0e05be3cdfe2
+		summarizeBy: sum
+		sourceColumn: Current Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Liabilities'
+		dataType: double
+		lineageTag: 71b34fb5-ff06-4137-b768-d4ccd77fe504
+		summarizeBy: sum
+		sourceColumn: Current Liabilities
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Working Capital'
+		dataType: double
+		lineageTag: 135e9c4b-e181-469b-b856-fdd8816bb958
+		summarizeBy: sum
+		sourceColumn: Working Capital
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quick Ratio'
+		dataType: double
+		lineageTag: fecc4845-e450-48fb-acaf-bf49eb5522f1
+		summarizeBy: sum
+		sourceColumn: Quick Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Assets
+		dataType: double
+		lineageTag: cb2bf500-2ac0-4ad4-a01e-2517ffe1b006
+		summarizeBy: sum
+		sourceColumn: Assets
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Liabilities
+		dataType: double
+		lineageTag: 9e360507-3810-4d3c-9e06-9ea5ba020892
+		summarizeBy: sum
+		sourceColumn: Liabilities
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Debt Ratio'
+		dataType: decimal
+		formatString: 0.00
+		lineageTag: 925c01b0-8d54-4009-ba6c-3670613fd561
+		summarizeBy: sum
+		sourceColumn: Debt Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debt to Equity Ratio'
+		dataType: double
+		lineageTag: f8600004-46fd-4e43-ba7e-640f041c756d
+		summarizeBy: average
+		sourceColumn: Debt to Equity Ratio
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Long Term Debt to Equity Rat'
+		dataType: string
+		lineageTag: f864df30-314f-437d-a817-a50ec02902dd
+		summarizeBy: none
+		sourceColumn: Long Term Debt to Equity Rat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Dolares
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c3eb884c-a62d-46ad-98df-03a3dddab4a4
+		summarizeBy: sum
+		sourceColumn: Dolares
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Margen bruto'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: abb1c82c-7518-49e8-9a50-07aedd6fc482
+		summarizeBy: sum
+		sourceColumn: Margen bruto
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column '% Margen Bruto'
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: f0f7171e-4e71-4cc1-8fd6-459b5b5f6ee4
+		summarizeBy: average
+		sourceColumn: % Margen Bruto
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column Temporada
+		dataType: string
+		lineageTag: 4d1576e3-8030-4a2f-8b4a-784edfb6d041
+		summarizeBy: none
+		sourceColumn: Temporada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Producto
+		dataType: string
+		lineageTag: 703e1a25-de75-41c2-a6a3-289f75d52f81
+		summarizeBy: none
+		sourceColumn: Producto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Departamento
+		dataType: string
+		lineageTag: b146a8b4-1108-4986-ba0e-07bbc8d8363c
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Imagen
+		dataType: string
+		lineageTag: 449b0ff1-767d-45ae-917f-98aa4e5a65c2
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Imagen
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Mes Num'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5142d8f5-591e-4172-8a1f-dd52a66f1dad
+		summarizeBy: sum
+		sourceColumn: Mes Num
+
+		annotation SummarizationSetBy = Automatic
+
+	partition historia-f12d1786-b18d-43e4-9117-322b87bcc32b = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\CFO ventas.xlsx"), null, true),
+				    historia_Sheet = Source{[Item="historia",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(historia_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Mes", type text}, {"Mes Num", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Changed Type1",{{"Compañía ", "Sucursal"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

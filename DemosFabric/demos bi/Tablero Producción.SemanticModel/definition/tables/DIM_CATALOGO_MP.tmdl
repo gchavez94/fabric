@@ -1,0 +1,40 @@
+table DIM_CATALOGO_MP
+	lineageTag: 309a4491-ab2c-4c75-b7a1-5b4149f8f1b0
+
+	column Orden
+		dataType: int64
+		formatString: 0
+		lineageTag: 57fd53bf-7eb0-4d79-aac5-c80739d462ed
+		summarizeBy: sum
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concepto
+		dataType: string
+		lineageTag: 902faa81-725f-4322-9169-93987ec9f0a8
+		summarizeBy: none
+		sourceColumn: Concepto
+
+		annotation SummarizationSetBy = Automatic
+
+	column detalle
+		dataType: string
+		lineageTag: b623313a-0c27-4c18-bc8c-00c9290d033f
+		summarizeBy: none
+		sourceColumn: detalle
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CATALOGO_MP = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM", [Query="SELECT#(lf)    MIN([Orden]) AS Orden,#(lf)    Concepto,#(lf)    MIN(Concepto) AS detalle#(lf)FROM [DWH_LM].[dbo].[CATALOGO_MP]#(lf)WHERE Concepto IS NOT NULL#(lf)GROUP BY Concepto#(lf)order by orden asc;"])
+				in
+				    Origen
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

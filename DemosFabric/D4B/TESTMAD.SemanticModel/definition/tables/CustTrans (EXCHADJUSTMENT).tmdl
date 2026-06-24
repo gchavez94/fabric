@@ -1,0 +1,36 @@
+table 'CustTrans (EXCHADJUSTMENT)'
+	lineageTag: 5d278245-5d3e-4d19-bcf7-1200afdc7a55
+	sourceLineageTag: [dbo].[CustTrans (EXCHADJUSTMENT)]
+
+	column EXCHADJUSTMENT
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 7c76c73f-7b97-4420-8b3b-083b31defd9e
+		sourceLineageTag: EXCHADJUSTMENT
+		summarizeBy: sum
+		sourceColumn: EXCHADJUSTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1b5950bb-4b53-4ed5-ae42-d0bb920951e6
+		sourceLineageTag: RECID
+		summarizeBy: count
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CustTrans (EXCHADJUSTMENT)' = entity
+		mode: directLake
+		source
+			entityName: CustTrans (EXCHADJUSTMENT)
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

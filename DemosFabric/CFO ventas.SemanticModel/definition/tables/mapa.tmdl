@@ -1,0 +1,133 @@
+table mapa
+	lineageTag: 4c0d6d8f-bd48-4ab5-a75f-a5f95e7de2a6
+
+	column CP
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f69564a-98b7-4786-bd45-f3eea3806934
+		summarizeBy: sum
+		sourceColumn: CP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		lineageTag: 35b71e71-0833-443e-ac71-1e836ea17c4c
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Colonia
+		dataType: string
+		lineageTag: 30169152-4600-4caa-af30-3573e9a63848
+		summarizeBy: none
+		sourceColumn: Colonia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Desc_Estado
+		dataType: string
+		lineageTag: 08596535-3af7-4c8b-af89-ec2ad9ef0799
+		summarizeBy: none
+		sourceColumn: Desc_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Codigo_Estado
+		dataType: string
+		lineageTag: 0ffa4fa6-71d0-4586-814c-dbc56cce2cf2
+		summarizeBy: none
+		sourceColumn: Codigo_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Desc_Municipio
+		dataType: string
+		lineageTag: c071c7ad-fd85-4296-927b-e3f4543ac984
+		summarizeBy: none
+		sourceColumn: Desc_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Codigo_Municipio
+		dataType: int64
+		formatString: 0
+		lineageTag: e2efa586-5fb7-4f13-bcc1-80537dd6f0e1
+		summarizeBy: sum
+		sourceColumn: Codigo_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAT
+		dataType: double
+		lineageTag: 5cbc4ef5-17b1-4685-b9c9-f8a8f86c1137
+		summarizeBy: sum
+		sourceColumn: LAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LONG
+		dataType: double
+		lineageTag: 98bf7071-4fa9-4dd9-ac38-4c76041d7876
+		summarizeBy: sum
+		sourceColumn: LONG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Programadas
+		dataType: int64
+		formatString: 0
+		lineageTag: 08b51170-a223-443b-b115-dd3b0fed6c32
+		summarizeBy: sum
+		sourceColumn: Programadas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reales
+		dataType: int64
+		formatString: 0
+		lineageTag: cfa231d6-d4a6-4b6a-8106-61deb0e94a21
+		summarizeBy: sum
+		sourceColumn: Reales
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% de avance'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e97d6cf7-95c0-4339-ba41-1f02aa88a317
+		summarizeBy: sum
+		sourceColumn: % de avance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mapa-dbf6e4fc-068c-4604-b3d9-0a59cb9c8361 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\CFO ventas.xlsx"), null, true),
+				    mapa_Sheet = Source{[Item="mapa",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(mapa_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CP", Int64.Type}, {"Pais", type text}, {"Colonia", type text}, {"Desc_Estado", type text}, {"Codigo_Estado", type text}, {"Desc_Municipio", type text}, {"Codigo_Municipio", Int64.Type}, {"LAT", type number}, {"LONG", type number}, {"Programadas", Int64.Type}, {"Reales", Int64.Type}, {"% de avance", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

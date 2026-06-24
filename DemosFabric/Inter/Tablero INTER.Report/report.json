@@ -1,0 +1,451 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2},\"customTheme\":{\"name\":\"Storm\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"visible\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "filters": "[{\"name\":\"324c22c6c5be1c19c2e9\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Tipo de Agente\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"adfbba711b67dba7201a\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Tipo de cotización\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":1},{\"name\":\"260c6dbcea84597006bb\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Categoría\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":2},{\"name\":\"aee4fd5b2c7f2e498c7c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Division\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":3},{\"name\":\"1ed61053fb20207f0b83\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Fecha\"}},\"type\":\"RelativeDate\",\"howCreated\":1,\"ordinal\":4},{\"name\":\"aacaf11aa692d2667a5c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Agente\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"}},\"Right\":{\"Literal\":{\"Value\":\"999999L\"}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":5},{\"name\":\"e8b3e658305b0faf37df\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Agrupacion\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":6},{\"name\":\"eb99934a92e88219a01d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Oficina\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":7}]",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "1f7192d581f1cd35fcc0",
+      "config": "{}",
+      "name": "51de408a94e30bb24c1a",
+      "parameters": "[{\"name\":\"a00a47605e1e298ebfa4\",\"boundFilter\":\"e9961ae2a842e1c7376b\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"% DESCUENTO\"}},\"asAggregation\":true},{\"name\":\"6c25a62ed74cff0406e9\",\"boundFilter\":\"527c73c64ad083aa2948\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Agrupacion\"}}},{\"name\":\"e630bd7f013cec9663b0\",\"boundFilter\":\"ba3feffa66157d4daef5\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Agente\"}}},{\"name\":\"c2de97f088d59e7eafea\",\"boundFilter\":\"d5902bb170b4722f622e\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Espejo\"}}},{\"name\":\"b1403813a1e72a0085c3\",\"boundFilter\":\"ebcc41b91cafba38d1fc\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"asAggregation\":true},{\"name\":\"96495c2c612b9fcf2c91\",\"boundFilter\":\"9610b4eac4b6c1338b25\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"COSTO PROMEDIO DE SINIESTRO\"}},\"asAggregation\":true},{\"name\":\"2183e23a65758a1d3da5\",\"boundFilter\":\"5a92071ec3ee30ad5935\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Division\"}}},{\"name\":\"b1e51abb10d17f2f4b37\",\"boundFilter\":\"09abda486e0f917e2f48\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"EXPUESTO\"}},\"asAggregation\":true},{\"name\":\"6bcbb740bee123d0e2a3\",\"boundFilter\":\"4dfd5b2442affcf3c134\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Fecha\"}}},{\"name\":\"1e7bbc95ce1ceeb25141\",\"boundFilter\":\"7bf880a8b81f030570f4\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"FRECUENCIA\"}},\"asAggregation\":true},{\"name\":\"53ff5cdbd2003148003a\",\"boundFilter\":\"4199460a6ef95004b786\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Nombre Agente\"}}},{\"name\":\"5e3e1c71f301ab1ce7ba\",\"boundFilter\":\"865254113f1d663ca596\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"NUMERO DE SINIESTROS\"}},\"asAggregation\":true},{\"name\":\"f7995640f8cfa045feb2\",\"boundFilter\":\"253d87a2dbbd0b7611f8\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Oficina\"}}},{\"name\":\"5b87e769157285868ccb\",\"boundFilter\":\"68a17afa7ddc1735dbb7\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Cobrada\"}},\"asAggregation\":true},{\"name\":\"d6a319ac120b3b6d1995\",\"boundFilter\":\"6876ab514e8cc03a9d6b\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Devengada\"}},\"asAggregation\":true},{\"name\":\"5b1e923219959aa124c8\",\"boundFilter\":\"b9a35444db905f0a6546\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Neta\"}},\"asAggregation\":true},{\"name\":\"c4c4b146140e59262f05\",\"boundFilter\":\"503146beccd26de4d400\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Promedio Historica\"}},\"asAggregation\":true},{\"name\":\"9685960d1e2da24d7aa5\",\"boundFilter\":\"00a148bfa3d79502c031\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"SINIESTRALIDAD\"}},\"asAggregation\":true}]",
+      "type": 1
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Storm",
+            "path": "BuiltInThemes/Storm.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "items": [
+          {
+            "name": "logoAzul319630999925797.png",
+            "path": "logoAzul319630999925797.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Análisis IA",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "03476477003a67a49bab",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2d326c21030318a4dd91\",\"layouts\":[{\"id\":0,\"position\":{\"x\":735.7917570498915,\"y\":1.3882863340563991,\"z\":5000,\"width\":226.29067245119305,\"height\":62.47288503253796,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.OFICINA\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"OFICINA\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 226.29,
+          "x": 735.79,
+          "y": 1.39,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"410d5e8ab1a340082070\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":54.888691602874424,\"z\":0,\"width\":838.4247642339068,\"height\":665.5253856848524,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"ExplainBy\":[{\"queryRef\":\"Seguros.DIVISION\",\"active\":true},{\"queryRef\":\"Seguros.OFICINA\",\"active\":true},{\"queryRef\":\"Seguros.NOMBRE_AGENTE\",\"active\":true},{\"queryRef\":\"Seguros.CLAVE_AGENTE\"},{\"queryRef\":\"Seguros.AGRUPACION\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\"},{\"queryRef\":\"Seguros.CLAVE_ESPEJO\"}],\"Analyze\":[{\"queryRef\":\"Sum(Seguros.Prima Neta)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"DIVISION\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.NOMBRE_AGENTE\",\"NativeReferenceName\":\"NOMBRE_AGENTE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"},\"Name\":\"Seguros.CLAVE_AGENTE\",\"NativeReferenceName\":\"CLAVE_AGENTE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Agrupacion\"},\"Name\":\"Seguros.AGRUPACION\",\"NativeReferenceName\":\"AGRUPACION\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"OFICINA\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"Fecha Día\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Espejo\"},\"Name\":\"Seguros.CLAVE_ESPEJO\",\"NativeReferenceName\":\"Clave Espejo\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0},\"Name\":\"Sum(Seguros.Prima Neta)\",\"NativeReferenceName\":\"Prima Neta\"}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"Seguros.DIVISION\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Division\"}}],\"isPinned\":true},{\"queryRefs\":[\"Seguros.OFICINA\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Oficina\"}}],\"isPinned\":true},{\"queryRefs\":[\"Seguros.NOMBRE_AGENTE\"],\"isCollapsed\":true,\"isPinned\":true},{\"queryRefs\":[\"Seguros.CLAVE_AGENTE\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.AGRUPACION\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\"],\"isCollapsed\":true},{\"queryRefs\":[\"Seguros.CLAVE_ESPEJO\"],\"isCollapsed\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'SUR'\"}}],\"isToggled\":true,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'CORPORATIVOS SUR'\"}}],\"isToggled\":true}]}]}}],\"columnProperties\":{\"Sum(Seguros.Prima Neta)\":{\"displayName\":\"Prima Neta\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"tree\":[{\"properties\":{\"effectiveBarsPerLevel\":{\"expr\":{\"Literal\":{\"Value\":\"9L\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 665.53,
+          "width": 838.42,
+          "x": 0.00,
+          "y": 54.89,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5aca65b10896803c5261\",\"layouts\":[{\"id\":0,\"position\":{\"x\":358.177874186551,\"y\":0,\"z\":3000,\"width\":213.79609544468545,\"height\":62.47288503253796,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.CLAVE_AGENTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"},\"Name\":\"Seguros.CLAVE_AGENTE\",\"NativeReferenceName\":\"CLAVE_AGENTE\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 213.80,
+          "x": 358.18,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"6347aaa34a035c20a465\",\"layouts\":[{\"id\":0,\"position\":{\"x\":571.9739696312364,\"y\":0,\"z\":4000,\"width\":163.8177874186551,\"height\":62.47288503253796,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.AGRUPACION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Agrupacion\"},\"Name\":\"Seguros.AGRUPACION\",\"NativeReferenceName\":\"AGRUPACION\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 163.82,
+          "x": 571.97,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"85a58b709701a50d2ba8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":183.62802558249533,\"y\":0,\"z\":7000,\"width\":175.20472165669278,\"height\":67.3864314064203,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.Nombre Agente\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.Nombre Agente\",\"NativeReferenceName\":\"Nombre Agente\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 67.39,
+          "width": 175.20,
+          "x": 183.63,
+          "y": 0.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"b782d84be0b4d95003c2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2000,\"width\":183.25379609544467,\"height\":62.47288503253796,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.DIVISION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"DIVISION\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 183.25,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"bb416266e72258a45c32\",\"layouts\":[{\"id\":0,\"position\":{\"x\":962.0824295010846,\"y\":0,\"z\":6000,\"width\":191.5835140997831,\"height\":62.47288503253796,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Año\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Fecha'\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\"}},\"Property\":\"Año\"}},\"Right\":{\"Literal\":{\"Value\":\"2024L\"}}}}},\"displayName\":\"2024\"}]}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 191.58,
+          "x": 962.08,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"c1eba232774b47bc98d2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":838.4247642339068,\"y\":64.49421263337744,\"z\":1000,\"width\":441.8539674031391,\"height\":655.9198646543493,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"qnaVisual\",\"drillFilterOtherVisuals\":true,\"objects\":{\"hiddenProperties\":[{\"properties\":{\"savedUtterance\":{\"expr\":{\"Literal\":{\"Value\":\"'nombre agente by prima cobrada in noviembre'\"}}}}}]}}}",
+          "height": 655.92,
+          "width": 441.85,
+          "x": 838.42,
+          "y": 64.49,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c42ccb55027472e3eb66\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1203.155831755976,\"y\":0,\"z\":8000,\"width\":76.84416824402419,\"height\":76.84416824402419,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logoAzul319630999925797.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 76.84,
+          "width": 76.84,
+          "x": 1203.16,
+          "y": 0.00,
+          "z": 8000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "detalle completo",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"e9961ae2a842e1c7376b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"% DESCUENTO\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"527c73c64ad083aa2948\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Agrupacion\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"ba3feffa66157d4daef5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Agente\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"d5902bb170b4722f622e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Espejo\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"ebcc41b91cafba38d1fc\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"9610b4eac4b6c1338b25\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"COSTO PROMEDIO DE SINIESTRO\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"5a92071ec3ee30ad5935\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Division\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"09abda486e0f917e2f48\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"EXPUESTO\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"4dfd5b2442affcf3c134\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Fecha\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"7bf880a8b81f030570f4\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"FRECUENCIA\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"4199460a6ef95004b786\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Nombre Agente\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"865254113f1d663ca596\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"NUMERO DE SINIESTROS\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"253d87a2dbbd0b7611f8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Oficina\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"68a17afa7ddc1735dbb7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Cobrada\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6876ab514e8cc03a9d6b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Devengada\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"b9a35444db905f0a6546\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Neta\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"503146beccd26de4d400\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Promedio Historica\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"00a148bfa3d79502c031\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"SINIESTRALIDAD\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "1f7192d581f1cd35fcc0",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1856bf0989ce44ddae8d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":69.41431670281996,\"y\":0,\"z\":2000,\"width\":183.25379609544467,\"height\":62.47288503253796,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.DIVISION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"DIVISION\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 183.25,
+          "x": 69.41,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"34796f0e3edc95475be4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":437.3101952277657,\"y\":0,\"z\":4000,\"width\":169.3709327548807,\"height\":62.47288503253796,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.CLAVE_AGENTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"},\"Name\":\"Seguros.CLAVE_AGENTE\",\"NativeReferenceName\":\"Clave Agente\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Clave Agente\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"}},\"Right\":{\"Literal\":{\"Value\":\"999999L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 62.47,
+          "width": 169.37,
+          "x": 437.31,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"72d8b30f64d06e57d060\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1203.155831755976,\"y\":0,\"z\":8001,\"width\":76.84416824402419,\"height\":76.84416824402419,\"tabOrder\":8001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logoAzul319630999925797.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 76.84,
+          "width": 76.84,
+          "x": 1203.16,
+          "y": 0.00,
+          "z": 8001.00
+        },
+        {
+          "config": "{\"name\":\"941faffe4a373914e001\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9b4f1bbc2c556c8e0236\",\"layouts\":[{\"id\":0,\"position\":{\"x\":770.4989154013015,\"y\":0,\"z\":6000,\"width\":226.29067245119305,\"height\":62.47288503253796,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.OFICINA\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"Oficina\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 226.29,
+          "x": 770.50,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"a32b5cbdb7942d984fba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":606.6811279826464,\"y\":0,\"z\":5000,\"width\":163.8177874186551,\"height\":62.47288503253796,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.AGRUPACION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Agrupacion\"},\"Name\":\"Seguros.AGRUPACION\",\"NativeReferenceName\":\"Agrupacion\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 163.82,
+          "x": 606.68,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"dc8c56d73982129d44aa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":996.7895878524945,\"y\":0,\"z\":7000,\"width\":191.5835140997831,\"height\":62.47288503253796,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Fecha'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 191.58,
+          "x": 996.79,
+          "y": 0.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"dcc4b6d21f289f2f7dfb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":252.66811279826464,\"y\":0,\"z\":3000,\"width\":184.64208242950107,\"height\":62.47288503253796,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.NOMBRE_AGENTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.NOMBRE_AGENTE\",\"NativeReferenceName\":\"NOMBRE_AGENTE\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 184.64,
+          "x": 252.67,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"f8d268e8f5359a17aee9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":54.888691602874424,\"z\":0,\"width\":1280.278731637046,\"height\":665.5253856848524,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.DIVISION\"},{\"queryRef\":\"Seguros.OFICINA\"},{\"queryRef\":\"Seguros.AGRUPACION\"},{\"queryRef\":\"Seguros.CLAVE_ESPEJO\"},{\"queryRef\":\"Seguros.CLAVE_AGENTE\"},{\"queryRef\":\"Seguros.NOMBRE_AGENTE\"},{\"queryRef\":\"Seguros.Tipo de Agente\"},{\"queryRef\":\"Seguros.Tipo de cotización\"},{\"queryRef\":\"Seguros.Categoría\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\"},{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"},{\"queryRef\":\"Sum(Seguros.PRIMA NETA)\"},{\"queryRef\":\"Sum(Seguros.CNS)\"},{\"queryRef\":\"Sum(Seguros.PRIMA DEVENGADA)\"},{\"queryRef\":\"Avg(Seguros.SINIESTRALIDAD)\"},{\"queryRef\":\"Sum(Seguros.PRIMA PROMEDIO HISTORICA)\"},{\"queryRef\":\"Sum(Seguros.% DESCUENTO)\"},{\"queryRef\":\"Sum(Seguros.FRECUENCIA)\"},{\"queryRef\":\"Sum(Seguros.COSTO PROMEDIO DE SINIESTRO)\"},{\"queryRef\":\"Sum(Seguros.EXPUESTO)\"},{\"queryRef\":\"Sum(Seguros.NUMERO DE SINIESTROS)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"DIVISION\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"Oficina\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Agrupacion\"},\"Name\":\"Seguros.AGRUPACION\",\"NativeReferenceName\":\"Agrupacion\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"},\"Name\":\"Seguros.CLAVE_AGENTE\",\"NativeReferenceName\":\"Clave Agente\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Espejo\"},\"Name\":\"Seguros.CLAVE_ESPEJO\",\"NativeReferenceName\":\"CLAVE_ESPEJO\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.NOMBRE_AGENTE\",\"NativeReferenceName\":\"NOMBRE_AGENTE\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"PRIMA COBRADA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA NETA)\",\"NativeReferenceName\":\"PRIMA NETA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CNS\"}},\"Function\":0},\"Name\":\"Sum(Seguros.CNS)\",\"NativeReferenceName\":\"CNS\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Devengada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA DEVENGADA)\",\"NativeReferenceName\":\"PRIMA DEVENGADA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SINIESTRALIDAD\"}},\"Function\":1},\"Name\":\"Avg(Seguros.SINIESTRALIDAD)\",\"NativeReferenceName\":\"SINIESTRALIDAD\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Promedio Historica\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA PROMEDIO HISTORICA)\",\"NativeReferenceName\":\"PRIMA PROMEDIO HISTORICA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"% DESCUENTO\"}},\"Function\":0},\"Name\":\"Sum(Seguros.% DESCUENTO)\",\"NativeReferenceName\":\"% DESCUENTO\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"FRECUENCIA\"}},\"Function\":0},\"Name\":\"Sum(Seguros.FRECUENCIA)\",\"NativeReferenceName\":\"FRECUENCIA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"EXPUESTO\"}},\"Function\":0},\"Name\":\"Sum(Seguros.EXPUESTO)\",\"NativeReferenceName\":\"EXPUESTO\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"NUMERO DE SINIESTROS\"}},\"Function\":0},\"Name\":\"Sum(Seguros.NUMERO DE SINIESTROS)\",\"NativeReferenceName\":\"NUMERO DE SINIESTROS\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"COSTO PROMEDIO DE SINIESTRO\"}},\"Function\":0},\"Name\":\"Sum(Seguros.COSTO PROMEDIO DE SINIESTRO)\",\"NativeReferenceName\":\"COSTO PROMEDIO DE SINIESTRO\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"Fecha Día\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Tipo de Agente\"},\"Name\":\"Seguros.Tipo de Agente\",\"NativeReferenceName\":\"Tipo de Agente\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Tipo de cotización\"},\"Name\":\"Seguros.Tipo de cotización\",\"NativeReferenceName\":\"Tipo de cotización\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Categoría\"},\"Name\":\"Seguros.Categoría\",\"NativeReferenceName\":\"Categoría\"}]},\"columnProperties\":{\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"PRIMA COBRADA\"},\"Sum(Seguros.PRIMA NETA)\":{\"displayName\":\"PRIMA NETA\"},\"Sum(Seguros.CNS)\":{\"displayName\":\"CNS\"},\"Sum(Seguros.PRIMA DEVENGADA)\":{\"displayName\":\"PRIMA DEVENGADA\"},\"Avg(Seguros.SINIESTRALIDAD)\":{\"displayName\":\"SINIESTRALIDAD\"},\"Sum(Seguros.PRIMA PROMEDIO HISTORICA)\":{\"displayName\":\"PRIMA PROMEDIO HISTORICA\"},\"Sum(Seguros.% DESCUENTO)\":{\"displayName\":\"% DESCUENTO\"},\"Sum(Seguros.FRECUENCIA)\":{\"displayName\":\"FRECUENCIA\"},\"Sum(Seguros.EXPUESTO)\":{\"displayName\":\"EXPUESTO\"},\"Sum(Seguros.NUMERO DE SINIESTROS)\":{\"displayName\":\"NUMERO DE SINIESTROS\"},\"Sum(Seguros.COSTO PROMEDIO DE SINIESTRO)\":{\"displayName\":\"COSTO PROMEDIO DE SINIESTRO\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnFormatting\":[{\"properties\":{\"dataBars\":{\"positiveColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}}},\"negativeColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}}},\"axisColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'foreground'\"}}}}},\"reverseDirection\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"hideText\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"totalMatchingOption\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}},\"selector\":{\"metadata\":\"Sum(Seguros.PRIMA COBRADA)\"}}],\"values\":[{\"properties\":{\"icon\":{\"kind\":\"Icon\",\"layout\":{\"expr\":{\"Literal\":{\"Value\":\"'Before'\"}}},\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}},\"value\":{\"expr\":{\"Conditional\":{\"Cases\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"0D\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":4,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"40000D\"}}}}}},\"Value\":{\"Literal\":{\"Value\":\"'CircleHigh'\"}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"40001D\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"100000D\"}}}}}},\"Value\":{\"Literal\":{\"Value\":\"'SignMedium'\"}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"100000D\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"9999999999D\"}}}}}},\"Value\":{\"Literal\":{\"Value\":\"'SignLow'\"}}}]}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Sum(Seguros.CNS)\"}}]}}}",
+          "filters": "[]",
+          "height": 665.53,
+          "width": 1280.28,
+          "x": 0.00,
+          "y": 54.89,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"7a031d19fc475aedc7f4\",\"target\":\"5b104a39cc9ba436f1f8\",\"type\":3}]}",
+      "displayName": "Tablero general",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "316904426de0bbb178a3",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0e81ff9a238a2ac9a9ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1047.4270557029176,\"y\":421.00795755968164,\"z\":8000,\"width\":232.57294429708222,\"height\":298.7798408488063,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.YoY% de PRIMA NETA\"},{\"queryRef\":\"Seguros.YoY% de PRIMA COBRADA\"},{\"queryRef\":\"Seguros.YoY% de CNS\"},{\"queryRef\":\"Seguros.YoY% de PRIMA DEVENGADA\"},{\"queryRef\":\"Seguros.YoY% de SINIESTRALIDAD\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Prima Cobrada\"},\"Name\":\"Seguros.YoY% de PRIMA COBRADA\",\"NativeReferenceName\":\"YoY% de Prima Cobrada\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Prima Devengada\"},\"Name\":\"Seguros.YoY% de PRIMA DEVENGADA\",\"NativeReferenceName\":\"YoY% de Prima Devengada\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Prima Neta\"},\"Name\":\"Seguros.YoY% de PRIMA NETA\",\"NativeReferenceName\":\"YoY% de Prima Neta\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Siniestralidad\"},\"Name\":\"Seguros.YoY% de SINIESTRALIDAD\",\"NativeReferenceName\":\"YoY% de Siniestralidad\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de CNS\"},\"Name\":\"Seguros.YoY% de CNS\",\"NativeReferenceName\":\"YoY% de CNS\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Prima Neta\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 298.78,
+          "width": 232.57,
+          "x": 1047.43,
+          "y": 421.01,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"2e66d56923da208c6032\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":183.25379609544467,\"height\":62.47288503253796,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.DIVISION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"Division\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 183.25,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5b104a39cc9ba436f1f8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":435.9480907478293,\"y\":61.18569694706377,\"z\":6000,\"width\":160.6124544860424,\"height\":275.33563626178693,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Seguros.PRIMA NETA)\"},{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"},{\"queryRef\":\"Sum(Seguros.PRIMA DEVENGADA)\"},{\"queryRef\":\"Sum(Seguros.CNS)\"},{\"queryRef\":\"Avg(Seguros.SINIESTRALIDAD)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA NETA)\",\"NativeReferenceName\":\"Prima Neta\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"Prima cobrada\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Devengada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA DEVENGADA)\",\"NativeReferenceName\":\"Prima devengada\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CNS\"}},\"Function\":0},\"Name\":\"Sum(Seguros.CNS)\",\"NativeReferenceName\":\"CNS\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SINIESTRALIDAD\"}},\"Function\":1},\"Name\":\"Avg(Seguros.SINIESTRALIDAD)\",\"NativeReferenceName\":\"Siniestralidad\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.PRIMA NETA)\":{\"displayName\":\"Prima Neta\"},\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"Prima cobrada\"},\"Sum(Seguros.PRIMA DEVENGADA)\":{\"displayName\":\"Prima devengada\"},\"Sum(Seguros.CNS)\":{\"displayName\":\"CNS\"},\"Avg(Seguros.SINIESTRALIDAD)\":{\"displayName\":\"Siniestralidad\"}},\"drillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'2023'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"d06ced41d6592ace087f\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"SINIESTRALIDAD\"}},\"Function\":1}},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":0},{\"name\":\"e84a2a50130f9bc50d7d\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Nombre Agente\"}},\"Function\":5}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false,\"ordinal\":1},{\"name\":\"c67ca750ac0cbcfbbafe\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"CNS\"}},\"Function\":0}},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":2},{\"name\":\"a01cf31a40b656e778fd\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":3},{\"name\":\"c27c850e24b246c1871b\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Devengada\"}},\"Function\":0}},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":4},{\"name\":\"25e1df31794ad734b575\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Prima Neta\"}},\"Function\":0}},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":5},{\"name\":\"2b1ec43e9db998bea8c7\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Property\":\"Siniestralidad \"}},\"Function\":0}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false,\"ordinal\":6},{\"name\":\"d0503a85a3b9502ce810\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Año\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2023L\"}}]]}}}]},\"type\":\"Categorical\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\"}},\"Property\":\"Año\"}},\"Right\":{\"Literal\":{\"Value\":\"2023L\"}}}}},\"displayName\":\"2023\"}],\"howCreated\":1,\"objects\":{},\"ordinal\":7}]",
+          "height": 275.34,
+          "width": 160.61,
+          "x": 435.95,
+          "y": 61.19,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"5fe7ee7c4fe68eae3b87\",\"layouts\":[{\"id\":0,\"position\":{\"x\":735.7917570498915,\"y\":1.3882863340563991,\"z\":3000,\"width\":226.29067245119305,\"height\":62.47288503253796,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.OFICINA\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"OFICINA\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 226.29,
+          "x": 735.79,
+          "y": 1.39,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"689b41d0eadbd20fe2e7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":756.1716171617162,\"y\":61.25412541254125,\"z\":10000,\"width\":523.8283828382838,\"height\":327.39273927392736,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Seguros.NOMBRE_AGENTE\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Seguros.Prima Cobrada)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.NOMBRE_AGENTE\",\"NativeReferenceName\":\"Nombre Agente\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.Prima Cobrada)\",\"NativeReferenceName\":\"Prima Cobrada\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.Prima Cobrada)\":{\"displayName\":\"Prima Cobrada\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'94533913201990b4bac6'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 327.39,
+          "width": 523.83,
+          "x": 756.17,
+          "y": 61.25,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"6d51b68ffe28f959a4e8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":358.177874186551,\"y\":0,\"z\":1000,\"width\":213.79609544468545,\"height\":62.47288503253796,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.CLAVE_AGENTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Clave Agente\"},\"Name\":\"Seguros.CLAVE_AGENTE\",\"NativeReferenceName\":\"CLAVE_AGENTE\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 213.80,
+          "x": 358.18,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"7278326a3f6a1230f94b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":571.9739696312364,\"y\":0,\"z\":2000,\"width\":163.8177874186551,\"height\":62.47288503253796,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.AGRUPACION\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Agrupacion\"},\"Name\":\"Seguros.AGRUPACION\",\"NativeReferenceName\":\"AGRUPACION\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 163.82,
+          "x": 571.97,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"72ae0038db3066f33532\",\"layouts\":[{\"id\":0,\"position\":{\"x\":596.5605452338717,\"y\":61.18569694706377,\"z\":5000,\"width\":159.0828120623658,\"height\":275.33563626178693,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Seguros.PRIMA NETA)\"},{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"},{\"queryRef\":\"Sum(Seguros.PRIMA DEVENGADA)\"},{\"queryRef\":\"Sum(Seguros.CNS)\"},{\"queryRef\":\"Avg(Seguros.SINIESTRALIDAD)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA NETA)\",\"NativeReferenceName\":\"Prima Neta\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"Prima cobrada\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Devengada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA DEVENGADA)\",\"NativeReferenceName\":\"Prima devengada\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CNS\"}},\"Function\":0},\"Name\":\"Sum(Seguros.CNS)\",\"NativeReferenceName\":\"CNS\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SINIESTRALIDAD\"}},\"Function\":1},\"Name\":\"Avg(Seguros.SINIESTRALIDAD)\",\"NativeReferenceName\":\"Siniestralidad\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0}}}]},\"columnProperties\":{\"Avg(Seguros.SINIESTRALIDAD)\":{\"displayName\":\"Siniestralidad\"},\"Sum(Seguros.PRIMA NETA)\":{\"displayName\":\"Prima Neta\"},\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"Prima cobrada\"},\"Sum(Seguros.PRIMA DEVENGADA)\":{\"displayName\":\"Prima devengada\"},\"Sum(Seguros.CNS)\":{\"displayName\":\"CNS\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'2024'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"fdab1b0c19f3a4ce1275\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Seguros\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Año\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}]]}}}]},\"type\":\"Categorical\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\"}},\"Property\":\"Año\"}},\"Right\":{\"Literal\":{\"Value\":\"2024L\"}}}}},\"displayName\":\"2024\"}],\"howCreated\":1,\"objects\":{}}]",
+          "height": 275.34,
+          "width": 159.08,
+          "x": 596.56,
+          "y": 61.19,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"7a031d19fc475aedc7f4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":962.0824295010846,\"y\":0,\"z\":7000,\"width\":191.5835140997831,\"height\":62.47288503253796,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Año\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Fecha'\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_32ee83fb-fb0a-4230-a704-e70cb3c4ad59\"}},\"Property\":\"Año\"}},\"Right\":{\"Literal\":{\"Value\":\"2024L\"}}}}},\"displayName\":\"2024\"}]}}",
+          "filters": "[]",
+          "height": 62.47,
+          "width": 191.58,
+          "x": 962.08,
+          "y": 0.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"868a189d71c553241699\",\"layouts\":[{\"id\":0,\"position\":{\"x\":183.62802558249533,\"y\":0,\"z\":12000,\"width\":175.20472165669278,\"height\":67.3864314064203,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Seguros.Nombre Agente\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Nombre Agente\"},\"Name\":\"Seguros.Nombre Agente\",\"NativeReferenceName\":\"Nombre Agente\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 67.39,
+          "width": 175.20,
+          "x": 183.63,
+          "y": 0.00,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"a4054c810f508536a678\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":388.64686468646863,\"z\":11000,\"width\":407.65676567656766,\"height\":331.6171617161716,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Seguros.YoY% de PRIMA COBRADA\"}],\"Category\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"YoY% de Prima Cobrada\"},\"Name\":\"Seguros.YoY% de PRIMA COBRADA\",\"NativeReferenceName\":\"YoY% de Prima Cobrada\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"preferredCategoryWidth\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 331.62,
+          "width": 407.66,
+          "x": 640.00,
+          "y": 388.65,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"dc429f6e26e68d1cc740\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":62.81167108753315,\"z\":9000,\"width\":434.5888594164456,\"height\":314.05835543766574,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Seguros.DIVISION\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Seguros.Prima Cobrada)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Division\"},\"Name\":\"Seguros.DIVISION\",\"NativeReferenceName\":\"Division\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.Prima Cobrada)\",\"NativeReferenceName\":\"Prima Cobrada\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.Prima Cobrada)\":{\"displayName\":\"Prima Cobrada\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'763bc952266dee97a265'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 314.06,
+          "width": 434.59,
+          "x": 0.00,
+          "y": 62.81,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"e8f13c1c503f8210493a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":377.3640158759537,\"z\":4000,\"width\":640.1710983609929,\"height\":343.67080017274355,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Seguros.Prima Neta)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Fecha\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Neta\"}},\"Function\":0},\"Name\":\"Sum(Seguros.Prima Neta)\",\"NativeReferenceName\":\"Prima Neta\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Fecha\"}}}]},\"columnProperties\":{\"Sum(Seguros.Prima Neta)\":{\"displayName\":\"Prima Neta\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 343.67,
+          "width": 640.17,
+          "x": 0.00,
+          "y": 377.36,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"f18b1e59c70d142684a3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1203.2631208171892,\"y\":0,\"z\":13001,\"width\":76.46636139485734,\"height\":76.46636139485734,\"tabOrder\":13001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logoAzul319630999925797.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 76.47,
+          "width": 76.47,
+          "x": 1203.26,
+          "y": 0.00,
+          "z": 13001.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1,\"type\":1}",
+      "displayName": "PrimaCobradaOficina",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 320.00,
+      "name": "763bc952266dee97a265",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4e026007b88a5ea8ae71\",\"layouts\":[{\"id\":0,\"position\":{\"x\":347.611240780506,\"y\":0,\"z\":1000,\"width\":132.50527495098495,\"height\":33.843338623844645,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"PRIMA COBRADA\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"PRIMA COBRADA\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 33.84,
+          "width": 132.51,
+          "x": 347.61,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c2586a436cb8470e681e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":243.2632346192263,\"z\":2000,\"width\":76.84906730016466,\"height\":76.84906730016466,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logoAzul319630999925797.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 76.85,
+          "width": 76.85,
+          "x": 0.00,
+          "y": 243.26,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"cf0444400ce7c2c0467d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":480.11651573149095,\"height\":320.0776771543273,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Seguros.OFICINA\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Oficina\"},\"Name\":\"Seguros.OFICINA\",\"NativeReferenceName\":\"OFICINA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"Prima Cobrada\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"Prima Cobrada\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 320.08,
+          "width": 480.12,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 480.00
+    },
+    {
+      "config": "{\"visibility\":1,\"type\":1}",
+      "displayName": "PrimaCobradaTiempo",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 320.00,
+      "name": "94533913201990b4bac6",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3e2b83dc2434a405c0b0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":347.611240780506,\"y\":0,\"z\":1000,\"width\":132.50527495098495,\"height\":33.843338623844645,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"PRIMA COBRADA\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"PRIMA COBRADA\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 33.84,
+          "width": 132.51,
+          "x": 347.61,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"957ca33cd3e997d08e95\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":523.8283828382838,\"height\":327.39273927392736,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"active\":true},{\"queryRef\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Seguros.PRIMA COBRADA)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Seguros\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"Fecha Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"Fecha Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"Seguros.Fecha.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"Fecha Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Prima Cobrada\"}},\"Function\":0},\"Name\":\"Sum(Seguros.PRIMA COBRADA)\",\"NativeReferenceName\":\"Prima Cobrada\"}]},\"columnProperties\":{\"Sum(Seguros.PRIMA COBRADA)\":{\"displayName\":\"Prima Cobrada\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Prima Cobrada en el tiempo'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 327.39,
+          "width": 523.83,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"9cd387b204950ae7e862\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":280.8584617876522,\"z\":2001,\"width\":39.25384013173879,\"height\":39.25384013173879,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logoAzul319630999925797.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.25,
+          "width": 39.25,
+          "x": 0.00,
+          "y": 280.86,
+          "z": 2001.00
+        }
+      ],
+      "width": 480.00
+    }
+  ],
+  "theme": "Storm"
+}

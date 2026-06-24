@@ -1,0 +1,173 @@
+table Morosidad_AML_Test
+	lineageTag: 3eb27be5-f8cf-4c0b-8e02-8a5f57b6ab86
+	sourceLineageTag: [dbo].[Morosidad_AML_Test]
+
+	column ACCOUNTNUM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4f61c506-d5d0-482e-bcc2-2c8fec441f89
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: none
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNTCUR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9eafb2bb-cb23-45b7-9c56-468dcebdfe0b
+		sourceLineageTag: AMOUNTCUR
+		summarizeBy: none
+		sourceColumn: AMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSED
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5eccc004-88d9-44ac-8f59-a71bb003d4d7
+		sourceLineageTag: CLOSED
+		summarizeBy: none
+		sourceColumn: CLOSED
+
+		annotation SummarizationSetBy = Automatic
+
+	column DUEDATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5e4a3791-91a4-49fe-b814-e7e89693b704
+		sourceLineageTag: DUEDATE
+		summarizeBy: none
+		sourceColumn: DUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEAMOUNTCUR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e776ed71-89de-40eb-ab57-47e4b6e73f45
+		sourceLineageTag: SETTLEAMOUNTCUR
+		summarizeBy: none
+		sourceColumn: SETTLEAMOUNTCUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7532259f-f7c8-45bb-b321-28ad62c78be2
+		sourceLineageTag: TRANSDATE
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAYMTERMID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1596c901-94f6-451f-b42d-024d4b822215
+		sourceLineageTag: PAYMTERMID
+		summarizeBy: none
+		sourceColumn: PAYMTERMID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3bc8d532-c8f6-405b-9add-ed9fcaa24ce1
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 862a9856-843c-4cb6-ad8c-c5590db94e0a
+		sourceLineageTag: RECID
+		summarizeBy: none
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_Pago
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ebfa2a7-5075-418f-8206-3fe1b4c3c28c
+		sourceLineageTag: Dias_Pago
+		summarizeBy: none
+		sourceColumn: Dias_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMOFDAYS
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ee878578-4f69-4b40-b96a-d96acf3fef33
+		sourceLineageTag: NUMOFDAYS
+		summarizeBy: none
+		sourceColumn: NUMOFDAYS
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANYCHAINID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c06e358d-e74f-49a9-80d8-cf66b734f798
+		sourceLineageTag: COMPANYCHAINID
+		summarizeBy: none
+		sourceColumn: COMPANYCHAINID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTGROUP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4b776a6f-9f76-4ed0-894e-3dd7d8666ffc
+		sourceLineageTag: CUSTGROUP
+		summarizeBy: none
+		sourceColumn: CUSTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Morosidad
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2fc96be-9ea7-4f12-bc48-161ed0459d46
+		sourceLineageTag: Morosidad
+		summarizeBy: none
+		sourceColumn: Morosidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scored Labels'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ed67659-39a8-4b73-9b7f-21534f48cf3c
+		sourceLineageTag: Scored Labels
+		summarizeBy: none
+		sourceColumn: Scored Labels
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scored Probabilities'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 41e80804-0b56-4812-b419-40d93dd5ca10
+		sourceLineageTag: Scored Probabilities
+		summarizeBy: none
+		sourceColumn: Scored Probabilities
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Morosidad_AML_Test-18bda00b-66b8-4d7d-9a52-9d3de8862b2e = entity
+		mode: directLake
+		source
+			entityName: Morosidad_AML_Test
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

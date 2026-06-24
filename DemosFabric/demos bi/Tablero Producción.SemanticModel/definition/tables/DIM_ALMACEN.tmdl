@@ -1,0 +1,69 @@
+table DIM_ALMACEN
+	lineageTag: e8bd15cd-08d4-42eb-84c5-3379076716ad
+
+	column ID_ALMACEN
+		dataType: int64
+		formatString: 0
+		lineageTag: a9e5cbb1-08ea-4e98-a504-763f1d767df1
+		summarizeBy: none
+		sourceColumn: ID_ALMACEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALMACEN_VALOR
+		dataType: string
+		lineageTag: 88f5fe53-0f81-4bfb-bf1d-aa17dbefbcc5
+		summarizeBy: none
+		sourceColumn: ALMACEN_VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALMACEN_NOMBRE
+		dataType: string
+		lineageTag: 048930a2-dfac-4055-bee2-a0d0bf3c9b0d
+		summarizeBy: none
+		sourceColumn: ALMACEN_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALMACEN_SITIO_VALOR
+		dataType: string
+		lineageTag: b212da17-54d0-4afd-82c6-a57a9407a645
+		summarizeBy: none
+		sourceColumn: ALMACEN_SITIO_VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALMACEN_SITIO_NOMBRE
+		dataType: string
+		lineageTag: 2ebabb13-32d2-4c17-83fe-30ccb83f0f3d
+		summarizeBy: none
+		sourceColumn: ALMACEN_SITIO_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CARGA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 77e32d27-9811-42ac-8eef-1499b748e42f
+		summarizeBy: none
+		sourceColumn: FECHA_CARGA
+
+		variation Variación
+			isDefault
+			relationship: 052b1539-1d2d-4f24-bec0-6c97550aacce
+			defaultHierarchy: LocalDateTable_0a16517f-4d86-49a5-b766-50bd99f381f1.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_ALMACEN = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("10.20.128.105", "DWH_LM"),
+				    dbo_DIM_ALMACEN = Origen{[Schema="dbo",Item="DIM_ALMACEN"]}[Data]
+				in
+				    dbo_DIM_ALMACEN
+
+	annotation PBI_ResultType = Table
+

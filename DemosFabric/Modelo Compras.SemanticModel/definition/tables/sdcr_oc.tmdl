@@ -1,0 +1,63 @@
+table sdcr_oc
+	lineageTag: 96159043-1404-408b-8e0e-79bd0ed3796d
+
+	column IdSdcrOc
+		dataType: int64
+		formatString: 0
+		lineageTag: ecfc54fe-4259-4d45-834f-da0fb2560c58
+		summarizeBy: none
+		sourceColumn: IdSdcrOc
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: e630cf02-a222-4ae8-9bf7-4b044cf1f939
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdSolicitudDeCompraRequisicion
+		dataType: string
+		lineageTag: 92735b0b-19be-4029-905f-0b155a036662
+		summarizeBy: none
+		sourceColumn: IdSolicitudDeCompraRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProyecto
+		dataType: string
+		lineageTag: 5a8153da-0554-4d50-a60a-e94e587dd893
+		summarizeBy: none
+		sourceColumn: IdProyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProducto
+		dataType: string
+		lineageTag: 886616b8-8746-41f1-a648-ce29e705871c
+		summarizeBy: none
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeProveedor
+		dataType: string
+		lineageTag: 3b3ae13c-17bb-40b6-bd64-abb6d96d9bb0
+		summarizeBy: none
+		sourceColumn: CuentaDeProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sdcr_oc = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_sdcr_oc = Origen{[Schema="dbo",Item="sdcr_oc"]}[Data]
+				in
+				    dbo_sdcr_oc
+
+	annotation PBI_ResultType = Table
+

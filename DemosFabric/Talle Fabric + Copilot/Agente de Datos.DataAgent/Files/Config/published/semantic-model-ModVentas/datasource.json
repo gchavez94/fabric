@@ -1,0 +1,327 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "cb49a713-5f8a-864c-4efe-a0f58eb2c3ff",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "ModVentas",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "e8297415-be0e-46a1-b846-a18973aa3308",
+      "is_selected": true,
+      "display_name": "DimArticulo",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "dd5cab62-bffa-4612-bbf0-c88ee9dc06c0",
+          "is_selected": true,
+          "display_name": "Categoria",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "680459b4-71ab-4d15-86f9-4b98725ae0a1",
+          "is_selected": true,
+          "display_name": "Descripcion",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2796a204-40e9-4146-abeb-bc9a00717893",
+          "is_selected": true,
+          "display_name": "DimArticuloId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "459dd618-2ac6-4413-b57f-3fbf92d7c8a5",
+          "is_selected": true,
+          "display_name": "Formato",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "15c87906-29ec-4fb7-a93c-4997c35daa2e",
+      "is_selected": true,
+      "display_name": "DimCliente",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "7508e824-3cec-4b94-8cc9-9bf8342436d5",
+          "is_selected": true,
+          "display_name": "DimClienteId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45a464aa-606b-4f84-9443-faa585be4b36",
+          "is_selected": true,
+          "display_name": "Estado",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "34af5819-dc74-45df-b5d7-f540dbc9d039",
+          "is_selected": true,
+          "display_name": "Latitud",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5198f2f1-715e-4742-bafe-bfe5adecd646",
+          "is_selected": true,
+          "display_name": "Longitud",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6c4757e8-2db3-46e1-a99b-a6c3bf943f16",
+          "is_selected": true,
+          "display_name": "Municipio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f75bc5bd-fd48-4804-b8af-f710a7cf83ac",
+          "is_selected": true,
+          "display_name": "NombreCliente",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b03c99bd-8ab7-42be-8d06-40ac67575f0f",
+          "is_selected": true,
+          "display_name": "Pais",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "973734c3-08c9-454e-8787-eafb71fd1ffd",
+          "is_selected": true,
+          "display_name": "Sucursal",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5756e434-fd9a-42e6-b1b9-f8fd25ad6dec",
+      "is_selected": true,
+      "display_name": "DimFecha",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "c9b5a07e-fc9e-455f-b780-f06baedd5d17",
+          "is_selected": true,
+          "display_name": "Año",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "98deaf2d-57ef-4a5b-b7bf-e99186231a19",
+          "is_selected": true,
+          "display_name": "Dia",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "48e1e012-7489-4518-bcf7-c88d15ec2fe3",
+          "is_selected": true,
+          "display_name": "DiaDeLaSemana",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e79e28a-102a-4e83-adb9-05847fdde2fd",
+          "is_selected": true,
+          "display_name": "Fecha",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "75ce00cc-986d-4d97-88d7-e0f76d2cd57e",
+          "is_selected": true,
+          "display_name": "NombreDelMes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2b834ab7-5ca0-43d4-b16d-fc1ba4dec5b4",
+          "is_selected": true,
+          "display_name": "Trimestre",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "73f19525-f95d-4f09-a5a2-e507c68298f2",
+      "is_selected": true,
+      "display_name": "DimVendedor",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "d10866ba-14ef-40c5-9700-20a62d6d3e8b",
+          "is_selected": true,
+          "display_name": "DimVendedorId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "435615f4-357c-42ec-a091-c53a8b58746c",
+          "is_selected": true,
+          "display_name": "NombreVendedor",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3842c788-a0a1-44d4-b150-53c32fa634d5",
+      "is_selected": true,
+      "display_name": "FactVentas",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0576a2ab-f942-400b-aafa-4de1b38d91d2",
+          "is_selected": true,
+          "display_name": "Cantidad",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "850aa6d5-efd7-42f0-b5fb-f0edf42c823c",
+          "is_selected": true,
+          "display_name": "DimArticuloId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b780b8c7-eebf-4c13-b0e2-5344a95ad808",
+          "is_selected": true,
+          "display_name": "DimClienteId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bf17edd8-6ff5-424b-8fef-944ee0e0d76b",
+          "is_selected": true,
+          "display_name": "DimVendedorId",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d079638-ceb6-4cd8-8659-c399df4d0c01",
+          "is_selected": true,
+          "display_name": "Fecha",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cd88e221-fafd-49be-ab30-8ad412e77130",
+          "is_selected": true,
+          "display_name": "IdVenta",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c7b212dd-fe69-482f-969e-cdec74e07982",
+          "is_selected": true,
+          "display_name": "Iva",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "47735498-6524-47af-9ef5-c9971c4ceab8",
+          "is_selected": true,
+          "display_name": "M_VentasTotal",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b76ae6ae-c768-4625-a7c0-d0fb38ba3c45",
+          "is_selected": true,
+          "display_name": "Subtotal",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ead46219-be57-400a-bab6-4b58df209932",
+          "is_selected": true,
+          "display_name": "Total",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

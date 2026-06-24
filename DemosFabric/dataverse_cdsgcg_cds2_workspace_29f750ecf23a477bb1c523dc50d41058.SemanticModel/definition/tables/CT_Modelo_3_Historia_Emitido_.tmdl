@@ -1,0 +1,59 @@
+table CT_Modelo_3_Historia_Emitido_
+	lineageTag: 93aac68b-6166-4d1f-9303-d2a1b695f404
+	sourceLineageTag: [dbo].[CT_Modelo_3_Historia_Emitido_]
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 50cbb0a1-72bf-43a1-b859-c705d4e1b42f
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e4a235b0-58fc-414c-872a-92fb642aef9b
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto_Emitido
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 02e53321-c0b6-4725-97ab-000e48a387ee
+		sourceLineageTag: Monto_Emitido
+		summarizeBy: sum
+		sourceColumn: Monto_Emitido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Monto_Recibido
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 68f2807f-08d2-4fd1-8889-16eb7a81e288
+		sourceLineageTag: Monto_Recibido
+		summarizeBy: sum
+		sourceColumn: Monto_Recibido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CT_Modelo_3_Historia_Emitido_-b6eed854-3eaf-4200-b92a-ebce7c5cdbb0 = entity
+		mode: directLake
+		source
+			entityName: CT_Modelo_3_Historia_Emitido_
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

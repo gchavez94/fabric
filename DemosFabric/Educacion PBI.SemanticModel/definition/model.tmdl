@@ -1,0 +1,22 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.123.742.0 (23.11)
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Info Estudiantes","SL","Presupuesto"]
+
+ref table 'Info Estudiantes'
+ref table DateTableTemplate_dc56faec-4920-4e8b-b7f3-3b46f63598cd
+ref table SL
+ref table Presupuesto
+ref table LocalDateTable_f10cfc63-3a6f-4219-8ce0-d5edadf1d5b3
+
+ref cultureInfo es-MX
+

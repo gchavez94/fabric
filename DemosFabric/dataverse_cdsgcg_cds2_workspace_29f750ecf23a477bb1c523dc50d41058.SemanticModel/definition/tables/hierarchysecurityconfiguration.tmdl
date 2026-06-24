@@ -1,0 +1,118 @@
+table hierarchysecurityconfiguration
+	lineageTag: 1b671d27-f000-475c-92f7-18bb8a275829
+	sourceLineageTag: [dbo].[hierarchysecurityconfiguration]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f02d01e8-5f94-42c2-9dda-f95b591f965e
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: db44fb4a-f4cb-4d81-a131-de13ca2d607a
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b0f62c43-fe4b-40f8-b81d-6bdaf3677d8a
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column entityname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9a700d05-77d2-40bb-921d-6e7020e14f2b
+		sourceLineageTag: entityname
+		summarizeBy: none
+		sourceColumn: entityname
+
+		annotation SummarizationSetBy = Automatic
+
+	column hierarchysecuritymodelingsettingid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e09b7f5a-36ac-4fd1-9006-0753a43d90ce
+		sourceLineageTag: hierarchysecuritymodelingsettingid
+		summarizeBy: none
+		sourceColumn: hierarchysecuritymodelingsettingid
+
+		annotation SummarizationSetBy = Automatic
+
+	column objecttypecode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f54311ed-7397-4450-a8ee-bc4d7088bfb8
+		sourceLineageTag: objecttypecode
+		summarizeBy: none
+		sourceColumn: objecttypecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e3f77b0a-defc-433d-bd20-d89470cbfb04
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: f93b14b2-7692-4195-abb0-145d23a236a9
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0caea329-4b60-4336-8310-07a471b0cedc
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d1513c5d-6ba4-42b7-b65c-fbb29f6d3ddb
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition hierarchysecurityconfiguration-4f062876-2d4e-42ad-b550-3ee309bd8761 = entity
+		mode: directLake
+		source
+			entityName: hierarchysecurityconfiguration
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,33 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["FACT_PRODUCCION_COSTOS","DIM_PRODUCTOS","DIM_ALMACEN","CATALOGO_MP","DIM_CATALOGO_MP","DIM_FECHA_CREACION","DIM_CENTRO_COSTOS","DIM_PART","dataProductos","conjuntoProd"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
+
+ref table FACT_PRODUCCION_COSTOS
+ref table DateTableTemplate_f5907245-b63d-406d-84b3-59c3d47296df
+ref table LocalDateTable_25428348-646a-4582-9801-0255ac65dc11
+ref table DIM_PRODUCTOS
+ref table LocalDateTable_69b15ca2-c77d-40a9-a987-fc1cfc7faa6f
+ref table DIM_ALMACEN
+ref table LocalDateTable_0a16517f-4d86-49a5-b766-50bd99f381f1
+ref table CATALOGO_MP
+ref table DIM_CATALOGO_MP
+ref table DIM_FECHA_CREACION
+ref table DIM_CENTRO_COSTOS
+ref table LocalDateTable_67aa65ef-f8b3-469d-a3e7-23962031f50b
+ref table DIM_PART
+ref table LocalDateTable_35a26c37-a881-4620-8c6c-49e75bd6c58d
+ref table dataProductos
+ref table conjuntoProd
+
+ref cultureInfo es-ES
+

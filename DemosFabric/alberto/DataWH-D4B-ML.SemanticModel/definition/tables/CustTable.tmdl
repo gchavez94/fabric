@@ -1,0 +1,168 @@
+table CustTable
+	lineageTag: 85853745-aaf7-4cd6-81a9-3f2a6feef4fc
+	sourceLineageTag: [dbo].[CustTable]
+
+	column PAYMTERMID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c1152e4-0e1a-4ff4-8bef-119b56eb0f99
+		sourceLineageTag: PAYMTERMID
+		summarizeBy: none
+		sourceColumn: PAYMTERMID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEDISC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 399259f5-5b19-451f-9864-471d409d63c7
+		sourceLineageTag: LINEDISC
+		summarizeBy: none
+		sourceColumn: LINEDISC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTYCOUNTRY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3bd48901-4bcf-4131-80dd-d8bf282c34bb
+		sourceLineageTag: PARTYCOUNTRY
+		summarizeBy: none
+		sourceColumn: PARTYCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: defe41bc-67e9-420d-a8c8-87ae0f5c378e
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: none
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column BANKACCOUNT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d224ab19-7915-4c3e-89cf-05ac94137a2d
+		sourceLineageTag: BANKACCOUNT
+		summarizeBy: sum
+		sourceColumn: BANKACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITMAX
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dca0ab2b-9a63-437c-80e2-d4ed52b97d05
+		sourceLineageTag: CREDITMAX
+		summarizeBy: sum
+		sourceColumn: CREDITMAX
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITRATING
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4f5f2faa-d437-4df3-a7e2-072ab1363dcb
+		sourceLineageTag: CREDITRATING
+		summarizeBy: none
+		sourceColumn: CREDITRATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ddc41dbe-9d65-4468-9299-38ff63c7c97b
+		sourceLineageTag: CURRENCY
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTGROUP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3327759b-72c2-4857-9a86-710aeca9e9e5
+		sourceLineageTag: CUSTGROUP
+		summarizeBy: none
+		sourceColumn: CUSTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTY
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 17794b8f-d3a9-4be4-a7c2-9709380e00f3
+		sourceLineageTag: PARTY
+		summarizeBy: sum
+		sourceColumn: PARTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFC_MX
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 33271331-0b8c-4ad5-9393-f09a09cfb487
+		sourceLineageTag: RFC_MX
+		summarizeBy: none
+		sourceColumn: RFC_MX
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 368afdc8-66fc-447b-81b0-51ad86aaf3d4
+		sourceLineageTag: DATAAREAID
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c891b6ad-c164-4afa-9ee1-742af4900325
+		sourceLineageTag: RECID
+		summarizeBy: count
+		sourceColumn: RECID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb4764c6-9e19-4e1b-bc34-7acb58b780ff
+		sourceLineageTag: NAME
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cliente Prov'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c6510a2-27f4-4dfb-b5d5-7bb40baed0ea
+		sourceLineageTag: Cliente Prov
+		summarizeBy: none
+		sourceColumn: Cliente Prov
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CustTable-602c144c-7042-4847-8229-5c7a0f1dc080 = entity
+		mode: directLake
+		source
+			entityName: CustTable
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

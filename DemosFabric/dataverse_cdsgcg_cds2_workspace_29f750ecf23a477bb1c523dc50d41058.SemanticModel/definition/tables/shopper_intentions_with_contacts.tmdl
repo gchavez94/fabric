@@ -1,0 +1,247 @@
+table shopper_intentions_with_contacts
+	lineageTag: 9b072a58-dc90-43db-9003-2858e1fb8be8
+	sourceLineageTag: [dbo].[shopper_intentions_with_contacts]
+
+	column aib_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3c0f5960-6354-4ab5-a83e-584cfb028b46
+		sourceLineageTag: aib_name
+		summarizeBy: none
+		sourceColumn: aib_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Administrative
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dc8fccb4-fa89-4dfe-ba85-4f8d7d73f711
+		sourceLineageTag: aib_Administrative
+		summarizeBy: sum
+		sourceColumn: aib_Administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Administrative_Duration
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c8c6f0cd-500d-4793-a9d1-a8562933207d
+		sourceLineageTag: aib_Administrative_Duration
+		summarizeBy: sum
+		sourceColumn: aib_Administrative_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_Informational
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b1320c1e-d344-408c-b17e-f3f846023aeb
+		sourceLineageTag: aib_Informational
+		summarizeBy: sum
+		sourceColumn: aib_Informational
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Informational_Duration
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3dd0926f-c051-4b0d-a4cd-53aaf19aa076
+		sourceLineageTag: aib_Informational_Duration
+		summarizeBy: sum
+		sourceColumn: aib_Informational_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_ProductRelated
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ed745368-4fcd-4cb6-8e3a-1b2d1e07880c
+		sourceLineageTag: aib_ProductRelated
+		summarizeBy: sum
+		sourceColumn: aib_ProductRelated
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_ProductRelated_Duration
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e82ad718-02d8-4c80-b631-5495a9320493
+		sourceLineageTag: aib_ProductRelated_Duration
+		summarizeBy: sum
+		sourceColumn: aib_ProductRelated_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_BounceRates
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e4e72d76-5308-4d13-8460-e7baa7d2a117
+		sourceLineageTag: aib_BounceRates
+		summarizeBy: sum
+		sourceColumn: aib_BounceRates
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_ExitRates
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 08d27640-9f96-45ef-bab6-2e0135ecd8aa
+		sourceLineageTag: aib_ExitRates
+		summarizeBy: sum
+		sourceColumn: aib_ExitRates
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_PageValues
+		dataType: double
+		sourceProviderType: float
+		lineageTag: fad43a62-2cc8-479d-8c2e-02aa583ada7e
+		sourceLineageTag: aib_PageValues
+		summarizeBy: sum
+		sourceColumn: aib_PageValues
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_SpecialDay
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1af8ef8e-abb7-4453-a938-371e4cbe492f
+		sourceLineageTag: aib_SpecialDay
+		summarizeBy: sum
+		sourceColumn: aib_SpecialDay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column aib_Month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ba3bc7db-b309-4a04-9aa1-a5ac7a1c39a8
+		sourceLineageTag: aib_Month
+		summarizeBy: none
+		sourceColumn: aib_Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_OperatingSystems
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: fb61ae8e-174d-4980-b613-f103612be230
+		sourceLineageTag: aib_OperatingSystems
+		summarizeBy: sum
+		sourceColumn: aib_OperatingSystems
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Browser
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a3e9a7e2-1d8d-4ac2-9efb-cc15ca71d383
+		sourceLineageTag: aib_Browser
+		summarizeBy: sum
+		sourceColumn: aib_Browser
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Region
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 75332389-c5bc-4e9c-a7d4-89b9af908ea0
+		sourceLineageTag: aib_Region
+		summarizeBy: sum
+		sourceColumn: aib_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_TrafficType
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7ae6999d-3729-41e6-81d7-7a9c6a00384d
+		sourceLineageTag: aib_TrafficType
+		summarizeBy: sum
+		sourceColumn: aib_TrafficType
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_VisitorType
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9e49028f-295f-4396-89b7-754eb29e8bb6
+		sourceLineageTag: aib_VisitorType
+		summarizeBy: none
+		sourceColumn: aib_VisitorType
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c2a06fde-5b36-4485-8bb4-ea9c7d78a624
+		sourceLineageTag: aib_Weekend
+		summarizeBy: none
+		sourceColumn: aib_Weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column aib_Revenue
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0f2998e8-4dc4-4c81-9b01-bc123529e28f
+		sourceLineageTag: aib_Revenue
+		summarizeBy: none
+		sourceColumn: aib_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c32144bb-a671-41c0-bee4-54b803a62dfb
+		sourceLineageTag: contactid
+		summarizeBy: none
+		sourceColumn: contactid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Predicted_aib_Revenue
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 65652dde-9fca-4386-b35c-a639cc545fca
+		sourceLineageTag: Predicted_aib_Revenue
+		summarizeBy: none
+		sourceColumn: Predicted_aib_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition shopper_intentions_with_contacts-c8c0ed6c-a160-42d7-add7-28fdda4b869c = entity
+		mode: directLake
+		source
+			entityName: shopper_intentions_with_contacts
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

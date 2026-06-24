@@ -1,0 +1,58 @@
+table 'Profit share analysis MTD QTD Y'
+	lineageTag: c5b484cc-cffe-48fe-9881-8a622eab70d7
+
+	column 'Date.Fiscal YQMD'
+		dataType: string
+		lineageTag: 709f7239-1b42-4a43-a515-7f707e2ee2dd
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Gross Margin'
+		dataType: double
+		lineageTag: 3cb8469d-115e-400d-923b-6582a3a7ffc2
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Profit'
+		dataType: double
+		lineageTag: 3e927a72-68c7-47e1-8f0c-9cb2aead00d0
+		summarizeBy: sum
+		sourceColumn: Net Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Sales share'
+		dataType: double
+		lineageTag: a7cb98d2-5183-4972-95bc-c0c1eb630a03
+		summarizeBy: sum
+		sourceColumn: Net Sales share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Profit share analysis MTD QTD Y-f4ff4096-c730-42b1-8b8a-b709ea5c6773' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\Demo CFO\Profit and loss statement.xlsx"), null, true),
+				    #"Profit share analysis MTD QTD Y_Sheet" = Origen{[Item="Profit share analysis MTD QTD Y",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Profit share analysis MTD QTD Y_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date.Fiscal YQMD", type text}, {"Gross Margin", type number}, {"Net Profit", type number}, {"Net Sales share", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

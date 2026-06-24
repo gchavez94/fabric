@@ -1,0 +1,23 @@
+expression 'Errores en BD Dwell Carros activos v1' =
+		let
+		Origen = #"BD Dwell Carros activos v1",
+		  #"Errores de coincidencia detectados" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origen, Table.ColumnsOfType(Origen, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "El tipo del valor no coincide con el tipo de la columna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origen, pairs),
+		  #"Índice agregado" = Table.AddIndexColumn(#"Errores de coincidencia detectados", "Número de fila" ,1),
+		  #"Conservar errores" = Table.SelectRowsWithErrors(#"Índice agregado", {"Id_Mov", "Tipo_de_servicio", "Identificador_Carro", "Fecha_de_llegada", "Fecha_Ini_P_Recibo", "Fecha_Fin_P_Recibo", "Fecha_Ini_P_Clasificacion", "Fecha_Ini_P_Despacho", "Fecha_Ofrecimiento_a_CO", "Fecha_de_Salida", "Tiempo_permanencia", "Estacion_de_arribo", "Patio_de_arribo", "Via_de_arribo", "Ultimo_movimiento", "Fecha_Ultimo_movimiento", "Estacion_actual", "Patio_actual", "Via_actual", "FFCC_llegada", "Tren_llegada", "FFCC_salida", "Tren_salida", "Lote", "Estatus_llegada", "Fecha_de_posicionado", "Via_de_posicionado", "Fecha_de_liberado", "Fecha_ultimo_ingreso", "Fecha_ini_Detencion", "Fecha_fin_detencion", "Fecha_ini_Bado", "Fecha_fin_Bado", "Estatus_actual", "Tipo_carro_RMI", "Tipo_carro_AAR", "Id_producto", "Origen", "Destino", "Entidad_emisora", "Entidad_receptora", "Posicionado-liberado", "Tiempo Reparacion", "Permanencia Recibo", "Personalizado", "Recibo Horas"}),
+		  #"Columnas reordenadas" = Table.ReorderColumns(#"Conservar errores", {"Número de fila", "Id_Mov", "Tipo_de_servicio", "Identificador_Carro", "Fecha_de_llegada", "Fecha_Ini_P_Recibo", "Fecha_Fin_P_Recibo", "Fecha_Ini_P_Clasificacion", "Fecha_Ini_P_Despacho", "Fecha_Ofrecimiento_a_CO", "Fecha_de_Salida", "Tiempo_permanencia", "Estacion_de_arribo", "Patio_de_arribo", "Via_de_arribo", "Ultimo_movimiento", "Fecha_Ultimo_movimiento", "Estacion_actual", "Patio_actual", "Via_actual", "FFCC_llegada", "Tren_llegada", "FFCC_salida", "Tren_salida", "Lote", "Estatus_llegada", "Fecha_de_posicionado", "Via_de_posicionado", "Fecha_de_liberado", "Fecha_ultimo_ingreso", "Fecha_ini_Detencion", "Fecha_fin_detencion", "Fecha_ini_Bado", "Fecha_fin_Bado", "Estatus_actual", "Tipo_carro_RMI", "Tipo_carro_AAR", "Id_producto", "Origen", "Destino", "Entidad_emisora", "Entidad_receptora", "Posicionado-liberado", "Tiempo Reparacion", "Permanencia Recibo", "Personalizado", "Recibo Horas"})
+		in
+		  #"Columnas reordenadas"
+	lineageTag: b24e171e-dd01-4e88-9d60-ac859dd779c0
+	queryGroup: 'Errores en las consultas: 21/07/2025 10:04:55 a  m'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

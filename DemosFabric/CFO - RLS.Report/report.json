@@ -1,0 +1,900 @@
+{
+  "config": "{\"version\":\"5.66\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY17SU10\",\"type\":2,\"version\":{\"visual\":\"1.8.26\",\"report\":\"2.0.26\",\"page\":\"1.3.26\"}},\"customTheme\":{\"name\":\"Classroom\",\"type\":2,\"version\":{\"visual\":\"1.8.36\",\"report\":\"2.0.36\",\"page\":\"1.3.36\"}}},\"activeSectionIndex\":0,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"isPersistentUserStateDisabled\":false,\"hideVisualContainerHeader\":false,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":0,\"useNewFilterPaneExperience\":true,\"optOutNewFilterPaneExperience\":false,\"defaultFilterActionIsDataFilter\":true,\"useCrossReportDrillthrough\":false,\"allowChangeFilterTypes\":true,\"allowInlineExploration\":false,\"disableFilterPaneSearch\":false,\"enableDeveloperMode\":false,\"useEnhancedTooltips\":true,\"useScaledTooltips\":false,\"useDefaultAggregateDisplayName\":false,\"queryLimitOption\":0,\"customMemoryLimit\":\"1048576\",\"customTimeoutLimit\":\"225\"},\"objects\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSectionda1246a17893081bb788",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod"
+    },
+    {
+      "boundSection": "ReportSectionc48e41e0a21525bea3a0",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod1",
+      "parameters": "[{\"name\":\"Param_Filter\",\"boundFilter\":\"Filter\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Mes\"}}}]",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSection9ef27a79850395dd0f31",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod2",
+      "parameters": "[{\"name\":\"Param_Filter\",\"boundFilter\":\"Filter\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Mes\"}}}]",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSection",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod3"
+    },
+    {
+      "boundSection": "ReportSection7a45703dbddf53e957fc",
+      "config": "{}",
+      "name": "Pod4"
+    },
+    {
+      "boundSection": "ReportSection3ba4e712ed29a471d501",
+      "config": "{}",
+      "name": "Pod5"
+    },
+    {
+      "boundSection": "ReportSection7e664a7b6509ab837839",
+      "config": "{}",
+      "name": "Pod6"
+    },
+    {
+      "boundSection": "ReportSectionbbbdb0f606106c933872",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod7",
+      "parameters": "[{\"name\":\"Param_Filter\",\"boundFilter\":\"Filter\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Cliente\"}}},{\"name\":\"Param_Filter2\",\"boundFilter\":\"Filter2\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Días de pago\"}}},{\"name\":\"Param_Filter3\",\"boundFilter\":\"Filter3\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Estatus\"}}}]",
+      "type": 1
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY17SU10",
+            "path": "BaseThemes/CY17SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Classroom",
+            "path": "BuiltInThemes/Classroom.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "items": [
+          {
+            "name": "backButton6143042868118096.png",
+            "path": "backButton6143042868118096.png",
+            "type": 100
+          },
+          {
+            "name": "isotipo_y_descriptivo_negro8377816359350421.png",
+            "path": "isotipo_y_descriptivo_negro8377816359350421.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "CFO",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0dc4e6454f506776ced8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":384.18426103646834,\"y\":0,\"z\":2000,\"width\":139.57773512476007,\"height\":181.03646833013437,\"tabOrder\":25000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 181.04,
+          "width": 139.58,
+          "x": 384.18,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"19d19ed2e942884e3ead\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.021113243761995,\"y\":116.08445297504798,\"z\":10000,\"width\":134.04990403071017,\"height\":49.75047984644914,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Gross Margin)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Gross Margin\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Gross Margin)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Margen Bruto'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 49.75,
+          "width": 134.05,
+          "x": 29.02,
+          "y": 116.08,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"256125961d2d336bbfdc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":844.1762747969644,\"y\":0,\"z\":26000,\"width\":141.10504593263215,\"height\":61.350019970709624,\"tabOrder\":21000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Compañía \",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"País\"},\"Name\":\"historia.Compañía \"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 61.35,
+          "width": 141.11,
+          "x": 844.18,
+          "y": 0.00,
+          "z": 26000.00
+        },
+        {
+          "config": "{\"name\":\"30a0930249e2a6a928bd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":523.7619961612285,\"y\":0,\"z\":3000,\"width\":139.57773512476007,\"height\":181.03646833013437,\"tabOrder\":26000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 181.04,
+          "width": 139.58,
+          "x": 523.76,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"373fdbe5422ba8994075\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":268.8,\"z\":23000,\"width\":466.4888888888889,\"height\":240.35555555555555,\"tabOrder\":18000}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"historia.Año\"},{\"queryRef\":\"historia.Mes\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historia.Net Sales)\"},{\"queryRef\":\"Sum(historia.COGS)\"}],\"Y2\":[{\"queryRef\":\"Sum(historia.LY Ingresos)\"},{\"queryRef\":\"Sum(historia.Gross Margin %)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Net Sales\"}},\"Function\":0},\"Name\":\"Sum(historia.Net Sales)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(historia.COGS)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Gross Margin %\"}},\"Function\":1},\"Name\":\"Sum(historia.Gross Margin %)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Año\"},\"Name\":\"historia.Año\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"LY Ingresos\"}},\"Function\":0},\"Name\":\"Sum(historia.LY Ingresos)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"}}}]},\"columnProperties\":{\"Sum(historia.Gross Margin %)\":{\"displayName\":\"Margen Bruto %\"},\"Sum(historia.Net Sales)\":{\"displayName\":\"Ventas Netas\"},\"Sum(historia.COGS)\":{\"displayName\":\"Costo de Ventas\"}},\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.COGS)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#a1ddef'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Gross Margin %)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#b887ad'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Net Sales)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Margen Bruto'\"}}}}}],\"visualTooltip\":[{\"properties\":{\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportSection7a45703dbddf53e957fc'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.36,
+          "width": 466.49,
+          "x": 0.00,
+          "y": 268.80,
+          "z": 23000.00
+        },
+        {
+          "config": "{\"name\":\"3ee09982a1422ffb2c1b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":665.4033290653009,\"y\":60.64020486555698,\"z\":8000,\"width\":178.6427656850192,\"height\":47.528809218950066,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Debt Ratio)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Debt Ratio\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Debt Ratio)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ratio de pasivos'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 47.53,
+          "width": 178.64,
+          "x": 665.40,
+          "y": 60.64,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"4ba63ba9fb2020424a76\",\"layouts\":[{\"id\":0,\"position\":{\"x\":857.6732791905206,\"y\":388.959126614299,\"z\":21000,\"width\":422.0881373984822,\"height\":331.29010784183197,\"tabOrder\":16000}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"historia.Mes\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historia.Assets)\"},{\"queryRef\":\"Sum(historia.Liabilities)\"},{\"queryRef\":\"CountNonNull(historia.Long Term Debt to Equity Rat)\"}],\"Y2\":[{\"queryRef\":\"Sum(historia.Debt Ratio)\"},{\"queryRef\":\"Sum(historia.Debt to Equity Ratio)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Assets\"}},\"Function\":1},\"Name\":\"Sum(historia.Assets)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Liabilities\"}},\"Function\":1},\"Name\":\"Sum(historia.Liabilities)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Debt Ratio\"}},\"Function\":1},\"Name\":\"Sum(historia.Debt Ratio)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Debt to Equity Ratio\"}},\"Function\":1},\"Name\":\"Sum(historia.Debt to Equity Ratio)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Long Term Debt to Equity Rat\"}},\"Function\":5},\"Name\":\"CountNonNull(historia.Long Term Debt to Equity Rat)\"}]},\"columnProperties\":{\"Sum(historia.Debt Ratio)\":{\"displayName\":\"Pasivos\"},\"Sum(historia.Debt to Equity Ratio)\":{\"displayName\":\"Coeficiente de endeudamiento\"},\"Sum(historia.Liabilities)\":{\"displayName\":\"Pasivos\"},\"CountNonNull(historia.Long Term Debt to Equity Rat)\":{\"displayName\":\"Pasivos a largo plazo\"},\"Sum(historia.Assets)\":{\"displayName\":\"Activos\"}},\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#000000'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Debt Ratio)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Debt to Equity Ratio)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#a1ddef'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Assets)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#b887ad'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Liabilities)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#cccccc'\"}}}}}},\"selector\":{\"metadata\":\"CountNonNull(historia.Long Term Debt to Equity Rat)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ratios de apalancamiento'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 331.29,
+          "width": 422.09,
+          "x": 857.67,
+          "y": 388.96,
+          "z": 21000.00
+        },
+        {
+          "config": "{\"name\":\"4e9c1f97b57674c09822\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":509.15555555555557,\"z\":24000,\"width\":466.4888888888889,\"height\":210.48888888888888,\"tabOrder\":19000}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"historia.Mes\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historia.Gross Margin)\"},{\"queryRef\":\"Sum(historia.Expenses)\"}],\"Y2\":[{\"queryRef\":\"Sum(historia.Operating Profit %)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Gross Margin\"}},\"Function\":0},\"Name\":\"Sum(historia.Gross Margin)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Expenses\"}},\"Function\":0},\"Name\":\"Sum(historia.Expenses)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Operating Profit %\"}},\"Function\":1},\"Name\":\"Sum(historia.Operating Profit %)\"}]},\"columnProperties\":{\"Sum(historia.Operating Profit %)\":{\"displayName\":\"Ganancias Operativas %\"},\"Sum(historia.Gross Margin)\":{\"displayName\":\"Margen Bruto\"},\"Sum(historia.Expenses)\":{\"displayName\":\"Gastos\"}},\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FE9666'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Expenses)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ganancias Operativas'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 210.49,
+          "width": 466.49,
+          "x": 0.00,
+          "y": 509.16,
+          "z": 24000.00
+        },
+        {
+          "config": "{\"name\":\"52d04bd5ff132f6c1e77\",\"layouts\":[{\"id\":0,\"position\":{\"x\":380.2304737516005,\"y\":118.00256081946223,\"z\":16000,\"width\":139.30857874519847,\"height\":63.91805377720871,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Return on Equity)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Return on Equity\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Return on Equity)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Retorno de Capital Contable'\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 63.92,
+          "width": 139.31,
+          "x": 380.23,
+          "y": 118.00,
+          "z": 16000.00
+        },
+        {
+          "config": "{\"name\":\"5db3f72c32a20c71cbb1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":463.64444444444445,\"y\":183.46666666666667,\"z\":27000,\"width\":381.15555555555557,\"height\":294.4,\"tabOrder\":22000}}],\"singleVisual\":{\"visualType\":\"azureMap\",\"projections\":{\"Y\":[{\"queryRef\":\"Avg(mapa.LAT)\"}],\"X\":[{\"queryRef\":\"Avg(mapa.LONG)\"}],\"Tooltips\":[{\"queryRef\":\"Min(mapa.Colonia)\"},{\"queryRef\":\"Sum(mapa.Reales)\"}],\"Size\":[{\"queryRef\":\"Sum(mapa.Programadas)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"mapa\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"LAT\"},\"Name\":\"Avg(mapa.LAT)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"LONG\"},\"Name\":\"Avg(mapa.LONG)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Colonia\"}},\"Function\":3},\"Name\":\"Min(mapa.Colonia)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Reales\"}},\"Function\":0},\"Name\":\"Sum(mapa.Reales)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Programadas\"}},\"Function\":0},\"Name\":\"Sum(mapa.Programadas)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"LAT\"}},\"Function\":1}}}]},\"columnProperties\":{\"Min(mapa.Colonia)\":{\"displayName\":\"Colonia\"},\"Sum(mapa.Reales)\":{\"displayName\":\"LY\"},\"Sum(mapa.Programadas)\":{\"displayName\":\"Ventas\"}},\"objects\":{\"mapControls\":[{\"properties\":{\"autoZoom\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"defaultStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'road'\"}}},\"showStylePicker\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showNavigationControls\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showSelectionControl\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#f7de6f'\"}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"mapa\"}},\"Property\":\"% de avance\"}},\"Function\":1}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"bubbleLayer\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"bubbleRadius\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"minBubbleRadius\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"maxRadius\":{\"expr\":{\"Literal\":{\"Value\":\"21L\"}}},\"bubbleStrokeWidth\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}},\"autoStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"layerPosition\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'% de Visitas'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 294.40,
+          "width": 381.16,
+          "x": 463.64,
+          "y": 183.47,
+          "z": 27000.00
+        },
+        {
+          "config": "{\"name\":\"671f7d1d8ae02e3690ae\",\"layouts\":[{\"id\":0,\"position\":{\"x\":76.00767754318618,\"y\":62.18809980806142,\"z\":12000,\"width\":125.75815738963531,\"height\":44.22264875239923,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Net Sales)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Net Sales\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Net Sales)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ventas Netas'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 44.22,
+          "width": 125.76,
+          "x": 76.01,
+          "y": 62.19,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"7239c3bf914ab06f19a4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":466.4888888888889,\"y\":479.2888888888889,\"z\":20000,\"width\":388.26666666666665,\"height\":240.35555555555555,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"historia.Mes\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historia.Return on Assets)\"},{\"queryRef\":\"Sum(historia.Return on Equity)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Assets\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Assets)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Equity\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Equity)\"}]},\"columnProperties\":{\"Sum(historia.Return on Assets)\":{\"displayName\":\"Retorno de activos\"},\"Sum(historia.Return on Equity)\":{\"displayName\":\"Retorno de Capital Contable\"}},\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Assets)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#689fb0'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Equity)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ratios de rentabilidad'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.36,
+          "width": 388.27,
+          "x": 466.49,
+          "y": 479.29,
+          "z": 20000.00
+        },
+        {
+          "config": "{\"name\":\"7461bfb87bd4701fe072\",\"layouts\":[{\"id\":0,\"position\":{\"x\":521.1779769526249,\"y\":119.6414852752881,\"z\":18000,\"width\":150.78104993597952,\"height\":57.36235595390525,\"tabOrder\":13000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Working Capital Ratio)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Working Capital Ratio\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Working Capital Ratio)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ratio de Capital de trabajo'\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 57.36,
+          "width": 150.78,
+          "x": 521.18,
+          "y": 119.64,
+          "z": 18000.00
+        },
+        {
+          "config": "{\"name\":\"77a4dc1819f6387a028a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":136.03072983354676,\"y\":199.94878361075547,\"z\":14000,\"width\":106.53008962868118,\"height\":42.61203585147248,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Operating Profit_1)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Operating Profit %\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Operating Profit_1)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Operating Profit'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 42.61,
+          "width": 106.53,
+          "x": 136.03,
+          "y": 199.95,
+          "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"90c9ff8ae92e2d348110\",\"layouts\":[{\"id\":0,\"position\":{\"x\":853.992277992278,\"y\":65.03102116895221,\"z\":25000,\"width\":424.54213819731063,\"height\":323.92810544534683,\"tabOrder\":20000}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(historia.Current Assets)\"},{\"queryRef\":\"Sum(historia.Current Liabilities)\"}],\"Category\":[{\"queryRef\":\"historia.Mes\",\"active\":true}],\"Y2\":[{\"queryRef\":\"Sum(historia.Working Capital)\"},{\"queryRef\":\"Sum(historia.Quick Ratio)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Current Assets\"}},\"Function\":0},\"Name\":\"Sum(historia.Current Assets)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Current Liabilities\"}},\"Function\":0},\"Name\":\"Sum(historia.Current Liabilities)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Working Capital\"}},\"Function\":1},\"Name\":\"Sum(historia.Working Capital)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Quick Ratio\"}},\"Function\":1},\"Name\":\"Sum(historia.Quick Ratio)\"}]},\"columnProperties\":{\"Sum(historia.Working Capital)\":{\"displayName\":\"Capital de trabajo\"},\"Sum(historia.Quick Ratio)\":{\"displayName\":\"Ratio\"},\"Sum(historia.Current Liabilities)\":{\"displayName\":\"Pasivo circulante\"},\"Sum(historia.Current Assets)\":{\"displayName\":\"Activos circulantes\"}},\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#fec0a3'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Current Assets)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#8AD4EB'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Quick Ratio)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#b887ad'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Working Capital)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#f7de6f'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Current Liabilities)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ratios de liquidez'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 323.93,
+          "width": 424.54,
+          "x": 853.99,
+          "y": 65.03,
+          "z": 25000.00
+        },
+        {
+          "config": "{\"name\":\"9260ca6dd543fb9cb241\",\"layouts\":[{\"id\":0,\"position\":{\"x\":985.2813207295966,\"y\":0,\"z\":19000,\"width\":182.82305951271468,\"height\":56.44201837305285,\"tabOrder\":14000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Año\"},\"Name\":\"historia.Año\"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Año\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'2023'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 56.44,
+          "width": 182.82,
+          "x": 985.28,
+          "y": 0.00,
+          "z": 19000.00
+        },
+        {
+          "config": "{\"name\":\"946c1fdb03857ee2c259\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1168.1043802423112,\"y\":0,\"z\":28000,\"width\":111.65703634669153,\"height\":77.30102516309412,\"tabOrder\":28000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"isotipo_y_descriptivo_negro8377816359350421.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 77.30,
+          "width": 111.66,
+          "x": 1168.10,
+          "y": 0.00,
+          "z": 28000.00
+        },
+        {
+          "config": "{\"name\":\"97cf20f387a542945306\",\"layouts\":[{\"id\":0,\"position\":{\"x\":77.38963531669866,\"y\":0,\"z\":22000,\"width\":778.042226487524,\"height\":42.840690978886755,\"tabOrder\":17000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Rendimiento\\t\\t\\t   Activitad\\t   Rentabilidad\\t\\t\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}},{\"value\":\"\\t\"},{\"value\":\"Liquidez\\t \",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}},{\"value\":\"\\t\"},{\"value\":\" Apalancamiento\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 42.84,
+          "width": 778.04,
+          "x": 77.39,
+          "y": 0.00,
+          "z": 22000.00
+        },
+        {
+          "config": "{\"name\":\"9d9245099d77df28798b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40.491013180668354,\"y\":0,\"z\":0,\"width\":207.36306750099854,\"height\":263.8050858740514,\"tabOrder\":23000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 263.81,
+          "width": 207.36,
+          "x": 40.49,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a5a02478738679b1044c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":36.056338028169016,\"y\":183.5595390524968,\"z\":13000,\"width\":127.83610755441742,\"height\":59.001280409731116,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Operating Profit)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Operating Profit\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Operating Profit)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ganancia Operativa'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 59.00,
+          "width": 127.84,
+          "x": 36.06,
+          "y": 183.56,
+          "z": 13000.00
+        },
+        {
+          "config": "{\"name\":\"aa3f29fdc24064b8c64b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":515.4702495201536,\"y\":57.03103787275878,\"z\":17000,\"width\":167.2168905950096,\"height\":51.132437619961614,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Working Capital)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Working Capital\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Working Capital)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Capital de trabajo'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 51.13,
+          "width": 167.22,
+          "x": 515.47,
+          "y": 57.03,
+          "z": 17000.00
+        },
+        {
+          "config": "{\"name\":\"aa645127415b0817f947\",\"layouts\":[{\"id\":0,\"position\":{\"x\":665.4033290653009,\"y\":127.83610755441742,\"z\":9000,\"width\":178.6427656850192,\"height\":55.72343149807939,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Debt to Equity Ratio)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Debt to Equity Ratio\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Debt to Equity Ratio)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Coeficiente de endeudamiento'\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 55.72,
+          "width": 178.64,
+          "x": 665.40,
+          "y": 127.84,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"b7bfd1f70a26b6ae0f0d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":662.1254801536492,\"y\":0,\"z\":4000,\"width\":181.92061459667096,\"height\":180.2816901408451,\"tabOrder\":27000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.28,
+          "width": 181.92,
+          "x": 662.13,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"bb81fde52d030352e844\",\"layouts\":[{\"id\":0,\"position\":{\"x\":388.3301343570058,\"y\":51.50320677870887,\"z\":15000,\"width\":122.99424184261036,\"height\":51.132437619961614,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Return on Assets)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Return on Assets\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Return on Assets)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Retorno de activos'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 51.13,
+          "width": 122.99,
+          "x": 388.33,
+          "y": 51.50,
+          "z": 15000.00
+        },
+        {
+          "config": "{\"name\":\"d54728cb13c51721c724\",\"layouts\":[{\"id\":0,\"position\":{\"x\":145.86427656850194,\"y\":122.91933418693984,\"z\":11000,\"width\":90.14084507042254,\"height\":54.08450704225353,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Gross Margin %)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Gross Margin %\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Gross Margin %)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Gross Margin'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 54.08,
+          "width": 90.14,
+          "x": 145.86,
+          "y": 122.92,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"e92a16fdd40c67c0301d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245.83866837387967,\"y\":124.5582586427657,\"z\":5000,\"width\":139.30857874519847,\"height\":47.528809218950066,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.AP)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"AP\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.AP)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cuentas por Pagar'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 47.53,
+          "width": 139.31,
+          "x": 245.84,
+          "y": 124.56,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f7125bc76fef61f2aeda\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245.98848368522073,\"y\":0,\"z\":1000,\"width\":139.57773512476007,\"height\":263.9539347408829,\"tabOrder\":24000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 263.95,
+          "width": 139.58,
+          "x": 245.99,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"fcd6e2ecaf1d4aac6aff\",\"layouts\":[{\"id\":0,\"position\":{\"x\":259.8080614203455,\"y\":186.56429942418427,\"z\":7000,\"width\":109.17466410748561,\"height\":56.660268714011515,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.Cash to Cash Cycle)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Cash to Cash Cycle\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.Cash to Cash Cycle)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Flujo de caja'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 56.66,
+          "width": 109.17,
+          "x": 259.81,
+          "y": 186.56,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"fefcc14413864c2c7048\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245.83866837387967,\"y\":59.001280409731116,\"z\":6000,\"width\":134.39180537772089,\"height\":47.528809218950066,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(tarjetas.AR)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tarjetas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"AR\"}},\"Function\":0},\"Name\":\"Sum(tarjetas.AR)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'18'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cuentas por Cobrar'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 47.53,
+          "width": 134.39,
+          "x": 245.84,
+          "y": 59.00,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "CxC",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection3ba4e712ed29a471d501",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"13b4cea627565d32e788\",\"layouts\":[{\"id\":0,\"position\":{\"x\":171.36276391554702,\"y\":447.75431861804225,\"z\":3000,\"width\":205.91170825335894,\"height\":87.06333973128599,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Avg(CxP.Días atraso)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días atraso\"}},\"Function\":5},\"Name\":\"Avg(CxP.Días atraso)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días atraso\"}},\"Function\":1}}}]},\"columnProperties\":{\"Avg(CxP.Días atraso)\":{\"displayName\":\"Promedio Días de pago\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 87.06,
+          "width": 205.91,
+          "x": 171.36,
+          "y": 447.75,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"1d4713bac88a0a0625e2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":781.1084452975049,\"y\":91.20921305182344,\"z\":16000,\"width\":497.5047984644914,\"height\":215.58541266794626,\"tabOrder\":16000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}],\"Category\":[{\"queryRef\":\"CxP.Cliente\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"CxP.Cliente\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#8AD4EB'\"}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'midColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"categoryAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top atrasadas'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Cliente\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}],\"Top\":5}}},\"Type\":2},{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 215.59,
+          "width": 497.50,
+          "x": 781.11,
+          "y": 91.21,
+          "z": 16000.00
+        },
+        {
+          "config": "{\"name\":\"2dba6357e04e1c4cb111\",\"layouts\":[{\"id\":0,\"position\":{\"x\":212.82149712092135,\"y\":0,\"z\":10000,\"width\":176.89059500959692,\"height\":81.53550863723609,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(CxP.Cliente)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"}},\"Function\":5},\"Name\":\"Min(CxP.Cliente)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Clientes\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 81.54,
+          "width": 176.89,
+          "x": 212.82,
+          "y": 0.00,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"38c233477736b1d0a7a0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":556.9289827255278,\"z\":14000,\"width\":1278.3109404990403,\"height\":163.07101727447218,\"tabOrder\":14000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CxP.Fecha.Variación.Date Hierarchy.Year\"},{\"queryRef\":\"CxP.Fecha.Variación.Date Hierarchy.Quarter\"},{\"queryRef\":\"CxP.Fecha.Variación.Date Hierarchy.Month\",\"active\":true},{\"queryRef\":\"CxP.Fecha.Variación.Date Hierarchy.Day\"}],\"Y\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"CxP.Fecha.Variación.Date Hierarchy.Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Quarter\"},\"Name\":\"CxP.Fecha.Variación.Date Hierarchy.Quarter\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"CxP.Fecha.Variación.Date Hierarchy.Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Day\"},\"Name\":\"CxP.Fecha.Variación.Date Hierarchy.Day\"}]},\"columnProperties\":{\"Sum(CxP.Monto compañía)\":{\"displayName\":\"Monto\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#333333'\"}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'midColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"valueAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}],\"categoryAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 163.07,
+          "width": 1278.31,
+          "x": 0.00,
+          "y": 556.93,
+          "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"3add5ca5d28907b39007\",\"layouts\":[{\"id\":0,\"position\":{\"x\":288.82917466410714,\"y\":121.93857965451053,\"z\":9000,\"width\":176.89059500959692,\"height\":87.06333973128599,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(CxP.Cliente)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"}},\"Function\":5},\"Name\":\"Min(CxP.Cliente)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Clientes\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Atrasado\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"true\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1}]",
+          "height": 87.06,
+          "width": 176.89,
+          "x": 288.83,
+          "y": 121.94,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"3db10ea21a411b26a0d1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":283.9299424184261,\"y\":343.0518234165069,\"z\":8000,\"width\":176.89059500959692,\"height\":87.06333973128599,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(CxP.Cliente)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"}},\"Function\":5},\"Name\":\"Min(CxP.Cliente)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Clientes\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Atrasado\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"false\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1}]",
+          "height": 87.06,
+          "width": 176.89,
+          "x": 283.93,
+          "y": 343.05,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"49d8e7e59130d9b88526\",\"layouts\":[{\"id\":0,\"position\":{\"x\":26.257197696737045,\"y\":0,\"z\":13000,\"width\":176.89059500959692,\"height\":80.15355086372361,\"tabOrder\":13000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 80.15,
+          "width": 176.89,
+          "x": 26.26,
+          "y": 0.00,
+          "z": 13000.00
+        },
+        {
+          "config": "{\"name\":\"4f1775f142909e60ac20\",\"layouts\":[{\"id\":0,\"position\":{\"x\":436.69865642994245,\"y\":0,\"z\":5000,\"width\":280.53742802303265,\"height\":81.53550863723609,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"CxP.Tipo de Proveedor\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Tipo de Proveedor\"},\"Name\":\"CxP.Tipo de Proveedor\"}]},\"columnProperties\":{\"CxP.Tipo de Proveedor\":{\"displayName\":\"Tipo de Cliente\"}},\"syncGroup\":{\"groupName\":\"Tipo de Proveedor\",\"fieldChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 81.54,
+          "width": 280.54,
+          "x": 436.70,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"55d8c04a58eb801b5933\",\"layouts\":[{\"id\":0,\"position\":{\"x\":729.9760076775434,\"y\":0,\"z\":6000,\"width\":291.59309021113245,\"height\":81.53550863723609,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"CxP.Cliente\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"CxP.Cliente\"}]},\"syncGroup\":{\"groupName\":\"Proveedor\",\"fieldChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 81.54,
+          "width": 291.59,
+          "x": 729.98,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"5f1f1570c0312550db3b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24.87523992322457,\"y\":0,\"z\":2000,\"width\":386.9481765834933,\"height\":99.50095969289828,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F2C80F'\"}}}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 99.50,
+          "width": 386.95,
+          "x": 24.88,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"67ade4f50e257e2ab41e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":420.1151631477927,\"z\":0,\"width\":145.10556621881,\"height\":59.42418426103647,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"En tiempo\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 59.42,
+          "width": 145.11,
+          "x": 0.00,
+          "y": 420.12,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"67ec765227944012ebe6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":97.36564299424188,\"y\":343.0518234165069,\"z\":11000,\"width\":176.89059500959692,\"height\":88.44529750479846,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(CxP.Monto compañía)\":{\"displayName\":\"Monto\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Atrasado\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"false\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1}]",
+          "height": 88.45,
+          "width": 176.89,
+          "x": 97.37,
+          "y": 343.05,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"6d41e574d4750ed680b8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":467.4040307101727,\"y\":91.20921305182344,\"z\":17000,\"width\":291.59309021113245,\"height\":214.20345489443378,\"tabOrder\":17000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CxP.Días de pago\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días de pago\"},\"Name\":\"CxP.Días de pago\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Monto compañía by Días de pago (atrasadas)'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Atrasado\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"true\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1}]",
+          "height": 214.20,
+          "width": 291.59,
+          "x": 467.40,
+          "y": 91.21,
+          "z": 17000.00
+        },
+        {
+          "config": "{\"name\":\"7ab9834da483a3d25e18\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1168.1043802423112,\"y\":0,\"z\":19000,\"width\":111.65703634669153,\"height\":77.30102516309412,\"tabOrder\":19000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"isotipo_y_descriptivo_negro8377816359350421.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 77.30,
+          "width": 111.66,
+          "x": 1168.10,
+          "y": 0.00,
+          "z": 19000.00
+        },
+        {
+          "config": "{\"name\":\"8dc3998b55de1ace2a15\",\"layouts\":[{\"id\":0,\"position\":{\"x\":775.5854126679462,\"y\":338.57965451055645,\"z\":15000,\"width\":504.41458733205377,\"height\":215.58541266794626,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}],\"Category\":[{\"queryRef\":\"CxP.Cliente\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"CxP.Cliente\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#8AD4EB'\"}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'midColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"categoryAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top a pagar'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Cliente\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}],\"Top\":5}}},\"Type\":2},{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 215.59,
+          "width": 504.41,
+          "x": 775.59,
+          "y": 338.58,
+          "z": 15000.00
+        },
+        {
+          "config": "{\"name\":\"9ed0cd6b24db2b1b4e91\",\"layouts\":[{\"id\":0,\"position\":{\"x\":102.26487523992331,\"y\":121.93857965451053,\"z\":12000,\"width\":176.89059500959692,\"height\":88.44529750479846,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 88.45,
+          "width": 176.89,
+          "x": 102.26,
+          "y": 121.94,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"a520f4e8eca98b820ad0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":179.65451055662206,\"y\":229.40499040307103,\"z\":4000,\"width\":210.05758157389636,\"height\":78.77159309021114,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Avg(CxP.Días atraso)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días atraso\"}},\"Function\":1},\"Name\":\"Avg(CxP.Días atraso)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días atraso\"}},\"Function\":1}}}]},\"columnProperties\":{\"Avg(CxP.Días atraso)\":{\"displayName\":\"Promedio Días atraso\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 78.77,
+          "width": 210.06,
+          "x": 179.65,
+          "y": 229.40,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"b93151e7892a7e060c11\",\"layouts\":[{\"id\":0,\"position\":{\"x\":478.76199616122835,\"y\":341.3435700575814,\"z\":18000,\"width\":291.59309021113245,\"height\":214.20345489443378,\"tabOrder\":18000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CxP.Días de pago\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(CxP.Monto compañía)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días de pago\"},\"Name\":\"CxP.Días de pago\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto compañía)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Atrasado\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"false\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1}]",
+          "height": 214.20,
+          "width": 291.59,
+          "x": 478.76,
+          "y": 341.34,
+          "z": 18000.00
+        },
+        {
+          "config": "{\"name\":\"e32a8d930d984ae08e3e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1.381957773512476,\"y\":308.1765834932822,\"z\":7000,\"width\":1278.3109404990403,\"height\":27.63915547024952,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"angle\":{\"expr\":{\"Literal\":{\"Value\":\"90D\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F2C80F'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 27.64,
+          "width": 1278.31,
+          "x": 1.38,
+          "y": 308.18,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"e834f41da9381213ba30\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":176.89059500959692,\"z\":1000,\"width\":145.10556621881,\"height\":59.42418426103647,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Atrasadas\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 59.42,
+          "width": 145.11,
+          "x": 0.00,
+          "y": 176.89,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1,\"type\":1}",
+      "displayName": "Costo por compañía",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 250.00,
+      "name": "ReportSection7a45703dbddf53e957fc",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"06a24099386dc9d0ec7c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":264.80314960629926,\"y\":0,\"z\":2000,\"width\":115.1968503937008,\"height\":33.412073490813654,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(historia.COGS)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(historia.COGS)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0}}}]},\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'20'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 33.41,
+          "width": 115.20,
+          "x": 264.80,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"8b3e1534edeb595592ee\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":380.00000000000006,\"height\":249.8425196850394,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"historia.Compañía \",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historia.COGS)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"País\"},\"Name\":\"historia.Compañía \"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(historia.COGS)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(historia.COGS)\":{\"displayName\":\"Costo\"}},\"objects\":{\"labels\":[{\"properties\":{\"labelStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'Category, data value, percent of total'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 249.84,
+          "width": 380.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 380.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"211L\"}}}}}]}}",
+      "displayName": "Cash flow",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection7e664a7b6509ab837839",
+      "ordinal": 7,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1a980baf20480ec17599\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":238.29787234042553,\"height\":98.72340425531914,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(cashflow.CxC)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cashflow\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0},\"Name\":\"Sum(cashflow.CxC)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0}}}]},\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 98.72,
+          "width": 238.30,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"313f7bcf87e421806355\",\"layouts\":[{\"id\":0,\"position\":{\"x\":238.29787234042553,\"y\":0,\"z\":2000,\"width\":238.29787234042553,\"height\":98.72340425531914,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(cashflow.CxP)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cashflow\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxP\"}},\"Function\":0},\"Name\":\"Sum(cashflow.CxP)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0}}}]},\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 98.72,
+          "width": 238.30,
+          "x": 238.30,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"39552e4764a567abca3d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":714.8936170212766,\"y\":0,\"z\":4000,\"width\":238.29787234042553,\"height\":98.72340425531914,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(cashflow.Proyectos)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cashflow\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Proyectos\"}},\"Function\":0},\"Name\":\"Sum(cashflow.Proyectos)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0}}}]},\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 98.72,
+          "width": 238.30,
+          "x": 714.89,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"b7a1bea73310e9a30ccc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":132.7659574468085,\"z\":0,\"width\":1280,\"height\":478.2978723404255,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"cashflow.Fecha.Variación.Date Hierarchy.Month\",\"active\":true},{\"queryRef\":\"cashflow.Fecha.Variación.Date Hierarchy.Day\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(cashflow.Actual)\"},{\"queryRef\":\"Sum(cashflow.CxC)\"},{\"queryRef\":\"Sum(cashflow.CxP)\"},{\"queryRef\":\"Sum(cashflow.Nómina)\"}],\"Y2\":[{\"queryRef\":\"Sum(cashflow.Proyectos)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cashflow\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"cashflow.Fecha.Variación.Date Hierarchy.Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Day\"},\"Name\":\"cashflow.Fecha.Variación.Date Hierarchy.Day\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Actual\"}},\"Function\":0},\"Name\":\"Sum(cashflow.Actual)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0},\"Name\":\"Sum(cashflow.CxC)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxP\"}},\"Function\":0},\"Name\":\"Sum(cashflow.CxP)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Nómina\"}},\"Function\":0},\"Name\":\"Sum(cashflow.Nómina)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Proyectos\"}},\"Function\":0},\"Name\":\"Sum(cashflow.Proyectos)\"}]}}}",
+          "filters": "[]",
+          "height": 478.30,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 132.77,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c67d106c670f1629b59d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1168.1043802423112,\"y\":0,\"z\":5000,\"width\":111.65703634669153,\"height\":77.30102516309412,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"isotipo_y_descriptivo_negro8377816359350421.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 77.30,
+          "width": 111.66,
+          "x": 1168.10,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"d78a89bb8c60a2d28020\",\"layouts\":[{\"id\":0,\"position\":{\"x\":476.59574468085106,\"y\":0,\"z\":3000,\"width\":238.29787234042553,\"height\":98.72340425531914,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(cashflow.Nómina)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cashflow\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Nómina\"}},\"Function\":0},\"Name\":\"Sum(cashflow.Nómina)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CxC\"}},\"Function\":0}}}]},\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 98.72,
+          "width": 238.30,
+          "x": 476.60,
+          "y": 0.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "detalle compañía",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Mes\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Año\"}},\"type\":\"Categorical\",\"howCreated\":1}]",
+      "height": 720.00,
+      "name": "ReportSection9ef27a79850395dd0f31",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"00d9fafc1507b9000301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":646.7562380038388,\"z\":0,\"width\":280.53742802303265,\"height\":73.24376199616123,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"backButton6143042868118096.png\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 73.24,
+          "width": 280.54,
+          "x": 0.00,
+          "y": 646.76,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"7e32e506a08cd0e2b748\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1.6389244558258644,\"y\":0,\"z\":1000,\"width\":1276.7221510883483,\"height\":647.3751600512164,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Mes\"},{\"queryRef\":\"historia.Compañía \"},{\"queryRef\":\"Sum(historia.Net Sales)\"},{\"queryRef\":\"Sum(historia.COGS)\"},{\"queryRef\":\"Avg(historia.Gross Margin %)\"},{\"queryRef\":\"Sum(historia.Current Liabilities)\"},{\"queryRef\":\"Sum(historia.Debt to Equity Ratio)\"},{\"queryRef\":\"Sum(historia.Dolares)\"},{\"queryRef\":\"Sum(historia.Return on Assets)\"},{\"queryRef\":\"Sum(historia.Return on Equity)\"},{\"queryRef\":\"Sum(historia.Working Capital)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Net Sales\"}},\"Function\":0},\"Name\":\"Sum(historia.Net Sales)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(historia.COGS)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Gross Margin %\"}},\"Function\":1},\"Name\":\"Avg(historia.Gross Margin %)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Current Liabilities\"}},\"Function\":0},\"Name\":\"Sum(historia.Current Liabilities)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Debt to Equity Ratio\"}},\"Function\":1},\"Name\":\"Sum(historia.Debt to Equity Ratio)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Dolares\"}},\"Function\":0},\"Name\":\"Sum(historia.Dolares)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Assets\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Assets)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Equity\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Equity)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Working Capital\"}},\"Function\":0},\"Name\":\"Sum(historia.Working Capital)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"País\"},\"Name\":\"historia.Compañía \"}]},\"columnProperties\":{\"Sum(historia.Gross Margin %)\":{\"displayName\":\"Gross Margin %\"},\"Sum(historia.Net Sales)\":{\"displayName\":\"Ingresos\"},\"Sum(historia.COGS)\":{\"displayName\":\"Costo\"},\"Avg(historia.Gross Margin %)\":{\"displayName\":\"Margen Bruto %\"},\"Sum(historia.Current Liabilities)\":{\"displayName\":\"Pasivo circulante\"},\"Sum(historia.Debt to Equity Ratio)\":{\"displayName\":\"Coef. de Endeudamiento\"},\"Sum(historia.Return on Assets)\":{\"displayName\":\"Retorno de Activos\"},\"Sum(historia.Return on Equity)\":{\"displayName\":\"Retorno Cap. Contable\"},\"Sum(historia.Working Capital)\":{\"displayName\":\"Capital de trabajo\"}},\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'12'\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'10'\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"165.3328984718662D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Debt to Equity Ratio)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"123.69397334452172D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Assets)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"154.6107487265552D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Equity)\"}}],\"grid\":[{\"properties\":{\"gridVertical\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Gross Margin over time'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 647.38,
+          "width": 1276.72,
+          "x": 1.64,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"193L\"}}}}}]},\"visibility\":0}",
+      "displayName": "Detalle CxC",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Año\"}},\"type\":\"Categorical\",\"howCreated\":1},{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Cliente\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filter2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Días de pago\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filter3\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Estatus\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSectionbbbdb0f606106c933872",
+      "ordinal": 6,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"00d9fafc1507b9000301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":646.7562380038388,\"z\":0,\"width\":280.53742802303265,\"height\":73.24376199616123,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"backButton6143042868118096.png\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 73.24,
+          "width": 280.54,
+          "x": 0.00,
+          "y": 646.76,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"60acc28fe082a0032d74\",\"layouts\":[{\"id\":0,\"position\":{\"x\":942.5454545454545,\"y\":199.4805194805195,\"z\":3000,\"width\":337.45454545454544,\"height\":280.93506493506493,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CxP.Atrasado\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(CxP.Monto)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"},\"Name\":\"CxP.Atrasado\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0}}}]},\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.94,
+          "width": 337.45,
+          "x": 942.55,
+          "y": 199.48,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7e32e506a08cd0e2b748\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1.6623376623376624,\"y\":0,\"z\":1000,\"width\":930.9090909090909,\"height\":646.6493506493506,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"CxP.Cliente\"},{\"queryRef\":\"CxP.Atrasado\"},{\"queryRef\":\"Sum(CxP.Días atraso)\"},{\"queryRef\":\"CxP.Días de pago\"},{\"queryRef\":\"CxP.Moneda\"},{\"queryRef\":\"Sum(CxP.Monto)\"},{\"queryRef\":\"CxP.Ubicación\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CxP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Cliente\"},\"Name\":\"CxP.Cliente\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días atraso\"}},\"Function\":0},\"Name\":\"Sum(CxP.Días atraso)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Atrasado\"},\"Name\":\"CxP.Atrasado\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Días de pago\"},\"Name\":\"CxP.Días de pago\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Moneda\"},\"Name\":\"CxP.Moneda\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Monto\"}},\"Function\":0},\"Name\":\"Sum(CxP.Monto)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ubicación\"},\"Name\":\"CxP.Ubicación\"}]},\"columnProperties\":{\"Sum(historia.Gross Margin %)\":{\"displayName\":\"Gross Margin %\"}},\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'12'\"}}}}},{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"CxP.Atrasado\"}},{\"properties\":{\"icon\":{\"kind\":\"Icon\",\"layout\":{\"expr\":{\"Literal\":{\"Value\":\"'Before'\"}}},\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}},\"value\":{\"expr\":{\"Conditional\":{\"Cases\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Right\":{\"RangePercent\":{\"Min\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":3}},\"Scope\":[]}},\"Max\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":4}},\"Scope\":[]}},\"Percent\":0.67}}}},\"Value\":{\"Literal\":{\"Value\":\"'CircleHigh'\"}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Right\":{\"RangePercent\":{\"Min\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":3}},\"Scope\":[]}},\"Max\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":4}},\"Scope\":[]}},\"Percent\":0.33}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Right\":{\"RangePercent\":{\"Min\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":3}},\"Scope\":[]}},\"Max\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":4}},\"Scope\":[]}},\"Percent\":0.67}}}}}},\"Value\":{\"Literal\":{\"Value\":\"'SignMedium'\"}}},{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Right\":{\"RangePercent\":{\"Min\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":3}},\"Scope\":[]}},\"Max\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Monto\"}},\"Function\":0}},\"Scope\":[{\"AllRolesRef\":{}}]}},\"Function\":4}},\"Scope\":[]}},\"Percent\":0.33}}}},\"Value\":{\"Literal\":{\"Value\":\"'SignLow'\"}}}]}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Sum(CxP.Monto)\"}},{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"CxP\"}},\"Property\":\"Días atraso\"}},\"Function\":0}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#33AE81'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'midColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#DC5B57'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Sum(CxP.Días atraso)\"}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'10'\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"grid\":[{\"properties\":{\"gridVertical\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Gross Margin over time'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 646.65,
+          "width": 930.91,
+          "x": 1.66,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "detalle",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Mes\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Año\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "ReportSectionc48e41e0a21525bea3a0",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"00d9fafc1507b9000301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":498.88675623800384,\"z\":0,\"width\":280.53742802303265,\"height\":125.75815738963531,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"backButton6143042868118096.png\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 125.76,
+          "width": 280.54,
+          "x": 0.00,
+          "y": 498.89,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"7e32e506a08cd0e2b748\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":1280,\"height\":498.2330345710628,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Mes\"},{\"queryRef\":\"Sum(historia.Net Sales)\"},{\"queryRef\":\"Sum(historia.COGS)\"},{\"queryRef\":\"Avg(historia.Gross Margin %)\"},{\"queryRef\":\"Sum(historia.Current Liabilities)\"},{\"queryRef\":\"Sum(historia.Debt to Equity Ratio)\"},{\"queryRef\":\"Sum(historia.Dolares)\"},{\"queryRef\":\"Sum(historia.Return on Assets)\"},{\"queryRef\":\"Sum(historia.Return on Equity)\"},{\"queryRef\":\"Sum(historia.Working Capital)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Net Sales\"}},\"Function\":0},\"Name\":\"Sum(historia.Net Sales)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(historia.COGS)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Gross Margin %\"}},\"Function\":1},\"Name\":\"Avg(historia.Gross Margin %)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Current Liabilities\"}},\"Function\":0},\"Name\":\"Sum(historia.Current Liabilities)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Debt to Equity Ratio\"}},\"Function\":0},\"Name\":\"Sum(historia.Debt to Equity Ratio)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Dolares\"}},\"Function\":0},\"Name\":\"Sum(historia.Dolares)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Assets\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Assets)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Return on Equity\"}},\"Function\":1},\"Name\":\"Sum(historia.Return on Equity)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Working Capital\"}},\"Function\":0},\"Name\":\"Sum(historia.Working Capital)\"}]},\"columnProperties\":{\"Sum(historia.Gross Margin %)\":{\"displayName\":\"Gross Margin %\"},\"Sum(historia.Net Sales)\":{\"displayName\":\"Ingresos\"},\"Sum(historia.COGS)\":{\"displayName\":\"Costo\"},\"Avg(historia.Gross Margin %)\":{\"displayName\":\"Margen Bruto %\"},\"Sum(historia.Working Capital)\":{\"displayName\":\"Capital de trabajo\"},\"Sum(historia.Current Liabilities)\":{\"displayName\":\"Pasivo circulante\"},\"Sum(historia.Debt to Equity Ratio)\":{\"displayName\":\"Coef. de Endeudamiento\"},\"Sum(historia.Return on Assets)\":{\"displayName\":\"Retorno de activos\"},\"Sum(historia.Return on Equity)\":{\"displayName\":\"Retorno Cap. Contable\"}},\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'12'\"}}}}},{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"historia\"}},\"Property\":\"Gross Margin %\"}},\"Function\":1}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Avg(historia.Gross Margin %)\"}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'12'\"}}}}}],\"columnFormatting\":[{\"properties\":{},\"selector\":{\"metadata\":\"Sum(historia.Net Sales)\"}},{\"properties\":{\"dataBars\":{\"positiveColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}}},\"negativeColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}}},\"axisColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'foreground'\"}}}}},\"reverseDirection\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"hideText\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},\"selector\":{\"metadata\":\"Sum(historia.COGS)\"}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"125.99869541559863D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Debt to Equity Ratio)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"111.86042258045484D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Assets)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"132.30472207107692D\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Return on Equity)\"}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Gross Margin over time'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 498.23,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "what if",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionda1246a17893081bb788",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"02a23ea0c9d35f9d3f5f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":255.66218809980808,\"y\":0,\"z\":6000,\"width\":214.20345489443378,\"height\":91.20921305182343,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(historia.Margen bruto)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Margen bruto\"}},\"Function\":0},\"Name\":\"Sum(historia.Margen bruto)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Margen bruto\"}},\"Function\":0}}}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"18L\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Margen Bruto'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 91.21,
+          "width": 214.20,
+          "x": 255.66,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"1e14effffd3d5d48d20e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1041.7233391026496,\"y\":72.39302356543736,\"z\":10000,\"width\":238.03807748635336,\"height\":58.89601917188124,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Mes\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 58.90,
+          "width": 238.04,
+          "x": 1041.72,
+          "y": 72.39,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"338009b7be11c3abb8cc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":847.857275995207,\"y\":72.39302356543736,\"z\":9000,\"width\":193.86606310744241,\"height\":58.89601917188124,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Año\"},\"Name\":\"historia.Año\"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 58.90,
+          "width": 193.87,
+          "x": 847.86,
+          "y": 72.39,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"6b8b2db07c9897782a96\",\"layouts\":[{\"id\":0,\"position\":{\"x\":719.4878361075545,\"y\":0,\"z\":3000,\"width\":98.33546734955186,\"height\":59.001280409731116,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"INPC2.INPC2\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"INPC\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INPC\"},\"Name\":\"INPC2.INPC2\"}]},\"columnProperties\":{\"INPC2.INPC2\":{\"displayName\":\"Tasa\"}},\"objects\":{\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"data\":[{\"properties\":{\"numericStart\":{\"expr\":{\"Literal\":{\"Value\":\"3.949999999999994D\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"INPC\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INPC\"}},\"Right\":{\"Literal\":{\"Value\":\"3.949999999999994D\"}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 59.00,
+          "width": 98.34,
+          "x": 719.49,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"71bc35de61823dce605e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":557.0581813340434,\"y\":0,\"z\":0,\"width\":282.2100918652643,\"height\":72.39302356543736,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#caa5c2'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 72.39,
+          "width": 282.21,
+          "x": 557.06,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"776f85126ce417caf867\",\"layouts\":[{\"id\":0,\"position\":{\"x\":557.0581813340434,\"y\":0,\"z\":4000,\"width\":154.60205032618825,\"height\":58.89601917188124,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Parameter.Parameter\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Dll-Euro\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Tipo de cambio\"},\"Name\":\"Parameter.Parameter\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Tipo de cambio\"}}}]},\"objects\":{\"data\":[{\"properties\":{\"numericStart\":{\"expr\":{\"Literal\":{\"Value\":\"0.8D\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Single'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Dll-Euro\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Tipo de cambio\"}},\"Right\":{\"Literal\":{\"Value\":\"0.8D\"}}}}}]}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 58.90,
+          "width": 154.60,
+          "x": 557.06,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"7f4968ce872982e20c92\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.500640204865558,\"y\":131.11395646606914,\"z\":1000,\"width\":216.3380281690141,\"height\":73.7516005121639,\"tabOrder\":13000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Euros\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Euros\"},\"Name\":\"historia.Euros\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Euros\"}}}]},\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 73.75,
+          "width": 216.34,
+          "x": 29.50,
+          "y": 131.11,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8b70822e2ada93320c2a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1168.1043802423112,\"y\":0,\"z\":14000,\"width\":111.65703634669153,\"height\":77.30102516309412,\"tabOrder\":14000}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"isotipo_y_descriptivo_negro8377816359350421.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 77.30,
+          "width": 111.66,
+          "x": 1168.10,
+          "y": 0.00,
+          "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"8be04dcc7e9053605abe\",\"layouts\":[{\"id\":0,\"position\":{\"x\":218.34932821497122,\"y\":0,\"z\":12000,\"width\":55.27831094049904,\"height\":201.7658349328215,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 201.77,
+          "width": 55.28,
+          "x": 218.35,
+          "y": 0.00,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"8d7728eb37a527d929c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":555.8311809346292,\"y\":72.39302356543736,\"z\":8000,\"width\":299.388097457063,\"height\":61.350019970709624,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Compañía \",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"País\"},\"Name\":\"historia.Compañía \"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 61.35,
+          "width": 299.39,
+          "x": 555.83,
+          "y": 72.39,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"8eb24a859bee5b61431c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":261.19001919385795,\"y\":118.84836852207295,\"z\":7000,\"width\":200.38387715930904,\"height\":99.50095969289828,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"historia.Margen Bruto Euros\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Margen Bruto Euros\"},\"Name\":\"historia.Margen Bruto Euros\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 99.50,
+          "width": 200.38,
+          "x": 261.19,
+          "y": 118.85,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"a607b974074130a53744\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.021113243761995,\"y\":0,\"z\":5000,\"width\":215.58541266794626,\"height\":95.35508637236084,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(historia.Dolares)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Dolares\"}},\"Function\":0},\"Name\":\"Sum(historia.Dolares)\"}]},\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"18L\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ingresos'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.36,
+          "width": 215.59,
+          "x": 29.02,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"c1bddf06da71c0647aa6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":11000,\"width\":55.27831094049904,\"height\":201.7658349328215,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 201.77,
+          "width": 55.28,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"d29c929bc1953e966540\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.673704414587332,\"y\":237.6967370441459,\"z\":2000,\"width\":1268.637236084453,\"height\":480.92130518234165,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(historia.Dolares)\"},{\"queryRef\":\"historia.Euros\"},{\"queryRef\":\"Sum(historia.Margen bruto)\"},{\"queryRef\":\"historia.Margen Bruto Euros\"}],\"Y2\":[{\"queryRef\":\"CountNonNull(historia.% Margen Bruto)\"}],\"Category\":[{\"queryRef\":\"historia.Mes\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"historia\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Dolares\"}},\"Function\":0},\"Name\":\"CountNonNull(historia.Dolares)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"% Margen Bruto\"}},\"Function\":1},\"Name\":\"CountNonNull(historia.% Margen Bruto)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Mes\"},\"Name\":\"historia.Mes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Margen bruto\"}},\"Function\":0},\"Name\":\"Sum(historia.Margen bruto)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Margen Bruto Euros\"},\"Name\":\"historia.Margen Bruto Euros\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Euros\"},\"Name\":\"historia.Euros\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"Dolares\"}},\"Function\":0}}}]},\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":5,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"CountNonNull(historia.% Margen Bruto)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#4c5d8a'\"}}}}}},\"selector\":{\"metadata\":\"CountNonNull(historia.Dolares)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#A66999'\"}}}}}},\"selector\":{\"metadata\":\"Sum(historia.Margen bruto)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#A66999'\"}}}}}},\"selector\":{\"metadata\":\"historia.Margen Bruto Euros\"}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'BottomCenter'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"CountNonNull(historia.Dolares)\"}},{\"properties\":{\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"Sum(historia.Margen bruto)\"}},{\"properties\":{\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"historia.Margen Bruto Euros\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"18L\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Análisis de Margen'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 480.92,
+          "width": 1268.64,
+          "x": 9.67,
+          "y": 237.70,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"de114979d6905726fe38\",\"layouts\":[{\"id\":0,\"position\":{\"x\":449.1362763915547,\"y\":0,\"z\":13000,\"width\":55.27831094049904,\"height\":201.7658349328215,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"basicShape\",\"objects\":{\"general\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"line\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FD625E'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 201.77,
+          "width": 55.28,
+          "x": 449.14,
+          "y": 0.00,
+          "z": 13000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Classroom"
+}

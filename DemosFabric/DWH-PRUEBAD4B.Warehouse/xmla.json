@@ -1,0 +1,581 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "DIM_CLIENTE",
+        "sourceLineageTag": "[dbo].[DIM_CLIENTE]",
+        "columns": [
+          {
+            "name": "SK_CLIENTE",
+            "dataType": "string",
+            "sourceColumn": "SK_CLIENTE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SK_CLIENTE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CVE_CLIENTE",
+            "dataType": "string",
+            "sourceColumn": "CVE_CLIENTE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CVE_CLIENTE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DSC_NOMBRE",
+            "dataType": "string",
+            "sourceColumn": "DSC_NOMBRE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DSC_NOMBRE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CVE_COMPANIA",
+            "dataType": "string",
+            "sourceColumn": "CVE_COMPANIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CVE_COMPANIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CVE_MERCADO",
+            "dataType": "string",
+            "sourceColumn": "CVE_MERCADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CVE_MERCADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DSC_MERCADO",
+            "dataType": "string",
+            "sourceColumn": "DSC_MERCADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DSC_MERCADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CVE_NEGOCIO",
+            "dataType": "string",
+            "sourceColumn": "CVE_NEGOCIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CVE_NEGOCIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DSC_NEGOCIO",
+            "dataType": "string",
+            "sourceColumn": "DSC_NEGOCIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DSC_NEGOCIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SK_VENDEDOR",
+            "dataType": "string",
+            "sourceColumn": "SK_VENDEDOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SK_VENDEDOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cve_Zona_de_ventas",
+            "dataType": "string",
+            "sourceColumn": "Cve_Zona_de_ventas",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cve_Zona_de_ventas",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_Zona_de_ventas",
+            "dataType": "string",
+            "sourceColumn": "Dsc_Zona_de_ventas",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_Zona_de_ventas",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cve_Subzona_de_ventas",
+            "dataType": "string",
+            "sourceColumn": "Cve_Subzona_de_ventas",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cve_Subzona_de_ventas",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_Subzona_de_ventas",
+            "dataType": "string",
+            "sourceColumn": "Dsc_Subzona_de_ventas",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_Subzona_de_ventas",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_Segmento_PlanLealtad",
+            "dataType": "string",
+            "sourceColumn": "Dsc_Segmento_PlanLealtad",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_Segmento_PlanLealtad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_Reconfiguracion_Acuerdos_Comerciales",
+            "dataType": "string",
+            "sourceColumn": "Dsc_Reconfiguracion_Acuerdos_Comerciales",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_Reconfiguracion_Acuerdos_Comerciales",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_CadenaCompania",
+            "dataType": "string",
+            "sourceColumn": "Dsc_CadenaCompania",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_CadenaCompania",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dsc_Agrupador_Clientes",
+            "dataType": "string",
+            "sourceColumn": "Dsc_Agrupador_Clientes",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dsc_Agrupador_Clientes",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cve_Calidra_PlanLealtad",
+            "dataType": "string",
+            "sourceColumn": "Cve_Calidra_PlanLealtad",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cve_Calidra_PlanLealtad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cve_Linea_Negocio",
+            "dataType": "string",
+            "sourceColumn": "Cve_Linea_Negocio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cve_Linea_Negocio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cve_Grupo",
+            "dataType": "string",
+            "sourceColumn": "Cve_Grupo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cve_Grupo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INSERT_SVR",
+            "dataType": "dateTime",
+            "sourceColumn": "INSERT_SVR",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "INSERT_SVR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UPDATE_SVR",
+            "dataType": "dateTime",
+            "sourceColumn": "UPDATE_SVR",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "UPDATE_SVR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DIM_CLIENTE",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dataarea",
+        "sourceLineageTag": "[dbo].[dataarea]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fno_id",
+            "dataType": "string",
+            "sourceColumn": "fno_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "fno_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dataarea",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "pruebatablafabric",
+        "sourceLineageTag": "[dbo].[pruebatablafabric]",
+        "columns": [
+          {
+            "name": "VENTA_ID",
+            "dataType": "int64",
+            "sourceColumn": "VENTA_ID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "VENTA_ID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FECHA",
+            "dataType": "dateTime",
+            "sourceColumn": "FECHA",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "FECHA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUCURSAL_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SUCURSAL_CLIENTE",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "SUCURSAL_CLIENTE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ARTICULO",
+            "dataType": "int64",
+            "sourceColumn": "ARTICULO",
+            "formatString": "0",
+            "sourceProviderType": "smallint",
+            "sourceLineageTag": "ARTICULO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CANTIDAD",
+            "dataType": "int64",
+            "sourceColumn": "CANTIDAD",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "CANTIDAD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SUBTOTAL",
+            "dataType": "int64",
+            "sourceColumn": "SUBTOTAL",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "SUBTOTAL",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IVA",
+            "dataType": "double",
+            "sourceColumn": "IVA",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "IVA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "VENDEDOR",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "VENDEDOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "pruebatablafabric",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

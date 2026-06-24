@@ -1,0 +1,437 @@
+table transactioncurrency
+	lineageTag: 7a9fc927-0341-42a6-b677-41037651bad8
+	sourceLineageTag: [dbo].[transactioncurrency]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d85b53c1-a045-48f0-92ee-8d1d5de01240
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 551c30a7-8a2e-4c1b-8d23-01e8a4b2a9d3
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 59285084-527c-43b0-abba-eda7e1c85aec
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 90a665c5-576e-4bc0-a974-62db63410ee0
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 410f9484-3ed3-4ee1-9dad-823dd140a5e6
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2813a9e3-a70e-482e-8f46-e92bedf2c236
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5c78f525-47e3-4ccb-8ba5-f879b2a03b9f
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c56a7407-91b9-40d2-84be-64062acdc6f7
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56ad48e7-856e-4400-b084-aec16fa0d542
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 14d9bbe4-84d9-461e-a794-cf62673783ef
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 96351252-c429-40d0-bfc3-5a579bfac581
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fde40a33-6ae9-49ca-9841-8721c1ac6e4c
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d0e5ccd3-3db8-47e6-8b72-1c0cb1363ff9
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column organizationid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 62da6977-032b-455d-9217-fe9c8c1be647
+		sourceLineageTag: organizationid
+		summarizeBy: none
+		sourceColumn: organizationid
+
+		annotation SummarizationSetBy = Automatic
+
+	column organizationid_entitytype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 683abfec-80c9-451f-8015-5b5ad4899f23
+		sourceLineageTag: organizationid_entitytype
+		summarizeBy: none
+		sourceColumn: organizationid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: afcc2cce-175b-4004-94d7-1e07bfe7985a
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18ed690e-dad7-4b81-9281-6c54cfe894f4
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2d5a4bdd-db5c-4e4f-93bc-d6dd0883d10b
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 75a7f7ca-8432-4311-b2a5-9ebef45d490c
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c2e9b597-2be3-4935-89a9-00405358449a
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column currencyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d1c03286-34b7-4320-89c0-b27719991a30
+		sourceLineageTag: currencyname
+		summarizeBy: none
+		sourceColumn: currencyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column currencyprecision
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9eafeaee-620d-47dd-9594-7285c1956b44
+		sourceLineageTag: currencyprecision
+		summarizeBy: sum
+		sourceColumn: currencyprecision
+
+		annotation SummarizationSetBy = Automatic
+
+	column currencysymbol
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ef0c43f1-8b7f-49ea-a8c1-31482ec3d3e0
+		sourceLineageTag: currencysymbol
+		summarizeBy: none
+		sourceColumn: currencysymbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column entityimage
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1e093e1-b3bd-4a79-a102-475090d2dea2
+		sourceLineageTag: entityimage
+		summarizeBy: none
+		sourceColumn: entityimage
+
+		annotation SummarizationSetBy = Automatic
+
+	column entityimage_timestamp
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3265901f-8aa9-420e-a96a-1e30183cb0b4
+		sourceLineageTag: entityimage_timestamp
+		summarizeBy: sum
+		sourceColumn: entityimage_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column entityimage_url
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ae689550-0d06-4f5f-bf73-7ba8d27f32fc
+		sourceLineageTag: entityimage_url
+		summarizeBy: none
+		sourceColumn: entityimage_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column entityimageid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 94c043da-11b3-4c31-bd18-17bddd095f0d
+		sourceLineageTag: entityimageid
+		summarizeBy: none
+		sourceColumn: entityimageid
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchangerate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b0dc6594-b8ff-4c2b-b861-913faceff470
+		sourceLineageTag: exchangerate
+		summarizeBy: sum
+		sourceColumn: exchangerate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a2348626-8365-4668-9517-2c1d8db82511
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column isocurrencycode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5eb9c306-71d1-4340-90c8-58b309f629d4
+		sourceLineageTag: isocurrencycode
+		summarizeBy: none
+		sourceColumn: isocurrencycode
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 667468a5-9494-458f-a756-0f42c7ed3f36
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56926709-ad99-4097-bb3a-fdbbc2abc4b7
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 20af2da7-8708-4e56-8447-5d3073a38405
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a2ee232e-4bee-4e84-854a-2099c07daec2
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 64368014-43d9-4bc9-a418-e2c9af64df5a
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 40ab8cdd-5163-44ea-a82c-493532ac6545
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72f7ae88-4624-4c74-84ce-4413c0bd66b2
+		sourceLineageTag: transactioncurrencyid
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column uniquedscid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e8954c7d-1b51-448d-8f95-347543cf233d
+		sourceLineageTag: uniquedscid
+		summarizeBy: none
+		sourceColumn: uniquedscid
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 348379bd-a955-45e4-ad57-7ca35f0f456a
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 26e5b650-93df-49e0-bfde-76e0d6544b5f
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa68ea86-63de-4e52-9da3-40a4dcc9779a
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transactioncurrency-cd9be56e-df8c-4a34-b13e-4cd49e510bb1 = entity
+		mode: directLake
+		source
+			entityName: transactioncurrency
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

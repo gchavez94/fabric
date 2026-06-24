@@ -1,0 +1,34 @@
+table DimVendedores
+	lineageTag: 04b82ffc-988f-46fa-836e-521d21ecf736
+	sourceLineageTag: [dbo].[DimVendedores]
+
+	column DimVendedorId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f2a7afc3-4385-4db0-88ac-a6e6919d35a5
+		sourceLineageTag: DimVendedorId
+		summarizeBy: none
+		sourceColumn: DimVendedorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreVendedor
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5b2ca870-5bc5-4cfe-bd71-792a1c7b54c5
+		sourceLineageTag: NombreVendedor
+		summarizeBy: none
+		sourceColumn: NombreVendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimVendedores = entity
+		mode: directLake
+		source
+			entityName: DimVendedores
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

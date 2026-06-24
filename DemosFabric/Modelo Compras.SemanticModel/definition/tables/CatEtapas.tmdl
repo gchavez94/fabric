@@ -1,0 +1,65 @@
+table CatEtapas
+	lineageTag: 15340c55-f96b-44d6-81ac-252468008134
+
+	measure M_Conteo = ```
+			
+			Var M1=[M_ConteoSolicitudDeCompra]+0
+			Var M2=[M_ConteoOrdenDeCompra]+0/*Cotización*/
+			Var M3=[M_ConteoOrdenDeCompra]+0/*Orden de compra*/
+			Var M4=[M_ConteoRecepcion]+0/*Recepción*/
+			Var M5=[M_ConteoFacturasAbiertas]+0/*Abiertas*/
+			Var M6=[M_ConteoFacturasPagadas]+0/*Pagos*/
+			RETURN 
+			 
+			IF  (HASONEVALUE(CatEtapas[Etapa]),SWITCH(VALUES(CatEtapas[IdEtapa]),
+			1, M1, 
+			2, M2,
+			3, M3,
+			4, M4,
+			5, M5,
+			6, M6))
+			```
+		lineageTag: e612141d-654f-4f42-9f74-026e0a0f4978
+
+	measure M_FiltroEtapas = ```
+			
+			([M_ConteoSolicitudDeCompra]+
+			[M_ConteoOrdenDeCompra]+
+			[M_ConteoRecepcion]+
+			[M_ConteoFacturasAbiertas]+
+			[M_ConteoFacturasPagadas])+0
+			
+			```
+		lineageTag: 7e95535d-c80e-43e2-9093-7aa23f9091ea
+
+	column IdEtapa
+		dataType: int64
+		formatString: 0
+		lineageTag: da1a86f6-4e16-45bb-971d-a0bb4a43988c
+		summarizeBy: sum
+		sourceColumn: IdEtapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: cf1cbceb-b7e1-4278-acdb-7c904725921a
+		summarizeBy: none
+		sourceColumn: Etapa
+		sortByColumn: IdEtapa
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CatEtapas = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_CatEtapas = Origen{[Schema="dbo",Item="CatEtapas"]}[Data]
+				in
+				    dbo_CatEtapas
+
+	annotation PBI_ResultType = Table
+

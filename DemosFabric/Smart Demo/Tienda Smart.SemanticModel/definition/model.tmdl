@@ -1,0 +1,18 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["fact_transactions"]
+
+ref table fact_transactions
+ref table DateTableTemplate_5d4e5cce-4baf-46fa-9d3a-669dd6fb59a9
+ref table LocalDateTable_c368d9e6-8530-4c96-8a92-53c065e87d98
+
+ref cultureInfo es-MX
+

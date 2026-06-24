@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[custsettlment-PagoReal] (
+
+	[TRANSRECID] bigint NULL, 
+	[ACCOUNTNUM] bigint NULL, 
+	[EXCHADJUSTMENT] float NULL, 
+	[OFFSETTRANSVOUCHER] varchar(8000) NULL, 
+	[SETTLEAMOUNTCUR] float NULL, 
+	[SETTLEAMOUNTMST] float NULL, 
+	[SETTLEMENTVOUCHER] varchar(8000) NULL, 
+	[TRANSDATE] date NULL, 
+	[CLOSEDDATE] date NULL, 
+	[TRANSTYPE] bigint NULL, 
+	[DATAAREAID] varchar(8000) NULL
+);
+
+
+GO
+ALTER TABLE [dbo].[custsettlment-PagoReal] ADD CONSTRAINT FK_ba8ed381_31f7_4ec9_a967_5160137d423a FOREIGN KEY ([CLOSEDDATE]) REFERENCES [dbo].[Calendario_Trad]([Date]);

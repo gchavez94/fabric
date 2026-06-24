@@ -1,0 +1,660 @@
+table FactOrdenDeCompra
+	lineageTag: ebf160b5-c5e2-458f-a28b-04643b9f2ddc
+
+	measure M_ConteoOrdenDeCompra = CALCULATE(COUNT(FactSolicitudDeCompraRequisicion[IdOrdenDeCompraLinea]),FactSolicitudDeCompraRequisicion[IdOrdenDeCompraLinea] <> "NO APLICA")
+		formatString: 0
+		lineageTag: a4939c9c-0f8e-4b63-a1e0-397c3878982a
+
+	measure M_MontoNetoOrdenDeCompra = ```
+			
+			 Var SeleccionMoneda=SELECTEDVALUE(DimMoneda[Id])
+			Var MontoMXN=SUM(FactOrdenDeCompra[MontoNetoMXN])
+			Var MontoUSD=SUM(FactOrdenDeCompra[MontoNetoUSD])
+			Var Resultado=IF(SeleccionMoneda=1,MontoMXN,MontoUSD)
+			RETURN Resultado
+			```
+		lineageTag: 5f806b0a-d2e0-4c81-886d-8f6d3f4674f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_MontoNetoOrdenDeCompraImpuesto = ```
+			
+			 Var SeleccionMoneda=SELECTEDVALUE(DimMoneda[Id])
+			Var MontoMXN=SUM(FactOrdenDeCompra[MontoNetoMXNImpuesto])
+			Var MontoUSD=SUM(FactOrdenDeCompra[MontoNetoUSDImpuesto])
+			Var Resultado=IF(SeleccionMoneda=1,MontoMXN,MontoUSD)
+			RETURN Resultado
+			```
+		lineageTag: 0748d6bf-3ca8-4fec-8843-c15c1a29f173
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_TiempoPromedio_OC_Recepcion = ```
+			
+			 AVERAGEX(SELECTCOLUMNS(SUMMARIZE(FILTER(FactOrdenDeCompra,FactOrdenDeCompra[FechaRecepcion] > DATE(1900,1,1 )),FactOrdenDeCompra[IdOrdenDeCompra],"Recepcion",MAX(FactOrdenDeCompra[FechaRecepcion]),"RegistroOC",MAX(FactOrdenDeCompra[FechaDeCreacionOrdenDeCompra])),[Recepcion],[RegistroOC]),[Recepcion]-[RegistroOC])
+			```
+		lineageTag: 00803cb2-2da4-4175-985b-7df5d8bbb6e9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_TiempoPromedio_SDCR_OC =
+			
+			
+			CALCULATE(
+			AVERAGEX(
+			    FactOrdenDeCompra,FactOrdenDeCompra[FechaDeCreacionOrdenDeCompra]
+			    -FactOrdenDeCompra[FechaDeCreacionSolicitud])
+			
+			    ,FactOrdenDeCompra[IdSolicitudDeCompraRequisicion]<> "NO APLICA",FactOrdenDeCompra[IdOrdenDeCompra]<> "")
+		lineageTag: 3a064a1b-95f9-4910-9c9d-d47c1deab9ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IdSdcrOc
+		dataType: int64
+		formatString: 0
+		lineageTag: 886a345d-681e-4770-91ce-410782d25e42
+		summarizeBy: none
+		sourceColumn: IdSdcrOc
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecidPt
+		dataType: int64
+		formatString: 0
+		lineageTag: 99e5b2f4-22e3-4061-90f7-e810c48c0a99
+		summarizeBy: sum
+		sourceColumn: RecidPt
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdOrdenDeCompra
+		dataType: string
+		lineageTag: 5fbf9d96-4ac5-451e-830e-b7900e087692
+		summarizeBy: none
+		sourceColumn: IdOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdSolicitudDeCompraRequisicion
+		dataType: string
+		lineageTag: eba157ae-d7fd-4a55-9ae5-17cfcabe0e10
+		summarizeBy: none
+		sourceColumn: IdSolicitudDeCompraRequisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdTipoDeCompra
+		dataType: int64
+		formatString: 0
+		lineageTag: 87076cda-39aa-4d21-9745-3960e0020d2b
+		summarizeBy: sum
+		sourceColumn: IdTipoDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstadoDeOrdenDeCompra
+		dataType: int64
+		formatString: 0
+		lineageTag: d7f5f8ea-68eb-44a8-96d1-6f93212e2c7e
+		summarizeBy: none
+		sourceColumn: IdEstadoDeOrdenDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstadoDeAprobacion
+		dataType: int64
+		formatString: 0
+		lineageTag: a489aa98-d1e8-49e7-88e6-503196876e8a
+		summarizeBy: none
+		sourceColumn: IdEstadoDeAprobacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEntregaDirecta
+		dataType: int64
+		formatString: 0
+		lineageTag: d274d8b4-1683-429d-b444-f0c85cefd36e
+		summarizeBy: sum
+		sourceColumn: IdEntregaDirecta
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCodigoDelArticulo
+		dataType: int64
+		formatString: 0
+		lineageTag: d7f33376-b5fb-49d0-8371-adfed6d26abb
+		summarizeBy: sum
+		sourceColumn: IdCodigoDelArticulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCategoriaDeCompras
+		dataType: int64
+		formatString: 0
+		lineageTag: 834ce5be-428d-45da-9d59-7bdfa7e32eda
+		summarizeBy: sum
+		sourceColumn: IdCategoriaDeCompras
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdUbicacionInventario
+		dataType: string
+		lineageTag: 92ab1a70-da5a-4436-a370-b3fd90ae23a6
+		summarizeBy: none
+		sourceColumn: IdUbicacionInventario
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdTipoDeOperacion
+		dataType: int64
+		formatString: 0
+		lineageTag: c91e860c-1690-4dad-988a-408afc5c421e
+		summarizeBy: sum
+		sourceColumn: IdTipoDeOperacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProyecto
+		dataType: string
+		lineageTag: 8b1cca50-20e5-4731-86ee-bfea9ec354ee
+		summarizeBy: none
+		sourceColumn: IdProyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeProveedor
+		dataType: string
+		lineageTag: 555f7fa7-bbd6-47b5-85c7-42dd367fb5a0
+		summarizeBy: none
+		sourceColumn: CuentaDeProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column CuentaDeFacturacion
+		dataType: string
+		lineageTag: 2984473b-5d89-4055-b0db-a78cac5b9f2e
+		summarizeBy: none
+		sourceColumn: CuentaDeFacturacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Divisa
+		dataType: string
+		lineageTag: f7996fee-e766-4782-b5bf-7299a1c2d0eb
+		summarizeBy: none
+		sourceColumn: Divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeRecepcionSolicitada
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9b54140c-ba8b-4978-aa70-e69f9c61fc24
+		summarizeBy: none
+		sourceColumn: FechaDeRecepcionSolicitada
+
+		variation Variación
+			isDefault
+			relationship: 5cbd804c-2d52-445e-b6fd-5f3ab2500dcf
+			defaultHierarchy: LocalDateTable_ec40d0b6-d481-47b7-8440-7d0373891a6d.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModoDeEntrega
+		dataType: string
+		lineageTag: 58796bf8-66a3-406b-8988-64aca19bafbd
+		summarizeBy: none
+		sourceColumn: ModoDeEntrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column CondicionesDeEntrega
+		dataType: string
+		lineageTag: 16d86144-0e3d-4433-998f-b95ee4c84489
+		summarizeBy: none
+		sourceColumn: CondicionesDeEntrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column Almacen
+		dataType: string
+		lineageTag: cccd5081-a4f0-4f0e-9fad-2f4412453938
+		summarizeBy: none
+		sourceColumn: Almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoriaDeServicio
+		dataType: string
+		lineageTag: 5cbe8877-8b10-489c-972c-ffa6cfa338d6
+		summarizeBy: none
+		sourceColumn: CategoriaDeServicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoriaDeCompras
+		dataType: string
+		lineageTag: 75c5ddcc-c8a9-497e-9840-93e22017e32b
+		summarizeBy: none
+		sourceColumn: CategoriaDeCompras
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeServicio
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 983b7c0b-3986-4a76-b28e-618f52e13cfb
+		summarizeBy: none
+		sourceColumn: FechaDeServicio
+
+		variation Variación
+			isDefault
+			relationship: 11843d98-a7b0-49c8-9887-8c97c4dfc4a3
+			defaultHierarchy: LocalDateTable_7c5aa1cc-2cca-4598-acc2-1f953278d0d2.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeServicio
+		dataType: string
+		lineageTag: 259d2901-4e45-444e-9f34-3f201e3927d6
+		summarizeBy: none
+		sourceColumn: NombreDeServicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClienteOriginal
+		dataType: string
+		lineageTag: 85166def-2a6f-4b4f-9464-1997d2bdea3e
+		summarizeBy: none
+		sourceColumn: ClienteOriginal
+
+		annotation SummarizationSetBy = Automatic
+
+	column CondicionesDePago
+		dataType: int64
+		formatString: 0
+		lineageTag: 30994ddd-4481-4cab-af9c-7a5324ceeb4d
+		summarizeBy: sum
+		sourceColumn: CondicionesDePago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaContable
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 985afc83-914a-407d-96aa-8159014123d6
+		summarizeBy: none
+		sourceColumn: FechaContable
+
+		variation Variación
+			isDefault
+			relationship: 2e0333d9-0600-4771-82ce-8612f221646e
+			defaultHierarchy: LocalDateTable_0b72f80e-5df9-4b9d-a728-66cb0a94ea5e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeEnvioConfirmada
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bcb61dd0-c079-4b98-93f0-46f4b84aecba
+		summarizeBy: none
+		sourceColumn: FechaDeEnvioConfirmada
+
+		variation Variación
+			isDefault
+			relationship: dc20c90b-67f3-4299-9c48-1f3acc9ab2bf
+			defaultHierarchy: LocalDateTable_7fa857f6-2fb4-4c6f-8b0b-0b689d7e2cf4.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeRecepcionConfirmada
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cc51e7de-36c3-4fc3-9c48-66dd8b708479
+		summarizeBy: none
+		sourceColumn: FechaDeRecepcionConfirmada
+
+		variation Variación
+			isDefault
+			relationship: d7e0dcfc-21ee-4494-a72e-3d07f751fc7c
+			defaultHierarchy: LocalDateTable_4fca8da3-ffce-4193-b2b5-4fb8c8bb44f3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeVencimiento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30e56fee-424a-4472-96ca-45bfa5b1de7d
+		summarizeBy: none
+		sourceColumn: FechaDeVencimiento
+
+		variation Variación
+			isDefault
+			relationship: 351036ed-e9a0-4565-bab1-fc17beb61164
+			defaultHierarchy: LocalDateTable_32ce6f9e-a20d-4ea3-a97d-6ad95f688ec3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeCreacionOrdenDeCompra
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 331f99d5-e34e-4749-b81f-d449bc0d0c25
+		summarizeBy: none
+		sourceColumn: FechaDeCreacionOrdenDeCompra
+
+		variation Variación
+			isDefault
+			relationship: 1ae09ef7-f456-4839-bc1f-c4afba0bf26b
+			defaultHierarchy: LocalDateTable_a9b440a4-0cbb-490a-858d-9aa27704cc3b.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaDeCreacionSolicitud
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2a62a45-8f43-40ec-b2f3-daeff2e2bc04
+		summarizeBy: none
+		sourceColumn: FechaDeCreacionSolicitud
+
+		variation Variación
+			isDefault
+			relationship: fd8f1e0b-1d81-416b-97b9-a8eac0153df0
+			defaultHierarchy: LocalDateTable_0aa54e94-df51-43c5-9338-dad4558ab5e9.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormaDePago
+		dataType: string
+		lineageTag: 1ec64284-d981-493d-b9d7-d911a0cb3c43
+		summarizeBy: none
+		sourceColumn: FormaDePago
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupoDeImpuestosSobreLasVentas
+		dataType: string
+		lineageTag: 9bea477b-f8ae-4e92-9e7d-802e91e53734
+		summarizeBy: none
+		sourceColumn: GrupoDeImpuestosSobreLasVentas
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupoDeProveedores
+		dataType: string
+		lineageTag: e0f5a1eb-1797-470f-9ea3-dcd9b6ce320d
+		summarizeBy: none
+		sourceColumn: GrupoDeProveedores
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDelProveedor
+		dataType: string
+		lineageTag: c54ef9a5-f3c1-4020-978c-208643ed3d21
+		summarizeBy: none
+		sourceColumn: NombreDelProveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Voucher
+		dataType: int64
+		formatString: 0
+		lineageTag: 5882b2a0-8230-4404-b039-352eae911b59
+		summarizeBy: sum
+		sourceColumn: Voucher
+
+		annotation SummarizationSetBy = Automatic
+
+	column pl_recid
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e5bc591-8b44-4179-8171-bcb202a1e4e1
+		summarizeBy: sum
+		sourceColumn: pl_recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumeroDeLinea
+		dataType: int64
+		formatString: 0
+		lineageTag: 295341a5-a83f-45e2-bf73-5236bb626c75
+		summarizeBy: sum
+		sourceColumn: NumeroDeLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDelProducto
+		dataType: string
+		lineageTag: 1785a14a-2cf0-4d4b-bb2e-96735b8a3f86
+		summarizeBy: none
+		sourceColumn: NombreDelProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a4fadf0-dcd5-4046-b281-6f822bdf8e72
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidad
+		dataType: string
+		lineageTag: 6c59e684-aa77-4ee9-b583-1406663ce9a1
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecioUnitario
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bb575b4-733c-4788-901b-350ac996267f
+		summarizeBy: sum
+		sourceColumn: PrecioUnitario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descuento
+		dataType: int64
+		formatString: 0
+		lineageTag: 875007b4-dbc0-4a4d-8ed5-1bd667a579bd
+		summarizeBy: sum
+		sourceColumn: Descuento
+
+		annotation SummarizationSetBy = Automatic
+
+	column PorcentajeDeDescuento
+		dataType: int64
+		formatString: 0
+		lineageTag: ec776cbc-5c6c-4530-acf4-d4e71aa2d406
+		summarizeBy: sum
+		sourceColumn: PorcentajeDeDescuento
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNeto
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fe6fe9d-052f-4d3a-a25e-01f3673a00e1
+		summarizeBy: sum
+		sourceColumn: MontoNeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNetoUSD
+		dataType: double
+		lineageTag: 3491a47a-6bec-4623-b708-c23bf52c03d3
+		summarizeBy: sum
+		sourceColumn: MontoNetoUSD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoNetoMXN
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a459ae1-4ae0-402a-a654-29f35a174a9d
+		summarizeBy: sum
+		sourceColumn: MontoNetoMXN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PagoAlCobro
+		dataType: int64
+		formatString: 0
+		lineageTag: cb6ab7d2-8b4c-43ab-98a3-bdfe076d553f
+		summarizeBy: sum
+		sourceColumn: PagoAlCobro
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sitio
+		dataType: string
+		lineageTag: f2d93ff8-14b2-4f4f-907c-933c78671e9d
+		summarizeBy: none
+		sourceColumn: Sitio
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoDeCompra
+		dataType: string
+		lineageTag: 626e90aa-a8db-4e37-a960-4bd4c5f5da1d
+		summarizeBy: none
+		sourceColumn: TipoDeCompra
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoDeOperacion
+		dataType: string
+		lineageTag: c3716775-00c4-47e6-bd7c-e30aaca09c82
+		summarizeBy: none
+		sourceColumn: TipoDeOperacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PendienteDeEntrega
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e55643e-af5a-43cd-bb9e-fe9d729ae7f8
+		summarizeBy: sum
+		sourceColumn: PendienteDeEntrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaRecepcion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c82aab9-7f3b-4ae3-a944-bade9690d71a
+		summarizeBy: none
+		sourceColumn: FechaRecepcion
+
+		variation Variación
+			isDefault
+			relationship: 1ebce55a-ff58-4319-a4f6-62e03159aa36
+			defaultHierarchy: LocalDateTable_7b8b302f-364d-458b-bf7f-59c47900230e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecepcionDelProductoLinea
+		dataType: string
+		lineageTag: 33e4d276-2c1a-41d7-ad8b-4c78d033aa7e
+		summarizeBy: none
+		sourceColumn: RecepcionDelProductoLinea
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaPrevista
+		dataType: string
+		lineageTag: 7d74f37b-b165-4d70-a969-494375503017
+		summarizeBy: none
+		sourceColumn: FechaPrevista
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		dataType: string
+		lineageTag: c1e37a55-8dec-43fa-a014-d143f0956606
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadRecibidaEnUnidadDeInventario
+		dataType: string
+		lineageTag: b8789c25-4b98-49aa-95c9-ac220f38b36e
+		summarizeBy: none
+		sourceColumn: CantidadRecibidaEnUnidadDeInventario
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadRestante
+		dataType: string
+		lineageTag: 40d8d3ba-10ab-4be6-ae34-115157f8b0a7
+		summarizeBy: none
+		sourceColumn: CantidadRestante
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoVisual
+		dataType: string
+		lineageTag: f27bd0f5-e7b8-452d-b9e0-0b4d2045064c
+		summarizeBy: none
+		sourceColumn: EstadoVisual
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupoDeImpuestosSobreLaVentaDeArticulos
+		dataType: string
+		lineageTag: 91e78cd7-a720-47e0-937f-3f389f2ec5b3
+		summarizeBy: none
+		sourceColumn: GrupoDeImpuestosSobreLaVentaDeArticulos
+
+		annotation SummarizationSetBy = Automatic
+
+	column TasaGrupoDeImpuestosSobreLaVentaDeArticulos
+		dataType: int64
+		formatString: 0
+		lineageTag: be653ee5-d3d9-4f1c-8cfd-2524c18db146
+		summarizeBy: sum
+		sourceColumn: TasaGrupoDeImpuestosSobreLaVentaDeArticulos
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNetoUSDImpuesto
+		dataType: double
+		lineageTag: 76ab218a-8458-425e-92f3-fca75708b73e
+		summarizeBy: sum
+		sourceColumn: MontoNetoUSDImpuesto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoNetoMXNImpuesto
+		dataType: int64
+		formatString: 0
+		lineageTag: af2cc46d-cb04-4383-840b-8d4f0872b746
+		summarizeBy: sum
+		sourceColumn: MontoNetoMXNImpuesto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactOrdenDeCompra = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\GabrielArmandoChávez\OneDrive - GONZALEZ CORTINA GLENDER Y CIA\OrdenDeCompra.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IdSdcrOc", Int64.Type}, {"RecidPt", Int64.Type}, {"IdOrdenDeCompra", type text}, {"IdSolicitudDeCompraRequisicion", type text}, {"IdTipoDeCompra", Int64.Type}, {"IdEstadoDeOrdenDeCompra", Int64.Type}, {"IdEstadoDeAprobacion", Int64.Type}, {"IdEntregaDirecta", Int64.Type}, {"IdCodigoDelArticulo", Int64.Type}, {"IdCategoriaDeCompras", Int64.Type}, {"IdUbicacionInventario", type text}, {"IdTipoDeOperacion", Int64.Type}, {"IdProyecto", type text}, {"CuentaDeProveedor", type text}, {"CuentaDeFacturacion", type text}, {"Divisa", type text}, {"FechaDeRecepcionSolicitada", type datetime}, {"ModoDeEntrega", type any}, {"CondicionesDeEntrega", type any}, {"Almacen", type text}, {"CategoriaDeServicio", type any}, {"CategoriaDeCompras", type text}, {"FechaDeServicio", type datetime}, {"NombreDeServicio", type any}, {"ClienteOriginal", type any}, {"CondicionesDePago", Int64.Type}, {"FechaContable", type datetime}, {"FechaDeEnvioConfirmada", type datetime}, {"FechaDeRecepcionConfirmada", type datetime}, {"FechaDeVencimiento", type datetime}, {"FechaDeCreacionOrdenDeCompra", type datetime}, {"FechaDeCreacionSolicitud", type datetime}, {"FormaDePago", type text}, {"GrupoDeImpuestosSobreLasVentas", type text}, {"GrupoDeProveedores", type text}, {"NombreDelProveedor", type text}, {"Voucher", Int64.Type}, {"pl_recid", Int64.Type}, {"NumeroDeLinea", Int64.Type}, {"NombreDelProducto", type text}, {"Cantidad", Int64.Type}, {"Unidad", type text}, {"PrecioUnitario", Int64.Type}, {"Descuento", Int64.Type}, {"PorcentajeDeDescuento", Int64.Type}, {"MontoNeto", Int64.Type}, {"MontoNetoUSD", type number}, {"MontoNetoMXN", Int64.Type}, {"PagoAlCobro", Int64.Type}, {"Sitio", type text}, {"TipoDeCompra", type text}, {"TipoDeOperacion", type text}, {"PendienteDeEntrega", Int64.Type}, {"FechaRecepcion", type datetime}, {"RecepcionDelProductoLinea", type any}, {"FechaPrevista", type any}, {"Orden", type any}, {"CantidadRecibidaEnUnidadDeInventario", type any}, {"CantidadRestante", type any}, {"EstadoVisual", type text}, {"GrupoDeImpuestosSobreLaVentaDeArticulos", type text}, {"TasaGrupoDeImpuestosSobreLaVentaDeArticulos", Int64.Type}, {"MontoNetoUSDImpuesto", type number}, {"MontoNetoMXNImpuesto", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

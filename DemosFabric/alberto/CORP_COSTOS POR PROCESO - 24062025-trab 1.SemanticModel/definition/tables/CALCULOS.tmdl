@@ -1,0 +1,2476 @@
+table CALCULOS
+	lineageTag: bba7cc7c-a2b2-459b-af8f-90ec432c5e10
+
+	measure EXTRACCION-101 =
+			
+			Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "101"))
+			VAR ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "101"))
+			Var ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "101"))
+			RETURN
+			SWITCH(
+			    Moneda,
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		lineageTag: 6ae13918-0c5c-4264-ab9e-15834c8a8bfa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TRITURACION-102 =
+			
+			VAR MONEDA = SELECTEDVALUE(Monedas[Moneda])
+			VAR ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "102"))
+			VAR ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "102"))
+			VAR ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "102"))
+			
+			 RETURN
+			SWITCH(
+			    Moneda,
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		lineageTag: eaa82086-0f7d-4acc-a97e-943cbaebc8c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CARBONATOS-104 =
+			
+			Var ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "104"))
+			Var ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "104"))
+			Var ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "104"))
+			
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		formatString: 0
+		lineageTag: ba2cf292-2fc4-4615-b1d4-c010403617bd
+
+	measure PULVCOKE-105-106 =
+			
+			Var ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] IN {"105","106"}))
+			Var ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] IN {"105","106"}))
+			Var ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] IN {"105","106"}))
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		lineageTag: c51b5ef1-9c21-45e1-a478-7fe5c0e66c0f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CALVIVA-108 =
+			
+			VAR ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "108"))
+			VAR ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "108"))
+			VAR ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "108"))
+			
+			Return
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		formatString: #,0
+		lineageTag: dfe5d901-6a67-4e86-b1bb-54d7a7a4e758
+
+	measure PULVOXIDO-109 =
+			
+			Var ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "109"))
+			Var ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "109"))
+			Var ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "109"))
+			
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		lineageTag: b9f32f3e-d936-4928-83d9-1f6514bb6b14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ENVASE-113 = ```
+			
+			 Var ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "113"))
+			 Var ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "113"))
+			 Var ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "113"))
+			
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+			```
+		formatString: #,0
+		lineageTag: 6b2d55a3-65dc-4254-96de-392782d2daea
+
+	measure DEPRECIACION = ```
+			
+			--Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var ImporteML = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Depreciacion"
+			       ),
+			       h_finanzas_consolidacion[Importe]
+			    )
+			Var ImporteMXN = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Depreciacion"
+			       ),
+			       h_finanzas_consolidacion[ImporteMXN]
+			    )
+			Var ImporteUSD = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Depreciacion"
+			       ),
+			       h_finanzas_consolidacion[ImporteUSD]
+			    )
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+			  /*VAR FiltroPartida = 
+			    FILTER(
+			        dim_cuentas_contables,
+			        dim_cuentas_contables[Partida] = "Depreciacion"
+			    )
+			
+			VAR Costo = 
+			    CALCULATE(
+			        SUM(h_finanzas_consolidacion[Importe]),
+			        USERELATIONSHIP(h_finanzas_consolidacion[KEY_Cuenta_Contable], dim_cuentas_contables[KEY_Cuenta_Contable]),
+			        FiltroPartida
+			    )
+			RETURN
+			Costo*/
+			```
+		lineageTag: e33b6a49-9fcf-4d25-aeed-7d9fd49b77fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PTU DIFERIDA' = ```
+			
+			--Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var ImporteML = 
+			SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           h_finanzas_consolidacion[dim_cuentas_contables.Partida] = "PTU Diferida"
+			       ),
+			       h_finanzas_consolidacion[Importe]
+			    )
+			
+			Var ImporteMXN = 
+			SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           h_finanzas_consolidacion[dim_cuentas_contables.Partida] = "PTU Diferida"
+			       ),
+			       h_finanzas_consolidacion[ImporteMXN]
+			    )
+			Var ImporteUSD = 
+			SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           h_finanzas_consolidacion[dim_cuentas_contables.Partida] = "PTU Diferida"
+			       ),
+			       h_finanzas_consolidacion[ImporteUSD]
+			    )
+			
+			Return 
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+			/*CALCULATE(SUM(h_finanzas_consolidacion[Importe]),h_finanzas_consolidacion[dim_cuentas_contables.Partida] = "PTU Diferida")*/
+			```
+		lineageTag: 106423e9-88ea-459d-9556-9c0a441c284d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EXTRACCION = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var ExtraccionTotal = [EXTRACCION-101]
+			VAr Extraccion = 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			   ,[Extraccion_SinDep_SinPTU],
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",[ExtraccionSinPTU],
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    , CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   --MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			   ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION]-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    , CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})), 
+			    
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			   ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION]-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			
+			
+			    [EXTRACCION-101])
+			    )))))))))))))))))))))))
+			                        
+			   
+			Return
+			Extraccion
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 349ff1dc-9363-4cb0-a4b4-a1137146c422
+
+	measure Extraccion_SinDep = [EXTRACCION-101]-[DEPRECIACION]
+		lineageTag: 9928ebe3-0358-4ae2-96ef-4fcb035a6f7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Extraccion_SinDep_SinPTU = [EXTRACCION-101] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 665877ab-8ee1-4bdf-ae4d-e5dec1cd3448
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Trituracion_SinDep = [TRITURACION-102]-[DEPRECIACION]
+		lineageTag: ef92cc2b-f277-4f30-b8ad-cf19d0734cd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Trituracion_SinDep_SinPTU = [TRITURACION-102] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 828a5d97-db59-49ea-bd7a-1a8cc98e0620
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure COSTO =
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoTotal = CALCULATE(SUM(h_finanzas_consolidacion[Importe]))
+			VAr Costo = IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA",CostoTotal-[DEPRECIACION]-[PTU DIFERIDA],
+			                     IF( Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA",CostoTotal-[DEPRECIACION],
+			                        CostoTotal))
+			RETURN
+			CostoTotal
+		formatString: #,0
+		lineageTag: 937ce2b6-40b1-4dd8-9397-746b74674379
+
+	measure TrituracionSinPTU = [TRITURACION-102]-[PTU DIFERIDA]
+		lineageTag: d0992c13-3c5f-4298-a62a-bbacc8af4f73
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Costos = ```
+			
+			/*VAR SelectedProceso = IF(
+			    ISFILTERED(dim_b_proceso_productivo[cve_B_ProcesoProductivo]),
+			       CONCATENATEX(
+			           VALUES(dim_b_proceso_productivo[Cve_B_ProcesoProductivo]),
+			           dim_b_proceso_productivo[Cve_B_ProcesoProductivo],
+			            ", ",
+			            dim_b_proceso_productivo[Cve_B_ProcesoProductivo],ASC
+			       ) ,
+			       "Todos"
+			)
+			
+			RETURN
+			*/
+			/*SWITCH(
+			   SelectedProceso,
+			   "Extraccion y Acarreo",[EXTRACCION],
+			   "Extraccion y Acarreo, Trituracion",[TRITURACION_v2],
+			   /* SelectedProceso = "107", Calcinacion,
+			    SelectedProceso = "108", CalViva,
+			    SelectedProceso = "109", OxidoPulverizado,
+			    SelectedProceso = "111", Hidratacion,
+			    SelectedProceso = "112", CalVivaEnvasada,
+			    SelectedProceso = "113", Envase,*/
+			    1 
+			)*/
+			IF([ProcesoSeleccionado] = "Extraccion y Acarreo", [EXTRACCION],
+			    if([ProcesoSeleccionado] IN {"Trituracion"},[TRITURACION],IF([ProcesoSeleccionado] IN {"Carbonatos"},[CARBONATOS],
+			    if([ProcesoSeleccionado]IN {"Pulverizado de Pet Coke"},[PULVCOKE],IF([ProcesoSeleccionado] IN{"Calcinacion"},[CALCINACION],IF([ProcesoSeleccionado]IN {"Manejo de Cal Viva"},[CALVIVA],IF([ProcesoSeleccionado]IN {"Pulverizado y Envasado de Oxido"},[PULVOXIDO],IF([ProcesoSeleccionado] IN {"Hidratacion y Molienda"},[HIDRATACION],IF([ProcesoSeleccionado] in {"Envase"},[ENVASE],[EXTRACCION]+[TRITURACION]+[CARBONATOS]+[PULVCOKE]+[CALVIVA]+[PULVOXIDO])))))))))
+			```
+		formatString: #,0
+		lineageTag: c568d0d3-eb33-4993-b894-83d0420e592a
+
+	measure ExtraccionSinPTU = [EXTRACCION-101]-[PTU DIFERIDA]
+		lineageTag: d6783544-c9c0-4638-b0cf-fce97c47a8b0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TRITURACION-COSTO_ABSORBENTE borrar' = ```
+			
+			/*VAR Acumuladocosto =
+			   SUMX (
+			        FILTER ( ALLSELECTED ( dim_b_proceso_productivo[Dsc_B_ProcesoProductivo] ), 'dim_b_proceso_productivo'[Dsc_B_ProcesoProductivo] IN {"Extraccion y Acarreo","Trituracion"} ),
+			        SUM('h_finanzas_consolidacion'[Importe])
+			    )
+			*/
+			VAR AcumuladoCosto =
+			    SUMX (
+			        FILTER (ALLSELECTED ( 'PROCESOS' ), 'PROCESOS'[ORDEN] <= MAX('PROCESOS'[ORDEN])),
+			        SUM('h_finanzas_consolidacion'[Importe])
+			    )
+			
+			RETURN
+			    AcumuladoCosto
+			
+			
+			
+			    /*Measure = 
+			VAR _cumulative_count =
+			    SUMX (
+			        FILTER ( ALLSELECTED ( 'Table' ), 'Table'[Index] <= MAX ( 'Table'[Index] ) ),
+			        [@MARCA 1]
+			    )
+			VAR _total_count =
+			    SUMX ( ALL ( 'Table' ), [@MARCA 1] )
+			VAR _result =
+			    DIVIDE ( _cumulative_count, _total_count )
+			RETURN
+			    _result*/
+			```
+		lineageTag: cd147d9a-346f-4fce-b53f-9ab11310bf97
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PTU DIFERIDA_ABSORBENTE' = ```
+			
+			VAR PTU =
+			   SUMX (
+			        FILTER ( ALLSELECTED ( 'PROCESOS' ), 'PROCESOS'[ORDEN] <=2),
+			        CALCULATE(SUM(h_finanzas_consolidacion[Importe]),
+			        FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "PTU Diferida")
+			       )
+			       
+			    )
+			
+			RETURN
+			PTU
+			
+			/*SUMX(FILTER('InternetSales_USD', RELATED('SalesTerritory'[SalesTerritoryCountry])<>"United States")
+			     ,'InternetSales_USD'[SalesAmount_USD])*/
+			```
+		lineageTag: 485ffde0-2790-4d5d-9a1f-75179330f88a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Estado = VALUES(dim_b_proceso_productivo[Dsc_B_ProcesoProductivo])
+		lineageTag: 5484b646-9802-4d24-a685-633290db677e
+
+	measure ProcesoSeleccionado =
+			IF(
+			    ISFILTERED(dim_b_proceso_productivo[Dsc_B_ProcesoProductivo]),
+			       CONCATENATEX(
+			           VALUES(dim_b_proceso_productivo[Dsc_B_ProcesoProductivo]),
+			           dim_b_proceso_productivo[Dsc_B_ProcesoProductivo],
+			            ", ",
+			            dim_b_proceso_productivo[Dsc_B_ProcesoProductivo],ASC
+			       ) ,
+			       "Todos"
+			)
+		lineageTag: dc8f0c36-1179-4686-8e14-10ec28091e2a
+
+	measure PruebaCosto = ```
+			
+			VAR PruebaCosto = 
+			    CALCULATE(
+			        SUM(h_finanzas_consolidacion[Importe]),
+			        USERELATIONSHIP(h_finanzas_consolidacion[SK_B_ProcesoProductivo],dim_b_proceso_productivo[Sk_B_ProcesoProductivo]))
+			Return
+			PruebaCosto
+			```
+		lineageTag: e236c216-ae7d-4b57-8fcd-55c5ffef2f03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CATrituración =
+			
+			VAR Extraccion = CALCULATE([PruebaCosto], h_finanzas_consolidacion[ProcesoProductivo] = "101")
+			VAR Trituracion = CALCULATE([PruebaCosto], h_finanzas_consolidacion[ProcesoProductivo] = "102")
+			
+			RETURN
+			Extraccion + Trituracion
+		lineageTag: 981bbed0-76b1-47d9-9346-afd5dd422536
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure HIDRATACION = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var HidratacionTotal = [HIDRATACION-111]
+			VAr Hidratacion = 
+			
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			     [Hidratacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [Hidratacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [HidratacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"  && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [HIDRATACION-111],
+			
+			
+			--MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			     [Hidratacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [Hidratacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [HidratacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"  && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [HIDRATACION-111],
+			
+			
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			     [Hidratacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD",
+			     [Hidratacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD",
+			     [HidratacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"  && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD",
+			     [HIDRATACION-111],
+			
+			---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			       IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"  &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"  &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"  &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111"})),
+			    
+			      
+			    [HIDRATACION-111])
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			Hidratacion
+			```
+		lineageTag: f923a4f1-f403-43dd-9c58-1179c2aa9ba3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CALCINACION-107 = ```
+			
+			VAR ImporteML = CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "107"))
+			VAR ImporteMXN = CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "107"))
+			VAR ImporteUSD = CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "107"))
+			
+			Return
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+			
+			```
+		lineageTag: 536fd2d6-2f68-44ea-91fc-420adeb290a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Carbonatos_SinDep = [CARBONATOS-104]-[DEPRECIACION]
+		lineageTag: 8c8fcc2b-fd45-46dd-9cbc-1ca2e669e732
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Carbonatos_SinDep_SinPTU = [CARBONATOS-104] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 1a92ba25-01e8-44dc-9bd9-e2e06b485a63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Cabonatos_SinPTU = [CARBONATOS-104]-[PTU DIFERIDA]
+		lineageTag: 4e0f2ff9-7da0-4528-8cc9-23942bc611fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CARBONATOS = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var CarbonatosTotal = [CARBONATOS-104]
+			VAr Carbonatos = 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[CARBONATOS-104],
+			    
+			    --MXN
+			      IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[CARBONATOS-104],
+			
+			--USD
+			      IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[CARBONATOS-104],
+			
+			
+			   ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE   
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			  
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"}))
+			    
+			    
+			    ,[CARBONATOS-104])
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			Carbonatos
+			```
+		lineageTag: 1ebeb78e-939b-4cff-9d3b-95d265c6bd01
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CarbonatosSinPTU = [CARBONATOS-104]-[PTU DIFERIDA]
+		lineageTag: b99760fa-1ddc-4d4b-a2b6-441ee4a2a318
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvPetCoke_SinDep = [PULVCOKE-105-106]-[DEPRECIACION]
+		lineageTag: d0a0eae7-d229-4bee-8c17-6b5fc3ce2b69
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvPetCoke_SinDep_SinPTU = [PULVCOKE-105-106] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 37223b8c-cade-4cbb-b6cb-845a455640cb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvPetCoke_SinPTU = [PULVCOKE-105-106]-[PTU DIFERIDA]
+		lineageTag: 0ae39f82-bd88-4f18-aa9f-2a1661371b82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PULVCOKE = ```
+			
+			Var Depreciacion = SELECTEDVALUE('DEPRECIACION'[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var Combustible = SELECTEDVALUE(COMBUSTIBLE[COMBUSTIBLE])
+			Var PulvCokeTotal = [PULVCOKE-105-106]
+			VAr PulverizadoCoke = 
+			---CON COMBUSTIBLE
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE", [PulvPetCoke_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE",[PulvPetCoke_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE",[PulvPetCoke_SinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE",[PULVCOKE-105-106],
+			    
+			-- ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"
+			    &&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE" 
+			   &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			     &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			     &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "CON COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			 --*******TERMINA CON COMBUSTIBLE
+			    
+			--SIN COMBUSTIBLE
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE", [PulvPetCoke_SinDep_SinPTU]-[COMBUSTIBLE],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE",[PulvPetCoke_SinDep]-[COMBUSTIBLE],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE",[PulvPetCoke_SinPTU]-[COMBUSTIBLE],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			   &&Combustible = "SIN COMBUSTIBLE" ,[PULVCOKE-105-106]-[COMBUSTIBLE],
+			    
+			-- ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE" 
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE" 
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Combustible = "SIN COMBUSTIBLE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[COMBUSTIBLE],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106"})),
+			    
+			    
+			    [CARBONATOS-104])
+			    )))))))))))))))
+			      ))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			PulverizadoCoke
+			```
+		lineageTag: 7a6c4946-4893-4ce0-b7a2-aa80a04ea7f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Calcinacion_SinDep = [CALCINACION-107]-[DEPRECIACION]
+		lineageTag: 95af84a4-553a-491f-9648-882dc0f448d7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CalcinacionSinPTU = [CALCINACION-107]-[PTU DIFERIDA]
+		lineageTag: 2cd1e95f-4d3e-4669-8fe6-24303d0f13f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Calcinacion_SinDep_SinPTU = [CALCINACION-107] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: db90f575-10f1-4827-923c-31b4489d4088
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CALCINACION = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var Combustibles = SELECTEDVALUE(COMBUSTIBLE[COMBUSTIBLE])
+			Var CalcinacionTotal = [CALCINACION-107]
+			VAr Calcinacion = 
+			
+			----CON COMBUSTIBLES
+			----****************
+			-- Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "Moneda Local",
+			    [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [CALCINACION-107],
+			
+			--MXN
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],dim_b_proceso_productivo--[Cve_B_ProcesoProductivo] = "107"),
+			   [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = --"107"),
+			  [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = --"107"),
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    --CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = "107"),
+			    [CALCINACION-107],
+			--USD
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "USD",
+			    [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			   [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			   [CALCINACION-107],
+			
+			--  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			
+			 -- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			   
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    ----TERMINA CON COMBUSTIBLES
+			
+			    ----------------------------
+			    ----INICIA CON COMBUSTIBLES
+			    --************************
+			    -- Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "Moneda Local",
+			    [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    [CALCINACION-107],
+			
+			--MXN
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],dim_b_proceso_productivo--[Cve_B_ProcesoProductivo] = "107"),
+			   [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = --"107"),
+			  [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			   -- CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = --"107"),
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    --CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] = "107"),
+			    [CALCINACION-107],
+			--USD
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    &&CostoAbsorbente = "SIN COSTO ABSORBENTE" &&[MonedaSeleccionada] = "USD",
+			    [Calcinacion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			   [Calcinacion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    [CalcinacionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"
+			    && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			   [CALCINACION-107],
+			
+			--  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"
+			    && CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			
+			 -- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			   
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107"})),
+			    [CALCINACION-107])
+			    
+			    )))))))))))))))))))))))
+			    ))))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			Calcinacion
+			```
+		lineageTag: 3de9608e-caf0-472c-b13d-d0c0848aab21
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CalViva_SinDep = [CALVIVA-108]-[DEPRECIACION]
+		lineageTag: fc1fe4cb-31af-4b66-ae6c-b7265a2ac3d6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CalVivaSinPTU = [CALVIVA-108]-[PTU DIFERIDA]
+		lineageTag: 32c5c964-aff4-4d02-8bb9-365898b164a7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CalViva_SinDep_SinPTU = [CALVIVA-108] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 93a4d4a9-febf-4a0e-9247-15041f7553ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CALVIVA = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var CalVivaTotal = [CALVIVA-108]
+			VAr CalViva = 
+			-- Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [CalViva_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [CalViva_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [CalVivaSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [CALVIVA-108],
+			
+			-- MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [CalViva_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [CalViva_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [CalVivaSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [CALVIVA-108],
+			
+			-- USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [CalViva_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [CalViva_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [CalVivaSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [CALVIVA-108],
+			
+			
+			    
+			--  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			    
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			     CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			    
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			  
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			     CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			   
+			   -- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			    
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108"})),
+			    
+			    [CALVIVA-108])
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			CalViva
+			```
+		lineageTag: 2307b818-1ee3-4911-a958-146d03acc3fa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvOxido_SinDep = [PULVOXIDO-109]-[DEPRECIACION]
+		lineageTag: d6fe8058-b23b-4783-8b79-e2527297363d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvOxidoSinPTU = [PULVOXIDO-109]-[PTU DIFERIDA]
+		lineageTag: 7979bf0c-3531-4006-a733-655afeca33a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PulvOxido_SinDep_SinPTU = [PULVOXIDO-109] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 83ff4e00-bbf2-4e09-a2f1-0ac6995eb085
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PULVOXIDO = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var PulvOxidoTotal = [PULVOXIDO-109]
+			VAr PulvOxido = 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local", 
+			     [PulvOxido_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local", 
+			    [PulvOxido_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local", 
+			    [PulvOxidoSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local", 
+			    [PULVOXIDO-109],
+			    
+			--MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN", 
+			     [PulvOxido_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN", 
+			    [PulvOxido_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN", 
+			    [PulvOxidoSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN", 
+			    [PULVOXIDO-109],
+			
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD", 
+			     [PulvOxido_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD", 
+			    [PulvOxido_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD", 
+			    [PulvOxidoSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD", 
+			    [PULVOXIDO-109],
+			
+			
+			  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"    && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			  IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"    && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			  IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"  && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			
+			
+			   -- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			    
+			      IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			    
+			      IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109"})),
+			    
+			    [PULVOXIDO-109])
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			PulvOxido
+			```
+		lineageTag: fa49db4a-42c3-4845-b215-82b52598432a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure HIDRATACION-111 = ```
+			
+			 VAR ImporteML =  CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "111"))
+			 VAR ImporteMXN =  CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "111"))
+			
+			 VAR ImporteUSD =  CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(h_finanzas_consolidacion,h_finanzas_consolidacion[ProcesoProductivo] = "111"))
+			
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+			```
+		lineageTag: d5b84098-613a-44ee-9cac-484275e6303e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure HidratacionSinPTU = [HIDRATACION-111]-[PTU DIFERIDA]
+		lineageTag: 170fddae-f67d-4a0c-a5e6-871a3f79ac02
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Hidratacion_SinDep = [HIDRATACION-111]-[DEPRECIACION]
+		lineageTag: a47de063-163e-48cd-83b8-d24c6619e584
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Hidratacion_SinDep_SinPTU = [HIDRATACION-111] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: f5843cfd-cfff-47af-b236-3b103b4af493
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Envase_SinDep = [ENVASE-113]-[DEPRECIACION]
+		lineageTag: 2d044fb0-6d36-4d36-928e-ce72ea6397fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EnvaseSinPTU = [ENVASE-113]-[PTU DIFERIDA]
+		lineageTag: d80d999f-60f1-4140-b27d-05531f206bb9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TRITURACION = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var TrituracionTotal = [TRITURACION-102]
+			VAr Trituracion = 
+			
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[TRITURACION-102],
+			
+			    --MXN
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[TRITURACION-102],
+			
+			-- USD
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[TRITURACION-102],
+			
+			
+			
+			  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			   IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&Moneda = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})), [TRITURACION-102])
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			Trituracion
+			```
+		lineageTag: 48068535-c589-4a6a-b139-33f9d5c06c53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Envase_SinDep_SinPTU = [ENVASE-113] - [DEPRECIACION]-[PTU DIFERIDA]
+		lineageTag: 2406cbf1-7077-444f-8cac-5af5bf90831a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ENVASE = ```
+			
+			Var Depreciacion = SELECTEDVALUE('DEPRECIACION'[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var Sacos = SELECTEDVALUE('SACOS'[SACOS])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var EnvaseTotal = [ENVASE-113]
+			Var Envase = 
+			
+			---CON SACOS 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			    [Envase_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [Envase_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [EnvaseSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [ENVASE-113],
+			    
+			--MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			    [Envase_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [Envase_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [EnvaseSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [ENVASE-113],
+			
+			
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			    [Envase_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [Envase_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [EnvaseSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [ENVASE-113],
+			
+			
+			 ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE" &&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			   &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "CON SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    --********************TERMINA CON SACOS 
+			    --COMIENZA SIN SACOS
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			    [Envase_SinDep_SinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [Envase_SinDep]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [EnvaseSinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "Moneda Local",
+			     [ENVASE-113]-[SACOS],
+			    
+			--MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			    [Envase_SinDep_SinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [Envase_SinDep]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [EnvaseSinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "MXN",
+			     [ENVASE-113]-[SACOS],
+			
+			
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			    [Envase_SinDep_SinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [Envase_SinDep]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [EnvaseSinPTU]-[SACOS],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			     [ENVASE-113]-[SACOS],
+			
+			
+			 ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE" &&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			   &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			     &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&Sacos = "SIN SACOS"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[SACOS],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104","105","106","107","108","109","111","113"})),
+			
+			    [ENVASE-113])
+			    ))))))))))))))))))))))))
+			    )))))))))))))))))))))))
+			                        
+			         -- IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&&CostoAbsorbente = "CON COSTO --ABSORBENTE",[EXTRACCION-101_ML]+[TRITURACION-102_ML],1000)              
+			RETURN
+			Envase
+			```
+		lineageTag: 25824c15-436b-4688-8e48-d2cd9825349a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MonedaSeleccionada = SELECTEDVALUE(Monedas[Moneda])
+		lineageTag: b098e9c8-5b5d-47fc-899c-4669e8243838
+
+	measure PeridoActual = CONCATENATE(YEAR(TODAY()),MONTH(TODAY()))
+		lineageTag: 752d342e-cf7e-4ecc-87b6-e31d9a6ec12f
+
+	measure TnProducidas = ```
+			
+			--Extraccion
+			Var Extraccion = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "101") 
+			Var Trituracion = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "102",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var Carbonatos = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "104",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var PulvPetCoke = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) <> "41-"&&h_operaciones[Cve_B_ProcesoProductivo] IN {"105","106"},h_operaciones[Fecha_Fisica]<= TODAY())
+			Var Calcinacion = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "107",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var CalViva = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "108",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var PulvOxido = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "109",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var Hidroxido = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "111",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var Envase = CALCULATE(sum(h_operaciones[Cantidad]),LEFT(h_operaciones[Cve_Articulo_Producido],3) = "40-"&&h_operaciones[Cve_B_ProcesoProductivo] = "113",h_operaciones[Fecha_Fisica]<= TODAY())
+			Var TnProducidas = Extraccion + Trituracion + Carbonatos + PulvPetCoke + Calcinacion + CalViva + PulvOxido + Hidroxido +Envase
+			Return
+			IF(TnProducidas=0,0,TnProducidas)
+			```
+		formatString: #,0
+		lineageTag: cc5d7b8b-88ba-4112-9b45-b1f7d8b3a274
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'CostoXTn Extraccion' =
+			DIVIDE([EXTRACCION],[TnProducidas],"-")
+			/*Var CostoxTon = ROUND(DIVIDE([EXTRACCION],[TnProducidas],"-"),0)
+			Var Moneda = CONCATENATE("-",IF([MonedaSeleccionada]="Moneda Local","ML",[MonedaSeleccionada]))
+			Return
+			CostoxTon*/
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e9d8cffa-d9f1-41de-a41e-244a24b251cc
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure CostoPorTn = [TnProducidas] / [Costos]
+		lineageTag: 69fb1916-0a50-49ca-9ca7-1de7ddb280b1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CostoXTn Trituracion' = DIVIDE([TRITURACION],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5cccd1be-7c6c-438b-b83e-12b43b829beb
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'CostoXTn Carbonatos' = DIVIDE([CARBONATOS],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: aa3d9a21-0ded-41a9-a369-beea2d531d31
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'CostoXTn PulvPetCoke' = DIVIDE([PULVCOKE],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c7bc0971-7b31-4fe3-9ea3-a5ecf566078d
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'CostoXTn Calcinacion' = DIVIDE([CALCINACION],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: f5177fce-1ae3-4598-a2c0-881cba2adb5f
+
+	measure 'CostoXTn PulvOxido' = DIVIDE([PULVOXIDO],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5ac8b711-0319-423a-a118-877a16f69c82
+
+	measure 'CostoXTn CalViva' = DIVIDE([CALVIVA],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 8e41e94c-c175-40e7-bb8d-6e1c6d49ee55
+
+	measure 'CostoXTn Hidratacion' = DIVIDE([HIDRATACION],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 2faec6a1-5dc4-4726-ab31-53f541a6ba8b
+
+	measure 'CostoXTn Envase' = DIVIDE([ENVASE],[TnProducidas],"-")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1f36db5a-32c8-4514-b5d6-a80915c10893
+
+	measure TOTAL = ```
+			
+			Var Depreciacion = SELECTEDVALUE(DEPRECIACION[DEPRECIACIÓN])
+			Var PTU_Dif = SELECTEDVALUE('PTU DIFERIDA'[PTU DIFERIDA])
+			Var CostoAbsorbente = SELECTEDVALUE('CostoAbsorbente'[COSTO ABSORBENTE])
+			Var A = [EXTRACCION]+[TRITURACION]+[CARBONATOS]+[PULVCOKE]+[CALCINACION]+[CALVIVA]+[PULVOXIDO]+[HIDRATACION]+[ENVASE]
+			Var Extraccion = 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			   ,[Extraccion_SinDep_SinPTU],
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",[ExtraccionSinPTU],
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local"
+			    , CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   --MXN
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			   ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION]-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN"
+			    , CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})), 
+			    
+			--USD
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    , [Extraccion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[Extraccion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[ExtraccionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,[EXTRACCION-101],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			   ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION]-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101"})),
+			
+			
+			    [EXTRACCION-101])
+			    )))))))))))))))))))))))
+			
+			VAr Trituracion = 
+			
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",[TRITURACION-102],
+			
+			    --MXN
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",[TRITURACION-102],
+			
+			-- USD
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" &&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [Trituracion_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[Trituracion_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[TrituracionSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",[TRITURACION-102],
+			
+			
+			
+			  ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			   IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			   IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			   
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})),
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102"})), [TRITURACION-102])
+			    )))))))))))))))))))))))
+			
+			VAr Carbonatos = 
+			--Moneda Local
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "Moneda Local",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "Moneda Local"
+			    ,[CARBONATOS-104],
+			    
+			    --MXN
+			      IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "MXN"
+			    ,[CARBONATOS-104],
+			
+			--USD
+			      IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&&CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "USD",
+			    [Carbonatos_SinDep_SinPTU],
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[Carbonatos_SinDep],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE"
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[CarbonatosSinPTU],
+			    
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA" && CostoAbsorbente = "SIN COSTO ABSORBENTE" 
+			     &&[MonedaSeleccionada] = "USD"
+			    ,[CARBONATOS-104],
+			
+			
+			   ---SIN DEPRECIACION - SIN PTU  - CON COSTO ABSORBENTE   
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "Moneda Local"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "MXN"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA" && CostoAbsorbente = "CON COSTO ABSORBENTE" &&[MonedaSeleccionada] = "USD"
+			    ,CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA]-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			-- SIN DEPRECIACION  - CON PTU - CON COSTO ABSORBENTE    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			    IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			     IF(Depreciacion = "SIN DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[DEPRECIACION],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			
+			-- CON DEPRECIACION  - SIN PTU DIFERIDA - CON COSTO ABSORBENTE
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUM(h_finanzas_consolidacion[Importe])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"
+			    &&[MonedaSeleccionada] = "MXN",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "SIN PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			    CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD])-[PTU DIFERIDA],FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			
+			
+			-- CON DEPRECIACIÓN - CON PTU  -  CON COSTO ABSORBENTE
+			  
+			    IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "Moneda Local",
+			    CALCULATE(SUMX(h_finanzas_consolidacion,h_finanzas_consolidacion[Importe]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "MXN",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteMXN]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"})),
+			    
+			     IF(Depreciacion = "CON DEPRECIACIÓN" && PTU_Dif = "CON PTU DIFERIDA"&& CostoAbsorbente = "CON COSTO ABSORBENTE"&&[MonedaSeleccionada] = "USD",
+			     CALCULATE(SUM(h_finanzas_consolidacion[ImporteUSD]),FILTER(ALL(dim_b_proceso_productivo),dim_b_proceso_productivo[Cve_B_ProcesoProductivo] IN {"101","102","104"}))
+			    
+			    
+			    ,[CARBONATOS-104])
+			    )))))))))))))))))))))))
+			Var C =
+			IF([ProcesoSeleccionado] = "Extraccion y Acarreo", [EXTRACCION],
+			 if([ProcesoSeleccionado] IN {"Extraccion y Acarreo, Trituracion"},Extraccion+Trituracion,
+			    if([ProcesoSeleccionado] IN {"Carbonatos, Extraccion y Acarreo"},Extraccion+Carbonatos,
+			    if([ProcesoSeleccionado] IN {"Trituracion"},[TRITURACION],
+			    IF([ProcesoSeleccionado] IN {"Carbonatos"},[CARBONATOS],
+			    IF([ProcesoSeleccionado] IN {"Carbonatos, Extraccion y Acarreo, Trituracion"},Extraccion+Trituracion+Carbonatos,
+			    if([ProcesoSeleccionado]IN {"Pulverizado de Pet Coke"},[PULVCOKE],IF([ProcesoSeleccionado] IN{"Calcinacion"},[CALCINACION],IF([ProcesoSeleccionado]IN {"Manejo de Cal Viva"},[CALVIVA],IF([ProcesoSeleccionado]IN {"Pulverizado y Envasado de Oxido"},[PULVOXIDO],IF([ProcesoSeleccionado] IN {"Hidratacion y Molienda"},[HIDRATACION],IF([ProcesoSeleccionado] in {"Envase"},[ENVASE],[EXTRACCION]+[TRITURACION]+[CARBONATOS]+[PULVCOKE]+[CALVIVA]+[PULVOXIDO]))))))))))))
+			
+			RETURN
+			C
+			```
+		lineageTag: f231b61b-7d11-46bb-9ae2-33ac6330513c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total de TOTAL para Dsc_B_ProcesoProductivo' =
+			
+			CALCULATE(
+				[TOTAL],
+				ALL(
+					'dim_b_proceso_productivo'[Dsc_B_ProcesoProductivo],
+					'dim_b_proceso_productivo'[PROCESOS.ORDEN]
+				)
+			)
+		formatString: 0
+		lineageTag: ff831269-9794-429d-a625-3983b0474996
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "TotalForAllCategory"
+				}
+
+	measure CostosUnitarios = ```
+			
+			/*VAR SelectedProceso = IF(
+			    ISFILTERED(dim_b_proceso_productivo[cve_B_ProcesoProductivo]),
+			       CONCATENATEX(
+			           VALUES(dim_b_proceso_productivo[Cve_B_ProcesoProductivo]),
+			           dim_b_proceso_productivo[Cve_B_ProcesoProductivo],
+			            ", ",
+			            dim_b_proceso_productivo[Cve_B_ProcesoProductivo],ASC
+			       ) ,
+			       "Todos"
+			)
+			
+			RETURN
+			*/
+			/*SWITCH(
+			   SelectedProceso,
+			   "Extraccion y Acarreo",[EXTRACCION],
+			   "Extraccion y Acarreo, Trituracion",[TRITURACION_v2],
+			   /* SelectedProceso = "107", Calcinacion,
+			    SelectedProceso = "108", CalViva,
+			    SelectedProceso = "109", OxidoPulverizado,
+			    SelectedProceso = "111", Hidratacion,
+			    SelectedProceso = "112", CalVivaEnvasada,
+			    SelectedProceso = "113", Envase,*/
+			    1 
+			)*/
+			IF([ProcesoSeleccionado] = "Extraccion y Acarreo", [CostoXTn Extraccion],
+			    if([ProcesoSeleccionado] IN {"Trituracion"},[CostoXTn Trituracion],IF([ProcesoSeleccionado] IN {"Carbonatos"},[CostoXTn Carbonatos],
+			    if([ProcesoSeleccionado]IN {"Pulverizado de Pet Coke"},[CostoXTn PulvPetCoke],IF([ProcesoSeleccionado] IN{"Calcinacion"},[CostoXTn Calcinacion],IF([ProcesoSeleccionado]IN {"Manejo de Cal Viva"},[CostoXTn CalViva],IF([ProcesoSeleccionado]IN {"Pulverizado y Envasado de Oxido"},[CostoXTn PulvOxido],IF([ProcesoSeleccionado] IN {"Hidratacion y Molienda"},[CostoXTn Hidratacion],IF([ProcesoSeleccionado] in {"Envase"},[CostoXTn Envase],[EXTRACCION]+[TRITURACION]+[CARBONATOS]+[PULVCOKE]+[CALVIVA]+[PULVOXIDO])))))))))
+			```
+		lineageTag: 31eb9251-1a9e-4b32-872d-2b65655ec58e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ConsumoLitrosDiesel = CALCULATE(SUM(Consumos[Cantidad]),Consumos[Cve_Articulo_Consumo] = "PRO-INP-548-061-0077"&&Consumos[Cve_B_ProcesoProductivo] = "101")
+		lineageTag: ac4eb087-0494-4cd7-ac49-69fabcdd1373
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LitroXTn Extraccion' = DIVIDE([ConsumoLitrosDiesel],[TnProducidas],"-")
+		lineageTag: d21b0e80-1938-427e-91d0-aa4e3f67426c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ConsumoExplosivo = ```
+			
+			--Se multiplica por 25 ya que no registran kg registran cajas o sacos de 25 kg en los diarios de lista de selecciónConsumoExplosivo 
+			CALCULATE(SUM(Consumos[Cantidad])*150,Consumos[Cve_Articulo_Consumo] IN {"PRO-EXP-168-014-0004",
+			"PRO-EXP-168-014-0005",
+			"PRO-EXP-555-078-0007",
+			"PRO-EXP-555-078-0008",
+			"PRO-EXP-555-078-0009",
+			"PRO-EXP-555-078-0010",
+			"PRO-EXP-555-078-0012",
+			"PRO-EXP-555-078-0013",
+			"PRO-EXP-555-078-0014",
+			"PRO-EXP-555-078-0015",
+			"PRO-EXP-555-078-0016",
+			"PRO-EXP-555-078-0017",
+			"PRO-EXP-555-078-0018",
+			"PRO-EXP-556-078-0025",
+			"PRO-EXP-556-078-0026",
+			"PRO-EXP-556-078-0027",
+			"PRO-EXP-556-078-0028",
+			"PRO-EXP-556-078-0030",
+			"PRO-EXP-556-078-0032",
+			"PRO-EXP-556-078-0033",
+			"PRO-EXP-556-078-0034",
+			"PRO-EXP-556-078-0038",
+			"PRO-EXP-556-078-0039",
+			"PRO-EXP-556-078-0040",
+			"PRO-EXP-556-078-0041",
+			"PRO-EXP-556-078-0042",
+			"PRO-EXP-556-078-0043",
+			"PRO-EXP-556-078-0044",
+			"PRO-EXP-556-078-0045",
+			"PRO-EXP-556-078-0046",
+			"PRO-EXP-556-078-0047",
+			"PRO-EXP-556-078-0048"})
+			```
+		lineageTag: 69f9b1b2-2888-4a0e-be36-26da696d4d73
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GrmsXTn Extraccion' = DIVIDE([ConsumoExplosivo],[TnProducidas],"-")
+		lineageTag: b9372bd7-37e1-4ae5-b5b1-4e0ef1dfa3c1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PromTnProducidas =
+			
+			Var AnoSeleccionado = SELECTEDVALUE(dim_fecha[Periodo1])
+			Return 1
+		formatString: 0
+		lineageTag: 8373ea46-9b2a-4064-8765-ffb3d4209b60
+
+	measure ConsumoKwh = CALCULATE(SUM(Consumos[Cantidad]),Consumos[Cve_Articulo_Consumo] = "PRO-INP-091-005-0002")
+		lineageTag: 487e6219-8775-485d-97f4-8091dffb4120
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PiedraHorno = ```
+			CALCULATE(sum(h_operaciones[Cantidad]),h_operaciones[Cve_Articulo_Producido] IN {"40-02-0013",
+			"40-02-0006",
+			"40-02-0021",
+			"40-02-0026",
+			"40-02-0034",
+			"40-02-0008",
+			"40-02-0007",
+			"40-02-0023",
+			"40-02-0027",
+			"40-02-0036",
+			"40-02-0014",
+			"40-02-0024",
+			"40-02-0015",
+			"40-02-0003",
+			"40-02-0001",
+			"40-02-0005",
+			"40-02-0012",
+			"40-02-0037",
+			"40-02-0004",
+			"40-02-0033",
+			"40-02-0002"}&&h_operaciones[Cve_B_ProcesoProductivo] = "102") 
+			```
+		formatString: 0
+		lineageTag: 30e81418-ecd7-490e-a621-f1d304fab97c
+
+	measure PercParaHornos = DIVIDE([PiedraHorno],[TnProducidas],"-")
+		formatString: 0%;-0%;0%
+		lineageTag: 00de7c7e-76b5-472b-9469-68a92711806e
+
+	measure KwHXTn = DIVIDE([ConsumoKwh],[TnProducidas],"-")
+		lineageTag: 1a615a86-eea1-41ca-9a6c-596004012d87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PromCalc = 1
+		formatString: 0
+		lineageTag: 61300ee8-815d-40d3-8d95-fd03450990ea
+
+	measure SACOS =
+			
+			--Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var ImporteML = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Sacos"
+			       ),
+			       h_finanzas_consolidacion[Importe]
+			    )
+			Var ImporteMXN = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Sacos"
+			       ),
+			       h_finanzas_consolidacion[ImporteMXN]
+			    )
+			Var ImporteUSD = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Sacos"
+			       ),
+			       h_finanzas_consolidacion[ImporteUSD]
+			    )
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		lineageTag: aa9be83d-621c-4d7b-a503-029d38d0d504
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure COMBUSTIBLE =
+			
+			--Var Moneda = SELECTEDVALUE(Monedas[Moneda])
+			Var ImporteML = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Combustibles"
+			       ),
+			       h_finanzas_consolidacion[Importe]
+			    )
+			Var ImporteMXN = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Combustibles"
+			       ),
+			       h_finanzas_consolidacion[ImporteMXN]
+			    )
+			Var ImporteUSD = SUMX(
+			       FILTER(
+			           h_finanzas_consolidacion,
+			           RELATED(dim_cuentas_contables[Partida]) = "Combustibles"
+			       ),
+			       h_finanzas_consolidacion[ImporteUSD]
+			    )
+			RETURN
+			SWITCH(
+			    [MonedaSeleccionada],
+			    "MXN", ImporteMXN,
+			    "USD",ImporteUSD,
+			     ImporteML)
+		formatString: 0
+		lineageTag: 01e2f8eb-5314-4cde-99ed-26622585f138
+
+	measure prueba = MID(TODAY(),1,2)
+		lineageTag: 9c12968c-dc98-4844-b1cb-961055965813
+
+	measure Subtotal =
+			CALCULATE(IF([ProcesoSeleccionado] = "Extraccion y Acarreo", [EXTRACCION],
+			    if([ProcesoSeleccionado] IN {"Trituracion"},[TRITURACION],IF([ProcesoSeleccionado] IN {"Carbonatos"},[CARBONATOS],
+			    if([ProcesoSeleccionado]IN {"Pulverizado de Pet Coke"},[PULVCOKE],IF([ProcesoSeleccionado] IN{"Calcinacion"},[CALCINACION],IF([ProcesoSeleccionado]IN {"Manejo de Cal Viva"},[CALVIVA],IF([ProcesoSeleccionado]IN {"Pulverizado y Envasado de Oxido"},[PULVOXIDO],IF([ProcesoSeleccionado] IN {"Hidratacion y Molienda"},[HIDRATACION],IF([ProcesoSeleccionado] in {"Envase"},[ENVASE],[EXTRACCION]+[TRITURACION]+[CARBONATOS]+[PULVCOKE]+[CALCINACION]+[CALVIVA]+[PULVOXIDO]+[HIDRATACION]+[ENVASE]))))))))),FILTER(ALLSELECTED(dim_b_proceso_productivo),dim_b_proceso_productivo[ClavePP] <= MAX(dim_b_proceso_productivo[ClavePP])))
+		lineageTag: ce6b1443-68df-47be-b0b0-127581a0e4da
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: 028852e6-9576-45d3-8f55-83d2854efde3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CALCULOS = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = a66b5eb4adff4bb6940eb603597a1a57
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

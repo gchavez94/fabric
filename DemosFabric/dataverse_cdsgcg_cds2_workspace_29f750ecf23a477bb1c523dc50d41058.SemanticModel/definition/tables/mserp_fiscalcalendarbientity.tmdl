@@ -1,0 +1,141 @@
+table mserp_fiscalcalendarbientity
+	lineageTag: 611181b0-5b69-4289-a73a-7c6479a122d2
+	sourceLineageTag: [dbo].[mserp_fiscalcalendarbientity]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dd1cf56b-6ce7-41d9-ad44-218988e3521c
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d8e8fe93-47cf-41ae-b387-3888ad30e605
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 44792867-94dc-4b56-b20f-463357c6315b
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_calendarid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 394d9f84-41e1-40d2-b1dd-e2779a10290b
+		sourceLineageTag: mserp_calendarid
+		summarizeBy: none
+		sourceColumn: mserp_calendarid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9d4a296f-2de1-4cc1-8eb1-2fc0364c9ced
+		sourceLineageTag: mserp_description
+		summarizeBy: none
+		sourceColumn: mserp_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_fiscalcalendarbientityid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 42a67b7b-f17b-4550-b1f8-78c710f03265
+		sourceLineageTag: mserp_fiscalcalendarbientityid
+		summarizeBy: none
+		sourceColumn: mserp_fiscalcalendarbientityid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sourcekey
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d03d57ba-f832-429e-8359-43f75267bc64
+		sourceLineageTag: mserp_sourcekey
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcekey_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b42c169b-a23f-4ad1-bb3c-df812ba5714b
+		sourceLineageTag: mserp_sourcekey_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3cc8a7c7-fe99-43c1-a155-ee3355edb449
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c14eefe2-e2dc-4771-9a50-8264fd22bbd5
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8f06f27b-e1d2-4319-b61f-7b84c83f6c36
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ae0f41a-d8cb-4a38-9a2e-54d92dc0bf02
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mserp_fiscalcalendarbientity-e8f2fd5c-9bf2-4269-a515-d0b7cd24a49e = entity
+		mode: directLake
+		source
+			entityName: mserp_fiscalcalendarbientity
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,29 @@
+table DimEstadoAprobacion
+	lineageTag: 9d7bf5b6-8399-4ab3-b961-0a97cd59f541
+
+	column IdEstadoDeAprobacion
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d6608cf-2b84-4328-b96d-cff2ccef1cbe
+		summarizeBy: none
+		sourceColumn: IdEstadoDeAprobacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: fe1a142a-21ab-4a23-b1ce-6aa97033802f
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEstadoAprobacion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("z7sbculfp4pu7njrxgznbuczsi-bw5iktbtxhrebna4s7zbk7immi.datawarehouse.fabric.microsoft.com", "DWH MEXMAR"),
+				    dbo_DimEstadoAprobacion = Origen{[Schema="dbo",Item="DimEstadoAprobacion"]}[Data]
+				in
+				    dbo_DimEstadoAprobacion
+

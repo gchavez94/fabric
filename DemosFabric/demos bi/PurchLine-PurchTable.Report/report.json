@@ -1,0 +1,60 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.58\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "e1be0d0ad234f2b0204f",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"448d9a390097a0fbd0cc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":720.6299212598425,\"y\":58.79265091863517,\"z\":1000,\"width\":559.3700787401575,\"height\":661.8372703412073,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Purchline-PurchTable.Artículo\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Purchline-PurchTable.purchprice)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Purchline-PurchTable\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"purchprice\"}},\"Function\":0},\"Name\":\"Sum(Purchline-PurchTable.purchprice)\",\"NativeReferenceName\":\"Suma de purchprice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Artículo\"},\"Name\":\"Purchline-PurchTable.Artículo\",\"NativeReferenceName\":\"Artículo\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"purchprice\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 661.84,
+          "width": 559.37,
+          "x": 720.63,
+          "y": 58.79,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"5d8dc869a0993c44b79c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":720.6299212598425,\"y\":0,\"z\":2000,\"width\":559.3700787401575,\"height\":58.79265091863517,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Purchline-PurchTable.Artículo\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Purchline-PurchTable\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Artículo\"},\"Name\":\"Purchline-PurchTable.Artículo\",\"NativeReferenceName\":\"Artículo\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 58.79,
+          "width": 559.37,
+          "x": 720.63,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6dcca339b74664ed24b2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":720.6299212598425,\"height\":720.6299212598425,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Purchline-PurchTable.Artículo\"},{\"queryRef\":\"Sum(Purchline-PurchTable.purchprice)\"},{\"queryRef\":\"Purchline-PurchTable.Moneda\"},{\"queryRef\":\"Sum(Purchline-PurchTable.purchqty)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Purchline-PurchTable\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"purchprice\"}},\"Function\":0},\"Name\":\"Sum(Purchline-PurchTable.purchprice)\",\"NativeReferenceName\":\"Suma de purchprice\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"purchqty\"}},\"Function\":0},\"Name\":\"Sum(Purchline-PurchTable.purchqty)\",\"NativeReferenceName\":\"Suma de purchqty\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Artículo\"},\"Name\":\"Purchline-PurchTable.Artículo\",\"NativeReferenceName\":\"Artículo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Moneda\"},\"Name\":\"Purchline-PurchTable.Moneda\",\"NativeReferenceName\":\"Moneda\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 720.63,
+          "width": 720.63,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

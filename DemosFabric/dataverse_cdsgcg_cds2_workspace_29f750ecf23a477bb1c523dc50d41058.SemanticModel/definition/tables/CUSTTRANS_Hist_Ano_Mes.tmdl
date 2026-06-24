@@ -1,0 +1,57 @@
+table CUSTTRANS_Hist_Ano_Mes
+	lineageTag: de3e4df4-6af6-4b5b-9158-fd42c25c9457
+	sourceLineageTag: [dbo].[CUSTTRANS_Hist_Ano_Mes]
+
+	column FECHA_Mes_Cierre
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 5a96b40a-3452-4a9b-86d2-80e2694d56ac
+		sourceLineageTag: FECHA_Mes_Cierre
+		summarizeBy: none
+		sourceColumn: FECHA_Mes_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 90c1c21d-cbb9-4976-99e2-595257917c76
+		sourceLineageTag: Total
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha_Corte
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: fb5e72ae-03f6-4423-8ded-647d1088b24a
+		sourceLineageTag: Fecha_Corte
+		summarizeBy: none
+		sourceColumn: Fecha_Corte
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto_Filtrado
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 35b1898c-38ae-4d37-b9af-71997d8c9d17
+		sourceLineageTag: Monto_Filtrado
+		summarizeBy: none
+		sourceColumn: Monto_Filtrado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CUSTTRANS_Hist_Ano_Mes-88fc6ea4-03af-4f15-91aa-c8c927013e2d = entity
+		mode: directLake
+		source
+			entityName: CUSTTRANS_Hist_Ano_Mes
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

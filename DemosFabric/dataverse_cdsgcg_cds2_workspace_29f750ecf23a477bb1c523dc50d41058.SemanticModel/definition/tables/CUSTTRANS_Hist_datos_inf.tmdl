@@ -1,0 +1,80 @@
+table CUSTTRANS_Hist_datos_inf
+	lineageTag: cc0dcd81-8b14-42db-9d31-16aa0431bc13
+	sourceLineageTag: [dbo].[CUSTTRANS_Hist_datos_inf]
+
+	column FECHA_Mes_Cierre
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8364021a-a0d6-4114-9907-e8aed2f01cf2
+		sourceLineageTag: FECHA_Mes_Cierre
+		summarizeBy: none
+		sourceColumn: FECHA_Mes_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1c132ba3-38c5-4570-8e83-79e3051f08e2
+		sourceLineageTag: Total
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha_Corte
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b223f608-bdce-4818-9911-a9c8bcc91f6e
+		sourceLineageTag: Fecha_Corte
+		summarizeBy: none
+		sourceColumn: Fecha_Corte
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTNUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 34ded4ec-2c81-40a0-b40b-12a8414f5363
+		sourceLineageTag: ACCOUNTNUM
+		summarizeBy: sum
+		sourceColumn: ACCOUNTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Cierre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a9bf017c-fdfa-47c1-b8de-2a8c5bc52ce8
+		sourceLineageTag: Mes_Cierre
+		summarizeBy: sum
+		sourceColumn: Mes_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año_Cierre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: be614e27-eec6-46ce-9252-623d4831992a
+		sourceLineageTag: Año_Cierre
+		summarizeBy: sum
+		sourceColumn: Año_Cierre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CUSTTRANS_Hist_datos_inf-3e9a4607-c754-4fe6-9a7e-f0cfde1ec836 = entity
+		mode: directLake
+		source
+			entityName: CUSTTRANS_Hist_datos_inf
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

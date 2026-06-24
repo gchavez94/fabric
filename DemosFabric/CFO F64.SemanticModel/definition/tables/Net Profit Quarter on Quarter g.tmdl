@@ -1,0 +1,46 @@
+table 'Net Profit Quarter on Quarter g'
+	lineageTag: 818b20b2-d211-42a1-b4bc-abd8d0f15b54
+
+	column 'Date.Fiscal YQMD'
+		dataType: string
+		lineageTag: 3d8bec4c-37d2-4f7f-aa7a-14f349bed3dd
+		summarizeBy: none
+		sourceColumn: Date.Fiscal YQMD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Growth %'
+		dataType: double
+		lineageTag: 8e1eb275-d313-496e-87cc-b5fda5729ea8
+		summarizeBy: sum
+		sourceColumn: Profit Growth %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Operating Profit %'
+		dataType: double
+		lineageTag: 97e64545-7721-4222-9d62-c690f4f22ff4
+		summarizeBy: sum
+		sourceColumn: Operating Profit %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Net Profit Quarter on Quarter g-56343fe6-966e-4226-b27d-7c43b525d508' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Gabriel Armando\Downloads\Profit and loss statement.xlsx"), null, true),
+				    #"Net Profit Quarter on Quarter g_Sheet" = Origen{[Item="Net Profit Quarter on Quarter g",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Net Profit Quarter on Quarter g_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Date.Fiscal YQMD", type text}, {"Profit Growth %", type number}, {"Operating Profit %", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

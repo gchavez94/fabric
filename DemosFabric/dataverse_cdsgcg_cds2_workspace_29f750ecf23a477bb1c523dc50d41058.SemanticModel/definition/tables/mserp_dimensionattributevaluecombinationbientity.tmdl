@@ -1,0 +1,151 @@
+table mserp_dimensionattributevaluecombinationbientity
+	lineageTag: abebfb2d-0b33-495d-b0f7-56d3fd5a332e
+	sourceLineageTag: [dbo].[mserp_dimensionattributevaluecombinationbientity]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ab8a222-02a5-48c7-b7c7-d1eda18223a6
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cd7606f2-2a32-4690-a452-72f0b7469109
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 850d9a35-68c2-4d73-b020-bbf32971fb84
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_dimensionattributevaluecombinationbientityid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f6c8d1be-8d25-4406-89e8-4d68fbddbd1c
+		sourceLineageTag: mserp_dimensionattributevaluecombinationbientityid
+		summarizeBy: none
+		sourceColumn: mserp_dimensionattributevaluecombinationbientityid
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_dimensionvaluesjson
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 380c085a-b54b-4809-857a-ed4566fb5f4e
+		sourceLineageTag: mserp_dimensionvaluesjson
+		summarizeBy: none
+		sourceColumn: mserp_dimensionvaluesjson
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_displayvalue
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 847db077-0dc9-49a5-820c-19df981c7197
+		sourceLineageTag: mserp_displayvalue
+		summarizeBy: none
+		sourceColumn: mserp_displayvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_primaryfield
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 01f7a279-6bf4-4b6b-9bd1-207322626dbb
+		sourceLineageTag: mserp_primaryfield
+		summarizeBy: none
+		sourceColumn: mserp_primaryfield
+
+		annotation SummarizationSetBy = Automatic
+
+	column mserp_sourcekey
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a47a6836-9336-4787-b8e6-c23fec028c9d
+		sourceLineageTag: mserp_sourcekey
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mserp_sourcekey_bigint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ef5571eb-4513-4001-b9f7-c712ece7404f
+		sourceLineageTag: mserp_sourcekey_bigint
+		summarizeBy: sum
+		sourceColumn: mserp_sourcekey_bigint
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ecb4aea2-390c-4398-9f90-d473d91f33cb
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c1afe333-5a84-414d-8337-8a4676b187db
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedOn
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6ac11616-c071-4b1b-a265-3057cc1739e0
+		sourceLineageTag: CreatedOn
+		summarizeBy: none
+		sourceColumn: CreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d62c5a5c-da45-4244-afe1-81524adaf487
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mserp_dimensionattributevaluecombinationbientity-5a9a7102-158c-4a2b-b303-73a5800d77a8 = entity
+		mode: directLake
+		source
+			entityName: mserp_dimensionattributevaluecombinationbientity
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,60 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "c963d3362ac37ddcf2f0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"31b46c58c421c20ce6b1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":896,\"y\":32,\"z\":2,\"width\":384,\"height\":192,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DimVendedor.NombreVendedor\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimVendedor\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"NombreVendedor\"},\"Name\":\"DimVendedor.NombreVendedor\",\"NativeReferenceName\":\"NombreVendedor\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimVendedor\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"NombreVendedor\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Daniela L�pez'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 192.00,
+          "width": 384.00,
+          "x": 896.00,
+          "y": 32.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"779fd727417f94053e4c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":48,\"y\":32,\"z\":0,\"width\":704,\"height\":432,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimArticulo.Formato\",\"active\":true}],\"Y\":[{\"queryRef\":\"FactVentas.SumaTotal\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimArticulo\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FactVentas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Formato\"},\"Name\":\"DimArticulo.Formato\",\"NativeReferenceName\":\"Formato\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"SumaTotal\"},\"Name\":\"FactVentas.SumaTotal\",\"NativeReferenceName\":\"SumaTotal\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"SumaTotal\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 432.00,
+          "width": 704.00,
+          "x": 48.00,
+          "y": 32.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"b86915098bca2ce9bf7b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":64,\"y\":416,\"z\":1,\"width\":880,\"height\":240,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimFecha.Fecha\",\"active\":true}],\"Y\":[{\"queryRef\":\"FactVentas.SumaTotal\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimFecha\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FactVentas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fecha\"},\"Name\":\"DimFecha.Fecha\",\"NativeReferenceName\":\"Fecha\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"SumaTotal\"},\"Name\":\"FactVentas.SumaTotal\",\"NativeReferenceName\":\"SumaTotal\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fecha\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{}}}",
+          "filters": "[]",
+          "height": 240.00,
+          "width": 880.00,
+          "x": 64.00,
+          "y": 416.00,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

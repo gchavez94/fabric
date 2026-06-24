@@ -1,0 +1,178 @@
+table DimClientes
+	lineageTag: 9f7f2def-cea3-42d6-b9f9-bd40d54ddc22
+	sourceLineageTag: [dbo].[DimClientes]
+
+	column CodigoGrupoCliente
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 74270e0d-b919-4f98-bff2-b6e5e78256ba
+		sourceLineageTag: CodigoGrupoCliente
+		summarizeBy: none
+		sourceColumn: CodigoGrupoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Grupo'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9208e6bc-140a-4029-8028-57c99eb7f73f
+		sourceLineageTag: Nombre Grupo
+		summarizeBy: none
+		sourceColumn: Nombre Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04e2e3a3-d039-44e4-8526-a54f73b697d4
+		sourceLineageTag: Sucursal
+		summarizeBy: none
+		sourceColumn: Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimClienteId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8332bc2a-f779-4c3f-9533-83e50bd28411
+		sourceLineageTag: DimClienteId
+		summarizeBy: none
+		sourceColumn: DimClienteId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9abeefe2-141b-4b20-8408-f877648f5877
+		sourceLineageTag: CP
+		summarizeBy: none
+		sourceColumn: CP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3c88190f-a6b6-42eb-bef1-a83b1d20b49e
+		sourceLineageTag: Pais
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Colonia
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 233c27ea-b28e-41e3-abb9-2ed6ae26ddd3
+		sourceLineageTag: Colonia
+		summarizeBy: none
+		sourceColumn: Colonia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ac8f3b5c-a4fb-4bfe-97c3-1ce535cd6397
+		sourceLineageTag: Desc_Estado
+		summarizeBy: none
+		sourceColumn: Desc_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0ec29e54-21e7-4614-ab02-bb23cc01f61d
+		sourceLineageTag: Codigo_Estado
+		summarizeBy: none
+		sourceColumn: Codigo_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Municipio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dc78fdbb-227f-4e51-8692-eba044a07ca9
+		sourceLineageTag: Desc_Municipio
+		summarizeBy: none
+		sourceColumn: Desc_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Municipio
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 091e665f-b697-4971-9b40-8b558aead756
+		sourceLineageTag: Codigo_Municipio
+		summarizeBy: none
+		sourceColumn: Codigo_Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d1a68f26-ca70-4cb4-bd00-81f97f267ab6
+		sourceLineageTag: LAT
+		summarizeBy: none
+		sourceColumn: LAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONG
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: de299c70-486e-40d7-9758-2e41e4aaf8b3
+		sourceLineageTag: LONG
+		summarizeBy: none
+		sourceColumn: LONG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'InfoComplementariaCliente.NivelDeServicio'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: be095882-bda0-4408-b951-67986103fd80
+		sourceLineageTag: InfoComplementariaCliente.NivelDeServicio
+		summarizeBy: none
+		sourceColumn: InfoComplementariaCliente.NivelDeServicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'InfoComplementariaCliente.Region'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cf4c4614-ecd6-44ac-b390-74784c194769
+		sourceLineageTag: InfoComplementariaCliente.Region
+		summarizeBy: none
+		sourceColumn: InfoComplementariaCliente.Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'URL Web'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9dcb7de1-9b87-457d-87bf-e236fa6faa0e
+		sourceLineageTag: URL Web
+		summarizeBy: none
+		sourceColumn: URL Web
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimClientes = entity
+		mode: directLake
+		source
+			entityName: DimClientes
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
